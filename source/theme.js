@@ -188,7 +188,7 @@ $(function() {
   $('.slideshow').cycle({
     speed: 600,
     swipe: true,
-    next: $('.slideshow')
+    next: $('.slideshow img')
   });
   
   /* Purchase widget */

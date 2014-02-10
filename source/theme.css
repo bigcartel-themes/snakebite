@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* TYPOGRAPHY & COLORS
 ------------------------------------------------
 
@@ -9,7 +11,8 @@ brown	#7C5531
 green	#47746F
 blue	#4F799E
 pink	#A04E6C
-											  */
+
+*/
 
 /* RESET
 --------------------------------------------- */
@@ -596,7 +599,7 @@ footer .url {
   right: -20px;
 }
 .rand-1 .badge-status {
-  bottom: 10%;
+  bottom: 15%;
   left: 20px;
 }
 .rand-2 {
@@ -616,7 +619,7 @@ footer .url {
   top: 40px;
 }
 .rand-3 .badge-view {
-  top: 50%;
+  bottom: 20%;
   left: -20px;
 }
 .rand-3 .badge-status {
@@ -644,7 +647,7 @@ footer .url {
 }
 .rand-5 .badge-status {
   top: -20px;
-  right: 20px;
+  right: -20px;
 }
 .rand-6 {
   width: 330px;
@@ -655,7 +658,7 @@ footer .url {
   right: 20px;
 }
 .rand-6 .badge-status {
-  top: 50%;
+  bottom: 10%;
   left: -20px;
 }
 
@@ -717,8 +720,8 @@ footer .url {
 }
 .cycle-pager span {
   display: inline-block;
-  width: 5px;
-  height: 5px;
+  width: 8px;
+  height: 8px;
   border-radius: 20px;
   text-indent: -999px;
   background: {{theme.highlight_color}};
@@ -728,10 +731,7 @@ footer .url {
   cursor: pointer;
 }
 .cycle-pager span.cycle-pager-active {
-  border: 1px solid {{theme.text_color}};
-  transform: scale(2,2);
-  -ms-transform: scale(2,2);
-  -webkit-transform: scale(2,2);
+  background: {{theme.text_color}};
 }
 .product .details {
   float: left;
