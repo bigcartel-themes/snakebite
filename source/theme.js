@@ -186,8 +186,9 @@ $(function() {
   
   /* Slider */
   $('.slideshow').cycle({
-    speed: 600,
+    speed: 400,
     swipe: true,
+    autoHeight: 'calc',
     next: $('.slideshow img')
   });
   

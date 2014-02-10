@@ -16,9 +16,9 @@ pink	#A04E6C
 
 /* RESET
 --------------------------------------------- */
-html, body, div, span, applet, object, iframe,h2, h3, h3, h4, h5, h6, p, blockquote, pre,
+html, body, div, span, applet, object, iframe, h2, h3, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,b, u, i, center,
+small, strike, strong, sub, sup, tt, var, b, u, i, center,
 dl, dt, dd, ol, ul, li,fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
@@ -240,7 +240,7 @@ html, body {
 }
 body {
   {% if theme.background_image %}
-  background: {{theme.background_image}};
+  background: url('{{theme.background_image.url}}');
   {% else %}
   background: {{theme.background_color}};
   {% endif %}
@@ -569,7 +569,7 @@ footer .url {
   bottom: 0;
   z-index: -1;
   {% if theme.accent_image %}
-  background: {{theme.accent_image}};
+  background: url('{{theme.accent_image.url}}');
   {% else %}
   background: {{theme.accent_color}};
   {% endif %}
@@ -685,7 +685,11 @@ footer .url {
   float: right;
   width: 66%;
   position: relative;
+  {% if theme.accent_image %}
+  background: url('{{theme.accent_image.url}}');
+  {% else %}
   background: {{theme.accent_color}};
+  {% endif %}
 }
 .product .color-block {
   width: 5000px;
@@ -694,7 +698,7 @@ footer .url {
   top: -100px;
   left: 0;
   {% if theme.accent_image %}
-  background: {{theme.accent_image}};
+  background: url('{{theme.accent_image.url}}');
   {% else %}
   background: {{theme.accent_color}};
   {% endif %}
@@ -704,7 +708,7 @@ footer .url {
   position: relative;
   overflow: hidden;
   {% if theme.accent_image %}
-  background: {{theme.accent_image}};
+  background: url('{{theme.accent_image.url}}');
   {% else %}
   background: {{theme.accent_color}};
   {% endif %}
@@ -729,9 +733,15 @@ footer .url {
   margin: 0 6px;
   position: relative;
   cursor: pointer;
+  -moz-transition: background 300ms;
+  -webkit-transition: background 300ms;
+  transition: background 300ms;
 }
 .cycle-pager span.cycle-pager-active {
   background: {{theme.text_color}};
+  -moz-transition: background 300ms;
+  -webkit-transition: background 300ms;
+  transition: background 300ms;
 }
 .product .details {
   float: left;

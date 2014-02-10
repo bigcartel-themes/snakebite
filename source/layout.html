@@ -7,6 +7,22 @@
     <meta name="keywords" content="{{ page.meta_keywords }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
+    <!-- Social Meta Tags -->
+    <meta property="og:title" content="{{ store.name }} &mdash; {{ page.name }}" />
+    <meta property="og:type" content="product" />
+    {% if page.permalink == 'product' %}
+      <meta property="og:description" content="{{ page.meta_description }}" />
+      <meta property="og:url" content="{{ store.url }}{{ product.url }}" />
+      <meta property="og:image" content="{{ product.images.first.url }}" />
+    {% else %}
+      {% if store.description != blank %}
+        <meta property="og:description" content="{{ store.description }}" />
+      {% else %}
+        <meta property="og:description" content="{{ page.meta_description }}" />
+      {% endif %}
+      <meta property="og:url" content="{{ store.website }}" />
+    {% endif %}
+
   	<!-- Google Fonts -->
   	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Cutive' rel='stylesheet' type='text/css'>
   	
@@ -35,7 +51,7 @@
           </a>
           <nav class="nav-main">
             <ul class="clear">
-              {% if categories.count > 0 %}
+              {% if categories != blank %}
                 <li>
                 <a class="dropdown-trigger" href="#">Products <span class="nav-caret">v</span></a>
                 <ul class="dropdown">
@@ -45,7 +61,7 @@
                 </ul>
                 </li>
               {% endif %}
-              {% if artists.count > 0 %}
+              {% if artists != blank %}
                 <li>
                 <a class="dropdown-trigger" href="#">Artists <span class="nav-caret">v</span></a>
                 <ul class="dropdown">
@@ -55,7 +71,7 @@
                 </ul>
                 </li>
               {% endif %}
-              {% if pages.count > 4 %}
+              {% if pages != blank %}
                 <li>
                 <a class="dropdown-trigger" href="#">Pages <span class="nav-caret">v</span></a>
                 <ul class="dropdown">
@@ -83,7 +99,7 @@
         <nav class="nav-mobile clear">
           <ul>
             <li><a href="#">Home</a></li>
-            {% if categories.count > 0 %}
+            {% if categories != blank %}
                 <li>
                 <a class="accordion-trigger" href="#">Products <span class="nav-caret">v</span></a>
                 <ul class="accordion">
@@ -93,7 +109,7 @@
                 </ul>
                 </li>
               {% endif %}
-              {% if artists.count > 0 %}
+              {% if artists != blank %}
                 <li>
                 <a class="accordion-trigger" href="#">Artists <span class="nav-caret">v</span></a>
                 <ul class="accordion">
@@ -103,7 +119,7 @@
                 </ul>
                 </li>
               {% endif %}
-              {% if pages.count > 4 %}
+              {% if pages != blank %}
                 <li>
                 <a class="accordion-trigger" href="#">Pages <span class="nav-caret">v</span></a>
                 <ul class="accordion">
@@ -112,10 +128,6 @@
                 {% endfor %}
                 </ul>
                 </li>
-              {% elsif pages.count > 0 %}
-                {% for page in pages.all %}
-                  <li><a href="{{ page.url }}">{{ page.name }}</a></li>
-                {% endfor %}
               {% endif %}
               <li><a href="/contact">Contact</a></li>
           </ul>
@@ -148,7 +160,7 @@
     <footer>
       <div class="inner">
         <span class="copyright">Copyright 2014 {{ store.name }}</span>
-        <a href="{{ store.website}}" class="url">{{ store.website | replace:'http://','' }}</a>
+        <a href="{{ store.website }}" class="url">{{ store.website | replace:'http://','' }}</a>
         {% if theme.twitter_username != blank %}
         <p><a href="http://twitter/{{ theme.twitter_username }}">Follow @{{ theme.twitter_username }}</a></p>
         {% endif %}

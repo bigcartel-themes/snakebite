@@ -1,6 +1,6 @@
 {
   "name": "Fuzzco",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "images": [
     {
       "variable": "logo",
@@ -39,17 +39,17 @@
     {
       "variable": "text_color",
       "label": "Text Color",
-      "default": "blue"
+      "default": "#0000FF"
     },
     {
       "variable": "highlight_color",
       "label": "Highlight Color",
-      "default": "#00ff01"
+      "default": "#00FF01"
     },
     {
       "variable": "accent_color",
       "label": "Accent Color",
-      "default": "#f0f0f0"
+      "default": "#F0F0F0"
     }
   ],
   "options": [
@@ -65,7 +65,13 @@
       "label": "Show view badges",
       "type": "boolean",
       "default": true,
-      "description": "Adds circular view product badges on top of product thumbnails"
+      "description": "Adds circular \"view product\" badges on top of product thumbnails"
+    },
+    {
+      "variable": "footer_text",
+      "label": "Footer Text",
+      "type": "text",
+      "description": "Bottom right text in footer. Leave blank to display store URL."
     },
     {
       "variable": "products_per_page",
@@ -86,11 +92,35 @@
     "content_header_background_color": "{{background_color}}",
     "content_color": "{{text_color}}",
     "content_header_color": "{{text_color}}",
-    "content_border_color": "{{text_color}}",
+    "content_border_color": "{{background_color}}",
     "content_border_width": "5px",
+    "content_header_vertical_padding": "80px",
+    "error_background_color": "{{highlight_color}}",
+    "error_color": "{{text_color}}",
+    "error_border_color": "{{highlight_color}}",
+    "step_border_style": "solid",
+    "step_border_color": "{{text_color}}",
+    "step_border_width": "3px",
+    "step_background_color": "{{accent_color}}",
+    "step_inactive_background_color": "{{background_color}}",
     "body_font": "{{text_font}}",
     "input_font": "{{text_font}}",
+    "input_focus_border_color": "{{text_color}}",
+    "input_focus_color": "{{text_color}}",
     "title_font": "{{header_font}}",
-    "title_color": "{{text_color}}"
+    "title_color": "{{text_color}}",
+    "button_font": "{{text_font}}",
+    "button_color": "{{text_color}}",
+    "button_background_color": "{{background_color}}",
+    "button_border_width": "3px",
+    "button_border_color": "{{text_color}}",
+    "button_hover_background_color": "{{text_color}}",
+    "button_hover_border_color": "{{text_color}}",
+    "button_hover_color": "{{background_color}}",
+    "summary_color": "{{text_color}}",
+    "summary_secondary_color": "{{text_color}}",
+    "summary_submit_border_color": "#bcbcbc",
+    "link_color": "{{text_color}}",
+    "link_hover_color": "#bcbcbc"
   }
 }

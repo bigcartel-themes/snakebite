@@ -72,15 +72,7 @@
   {{ product.description | paragraphs }}
   </div>
 {% endif %}
-{% case product.status %}
 
-  {% when 'sold-out' %}
-  <p>sold out</p>
-  
-  {% when 'coming-soon' %}
-  <p>coming soon</p>
-  
-  {% when 'active' %}
   {% if product.options.size > 1 %}
   <h3>Available Options:</h3>
   <ul class="bullets">
@@ -92,5 +84,4 @@
   </ul>
   {% endif %}
   
-{% endcase %}
 </div>
