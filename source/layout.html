@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+  <head>
+    <title>{{ store.name }} &mdash; {{ page.name }}</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="{{ page.meta_description }}">
+    <meta name="keywords" content="{{ page.meta_keywords }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+  	<!-- Google Fonts -->
+  	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Cutive' rel='stylesheet' type='text/css'>
+  	
+  	<!-- Styles -->
+    <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">
+  
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+    <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>
+    <script src="{{ 'api' | theme_js_url }}" type="text/javascript"></script>
+  
+    {{ head_content }}
+  
+  </head>
+
+  <body class="{{ page.permalink }} {{ page.category }}">
+    <div class="wrapper">
+      <header>
+        <div class="inner clear">
+          <a class="wordmark" href="/" data-store-name="{{ store.name | escape }}">
+            {% if theme.logo != blank %}
+            <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
+            {% else %}
+            {{ store.name }}
+            {% endif %}
+          </a>
+          <nav class="nav-main">
+            <ul class="clear">
+              {% if categories.count > 0 %}
+                <li>
+                <a class="dropdown-trigger" href="#">Products <span class="nav-caret">v</span></a>
+                <ul class="dropdown">
+                {% for category in categories.all %}
+                  <li><a href="{{ category.url }}">{{ category.name }}</a></li>
+                {% endfor %}
+                </ul>
+                </li>
+              {% endif %}
+              {% if artists.count > 0 %}
+                <li>
+                <a class="dropdown-trigger" href="#">Artists <span class="nav-caret">v</span></a>
+                <ul class="dropdown">
+                {% for artist in artists.all %}
+                  <li><a href="{{ artist.url }}">{{ artist.name }}</a></li>
+                {% endfor %}
+                </ul>
+                </li>
+              {% endif %}
+              {% if pages.count > 4 %}
+                <li>
+                <a class="dropdown-trigger" href="#">Pages <span class="nav-caret">v</span></a>
+                <ul class="dropdown">
+                {% for page in pages.all %}
+                  <li><a href="{{ page.url }}">{{ page.name }}</a></li>
+                {% endfor %}
+                </ul>
+                </li>
+              {% elsif pages.count > 0 %}
+                {% for page in pages.all %}
+                  <li><a href="{{ page.url }}">{{ page.name }}</a></li>
+                {% endfor %}
+              {% endif %}
+              <li><a href="/contact">Contact</a></li>
+              <li class="mobile-nav-trigger"><a href="#"><span class="icon-menu"></span></a></li>
+              <li class="cart-status">
+                <a href="/cart">
+                  <span class="cart-count">{{ cart.item_count }}</span>
+                  <span class="icon-cart"></span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <nav class="nav-mobile clear">
+          <ul>
+            <li><a href="#">Home</a></li>
+            {% if categories.count > 0 %}
+                <li>
+                <a class="accordion-trigger" href="#">Products <span class="nav-caret">v</span></a>
+                <ul class="accordion">
+                {% for category in categories.all %}
+                  <li><a href="{{ category.url }}">{{ category.name }}</a></li>
+                {% endfor %}
+                </ul>
+                </li>
+              {% endif %}
+              {% if artists.count > 0 %}
+                <li>
+                <a class="accordion-trigger" href="#">Artists <span class="nav-caret">v</span></a>
+                <ul class="accordion">
+                {% for artist in artists.all %}
+                  <li><a href="{{ artist.url }}">{{ artist.name }}</a></li>
+                {% endfor %}
+                </ul>
+                </li>
+              {% endif %}
+              {% if pages.count > 4 %}
+                <li>
+                <a class="accordion-trigger" href="#">Pages <span class="nav-caret">v</span></a>
+                <ul class="accordion">
+                {% for page in pages.all %}
+                  <li><a href="{{ page.url }}">{{ page.name }}</a></li>
+                {% endfor %}
+                </ul>
+                </li>
+              {% elsif pages.count > 0 %}
+                {% for page in pages.all %}
+                  <li><a href="{{ page.url }}">{{ page.name }}</a></li>
+                {% endfor %}
+              {% endif %}
+              <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+      <section class="main clear">
+        <div class="inner clear">
+        
+          {% if errors != blank %}
+          <ul class="unstyled errors">
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+    
+          {% if page.category == 'custom' %}
+            {{ page_content | paragraphs }}
+          {% else %}
+            {{ page_content }}
+          {% endif %}
+          
+        </div>
+        
+      </section>
+    
+    </div><!-- End wrapper -->
+    
+    <footer>
+      <div class="inner">
+        <span class="copyright">Copyright 2014 {{ store.name }}</span>
+        <a href="{{ store.website}}" class="url">{{ store.website | replace:'http://','' }}</a>
+        {% if theme.twitter_username != blank %}
+        <p><a href="http://twitter/{{ theme.twitter_username }}">Follow @{{ theme.twitter_username }}</a></p>
+        {% endif %}
+      </div>
+    </footer>
+    
+    {% if page.permalink == 'home' or  page.permalink == 'products' %}
+    <div class="color-block-products"></div>
+    {% endif %}
+    
+  </body>
+</html>

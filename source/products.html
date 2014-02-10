@@ -1,0 +1,52 @@
+{% paginate products from products.current by theme.products_per_page %}
+
+{% if products != blank %}
+
+  <h1 class="floating-title">{{ page.name }}</h1>
+
+  {% for product in products %}
+  
+    <div class="preview rand-{{ forloop.index | modulo:7 }}">
+      <div class="preview-inner">
+        <a href="{{ product.url }}">
+          <div class="image-wrap">
+            {% if theme.show_view_badges %}
+            <div class="badge badge-red badge-view"><span>View</span></div>
+            {% endif %}
+            {% if product.status == 'coming-soon' %}
+              <div class="badge badge-white badge-status">
+              <span>Coming<br/>Soon</span>
+              </div>
+            {% elsif product.status == 'sold-out' %}
+              <div class="badge badge-white badge-status">
+              <span>Sold<br/>Out</span>
+              </div>
+            {% elsif product.on_sale %}
+              <div class="badge badge-white badge-status">
+              <span>On<br/>Sale</span>
+              </div>
+            {% endif %}
+            <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url 'large' }}">
+          </div>
+          <div class="meta">
+            <span class="highlight price">{{ product.default_price | money_with_sign }}</span>
+            <h3>{{ product.name }}</h3>
+  
+          </div>
+          {% if product.on_sale %}
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  
+  {% endfor %}
+    
+{{ paginate | default_pagination }}
+
+{% else %}
+
+   <h1 class="floating-title">No products found</h1>
+   
+{% endif %}
+
+{% endpaginate %}

@@ -1,0 +1,96 @@
+{
+  "name": "Fuzzco",
+  "version": "1.0.0",
+  "images": [
+    {
+      "variable": "logo",
+      "label": "Logo",
+      "description": "Adds your logo to the header"
+    },
+    {
+      "variable": "background_image",
+      "label": "Background Image",
+      "description": "Adds a repeating background image by replacing some instances the background color."
+    },
+    {
+      "variable": "accent_image",
+      "label": "Accent Image",
+      "description": "Adds a repeating background image by replacing some instances the accent color."
+    }
+  ],
+  "fonts": [
+    {
+      "variable": "header_font",
+      "label": "Header Font",
+      "default": "Cutive"
+    },
+    {
+      "variable": "text_font",
+      "label": "Text Font",
+      "default": "Montserrat"
+    }
+  ],
+  "colors": [
+    {
+      "variable": "background_color",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "variable": "text_color",
+      "label": "Text Color",
+      "default": "blue"
+    },
+    {
+      "variable": "highlight_color",
+      "label": "Highlight Color",
+      "default": "#00ff01"
+    },
+    {
+      "variable": "accent_color",
+      "label": "Accent Color",
+      "default": "#f0f0f0"
+    }
+  ],
+  "options": [
+    {
+      "variable": "show_social",
+      "label": "Show social media buttons",
+      "type": "boolean",
+      "default": true,
+      "description": "Adds social media share buttons to product pages"
+    },
+    {
+      "variable": "show_view_badges",
+      "label": "Show view badges",
+      "type": "boolean",
+      "default": true,
+      "description": "Adds circular view product badges on top of product thumbnails"
+    },
+    {
+      "variable": "products_per_page",
+      "label": "Products per page",
+      "type": "select",
+      "options": "1..100",
+      "default": 15,
+      "description": "The number of products shown per page"
+    }
+  ],
+  "checkout": {
+    "optimize_legibility": true,
+    "antialias_text": true,
+    "header_image": "{{image}}",
+    "header_width": "900px",
+    "background_color": "{{background_color}}",
+    "content_background_color": "{{background_color}}",
+    "content_header_background_color": "{{background_color}}",
+    "content_color": "{{text_color}}",
+    "content_header_color": "{{text_color}}",
+    "content_border_color": "{{text_color}}",
+    "content_border_width": "5px",
+    "body_font": "{{text_font}}",
+    "input_font": "{{text_font}}",
+    "title_font": "{{header_font}}",
+    "title_color": "{{text_color}}"
+  }
+}
