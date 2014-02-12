@@ -1,35 +1,30 @@
 <div class="images">
-  {% if product.status == 'coming-soon' %}
-    <div class="badge badge-red badge-sale">
-    <span>Coming<br/>Soon</span>
-    </div>
-  {% elsif product.status == 'sold-out' %}
-    <div class="badge badge-red badge-sale">
-    <span>Sold<br/>Out</span>
-    </div>
-  {% elsif product.on_sale %}
-    <div class="badge badge-red badge-sale">
-    <span>On<br/>Sale</span>
-    </div>
-  {% endif %}
-  {% if theme.show_social %}
-  <ul class="social-links">
-    <li><a target="_blank" href="http://twitter.com/home?status={{product.name}}%20-%20{{store.name}}%20{{store.url}}{{product.url}}">Tweet</a></li>
-    <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{store.url}}{{product.url}}">Share</a></li>
-    <li><a target="_blank" href="http://pinterest.com/pin/create/button/?url={{store.url}}{{product.url}}">Pin It</a></li>
-  </ul>
-  {% endif %}
-  <div class="color-block"></div>
-  {% if product.images.size > 0 %}
-    <div class="slideshow">
-      {% for image in product.images %}
-      <img src="{{ image | product_image_url size:'full' }}" alt="Image of {{ product.name | escape }}"/>
-      {% endfor %}
-      {% if product.images.size > 1 %}
-        <div class="cycle-pager"></div>
-      {% endif %}
-    </div>
-  {% endif %}
+  <div class="images-inner">
+    {% if product.status == 'coming-soon' %}
+      <div class="badge badge-red badge-sale">
+      <span>Coming<br/>Soon</span>
+      </div>
+    {% elsif product.status == 'sold-out' %}
+      <div class="badge badge-red badge-sale">
+      <span>Sold<br/>Out</span>
+      </div>
+    {% elsif product.on_sale %}
+      <div class="badge badge-red badge-sale">
+      <span>On<br/>Sale</span>
+      </div>
+    {% endif %}
+    <div class="color-block"></div>
+    {% if product.images.size > 0 %}
+      <div class="slideshow">
+        {% for image in product.images %}
+        <img src="{{ product.image | product_image_url | constrain: '900' }}" data-src-retina="{{ product.image | product_image_url | constrain: '1800' }}" alt="Image of {{ product.name | escape }}"/>
+        {% endfor %}
+        {% if product.images.size > 1 %}
+          <div class="cycle-pager"></div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
 </div>
 
 <div class="details">
@@ -40,47 +35,37 @@
   <span class="highlight price">{{ product.default_price | money_with_sign }}</span>
 {% endif %}
   {% unless product.status == 'sold-out' %}
-    <div class="purchase-wrap">
-      <div class="purchase" data-default-option-id="{{ product.options.first.id }}">
-        {% if product.options.size > 1 %}
-        <div class="options">
-          <ul class="options-list">
-          {% for option in product.options %}
-            <li data-option-id="{{ option.id }}">{{ option.name }} - {{ option.price | money_with_sign }}</li>
-          {% endfor %}
-          </ul>
+    <div class="purchase" data-default-option-id="{{ product.options.first.id }}">
+      {% if product.options.size > 1 %}
+      <div class="options">
+        <div class="options-title">Options</div>
+        <div class="option-selected">
+        <span class="option-selected-name">
+        {{ product.options.first.name }} - {{ product.options.first.price | money_with_sign }}
+        </span>
+        <span class="dropdown-caret">v</span>
         </div>
-        {% endif %}
-        <div class="quantity">
-          <div class="quantity-widget">
-            <div class="quantity-value">
-              <input value="1">
-            </div>
-            <div class="quantity-controls">
-              <div class="quantity-increment"><span>+</span></div>
-              <div class="quantity-decrement"><span>-</span></div>
-            </div>
-            <div class="quantity-message"><span>In your cart</span></div>
-          </div>
-        </div>
-        <div class="btn btn-purchase">Purchase</div>
-      </div><!-- End purchase -->
-    </div><!-- End purchase wrap -->
+        <ul class="options-list">
+        {% for option in product.options %}
+          <li data-option-id="{{ option.id }}">{{ option.name }} - {{ option.price | money_with_sign }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      <div class="btn btn-purchase">Purchase</div>
+    </div>
   {% endunless %}
 {% if product.description != blank %}
   <div class="description">
   {{ product.description | paragraphs }}
   </div>
 {% endif %}
-
-  {% if product.options.size > 1 %}
-  <h3>Available Options:</h3>
-  <ul class="bullets">
-    {% for option in product.options %}
-      {% unless product.has_default_option %}
-      <li>{{ option.name }}</li>
-      {% endunless %}
-    {% endfor %}
+   
+  {% if theme.show_social %}
+  <ul class="social-links">
+    <li><a target="_blank" href="http://twitter.com/home?status={{product.name}}%20-%20{{store.name}}%20{{store.url}}{{product.url}}">Tweet</a></li>
+    <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{store.url}}{{product.url}}">Share</a></li>
+    <li><a target="_blank" href="http://pinterest.com/pin/create/button/?url={{store.url}}{{product.url}}&media={{ product.images.first.url }}">Pin It</a></li>
   </ul>
   {% endif %}
   

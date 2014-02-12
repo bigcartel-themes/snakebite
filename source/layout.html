@@ -31,8 +31,9 @@
   
     <!-- Scripts -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
-    <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>
     <script src="{{ 'api' | theme_js_url }}" type="text/javascript"></script>
+    <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>
+    <!--<script src="http://dev.fuzzco.com/bigcartel.com/theme.js" type="text/javascript"></script>-->
   
     {{ head_content }}
   
@@ -42,28 +43,27 @@
     <div class="wrapper">
       <header>
         <div class="inner clear">
-          <a class="wordmark" href="/" data-store-name="{{ store.name | escape }}">
-            {% if theme.logo != blank %}
-            <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
-            {% else %}
-            {{ store.name }}
-            {% endif %}
-          </a>
+          {% if theme.logo.url != blank %}
+            <a class="logo" href="/" ><img src="{{ theme.logo.url }}" alt="{{ store.name }}"></a>
+          {% else %}
+            <a class="wordmark" href="/" data-store-name="{{ store.name | escape }}">{{ store.name }}</a>
+          {% endif %}
           <nav class="nav-main">
             <ul class="clear">
-              {% if categories != blank %}
+              {% if categories.all != blank %}
                 <li>
-                <a class="dropdown-trigger" href="#">Products <span class="nav-caret">v</span></a>
+                <a class="dropdown-trigger" href="/">Products <span class="nav-caret">v</span></a>
                 <ul class="dropdown">
+                <li><a href="/">View All</a></li>
                 {% for category in categories.all %}
                   <li><a href="{{ category.url }}">{{ category.name }}</a></li>
                 {% endfor %}
                 </ul>
                 </li>
               {% endif %}
-              {% if artists != blank %}
+              {% if artists.all != blank %}
                 <li>
-                <a class="dropdown-trigger" href="#">Artists <span class="nav-caret">v</span></a>
+                <a class="dropdown-trigger" href="/">Artists <span class="nav-caret">v</span></a>
                 <ul class="dropdown">
                 {% for artist in artists.all %}
                   <li><a href="{{ artist.url }}">{{ artist.name }}</a></li>
@@ -71,19 +71,15 @@
                 </ul>
                 </li>
               {% endif %}
-              {% if pages != blank %}
+              {% if pages.all != blank %}
                 <li>
-                <a class="dropdown-trigger" href="#">Pages <span class="nav-caret">v</span></a>
+                <a class="dropdown-trigger" href="/">Pages <span class="nav-caret">v</span></a>
                 <ul class="dropdown">
                 {% for page in pages.all %}
                   <li><a href="{{ page.url }}">{{ page.name }}</a></li>
                 {% endfor %}
                 </ul>
                 </li>
-              {% elsif pages.count > 0 %}
-                {% for page in pages.all %}
-                  <li><a href="{{ page.url }}">{{ page.name }}</a></li>
-                {% endfor %}
               {% endif %}
               <li><a href="/contact">Contact</a></li>
               <li class="mobile-nav-trigger"><a href="#"><span class="icon-menu"></span></a></li>
@@ -99,17 +95,18 @@
         <nav class="nav-mobile clear">
           <ul>
             <li><a href="#">Home</a></li>
-            {% if categories != blank %}
+            {% if categories.all != blank %}
                 <li>
                 <a class="accordion-trigger" href="#">Products <span class="nav-caret">v</span></a>
                 <ul class="accordion">
+                <li><a href="/">View All</a></li>
                 {% for category in categories.all %}
                   <li><a href="{{ category.url }}">{{ category.name }}</a></li>
                 {% endfor %}
                 </ul>
                 </li>
               {% endif %}
-              {% if artists != blank %}
+              {% if artists.all != blank %}
                 <li>
                 <a class="accordion-trigger" href="#">Artists <span class="nav-caret">v</span></a>
                 <ul class="accordion">
@@ -119,7 +116,7 @@
                 </ul>
                 </li>
               {% endif %}
-              {% if pages != blank %}
+              {% if pages.all != blank %}
                 <li>
                 <a class="accordion-trigger" href="#">Pages <span class="nav-caret">v</span></a>
                 <ul class="accordion">
@@ -135,23 +132,17 @@
       </header>
       
       <section class="main clear">
-        <div class="inner clear">
-        
-          {% if errors != blank %}
-          <ul class="unstyled errors">
-            {% for error in errors %}
-            <li>{{ error }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
     
           {% if page.category == 'custom' %}
+            <div class="inner format-text clear">
+              <h1>{{ page.name }}</h1>
             {{ page_content | paragraphs }}
+            </div>
           {% else %}
-            {{ page_content }}
+            <div class="inner clear">
+              {{ page_content }}
+            </div>
           {% endif %}
-          
-        </div>
         
       </section>
     
@@ -159,11 +150,14 @@
     
     <footer>
       <div class="inner">
-        <span class="copyright">Copyright 2014 {{ store.name }}</span>
-        <a href="{{ store.website }}" class="url">{{ store.website | replace:'http://','' }}</a>
-        {% if theme.twitter_username != blank %}
-        <p><a href="http://twitter/{{ theme.twitter_username }}">Follow @{{ theme.twitter_username }}</a></p>
+        <span class="copyright">Copyright 2014 {{ store.name }}</span>        
+        <span class="footer-text">
+        {% if theme.footer_text.size > 0 %}
+          {{ theme.footer_text }}
+        {% else %}
+          <a href="{{ store.website }}">{{ store.website | replace:'http://','' }}</a>
         {% endif %}
+        </span>
       </div>
     </footer>
     

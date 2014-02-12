@@ -6,15 +6,16 @@ options = {}
 # categories, and more. Just give us the subdomain. Default is "dugway" for dugway.bigcartel.com.
 
 #options[:store] = 'herriottgrace'
-options[:store] = 'fuzzco'
+#options[:store] = 'fuzzco'
 #options[:store] = 'wintercabincollection'
 #options[:store] = 'banditodesignco'
+#options[:store] = 'fuzzcotheme'
 
 #has artists
 #options[:store] = 'goldrobotrecords'
 
 #has pages
-#options[:store] = 'ripeshop'
+options[:store] = 'ripeshop'
 
 # Simulate the customization done by store owners by passing values to different variables.
 # Default values are based on the "default" for each setting in your settings.json.

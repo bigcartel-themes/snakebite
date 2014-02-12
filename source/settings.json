@@ -10,12 +10,12 @@
     {
       "variable": "background_image",
       "label": "Background Image",
-      "description": "Adds a repeating background image by replacing some instances the background color."
+      "description": "Repeating image replaces background color."
     },
     {
       "variable": "accent_image",
       "label": "Accent Image",
-      "description": "Adds a repeating background image by replacing some instances the accent color."
+      "description": "Repeating image replaces accent color."
     }
   ],
   "fonts": [
@@ -88,25 +88,27 @@
     "header_image": "{{image}}",
     "header_width": "900px",
     "background_color": "{{background_color}}",
+    "title_background_color": "{{background_color}}",
+    "title_vertical_padding": "40px",
     "content_background_color": "{{background_color}}",
     "content_header_background_color": "{{background_color}}",
     "content_color": "{{text_color}}",
     "content_header_color": "{{text_color}}",
-    "content_border_color": "{{background_color}}",
-    "content_border_width": "5px",
-    "content_header_vertical_padding": "80px",
+    "content_border_width": "0px",
     "error_background_color": "{{highlight_color}}",
     "error_color": "{{text_color}}",
     "error_border_color": "{{highlight_color}}",
     "step_border_style": "solid",
     "step_border_color": "{{text_color}}",
     "step_border_width": "3px",
-    "step_background_color": "{{accent_color}}",
+    "step_background_color": "{{background_color}}",
     "step_inactive_background_color": "{{background_color}}",
     "body_font": "{{text_font}}",
     "input_font": "{{text_font}}",
     "input_focus_border_color": "{{text_color}}",
     "input_focus_color": "{{text_color}}",
+    "input_error_border_color": "{{text_color}}",
+    "input_border_width": "3px",
     "title_font": "{{header_font}}",
     "title_color": "{{text_color}}",
     "button_font": "{{text_font}}",
@@ -120,6 +122,10 @@
     "summary_color": "{{text_color}}",
     "summary_secondary_color": "{{text_color}}",
     "summary_submit_border_color": "#bcbcbc",
+    "summary_item_border_color": "{{text_color}}",
+    "summary_item_border_width": "1px",
+    "summary_item_list_border_color": "{{text_color}}",
+    "summary_item_list_border_width": "3px",
     "link_color": "{{text_color}}",
     "link_hover_color": "#bcbcbc"
   }

@@ -6,34 +6,42 @@
 
 <h1>Contact</h1>
 <div class="contact-form-wrap">
-  <p class="error-message">All fields are required.</p>
-  <form id="contact-form" method="post" action="/contact">
-    <ul class="unstyled">
-      <li>
-        {{ contact | contact_input: 'name' }}
+  {% if errors != blank %}
+  <ul class="errors">
+    {% for error in errors %}
+    <li>{{ error }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <form class="contact-form" method="post" action="/contact">
+    <div class="contact-row clear">
+      <div class="contact-row-half">
         <label for="name">Name</label>
-      </li>
-      <li>
-        {{ contact | contact_input: 'email' }}
+        {{ contact | contact_input: 'name' }}
+      </div>
+      <div class="contact-row-half">
         <label for="email">Email</label>
-      </li>
-      <li>
-        {{ contact | contact_input: 'subject' }}
-        <label for="subject">Subject</label>
-      </li>
-      <li>
-        {{ contact | contact_input: 'message' }}
-        <label for="message">Message</label>
-      </li>
-      <li>
-        <div>{{ contact.captcha }}</div>
-        {{ contact | contact_input: 'captcha' }}
-        <label for="captcha">Spam check (please enter the characters from the image)</label>
-      </li>
-      <li>
+        {{ contact | contact_input: 'email' }}
+      </div>
+    </div>
+    <div class="contact-row">
+      <label for="subject">Subject</label>
+      {{ contact | contact_input: 'subject' }}
+    </div>
+    <div class="contact-row">
+      <label for="message">Message</label>
+      {{ contact | contact_input: 'message' }}
+    </div>
+    <div class="contact-row">
+      <label for="captcha">Spam check (please enter the characters from the image)</label>
+      <div class="captcha-wrap">
+        <div class="captcha-code">{{ contact.captcha }}</div>
+        <div class="captcha-input">{{ contact | contact_input: 'captcha' }}</div>
+      </div>
+    </div>
+    <div class="contact-row contact-row-centered">
         <button class="btn" id="contact-submit" type="submit" name="submit" title="Send us an email">Send Message</button>
-      </li>
-    </ul>
+    </div>
   </form>
 </div>
 
