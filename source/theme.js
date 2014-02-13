@@ -45,24 +45,6 @@ $(function() {
     $(this).removeClass('active');
   });
   
-  /*
-  $('.dropdown-trigger').click(function(e) {
-    e.preventDefault();
-    $('.dropdown-trigger').not($(this)).each(function() {
-      $(this).parent().removeClass('active');
-    });
-    var li = $(this).parent();
-    li.toggleClass('active');
-    console.log(li);
-    e.stopPropagation();
-  });
-  $('html').click(function() {
-    $('.dropdown-trigger').each(function() {
-      $(this).parent().removeClass('active');
-    });
-  });
-  */
-  
   /* Mobile nav */
   $('.mobile-nav-trigger').click(function(e) {
     e.preventDefault();
@@ -114,6 +96,14 @@ $(function() {
   $('.errors').fadeIn();
   
   
+  // Captcha focus state
+  $("#captcha").focus(function(){
+    $(this).closest('.captcha-wrap').addClass('active');
+  
+  }).blur(function(){
+    $(this).closest('.captcha-wrap').removeClass('active');
+  })
+  
   // FadeIn Page Content
   if($(window).width() > 700) {
     var waitForLoad = $('.home .main .inner, .home footer, .products .main .inner, .products footer');
@@ -129,13 +119,22 @@ $(function() {
   /* Site-wide methods */
   Cart.updateCount = function(cart) {
     var cartCountEl = $('.cart-count');
+    var cartOrbEl = $('.cart-orb');
+    cartOrbEl.show();
+    cartOrbEl.addClass('cart-orb-animate');
     var curCount = parseInt(cartCountEl.html());
-    if(curCount != cart.item_count) {
+    if(cart.item_count === 0) {
+      location.reload();
+    } else if(curCount != cart.item_count) {
       cartCountEl.addClass('cart-count-animate');
       setTimeout(function() {
         cartCountEl.html(cart.item_count);
         cartCountEl.removeClass('cart-count-animate');
       }, 150);
+      setTimeout(function() {
+        cartCountEl.html(cart.item_count);
+        cartOrbEl.removeClass('cart-orb-animate');
+      }, 500);
     }
   }
   Cart.updateTotals = function(cart) {
@@ -154,6 +153,11 @@ $(function() {
       Cart.updateTotals(cart);
       Cart.updateCount(cart);
     });
+  }
+  Cart.checkout = function() {
+    var form = $('#cart-form');
+    form.append('<input type="hidden" name="checkout" value="1" />');
+    form.submit();
   }
   
   /* Cart page */
@@ -209,6 +213,7 @@ $(function() {
   $('.quantity-decrement').click(function(e) {
     e.preventDefault();
     getCartItem($(this));
+    
     var input = cartItem.el.find('input');
     var curQuantity = parseInt(input.val());
     clearTimeout(decrementTimer);
@@ -226,7 +231,7 @@ $(function() {
     } else {
       Cart.removeItemAnimate(cartItem.id, cartItem.el);
     }
-  }); 
+  });
   
   // PRODUCT
   //------------------------------------------------
@@ -236,6 +241,7 @@ $(function() {
     speed: 400,
     swipe: true,
     autoHeight: 'calc',
+    pagerTemplate: '<span><span></span></span>',
     next: $('.slideshow img')
   });
   
@@ -254,7 +260,11 @@ $(function() {
   maxImageHeight();
   
   /* Purchasing */
-  var singleOptionID = $('.purchase').attr('data-default-option-id');
+  if($('.options').length > 0) {
+    var optionID = false;
+  } else {
+    var optionID = $('.purchase').attr('data-default-option-id');
+  }
 	$('.options-list').hide();
 	$('.option-selected').click(function() {
 		if ($('.options-list').is(':visible')) {
@@ -267,16 +277,37 @@ $(function() {
 	  $('.options-list li').removeClass('active');
 	  $(this).addClass('active');
 		var option = $(this).html();
-		singleOptionID = $(this).attr('data-option-id');
+		optionID = $(this).attr('data-option-id');
 		$('.option-selected-name').html(option);
 		$('.options-list').hide();
-		console.log(singleOptionID);
 	});
   $('.btn-purchase').click(function(e) {
     e.preventDefault();
-    Cart.addItem(singleOptionID, 1, function(cart) {
-      Cart.updateCount(cart);
-    });
+    var purchaseBtn = $(this);
+    var purchaseText = purchaseBtn.find('span');
+    purchaseText.html('Adding...');
+    if(optionID) {
+      $(this).addClass('btn-purchase-animate');
+      setTimeout(function() {
+        purchaseBtn.removeClass('btn-purchase-animate');
+      }, 200);
+      Cart.addItem(optionID, 1, function(cart) {
+        Cart.updateCount(cart);
+        purchaseText.html('Added!');
+        setTimeout(function() {
+          purchaseText.clone().appendTo(purchaseBtn).html('Purchase').hide();
+          purchaseBtn.find('span').first().remove();
+          purchaseBtn.find('span').first().fadeIn(400);
+        }, 800);
+      });
+    } else {
+      purchaseText.html('Please choose an option');
+      setTimeout(function() {
+        purchaseText.clone().appendTo(purchaseBtn).html('Purchase').hide();
+        purchaseBtn.find('span').first().remove();
+        purchaseBtn.find('span').first().fadeIn(400);
+      }, 800);
+    }
   });
   
 });
