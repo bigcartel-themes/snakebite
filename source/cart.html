@@ -6,6 +6,13 @@
     <a href="/" class="link-continue"><span class="icon-arrow-left"></span>Continue Shopping</a>
     <a href="/checkout" class="link-checkout hidden-phone">Checkout<span class="icon-arrow-right"></span></a>
   </div>
+  {% if errors != blank %}
+  <ul class="errors">
+    {% for error in errors %}
+    <li>{{ error }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
   <div class="cart-items">
     {% for item in cart.items %}
     <div class="cart-item" data-item-id="{{ item.id }}">
@@ -91,7 +98,7 @@
     {% if cart.shipping.enabled or cart.discount.enabled %}
     <button class="btn" type="submit" title="Update Total">Update Total</button>
     {% endif %}
-    <button class="btn" type="submit" title="Checkout">Checkout</button>
+    <button class="btn" type="submit" onclick="Cart.checkout(); return false" title="Checkout">Checkout</button>
   </div>
   
 </form>

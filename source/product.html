@@ -17,7 +17,7 @@
     {% if product.images.size > 0 %}
       <div class="slideshow">
         {% for image in product.images %}
-        <img src="{{ product.image | product_image_url | constrain: '900' }}" data-src-retina="{{ product.image | product_image_url | constrain: '1800' }}" alt="Image of {{ product.name | escape }}"/>
+        <img src="{{ image | product_image_url | constrain: '900' }}" data-src-retina="{{ image | product_image_url | constrain: '1800' }}" alt="Image of {{ product.name | escape }}"/>
         {% endfor %}
         {% if product.images.size > 1 %}
           <div class="cycle-pager"></div>
@@ -38,10 +38,9 @@
     <div class="purchase" data-default-option-id="{{ product.options.first.id }}">
       {% if product.options.size > 1 %}
       <div class="options">
-        <div class="options-title">Options</div>
         <div class="option-selected">
         <span class="option-selected-name">
-        {{ product.options.first.name }} - {{ product.options.first.price | money_with_sign }}
+        Choose an option
         </span>
         <span class="dropdown-caret">v</span>
         </div>
@@ -52,7 +51,7 @@
         </ul>
       </div>
       {% endif %}
-      <div class="btn btn-purchase">Purchase</div>
+      <div class="btn btn-purchase"><span>Purchase</span></div>
     </div>
   {% endunless %}
 {% if product.description != blank %}

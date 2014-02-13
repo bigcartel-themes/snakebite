@@ -33,14 +33,16 @@
       {{ contact | contact_input: 'message' }}
     </div>
     <div class="contact-row">
-      <label for="captcha">Spam check (please enter the characters from the image)</label>
-      <div class="captcha-wrap">
-        <div class="captcha-code">{{ contact.captcha }}</div>
-        <div class="captcha-input">{{ contact | contact_input: 'captcha' }}</div>
+      <div class="contact-row-half">
+        <label for="captcha">Spam check</label>
+        <div class="captcha-wrap">
+          <div class="captcha-code">{{ contact.captcha }}</div>
+          <div class="captcha-input">{{ contact | contact_input: 'captcha' }}</div>
+        </div>
       </div>
-    </div>
-    <div class="contact-row contact-row-centered">
+      <div class="contact-row-half">
         <button class="btn" id="contact-submit" type="submit" name="submit" title="Send us an email">Send Message</button>
+      </div>
     </div>
   </form>
 </div>

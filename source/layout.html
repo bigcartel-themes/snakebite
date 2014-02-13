@@ -20,7 +20,7 @@
       {% else %}
         <meta property="og:description" content="{{ page.meta_description }}" />
       {% endif %}
-      <meta property="og:url" content="{{ store.website }}" />
+      <meta property="og:url" content="{{ store.url }}{{ page.url }}" />
     {% endif %}
 
   	<!-- Google Fonts -->
@@ -33,7 +33,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
     <script src="{{ 'api' | theme_js_url }}" type="text/javascript"></script>
     <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>
-    <!--<script src="http://dev.fuzzco.com/bigcartel.com/theme.js" type="text/javascript"></script>-->
+    <!--<script src="http://dev.fuzzco.com/bigcartel.com/theme2.js" type="text/javascript"></script>-->
   
     {{ head_content }}
   
@@ -63,7 +63,7 @@
               {% endif %}
               {% if artists.all != blank %}
                 <li>
-                <a class="dropdown-trigger" href="/">Artists <span class="nav-caret">v</span></a>
+                <span class="dropdown-trigger">Artists <span class="nav-caret">v</span></span>
                 <ul class="dropdown">
                 {% for artist in artists.all %}
                   <li><a href="{{ artist.url }}">{{ artist.name }}</a></li>
@@ -73,7 +73,7 @@
               {% endif %}
               {% if pages.all != blank %}
                 <li>
-                <a class="dropdown-trigger" href="/">Pages <span class="nav-caret">v</span></a>
+                <span class="dropdown-trigger">Pages <span class="nav-caret">v</span></span>
                 <ul class="dropdown">
                 {% for page in pages.all %}
                   <li><a href="{{ page.url }}">{{ page.name }}</a></li>
@@ -91,6 +91,7 @@
               </li>
             </ul>
           </nav>
+          <div class="cart-orb" {% if cart.item_count == 0 %}style="display: none;"{% endif %}></div>
         </div>
         <nav class="nav-mobile clear">
           <ul>

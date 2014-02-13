@@ -1,6 +1,6 @@
 {
   "name": "Fuzzco",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "images": [
     {
       "variable": "logo",
@@ -37,8 +37,8 @@
       "default": "#FFFFFF"
     },
     {
-      "variable": "text_color",
-      "label": "Text Color",
+      "variable": "primary_color",
+      "label": "Primary Color",
       "default": "#0000FF"
     },
     {
@@ -53,6 +53,13 @@
     }
   ],
   "options": [
+    {
+      "variable": "product_slideshows",
+      "label": "Enable product slideshows",
+      "type": "boolean",
+      "default": false,
+      "description": "Displays product images as a slideshow instead of stacked images."
+    },
     {
       "variable": "show_social",
       "label": "Show social media buttons",
@@ -86,7 +93,6 @@
     "optimize_legibility": true,
     "antialias_text": true,
     "header_image": "{{image}}",
-    "header_width": "900px",
     "background_color": "{{background_color}}",
     "title_background_color": "{{background_color}}",
     "title_vertical_padding": "40px",
@@ -123,7 +129,7 @@
     "summary_secondary_color": "{{text_color}}",
     "summary_submit_border_color": "#bcbcbc",
     "summary_item_border_color": "{{text_color}}",
-    "summary_item_border_width": "1px",
+    "summary_item_border_width": "3px",
     "summary_item_list_border_color": "{{text_color}}",
     "summary_item_list_border_width": "3px",
     "link_color": "{{text_color}}",
