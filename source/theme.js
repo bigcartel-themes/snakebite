@@ -72,9 +72,9 @@ $(function() {
   /* Wordmark shortening */
   var wordmarkEl = $('.wordmark');
   var wordmarkLong = wordmarkEl.attr('data-store-name');
-  var wordmarkThreshold = 10;
+  var wordmarkThreshold = 9;
   var wordmarkShort = wordmarkLong;
-  if(wordmarkLong.length > 10) {
+  if(wordmarkLong.length > wordmarkThreshold) {
     wordmarkShort = wordmarkLong.substring(0,wordmarkThreshold) + '...';
   }
   function wordmarkSizing() {
@@ -280,6 +280,8 @@ $(function() {
 		optionID = $(this).attr('data-option-id');
 		$('.option-selected-name').html(option);
 		$('.options-list').hide();
+		$('.btn-purchase span').html('Purchase');
+		$('.btn-purchase').removeClass('btn-purchase-inactive');
 	});
   $('.btn-purchase').click(function(e) {
     e.preventDefault();
@@ -298,15 +300,10 @@ $(function() {
           purchaseText.clone().appendTo(purchaseBtn).html('Purchase').hide();
           purchaseBtn.find('span').first().remove();
           purchaseBtn.find('span').first().fadeIn(400);
-        }, 800);
+        }, 1000);
       });
     } else {
-      purchaseText.html('Please choose an option');
-      setTimeout(function() {
-        purchaseText.clone().appendTo(purchaseBtn).html('Purchase').hide();
-        purchaseBtn.find('span').first().remove();
-        purchaseBtn.find('span').first().fadeIn(400);
-      }, 800);
+    
     }
   });
   

@@ -51,7 +51,11 @@
         </ul>
       </div>
       {% endif %}
-      <div class="btn btn-purchase"><span>Purchase</span></div>
+      {% if product.options.size > 1 %}
+        <div class="btn btn-purchase btn-purchase-inactive"><span>Please choose an option</span></div>
+      {% else %}
+        <div class="btn btn-purchase"><span>Purchase</span></div>
+      {% endif %}
     </div>
   {% endunless %}
 {% if product.description != blank %}

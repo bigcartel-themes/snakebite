@@ -453,12 +453,13 @@ header .inner {
   top: 90px;
   right: 0px;
   border-top: 8px solid {{theme.primary_color}};
-  border-bottom: 8px solid {{theme.primary_color}};
   background: {{theme.primary_color}};
   text-align: right;
   padding: 0;
   max-height: 590px;
   overflow: scroll;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .nav-main > ul > li.active .dropdown {
   visibility: visible;
@@ -814,9 +815,15 @@ footer .footer-text {
 } 
 .btn-purchase {
   display: block;
+  -webkit-transition: all 100ms ease-in-out;
 }
 .btn-purchase-animate {
   -webkit-animation: purchasepulse 200ms ease-in-out;
+}
+.btn-purchase-inactive:hover {
+  background: none;
+  color: {{theme.primary_color}};
+  cursor: default;
 }
 .options {
   border: 3px solid {{theme.primary_color}};
@@ -829,6 +836,10 @@ footer .footer-text {
   padding: 10px;
   cursor: pointer;
   position: relative;
+}
+.option-selected:hover {
+  color: {{theme.background_color}};
+  background: {{theme.primary_color}};
 }
 .option-selected-name {
   display: block;
@@ -1105,6 +1116,8 @@ footer .footer-text {
   display: none;
   margin-bottom: 20px;
   padding: 15px;
+  border-radius: 5px;
+  text-align: center;
   background: {{theme.highlight_color}};
 }
 .contact-form-wrap {
@@ -1139,41 +1152,45 @@ footer .footer-text {
 .contact-form-wrap textarea {
   border: none;
   outline: none;
-  border-top: 3px solid {{theme.primary_color}};
-  padding: 14px 15px;
+  padding: 15px;
   width: 100%;
   font-size: 16px;
+  border: 3px solid {{theme.primary_color}};
   font-family: "{{theme.text_font}}", sans-serif, sans-serif;
   color: {{theme.primary_color}};
-  background: {{theme.accent_color}};
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
+  border-radius: 5px;
 }
 .contact-form-wrap input:focus,
 .contact-form-wrap textarea:focus {
-  background: {{theme.primary_color}};
-  color: {{theme.background_color}};
+  background: {{theme.accent_color}};
 }
 .contact-form-wrap textarea {
   height: 100px;
 }
 .captcha-wrap {
-  background: {{theme.accent_color}};
-  border-top: 3px solid {{theme.primary_color}};
+  border: 3px solid {{theme.primary_color}};
+  border-radius: 5px;
   height: 50px;
+  overflow: hidden;
 }
 .captcha-code {
   width: 125px;
   height: 50px;
   float: left;
+  border-right: 3px solid {{theme.primary_color}};
 }
 .captcha-input {
   width: 50%;
   float: left;
 }
+.captcha-input input {
+  border: 0px;
+}
 .captcha-wrap.active {
-  background: {{theme.primary_color}};
+  background: {{theme.accent_color}};
 }
 .captcha-input input {
   border-top: 0px;
@@ -1184,7 +1201,7 @@ footer .footer-text {
 }
 .contact-form button {
   width: 100%;
-  margin-top: 15px;
+  margin-top: 17px;
 }
 
 /* DOM mods */
@@ -1443,7 +1460,7 @@ and (max-width : 880px) {
   
   /* Contact page */
   .contact-form button {
-    margin-top: 25px;
+    margin-top: 28px;
   }
   
   /* Single Product */
