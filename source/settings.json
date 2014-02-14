@@ -1,6 +1,6 @@
 {
   "name": "Fuzzco",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "images": [
     {
       "variable": "logo",
@@ -89,10 +89,10 @@
       "description": "The number of products shown per page"
     }
   ],
-  "checkout": {
+    "checkout": {
     "optimize_legibility": true,
     "antialias_text": true,
-    "content_width": 700,
+    "content_width": "700px",
     "header_image": "{{image}}",
     "background_color": "{{background_color}}",
     "title_background_color": "{{background_color}}",

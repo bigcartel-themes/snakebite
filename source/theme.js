@@ -133,6 +133,11 @@ function(e){"use strict";e.extend(e.fn.cycle.defaults,{tmplRegex:"{{((.)?.*?)}}"
     wordmarkSizing();
   });
   wordmarkSizing();
+
+  /* Cart orb hover animation */
+  $('.cart-status').mousedown(function() {
+    $('.cart-orb').addClass('cart-orb-shrink');
+  });
   
   // CATEGORIES AND PAGES
   //------------------------------------------------

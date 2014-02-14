@@ -119,7 +119,11 @@
 
 <div class="centered-message centered-message-cart">
   <h1>Your cart is empty!</h1>
-  <a href="/" class="btn">Start shopping</a>
+  <script type="text/javascript">
+    setTimeout(function() {
+      document.location.href = '../'; 
+    }, 1500);
+  </script>
 </div>
 
 {% endif %}

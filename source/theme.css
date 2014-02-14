@@ -437,6 +437,10 @@ header .inner {
   position: absolute;
   top: 10px;
   right: -14px;
+  -moz-transition: -moz-transform 100ms ease-in-out;
+  -o-transition: -o-transform 100ms ease-in-out;
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;
 }
 @-webkit-keyframes orbpulse {
   0%   { -webkit-transform: scale(1); }
@@ -471,6 +475,23 @@ header .inner {
   -moz-animation: orbpulse 400ms ease-in-out;
   -o-animation: orbpulse 400ms ease-in-out;
   animation: orbpulse 400ms ease-in-out;
+}
+.cart-orb-inverse {
+  background: {{theme.primary_color}};
+}
+.cart-status-inverse a {
+  color: {{theme.highlight_color}};
+}
+.cart-orb-shrink {
+  -moz-transition: -moz-transform 100ms ease-in-out;
+  -o-transition: -o-transform 100ms ease-in-out;
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;
+  -moz-transform: scale(.95);
+  -ms-transform: scale(.95);
+  -o-transform: scale(.95);
+  -webkit-transform: scale(.95);
+  transform: scale(.95);
 }
 .icon-cart {
   display: block;
@@ -583,9 +604,35 @@ footer .footer-text {
   width: 100%;
   height: auto;
 }
+.preview .badge-red {
+  -moz-transition: -moz-transform 100ms ease-in-out;
+  -o-transition: -o-transform 100ms ease-in-out;
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;
+}
 .preview:hover .badge-red {
   color: {{theme.background_color}};
   background: {{theme.primary_color}};
+  -moz-transition: -moz-transform 100ms ease-in-out;
+  -o-transition: -o-transform 100ms ease-in-out;
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.preview:active .badge-red {
+  -moz-transition: -moz-transform 50ms ease-in-out;
+  -o-transition: -o-transform 50ms ease-in-out;
+  -webkit-transition: -webkit-transform 50ms ease-in-out;
+  transition: transform 50ms ease-in-out;
+  -moz-transform: scale(.95);
+  -ms-transform: scale(.95);
+  -o-transform: scale(.95);
+  -webkit-transform: scale(.95);
+  transform: scale(.95);
 }
 .preview .badge {
   position: absolute;
