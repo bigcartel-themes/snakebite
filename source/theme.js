@@ -149,7 +149,6 @@ $(function() {
   // CART
   //------------------------------------------------
   
-  /* Site-wide methods */
   Cart.updateCount = function(cart) {
     var cartCountEl = $('.cart-count');
     var cartOrbEl = $('.cart-orb');
@@ -193,15 +192,13 @@ $(function() {
     form.submit();
   }
   
-  /* Cart page */
-  
+    
   var cartItem = {}
   function getCartItem(el) {
     cartItem.el = el.closest('.cart-item');
     cartItem.id = cartItem.el.attr('data-item-id');
     cartItem.index = $('.cart-item').index(cartItem.el);
   }
-  
   $('.cart-item-remove').click(function(e) {
     getCartItem($(this));
     Cart.removeItemAnimate(cartItem.id, cartItem.el);
@@ -266,6 +263,42 @@ $(function() {
     }
   });
   
+  $('.discount-refresh').hide();
+  $('#cart_discount_code').focus(function() {
+    $('.discount-refresh').show();
+  });
+  $('.discount-refresh').click(function(e) {
+    $('#cart-form').submit();
+  });
+  
+  // Custom country dropdown
+  var currentCountry = $("#country option:selected").text();
+  var currentCountryID = $("#country option:selected").val();
+  if((currentCountry.length > 0) && (currentCountryID.length > 0)) {
+    $('.country-selected-name').html(currentCountry);
+  }
+  $('#country option').each(function(i){
+    if(($(this).val().length > 0)) {
+      $('.country-list').append('<li data-country-id="'+$(this).val()+'">'+$(this).text()+'</li>');
+    }
+  });
+  $('.country-list').hide();
+	$('.country-selected').click(function() {
+		if ($('.country-list').is(':visible')) {
+			$('.country-list').hide();
+		} else {
+			$('.country-list').show();
+		}
+	});
+	$('.country-list li').click(function() {
+		countryVal = $(this).attr('data-country-id');
+		countryName = $(this).text();
+		$('#country').val(countryVal);
+		$('.country-selected-name').text(countryName);
+		$('.country-list').hide();
+		$('#cart-form').submit();
+	});
+  
   // PRODUCT
   //------------------------------------------------
   
@@ -278,7 +311,6 @@ $(function() {
     pagerTemplate: '<span><span></span></span>',
     next: $('.slideshow img')
   }
-  
   var waitForFinalEvent = (function () {
     var timers = {};
     return function (callback, ms, uniqueId) {
@@ -345,12 +377,11 @@ $(function() {
 		}
 	});
 	$('.options-list li').click(function() {
-	  $('.options-list li').removeClass('active');
-	  $(this).addClass('active');
 		var option = $(this).html();
 		optionID = $(this).attr('data-option-id');
 		$('.option-selected-name').html(option);
 		$('.options-list').hide();
+		$('.options-wrap').height($('.options').outerHeight());
 		$('.btn-purchase').removeClass('btn-purchase-inactive');
 		$('.btn-purchase span').html('Purchase');
 	});
@@ -379,6 +410,9 @@ $(function() {
         }, 1000);
       });
     }
+  });
+  $(window).resize(function() {
+    $('.options-wrap').height($('.options').outerHeight());
   });
   
 });

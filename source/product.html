@@ -41,22 +41,24 @@
   {% unless product.status == 'sold-out' %}
     <div class="purchase" data-default-option-id="{{ product.options.first.id }}">
       {% if product.options.size > 1 %}
-      <div class="options">
-        <div class="option-selected">
-        <span class="option-selected-name">
-        Choose an option
-        </span>
-        <span class="dropdown-caret">v</span>
+      <div class="options-wrap">
+        <div class="options">
+          <div class="option-selected">
+          <span class="option-selected-name">
+          Choose an option
+          </span>
+          <span class="dropdown-caret">v</span>
+          </div>
+          <ul class="options-list">
+          {% for option in product.options %}
+            <li data-option-id="{{ option.id }}">{{ option.name }} - {{ option.price | money_with_sign }}</li>
+          {% endfor %}
+          </ul>
         </div>
-        <ul class="options-list">
-        {% for option in product.options %}
-          <li data-option-id="{{ option.id }}">{{ option.name }} - {{ option.price | money_with_sign }}</li>
-        {% endfor %}
-        </ul>
       </div>
       {% endif %}
       {% if product.options.size > 1 %}
-        <div class="btn btn-purchase btn-purchase-inactive"><span>Please choose an option</span></div>
+        <div class="btn btn-purchase btn-purchase-inactive"><span>Choose an option</span></div>
       {% else %}
         <div class="btn btn-purchase"><span>Purchase</span></div>
       {% endif %}

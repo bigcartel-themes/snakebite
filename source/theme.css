@@ -269,7 +269,7 @@ body {
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 20px 30px;
+  padding: 15px 20px;
   font-family: "{{theme.text_font}}", sans-serif;
   font-size: 20px;
   line-height: 22px;
@@ -818,11 +818,11 @@ footer .footer-text {
 } 
 .btn-purchase {
   display: block;
-  -webkit-transition: all 100ms ease-in-out;
+  -webkit-transition: scale 100ms ease-in-out;
   -webkit-transform: scale(1);
 }
 .btn-purchase-active {
-  -webkit-transition: all 100ms ease-in-out;
+  -webkit-transition: scale 100ms ease-in-out;
   -webkit-transform: scale(.95);
 }
 .btn-purchase-animate {
@@ -854,6 +854,18 @@ footer .footer-text {
   margin-right: 30px;
   font-size: 16px;
 }
+.options-wrap {
+  height: 48px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+.options-list {
+  background: {{theme.background_color}};
+  height: 200px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 .options-list li {
   display: block;
   padding: 10px;
@@ -863,7 +875,7 @@ footer .footer-text {
   background: {{theme.primary_color}};
   color: {{theme.background_color}};
 }
-.dropdown-caret {
+.options .dropdown-caret {
   position: absolute;
   top: 50%;
   right: 20px;
@@ -933,7 +945,7 @@ footer .footer-text {
   margin-left: 8px;
 }
 .cart-items {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 .cart-item {
   border-bottom: 3px solid {{theme.primary_color}};
@@ -1048,31 +1060,26 @@ footer .footer-text {
   display: table-cell;
   vertical-align: middle;
 }
-.discount,
-.shipping {
-  border-bottom: 3px solid {{theme.primary_color}};
-  padding-bottom: 30px;
-}
-.discount,
-.shipping,
-.total {
-  width: 100%;
-  margin-bottom: 30px;
+.cart-options {
   text-align: center;
+  border-bottom: 3px solid {{theme.primary_color}};
+  margin-bottom: 60px;
 }
-.discount h3,
-.shipping h3 {
+.cart-options-item {
+  float: left;
+  width: 30%;
+  padding: 0 10%;
+  margin-bottom: 60px;
+}
+.cart-options-item h3 {
   margin-bottom: 10px;
 }
-.shipping select {
-  margin-bottom: 10px;
-}
-.discount input {
+.discount-wrap input {
+  width: 100%;
   outline: none;
-  padding: 20px;
+  padding: 15px 65px 15px 15px;
   font-family: "{{theme.text_font}}", sans-serif;
-  font-size: 20px;
-  line-height: 22px;
+  font-size: 16px;
   color: #0000FF;
   border: 3px solid {{theme.primary_color}};
   background: none;
@@ -1083,9 +1090,85 @@ footer .footer-text {
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
+.discount-wrap input:focus {
+  background: {{theme.accent_color}};
+}
+.discount-wrap  {
+  position: relative;
+}
+.discount-refresh {
+  width: 55px;
+  height: 55px;
+  background: {{theme.primary_color}};
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+.total {
+  width: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.countries-wrap {
+  display: block;
+  margin: 0 auto;
+  height: 55px;
+}
+.countries {
+  border: 3px solid {{theme.primary_color}};
+  border-radius: 5px;
+}
+#country {
+  display: none;
+}
+.country-selected {
+  font-size: 15px;
+  line-height: 22px;
+  padding: 14px 15px 13px;
+  cursor: pointer;
+  position: relative;
+}
+.country-selected:hover {
+  color: {{theme.background_color}};
+  background: {{theme.primary_color}};
+}
+.country-selected-name {
+  display: block;
+  margin-right: 30px;
+  font-size: 16px;
+}
+.country-list {
+  background: {{theme.background_color}};
+  height: 200px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.country-list li {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+}
+.country-list li:hover {
+  background: {{theme.primary_color}};
+  color: {{theme.background_color}};
+}
+.countries .dropdown-caret {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -12px;
+  text-transform: lowercase;
+  font-size: 7px;
+  display: block;
+  font-weight: 700;
+  -webkit-transform: scaleX(1.5);
+}
 .cart-btns {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 .cart-btns .btn {
   margin: 0 10px;
@@ -1095,6 +1178,9 @@ footer .footer-text {
   font-size: 50px;
   font-weight: 700;
   margin: 10px 0;
+}
+.checkout-placeholder {
+  margin-top: 100px;
 }
 
 /* Message pages */
@@ -1494,10 +1580,6 @@ and (max-width : 880px) {
   /* Cart */
   .cart-item-price {
     font-size: 20px;
-  }
-  .discount input {
-    padding: 10px;
-    font-size: 16px;
   }
   
 }
