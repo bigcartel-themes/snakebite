@@ -5,14 +5,14 @@ options = {}
 # Use data from any store to make sure your theme looks great with all sorts of products, pages,
 # categories, and more. Just give us the subdomain. Default is "dugway" for dugway.bigcartel.com.
 
-#options[:store] = 'herriottgrace'
+options[:store] = 'herriottgrace'
 #options[:store] = 'fuzzco'
 #options[:store] = 'wintercabincollection'
 #options[:store] = 'banditodesignco'
 #options[:store] = 'fuzzcotheme'
 
 #has artists
-options[:store] = 'goldrobotrecords'
+#options[:store] = 'goldrobotrecords'
 
 #has pages
 #options[:store] = 'ripeshop'

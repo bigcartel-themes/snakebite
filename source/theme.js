@@ -19,6 +19,38 @@ function(e){"use strict";e.extend(e.fn.cycle.defaults,{tmplRegex:"{{((.)?.*?)}}"
 //@ sourceMappingURL=jquery.cycle2.js.map
 
 
+// Window resize debounce by Paul Irish
+// http://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
+
+(function($,sr){
+
+  // debouncing function from John Hann
+  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+  var debounce = function (func, threshold, execAsap) {
+      var timeout;
+
+      return function debounced () {
+          var obj = this, args = arguments;
+          function delayed () {
+              if (!execAsap)
+                  func.apply(obj, args);
+              timeout = null;
+          };
+
+          if (timeout)
+              clearTimeout(timeout);
+          else if (execAsap)
+              func.apply(obj, args);
+
+          timeout = setTimeout(delayed, threshold || 100);
+      };
+  }
+  // smartresize 
+  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');
+
+
 $(function() {
 
   // RETINA IMAGES
@@ -75,7 +107,8 @@ $(function() {
   var wordmarkThreshold = 9;
   var wordmarkShort = wordmarkLong;
   if(wordmarkLong.length > wordmarkThreshold) {
-    wordmarkShort = wordmarkLong.substring(0,wordmarkThreshold) + '...';
+    wordmarkShort = wordmarkLong.substring(0,wordmarkThreshold);
+    wordmarkShort = $.trim(wordmarkShort) + '...';
   }
   function wordmarkSizing() {
     if($(window).width() < 880) {
@@ -106,7 +139,7 @@ $(function() {
   
   // FadeIn Page Content
   if($(window).width() > 700) {
-    var waitForLoad = $('.home .main .inner, .home footer, .products .main .inner, .products footer');
+    var waitForLoad = $('.main .inner, footer');
     waitForLoad.hide();
     $(window).load(function() {
       waitForLoad.fadeIn(400);
@@ -237,27 +270,65 @@ $(function() {
   //------------------------------------------------
   
   /* Slider */
-  $('.slideshow').cycle({
+  
+  var slideshowAtts = {
     speed: 400,
     swipe: true,
     autoHeight: 'calc',
     pagerTemplate: '<span><span></span></span>',
     next: $('.slideshow img')
-  });
-  
-  /* Slider Max Height */
-  function maxImageHeight() {
-    if($(window).width() > 880) {
-      var maxImageHeight = $(window).height() - $('header').outerHeight();
-    } else {
-      var maxImageHeight = 2000;
-    }
-    $('.images, .images img').css({'max-height': maxImageHeight});
   }
-  $(window).resize(function() {
+  
+  var waitForFinalEvent = (function () {
+    var timers = {};
+    return function (callback, ms, uniqueId) {
+      if (!uniqueId) {
+        uniqueId = "Don't call this twice without a uniqueId";
+      }
+      if (timers[uniqueId]) {
+        clearTimeout (timers[uniqueId]);
+      }
+      timers[uniqueId] = setTimeout(callback, ms);
+    };
+  })();
+  
+  if($('.stacked-images').length === 0) {
+    
+    // Slidehsow
+    $('.slideshow').cycle(slideshowAtts);
+    
+    /* Slider Max Height */
+    function maxImageHeight() {
+      if($(window).width() > 880) {
+        var maxImageHeight = $(window).height() - $('header').outerHeight();
+      } else {
+        var maxImageHeight = 2000;
+      }
+      $('.images, .images img').css({'max-height': maxImageHeight});
+    }
+    $(window).resize(function() {
+      maxImageHeight();
+    });
     maxImageHeight();
-  });
-  maxImageHeight();
+    
+  } else {
+  
+    function startSlideshow() {
+      if($(window).width() > 880) {
+        $('.cycle-pager').hide();
+        $('.slideshow').cycle('destroy');
+      } else {
+        $('.cycle-pager').show();
+        $('.slideshow').cycle(slideshowAtts);
+      }
+    }
+    startSlideshow();
+    
+    $(window).smartresize(function(){
+      startSlideshow();
+    });
+    
+  }
   
   /* Purchasing */
   if($('.options').length > 0) {
@@ -283,7 +354,7 @@ $(function() {
 		$('.btn-purchase span').html('Purchase');
 		$('.btn-purchase').removeClass('btn-purchase-inactive');
 	});
-  $('.btn-purchase').click(function(e) {
+	$('.purchase').on('click', '.btn-purchase:not(.btn-purchase-inactive)', function(e) {
     e.preventDefault();
     var purchaseBtn = $(this);
     var purchaseText = purchaseBtn.find('span');
@@ -302,8 +373,6 @@ $(function() {
           purchaseBtn.find('span').first().fadeIn(400);
         }, 1000);
       });
-    } else {
-    
     }
   });
   

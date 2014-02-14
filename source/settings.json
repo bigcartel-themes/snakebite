@@ -57,7 +57,7 @@
       "variable": "product_slideshows",
       "label": "Enable product slideshows",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "description": "Displays product images as a slideshow instead of stacked images."
     },
     {

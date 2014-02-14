@@ -15,14 +15,18 @@
     {% endif %}
     <div class="color-block"></div>
     {% if product.images.size > 0 %}
-      <div class="slideshow">
-        {% for image in product.images %}
-        <img src="{{ image | product_image_url | constrain: '900' }}" data-src-retina="{{ image | product_image_url | constrain: '1800' }}" alt="Image of {{ product.name | escape }}"/>
-        {% endfor %}
-        {% if product.images.size > 1 %}
-          <div class="cycle-pager"></div>
+        {% if theme.product_slideshows %}
+        <div class="slideshow">
+        {% else %}
+        <div class="slideshow stacked-images">
         {% endif %}
-      </div>
+          {% for image in product.images %}
+          <img src="{{ image | product_image_url | constrain: '900' }}" data-src-retina="{{ image | product_image_url | constrain: '1800' }}" alt="Image of {{ product.name | escape }}"/>
+          {% endfor %}
+          {% if product.images.size > 1 %}
+            <div class="cycle-pager"></div>
+          {% endif %}
+        </div>
     {% endif %}
   </div>
 </div>
