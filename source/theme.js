@@ -18,6 +18,17 @@ function(e){"use strict";e.extend(e.fn.cycle.defaults,{progressive:!1}),e(docume
 function(e){"use strict";e.extend(e.fn.cycle.defaults,{tmplRegex:"{{((.)?.*?)}}"}),e.extend(e.fn.cycle.API,{tmpl:function(t,i){var n=RegExp(i.tmplRegex||e.fn.cycle.defaults.tmplRegex,"g"),s=e.makeArray(arguments);return s.shift(),t.replace(n,function(t,i){var n,o,c,l,r=i.split(".");for(n=0;s.length>n;n++)if(c=s[n]){if(r.length>1)for(l=c,o=0;r.length>o;o++)c=l,l=l[r[o]]||i;else l=c[i];if(e.isFunction(l))return l.apply(c,s);if(void 0!==l&&null!==l&&l!=i)return l}return i})}})}(jQuery);
 //@ sourceMappingURL=jquery.cycle2.js.map
 
+/**
+ * jQuery Plugin to obtain touch gestures from iPhone, iPod Touch and iPad, should also work with Android mobile phones (not tested yet!)
+ * Common usage: wipe images (left and right to show the previous or next image)
+ * 
+ * @author Andreas Waltl, netCU Internetagentur (http://www.netcu.de)
+ * @version 1.1.1 (9th December 2010) - fix bug (older IE's had problems)
+ * @version 1.1 (1st September 2010) - support wipe up and wipe down
+ * @version 1.0 (15th July 2010)
+ */
+(function($){$.fn.touchwipe=function(settings){var config={min_move_x:20,min_move_y:20,wipeLeft:function(){},wipeRight:function(){},wipeUp:function(){},wipeDown:function(){},preventDefaultEvents:true};if(settings)$.extend(config,settings);this.each(function(){var startX;var startY;var isMoving=false;function cancelTouch(){this.removeEventListener('touchmove',onTouchMove);startX=null;isMoving=false}function onTouchMove(e){if(config.preventDefaultEvents){e.preventDefault()}if(isMoving){var x=e.touches[0].pageX;var y=e.touches[0].pageY;var dx=startX-x;var dy=startY-y;if(Math.abs(dx)>=config.min_move_x){cancelTouch();if(dx>0){config.wipeLeft()}else{config.wipeRight()}}else if(Math.abs(dy)>=config.min_move_y){cancelTouch();if(dy>0){config.wipeDown()}else{config.wipeUp()}}}}function onTouchStart(e){if(e.touches.length==1){startX=e.touches[0].pageX;startY=e.touches[0].pageY;isMoving=true;this.addEventListener('touchmove',onTouchMove,false)}}if('ontouchstart'in document.documentElement){this.addEventListener('touchstart',onTouchStart,false)}});return this}})(jQuery);
+
 
 // Window resize debounce by Paul Irish
 // http://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
@@ -27,31 +38,30 @@ function(e){"use strict";e.extend(e.fn.cycle.defaults,{tmplRegex:"{{((.)?.*?)}}"
   // debouncing function from John Hann
   // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
   var debounce = function (func, threshold, execAsap) {
-      var timeout;
-
-      return function debounced () {
-          var obj = this, args = arguments;
-          function delayed () {
-              if (!execAsap)
-                  func.apply(obj, args);
-              timeout = null;
-          };
-
-          if (timeout)
-              clearTimeout(timeout);
-          else if (execAsap)
-              func.apply(obj, args);
-
-          timeout = setTimeout(delayed, threshold || 100);
-      };
-  }
-  // smartresize 
-  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-
-})(jQuery,'smartresize');
-
-
-$(function() {
+        var timeout;
+  
+        return function debounced () {
+            var obj = this, args = arguments;
+            function delayed () {
+                if (!execAsap)
+                    func.apply(obj, args);
+                timeout = null;
+            };
+  
+            if (timeout)
+                clearTimeout(timeout);
+            else if (execAsap)
+                func.apply(obj, args);
+  
+            timeout = setTimeout(delayed, threshold || 100);
+        };
+    }
+    // smartresize 
+    jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+  
+  })(jQuery,'smartresize');
+  
+  $(function() {
 
   // RETINA IMAGES
   //------------------------------------------------
@@ -110,8 +120,10 @@ $(function() {
     wordmarkShort = wordmarkLong.substring(0,wordmarkThreshold);
     wordmarkShort = $.trim(wordmarkShort) + '...';
   }
+  var wordmarkSpace = $('.wordmark').width() + 40;
   function wordmarkSizing() {
-    if($(window).width() < 880) {
+    var availableSpace = $('header .inner').width() - $('.nav-main').width();
+    if(wordmarkSpace > availableSpace) {
       wordmarkEl.html(wordmarkShort);
     } else {
       wordmarkEl.html(wordmarkLong);
@@ -358,6 +370,11 @@ $(function() {
     
   }
   
+  // Puase slideshow on page click
+  $('.slideshow').on('cycle-pager-activated cycle-prev cycle-next', function( event, opts ) {
+    $(this).cycle('pause');
+  });
+
   /* Purchasing */
   if($('.options').length > 0) {
     var optionID = false;
