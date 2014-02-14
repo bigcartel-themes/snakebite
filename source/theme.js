@@ -124,11 +124,7 @@ $(function() {
   
   // CATEGORIES AND PAGES
   //------------------------------------------------
-  
-  // Fade in errors on contact page
-  $('.errors').fadeIn();
-  
-  
+
   // Captcha focus state
   $("#captcha").focus(function(){
     $(this).closest('.captcha-wrap').addClass('active');
@@ -393,7 +389,7 @@ $(function() {
     var purchaseText = purchaseBtn.find('span');
     setTimeout(function() {
       purchaseBtn.removeClass('btn-purchase-active');
-    }, 50);
+    }, 100);
     purchaseText.html('Adding...');
     if(optionID) {
       $(this).addClass('btn-purchase-animate');

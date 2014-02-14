@@ -4,7 +4,7 @@
 
   <div class="cart-header">
     <a href="/" class="link-continue"><span class="icon-arrow-left"></span>Continue Shopping</a>
-    <a href="/checkout" class="link-checkout hidden-phone">Checkout<span class="icon-arrow-right"></span></a>
+    <a href="#" onclick="Cart.checkout();" class="link-checkout hidden-phone">Checkout<span class="icon-arrow-right"></span></a>
   </div>
   {% if errors != blank %}
   <ul class="errors">
@@ -110,7 +110,7 @@
         <h3>Discount</h3>
         <div class="discount-wrap">
           <input autocomplete="off" id="cart_discount_code" name="cart[discount_code]" type="text">
-          <div class="discount-refresh"></div>
+          <div class="discount-refresh">Apply</div>
         </div>
       </div>
       
@@ -135,8 +135,8 @@
 
 {% else %}
 
-<div class="centered-message">
-  <h2>Your cart is empty!</h2>
+<div class="centered-message centered-message-cart">
+  <h1>Your cart is empty!</h1>
   <a href="/" class="btn">Start shopping</a>
 </div>
 

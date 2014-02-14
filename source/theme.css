@@ -325,8 +325,9 @@ header {
   top: 0;
   width: 100%;
   z-index: 500;
-  -webkit-transition: background 200ms;
   -moz-transition: background 200ms;
+  -o-transition: background 200ms;
+  -webkit-transition: background 200ms;
   transition: background 200ms;
 }
 header .inner {
@@ -339,8 +340,9 @@ header .inner {
 .home header:hover,
 .products header:hover {
   background: {{theme.background_color}};
-  -webkit-transition: background 200ms;
   -moz-transition: background 200ms;
+  -o-transition: background 200ms;
+  -webkit-transition: background 200ms;
   transition: background 200ms;
 }
 .wordmark {
@@ -411,11 +413,21 @@ header .inner {
   margin-top: 22px;
   margin-bottom: -2px;
   padding-right: 5px;
+  -moz-transition: all 100ms;
+  -o-transition: all 100ms;
   -webkit-transition: all 100ms;
+  transition: all 100ms;
 }
 .cart-count-animate {
-  -webkit-transition: all 100ms;
+  -moz-transform: translate(0,20px);
+  -o-transform: translate(0,20px);
+  -ms-transform: translate(0, 20px);
   -webkit-transform: translate(0,20px);
+  transform: translate(0,20px);
+  -moz-transition: all 100ms;
+  -o-transition: all 100ms;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
 }
 .cart-orb {
   height: 70px;
@@ -432,9 +444,33 @@ header .inner {
   50%   { -webkit-transform: scale(1); } 
   75% { -webkit-transform: scale(1.2); }
   100%   { -webkit-transform: scale(1); }
+}
+@-moz-keyframes orbpulse {
+  0%   { -moz-transform: scale(1); }
+  25% { -moz-transform: scale(2); }
+  50%   { -moz-transform: scale(1); } 
+  75% { -moz-transform: scale(1.2); }
+  100%   { -moz-transform: scale(1); }
+} 
+@-o-keyframes orbpulse {
+  0%   { -o-transform: scale(1); }
+  25% { -o-transform: scale(2); }
+  50%   { -o-transform: scale(1); } 
+  75% { -o-transform: scale(1.2); }
+  100%   { -o-transform: scale(1); }
+}
+@keyframes orbpulse {
+  0%   { transform: scale(1); }
+  25% { transform: scale(2); }
+  50%   { transform: scale(1); } 
+  75% { transform: scale(1.2); }
+  100%   { transform: scale(1); }
 } 
 .cart-orb-animate {
   -webkit-animation: orbpulse 400ms ease-in-out;
+  -moz-animation: orbpulse 400ms ease-in-out;
+  -o-animation: orbpulse 400ms ease-in-out;
+  animation: orbpulse 400ms ease-in-out;
 }
 .icon-cart {
   display: block;
@@ -447,7 +483,11 @@ header .inner {
   position: relative;
   display: inline-block;
   top: -2px;
-  -webkit-transform: scaleX(1.5);
+  -moz-transform: scalex(1.5);
+  -ms-transform: scalex(1.5);
+  -o-transform: scalex(1.5);
+  -webkit-transform: scalex(1.5);
+  transform: scalex(1.5)
 }
 .nav-main .dropdown {
   visibility: hidden;
@@ -751,12 +791,14 @@ footer .footer-text {
   border: 3px solid {{theme.primary_color}};
   position: relative;
   -moz-transition: background 300ms;
+  -o-transition: background 300ms;
   -webkit-transition: background 300ms;
   transition: background 300ms;
 }
 .cycle-pager span.cycle-pager-active span {
   background: {{theme.primary_color}};
   -moz-transition: background 300ms;
+  -o-transition: background 300ms;
   -webkit-transition: background 300ms;
   transition: background 300ms;
 }
@@ -815,18 +857,53 @@ footer .footer-text {
   45% { -webkit-transform: scale(1.2); } 
   85% { -webkit-transform: scale(.9); } 
   100%   { -webkit-transform: scale(1); } 
-} 
+}
+@-moz-keyframes purchasepulse {
+  0%   { -moz-transform: scale(.95); } 
+  45% { -moz-transform: scale(1.2); } 
+  85% { -moz-transform: scale(.9); } 
+  100%   { -moz-transform: scale(1); } 
+}
+@-o-keyframes purchasepulse {
+  0%   { -o-transform: scale(.95); } 
+  45% { -o-transform: scale(1.2); } 
+  85% { -o-transform: scale(.9); } 
+  100%   { -o-transform: scale(1); } 
+}
+@keyframes purchasepulse {
+  0%   { transform: scale(.95); } 
+  45% { transform: scale(1.2); } 
+  85% { transform: scale(.9); } 
+  100%   { transform: scale(1); } 
+}
 .btn-purchase {
   display: block;
+  -moz-transition: scale 100ms ease-in-out;
+  -o-transition: scale 100ms ease-in-out;
   -webkit-transition: scale 100ms ease-in-out;
+  transition: scale 100ms ease-in-out;
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
   -webkit-transform: scale(1);
+  transform: scale(1)
 }
 .btn-purchase-active {
-  -webkit-transition: scale 100ms ease-in-out;
-  -webkit-transform: scale(.95);
+  -moz-transition: -moz-transform 100ms ease-in-out;
+  -o-transition: -o-transform 100ms ease-in-out;
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95)
 }
 .btn-purchase-animate {
   -webkit-animation: purchasepulse 200ms ease-in-out;
+  -moz-animation: purchasepulse 200ms ease-in-out;
+  -o-animation: purchasepulse 200ms ease-in-out;
+  animation: purchasepulse 200ms ease-in-out;
 }
 .btn-purchase-inactive:hover {
   background: none;
@@ -884,7 +961,11 @@ footer .footer-text {
   font-size: 7px;
   display: block;
   font-weight: 700;
-  -webkit-transform: scaleX(1.5);
+  -moz-transform: scalex(1.5);
+  -ms-transform: scalex(1.5);
+  -o-transform: scalex(1.5);
+  -webkit-transform: scalex(1.5);
+  transform: scalex(1.5)
 }
 
 /* Cart */
@@ -1077,7 +1158,7 @@ footer .footer-text {
 .discount-wrap input {
   width: 100%;
   outline: none;
-  padding: 15px 65px 15px 15px;
+  padding: 15px 100px 15px 15px;
   font-family: "{{theme.text_font}}", sans-serif;
   font-size: 16px;
   color: #0000FF;
@@ -1098,14 +1179,23 @@ footer .footer-text {
 }
 .discount-refresh {
   width: 55px;
-  height: 55px;
+  height: 12px;
+  padding: 21px 15px;
+  color: {{theme.background_color}};
   background: {{theme.primary_color}};
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 12px;
+  font-weight: 700;
   position: absolute;
   right: 0;
   top: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
+}
+.discount-refresh:hover {
+  color: {{theme.highlight_color}};
 }
 .total {
   width: 100%;
@@ -1116,6 +1206,8 @@ footer .footer-text {
   display: block;
   margin: 0 auto;
   height: 55px;
+  position: relative;
+  z-index: 10;
 }
 .countries {
   border: 3px solid {{theme.primary_color}};
@@ -1164,7 +1256,11 @@ footer .footer-text {
   font-size: 7px;
   display: block;
   font-weight: 700;
-  -webkit-transform: scaleX(1.5);
+  -moz-transform: scalex(1.5);
+  -ms-transform: scalex(1.5);
+  -o-transform: scalex(1.5);
+  -webkit-transform: scalex(1.5);
+  transform: scalex(1.5);
 }
 .cart-btns {
   text-align: center;
@@ -1197,6 +1293,12 @@ footer .footer-text {
 .centered-message .btn {
   margin-top: 30px;
 }
+.centered-message-cart {
+  margin-top: 200px;
+}
+.centered-message-cart h1 {
+  margin-bottom: 0;
+}
 
 /* General pages */
 .format-text p {
@@ -1205,7 +1307,6 @@ footer .footer-text {
 
 /* Contact page */
 .errors {
-  display: none;
   margin-bottom: 20px;
   padding: 15px;
   border-radius: 5px;
@@ -1265,13 +1366,14 @@ footer .footer-text {
 .captcha-wrap {
   border: 3px solid {{theme.primary_color}};
   border-radius: 5px;
-  height: 50px;
+  height: 52px;
   overflow: hidden;
 }
 .captcha-code {
   width: 125px;
-  height: 50px;
+  height: 52px;
   float: left;
+  background: {{theme.background_color}};
   border-right: 3px solid {{theme.primary_color}};
 }
 .captcha-input {
@@ -1293,7 +1395,7 @@ footer .footer-text {
 }
 .contact-form button {
   width: 100%;
-  margin-top: 17px;
+  margin-top: 29px;
 }
 
 /* DOM mods */
@@ -1430,6 +1532,10 @@ and (max-width : 1200px) {
   /* Cart */
   .cart .main .inner {
     margin-top: 78px;
+  }
+  .cart-options-item {
+    width: 44%;
+    padding: 0 3%;
   }
   
   /* Single Product */
@@ -1760,6 +1866,21 @@ and (max-width : 700px) {
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box; 
     box-sizing: border-box;
+  }
+  .total {
+    width: 80%;
+    padding: 0 10%;
+  }
+  .cart-items,
+  .cart-options,
+  .cart-btns {
+    margin-bottom: 30px;
+  }
+  .cart-options-item {
+    float: none;
+    width: 80%;
+    padding: 0 10%;
+    margin-bottom: 30px;
   }
   
   /* Message pages */
