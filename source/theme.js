@@ -351,13 +351,18 @@ $(function() {
 		optionID = $(this).attr('data-option-id');
 		$('.option-selected-name').html(option);
 		$('.options-list').hide();
-		$('.btn-purchase span').html('Purchase');
 		$('.btn-purchase').removeClass('btn-purchase-inactive');
+		$('.btn-purchase span').html('Purchase');
 	});
-	$('.purchase').on('click', '.btn-purchase:not(.btn-purchase-inactive)', function(e) {
+  $('.purchase').on('mousedown', '.btn-purchase:not(.btn-purchase-inactive)', function(e) {
+    $(this).addClass('btn-purchase-active');
+  }).on('mouseup', '.btn-purchase:not(.btn-purchase-inactive)', function(e) {
     e.preventDefault();
     var purchaseBtn = $(this);
     var purchaseText = purchaseBtn.find('span');
+    setTimeout(function() {
+      purchaseBtn.removeClass('btn-purchase-active');
+    }, 50);
     purchaseText.html('Adding...');
     if(optionID) {
       $(this).addClass('btn-purchase-animate');

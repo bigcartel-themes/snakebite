@@ -811,7 +811,7 @@ footer .footer-text {
   margin-top: 30px;
 }
 @-webkit-keyframes purchasepulse {
-  0%   { -webkit-transform: scale(1); } 
+  0%   { -webkit-transform: scale(.95); } 
   45% { -webkit-transform: scale(1.2); } 
   85% { -webkit-transform: scale(.9); } 
   100%   { -webkit-transform: scale(1); } 
@@ -819,6 +819,11 @@ footer .footer-text {
 .btn-purchase {
   display: block;
   -webkit-transition: all 100ms ease-in-out;
+  -webkit-transform: scale(1);
+}
+.btn-purchase-active {
+  -webkit-transition: all 100ms ease-in-out;
+  -webkit-transform: scale(.95);
 }
 .btn-purchase-animate {
   -webkit-animation: purchasepulse 200ms ease-in-out;
@@ -1042,9 +1047,6 @@ footer .footer-text {
 .cart-item-price-inner {
   display: table-cell;
   vertical-align: middle;
-}
-.cart-empty {
-  text-align: center;
 }
 .discount,
 .shipping {
