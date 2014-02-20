@@ -1,0 +1,113 @@
+{% if cart.items != blank %}
+
+<form method="post" action="/cart" id="cart-form">
+
+  <div class="cart-header">
+    <a href="/" class="link-continue"><span class="icon-arrow-left"></span>Continue Shopping</a>
+    <a href="/checkout" class="link-checkout hidden-phone">Checkout<span class="icon-arrow-right"></span></a>
+  </div>
+  {% if errors != blank %}
+  <ul class="errors">
+    {% for error in errors %}
+    <li>{{ error }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <div class="cart-items">
+    {% for item in cart.items %}
+    <div class="cart-item" data-item-id="{{ item.id }}">
+      <div class="cart-item-cell cart-item-actions">
+        <div class="cart-item-quantity">
+          <div class="quantity-controls">
+            <div class="quantity-increment"><span>+</span></div>
+            <div class="quantity-decrement"><span>-</span></div>
+          </div>
+          {{ item | item_quantity_input }}
+        </div>
+        <div class="cart-item-remove">
+          <span class="icon-close"></span>
+        </div>
+      </div>
+      <div class="cart-item-cell cart-item-image-mobile visible-phone" style="background-image: url('{{ item.product.image | product_image_url size:"small" }}');">
+      </div>
+      <div class="cart-item-cell cart-item-price">
+        <span class="cart-item-price-inner">$<span class="price-update">{{ item.price | money }}</span></span>
+      </div>
+      <div class="cart-item-cell cart-item-name">
+        <h3>
+          <a href="{{ item.product.url }}">
+            {{ item.product.name }}
+            {% unless item.product.has_default_option %}
+              <em>{{ item.option.name }}</em>
+            {% endunless %}
+          </a>
+        </h3>
+      </div>
+      <div class="cart-item-cell cart-item-image hidden-phone" style="background-image: url('{{ item.product.image | product_image_url | constrain: '600' }}');">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% if cart.shipping.enabled or cart.discount.enabled %}
+    <div class="cart-options">
+      {% if cart.shipping.enabled %}
+        <div class="shipping">
+          <h3>Shipping</h3>
+          {% if cart.shipping.strict %}
+            {{ store.country | country_select }}
+            {% if cart.shipping.pending %}
+              {% if cart.country %}
+                <p>We don't ship to {{ cart.country.name }}</p>
+              {% endif %}
+            {% else %}
+              <p>{{ cart.shipping.amount | money_with_sign }}</p>
+            {% endif %}
+          {% else %}
+            <p>{{ cart.shipping.amount | money_with_sign }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+  
+      {% if cart.discount.enabled %}
+      <div class="discount">
+        <h3>Discount</h3>
+        {% if cart.discount.pending %}
+          {{ cart.discount | discount_code_input }}
+        {% elsif cart.discount.free_shipping %}
+          <p>Free Shipping!</p>
+        {% else %}
+          <p>{{ cart.discount.name }} - You saved {{ cart.discount.amount | money_with_sign }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  {% endif %}
+  
+  <div class="total">
+    {% if cart.shipping.enabled or cart.discount.enabled %}
+      <h3>Total</h3>
+      <span class="grand-total">{{ cart.total | money_with_sign }}</span>
+    {% else %}
+      <h3>Subtotal</h3>
+      <span class="grand-total">{{ cart.total | money_with_sign }}</span>
+      <p>Checkout to calculate shipping and apply any discounts.</p>
+    {% endif %}
+  </div>
+  
+  <div class="cart-btns">
+    {% if cart.shipping.enabled or cart.discount.enabled %}
+    <button class="btn" type="submit" title="Update Total">Update Total</button>
+    {% endif %}
+    <button class="btn" type="submit" onclick="Cart.checkout(); return false" title="Checkout">Checkout</button>
+  </div>
+  
+</form>
+
+{% else %}
+
+<div class="centered-message">
+  <h2>Your cart is empty!</h2>
+  <a href="/" class="btn">Start shopping</a>
+</div>
+
+{% endif %}
