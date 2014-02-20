@@ -1,6 +1,6 @@
 {
   "name": "Fuzzco",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "images": [
     {
       "variable": "logo",
@@ -39,17 +39,17 @@
     {
       "variable": "primary_color",
       "label": "Primary Color",
-      "default": "#0000FF"
+      "default": "#F72E2A"
     },
     {
       "variable": "highlight_color",
       "label": "Highlight Color",
-      "default": "#00FF01"
+      "default": "#FFFF00"
     },
     {
       "variable": "accent_color",
       "label": "Accent Color",
-      "default": "#F0F0F0"
+      "default": "#DEFFFD"
     }
   ],
   "options": [
