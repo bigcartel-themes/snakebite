@@ -8,5 +8,4 @@ log
 *.tmproj
 *.esproj
 *.sublime*
-
-.sass-cache
+*.sass-cache*
