@@ -151,14 +151,8 @@
     
     <footer>
       <div class="inner">
-        <span class="copyright">Copyright 2014 {{ store.name }}</span>        
-        <span class="footer-text">
-        {% if theme.footer_text.size > 0 %}
-          {{ theme.footer_text }}
-        {% else %}
-          <a href="{{ store.website }}">{{ store.website | replace:'http://','' }}</a>
-        {% endif %}
-        </span>
+        <span class="copyright">Copyright 2014 <a href="{{ store.website }}">{{ store.name }}</a></span>        
+        <span class="footer-text">{{ bigcartel_credit }}</span>
       </div>
     </footer>
     
