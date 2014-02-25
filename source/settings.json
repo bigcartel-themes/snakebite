@@ -75,12 +75,6 @@
       "description": "Adds circular \"view product\" badges on top of product thumbnails"
     },
     {
-      "variable": "footer_text",
-      "label": "Footer Text",
-      "type": "text",
-      "description": "Bottom right text in footer. Leave blank to display store URL."
-    },
-    {
       "variable": "products_per_page",
       "label": "Products per page",
       "type": "select",

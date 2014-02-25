@@ -25,6 +25,28 @@
 .format-text p {
   margin-bottom: 20px;
 }
+.format-text b,
+.format-text strong {
+  font-weight: bold;
+}
+.format-text i,
+.format-text em {
+  font-style: italic;
+}
+.format-text ul {
+  margin: 0 0 20px 40px;
+}
+.format-text ul li {
+  display: list-item;
+  list-style: disc;
+}
+.format-text ol {
+  margin: 0 0 20px 40px;
+}
+.format-text ol li {
+  display: list-item;
+  list-style: decimal;
+}
 
 /* EXTRA LARGE */
 @media only screen and (min-width : $break-extra-large) {
