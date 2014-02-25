@@ -28,7 +28,7 @@
   transition: transform 100ms ease-in-out;
 }
 .preview:hover .badge-empty {
-  color: #{"{{theme.background_color}}"};
+  color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"};
   background: #{"{{theme.primary_color}}"};
   -moz-transition: -moz-transform 100ms ease-in-out;
   -o-transition: -o-transform 100ms ease-in-out;

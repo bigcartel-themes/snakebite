@@ -271,7 +271,7 @@ header .inner {
   background-image: #{"{% if theme.logo != blank %} url(\"{{ theme.logo.url }}\") {% else %} none {% endif %}"};
   background-size: contain;
   background-position: center left;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;  
 }
 .logo img {
   height: 100%;
