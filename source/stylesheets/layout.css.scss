@@ -267,7 +267,11 @@ header .inner {
   display: block;
   float: left;
   height: 90px;
-  width: auto;
+  width: 300px;
+  background-image: #{"{% if theme.logo != blank %} url(\"{{ theme.logo.url }}\") {% else %} none {% endif %}"};
+  background-size: contain;
+  background-position: center left;
+  background-repeat: no-repeat;
 }
 .logo img {
   height: 100%;
@@ -308,7 +312,7 @@ header .inner {
   color: #{"{{theme.background_color}}"};
 }
 .nav-main > ul > li.cart-status {
-  margin-left: 28px;
+  margin-left: 20px;
 }
 .nav-main > ul > li.cart-status > a {
   padding: 0;
@@ -610,6 +614,9 @@ footer .footer-text {
   /* Header */
   header {
     position: relative;
+  }
+  .logo {
+    width: 160px;
   }
   header .nav-main li {
     display: none;

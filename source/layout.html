@@ -44,7 +44,7 @@
       <header>
         <div class="inner clear">
           {% if theme.logo.url != blank %}
-            <a class="logo" href="/" ><img src="{{ theme.logo.url }}" alt="{{ store.name }}"></a>
+            <a class="logo" href="/"></a>
           {% else %}
             <a class="wordmark" href="/" data-store-name="{{ store.name | escape }}">{{ store.name }}</a>
           {% endif %}
@@ -95,7 +95,7 @@
         </div>
         <nav class="nav-mobile clear">
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             {% if categories.all != blank %}
                 <li>
                 <a class="accordion-trigger" href="#">Products <span class="nav-caret">v</span></a>
