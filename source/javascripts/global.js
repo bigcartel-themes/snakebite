@@ -54,26 +54,28 @@ $(function() {
   
   // Wordmark shortening
   var wordmarkEl = $('.wordmark');
-  var wordmarkLong = wordmarkEl.attr('data-store-name');
-  var wordmarkThreshold = 9;
-  var wordmarkShort = wordmarkLong;
-  if(wordmarkLong.length > wordmarkThreshold) {
-    wordmarkShort = wordmarkLong.substring(0,wordmarkThreshold);
-    wordmarkShort = $.trim(wordmarkShort) + '...';
-  }
-  var wordmarkSpace = $('.wordmark').width() + 40;
-  function wordmarkSizing() {
-    var availableSpace = $('header .inner').width() - $('.nav-main').width();
-    if(wordmarkSpace > availableSpace) {
-      wordmarkEl.html(wordmarkShort);
-    } else {
-      wordmarkEl.html(wordmarkLong);
+  if(wordmarkEl.length > 0) {
+    var wordmarkLong = wordmarkEl.attr('data-store-name');
+    var wordmarkThreshold = 9;
+    var wordmarkShort = wordmarkLong;
+    if(wordmarkLong.length > wordmarkThreshold) {
+      wordmarkShort = wordmarkLong.substring(0,wordmarkThreshold);
+      wordmarkShort = $.trim(wordmarkShort) + '...';
     }
-  }
-  $(window).resize(function() {
+    var wordmarkSpace = $('.wordmark').width() + 40;
+    function wordmarkSizing() {
+      var availableSpace = $('header .inner').width() - $('.nav-main').width();
+      if(wordmarkSpace > availableSpace) {
+        wordmarkEl.html(wordmarkShort);
+      } else {
+        wordmarkEl.html(wordmarkLong);
+      }
+    }
+    $(window).resize(function() {
+      wordmarkSizing();
+    });
     wordmarkSizing();
-  });
-  wordmarkSizing();
+  }
 
   // Cart orb hover animation
   $('.cart-status').mousedown(function() {

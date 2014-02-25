@@ -1,0 +1,345 @@
+@import 'config';
+
+.home .main .inner {
+  text-align: center;
+}
+.preview {
+  margin: 0 15px 80px 15px;
+  position: relative;
+  display: inline-block;
+}
+.preview-inner a {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.image-wrap {
+  position: relative;
+}
+.image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.preview .badge-red {
+  -moz-transition: -moz-transform 100ms ease-in-out;
+  -o-transition: -o-transform 100ms ease-in-out;
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;
+}
+.preview:hover .badge-red {
+  color: #{"{{theme.background_color}}"};
+  background: #{"{{theme.primary_color}}"};
+  -moz-transition: -moz-transform 100ms ease-in-out;
+  -o-transition: -o-transform 100ms ease-in-out;
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.preview:active .badge-red {
+  -moz-transition: -moz-transform 50ms ease-in-out;
+  -o-transition: -o-transform 50ms ease-in-out;
+  -webkit-transition: -webkit-transform 50ms ease-in-out;
+  transition: transform 50ms ease-in-out;
+  -moz-transform: scale(.95);
+  -ms-transform: scale(.95);
+  -o-transform: scale(.95);
+  -webkit-transform: scale(.95);
+  transform: scale(.95);
+}
+.preview .badge {
+  position: absolute;
+}
+.meta {
+  border-top: 3px solid #{"{{theme.primary_color}}"};
+  text-align: left;
+  padding: 20px 0;
+  position: relative;
+}
+.meta .price {
+  float: right;
+  margin: 0 0 10px 30px;
+}
+.pagination {
+  display: block;
+  font-size: 40px;
+  line-height: 1.5em;
+  margin-bottom: 80px;
+}
+.pagination a,
+.pagination span {
+  display: inline-block;
+  padding: 0 4px;
+}
+.pagination .current,
+.pagination a:hover {
+  background: #{"{{theme.highlight_color}}"};
+}
+.pagination .disabled {
+  display: none;
+}
+.color-block-products {
+  width: 70%;
+  height: 70%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: #{"{{theme.accent_color}}"};
+  background-image: #{"{% if theme.accent_image != blank %} url(\"{{ theme.accent_image.url }}\") {% else %} none {% endif %}"};
+}
+.preview {
+  width: 300px;
+}
+.rand-0 {
+  width: 330px;
+  top: 40px;
+}
+.rand-0 .badge-view {
+  bottom: 20px;
+  right: 20px;
+}
+.rand-0 .badge-status {
+  top: 20px;
+  left: 20px;
+}
+.rand-1 {
+  width: 280px;
+  top: 20px;
+}
+.rand-1 .badge-view {
+  top: 21%;
+  right: -20px;
+}
+.rand-1 .badge-status {
+  bottom: 15%;
+  left: 20px;
+}
+.rand-2 {
+  width: 350px;
+  top: 0px;
+}
+.rand-2 .badge-view {
+  top: 30%;
+  right: 20px;
+}
+.rand-2 .badge-status {
+  bottom: 5%;
+  left: 20px;
+}
+.rand-3 {
+  width: 320px;
+  top: 40px;
+}
+.rand-3 .badge-view {
+  bottom: 20%;
+  left: -20px;
+}
+.rand-3 .badge-status {
+  top: 10%;
+  right: -20px;
+}
+.rand-4 {
+  width: 400px;
+  top:-20px;
+}
+.rand-4 .badge-view {
+  top: 20%;
+  left: -20px;
+}
+.rand-4 .badge-status {
+  bottom: 10%;
+  right: 20px;
+}
+.rand-5 {
+  top: 20px;
+}
+.rand-5 .badge-view {
+  top: 20px;
+  left: 20px;
+}
+.rand-5 .badge-status {
+  top: -20px;
+  right: -20px;
+}
+.rand-6 {
+  width: 330px;
+  top: 0px;
+}
+.rand-6 .badge-view {
+  top: -20px;
+  right: 20px;
+}
+.rand-6 .badge-status {
+  bottom: 10%;
+  left: -20px;
+}
+
+/* Categories / Artists */
+.products .main .inner {
+  margin-top: 160px;
+  text-align: center;
+}
+
+
+/* EXTRA LARGE */
+@media only screen and (min-width : $break-extra-large) {
+
+}
+
+/* LARGE */
+@media only screen and (max-width : $break-large) {
+
+  .preview {
+    margin: 0 15px 70px 15px
+  }
+  .preview {
+    width: 200px;
+  }
+  .meta {
+    padding: 0 0 20px 0;
+    text-align: center;
+  }
+  .meta .price {
+    float: none;
+    display: inline-block;
+    margin: 0 0 -5px 0;
+    position: relative;
+    top: -20px;
+  }
+  .rand-0 {
+    width: 240px;
+    top: 40px;
+  }
+  .rand-1 {
+    width: 200px;
+    top: 20px;
+  }
+  .rand-2 {
+    width: 250px;
+    top: 0px;
+  }
+  .rand-3 {
+    width: 220px;
+    top: 40px;
+  }
+  .rand-4 {
+    width: 300px;
+    top:-20px;
+  }
+  .rand-5 {
+    top: 20px;
+  }
+  .rand-6 {
+    width: 230px;
+    top: 0px;
+  }
+  .pagination {
+    font-size: 32px;
+  }
+  
+  /* Categories / Artists */
+  .products .main .inner {
+    margin-top: 130px;
+  }  
+
+}
+
+/* MEDIUM */
+@media only screen and (max-width : $break-medium) {
+
+  /* Categories / Artists */
+  .products .main .inner {
+    margin-top: 50px;
+  }
+
+}
+
+/* SMALL */
+@media only screen and (max-width : $break-small) {
+
+  .preview {
+    margin: 0 15px 20px 15px;
+  }
+  .rand-0 {
+    width: 210px;
+    top: 0;
+  }
+  .rand-1 {
+    width: 200px;
+    top: 0;
+  }
+  .rand-2 {
+    width: 230px;
+    top: 0;
+  }
+  .rand-3 {
+    width: 210px;
+    top: 0;
+  }
+  .rand-4 {
+    width: 190px;
+    top: 0;
+  }
+  .rand-5 {
+    width: 210px;
+    top: 0;
+  }
+  .rand-6 {
+    width: 230px;
+    top: 0;
+  }
+  .pagination {
+    font-size: 22px;
+    margin-bottom: 60px;
+  }
+  
+  /* Categories / Artists */
+  .products .main .inner {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+}
+
+/* EXTRA SMALL */
+@media only screen and (max-width : $break-extra-small) {
+
+  /* Products */
+  .preview {
+    margin: 0 0 20px 0;
+  }
+  .rand-0 {
+    width: 260px;
+    top: 0;
+  }
+  .rand-1 {
+    width: 250px;
+    top: 0;
+  }
+  .rand-2 {
+    width: 280px;
+    top: 0;
+  }
+  .rand-3 {
+    width: 260px;
+    top: 0;
+  }
+  .rand-4 {
+    width: 210px;
+    top: 0;
+  }
+  .rand-5 {
+    width: 280px;
+    top: 0;
+  }
+  .rand-6 {
+    width: 240px;
+    top: 0;
+  }
+
+}
