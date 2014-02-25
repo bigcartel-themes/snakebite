@@ -1,15 +1,15 @@
 <div class="images">
   <div class="images-inner">
     {% if product.status == 'coming-soon' %}
-      <div class="badge badge-red badge-sale">
+      <div class="badge badge-filled badge-sale">
       <span>Coming<br/>Soon</span>
       </div>
     {% elsif product.status == 'sold-out' %}
-      <div class="badge badge-red badge-sale">
+      <div class="badge badge-filled badge-sale">
       <span>Sold<br/>Out</span>
       </div>
     {% elsif product.on_sale %}
-      <div class="badge badge-red badge-sale">
+      <div class="badge badge-filled badge-sale">
       <span>On<br/>Sale</span>
       </div>
     {% endif %}

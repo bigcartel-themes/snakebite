@@ -217,11 +217,11 @@ body {
   display: table-cell;
   vertical-align: middle;
 }
-.badge-red {
+.badge-empty {
   color: #{"{{theme.primary_color}}"};
   border: 3px solid #{"{{theme.primary_color}}"};
 }
-.badge-white {
+.badge-filled {
   color: #{"{{theme.primary_color}}"};
   background: #{"{{theme.background_color}}"};
   border: 3px solid #{"{{theme.background_color}}"};

@@ -11,18 +11,18 @@
         <a href="{{ product.url }}">
           <div class="image-wrap">
             {% if theme.show_view_badges %}
-            <div class="badge badge-red badge-view"><span>View</span></div>
+            <div class="badge badge-empty badge-view"><span>View</span></div>
             {% endif %}
             {% if product.status == 'coming-soon' %}
-              <div class="badge badge-white badge-status">
+              <div class="badge badge-filled badge-status">
               <span>Coming<br/>Soon</span>
               </div>
             {% elsif product.status == 'sold-out' %}
-              <div class="badge badge-white badge-status">
+              <div class="badge badge-filled badge-status">
               <span>Sold<br/>Out</span>
               </div>
             {% elsif product.on_sale %}
-              <div class="badge badge-white badge-status">
+              <div class="badge badge-filled badge-status">
               <span>On<br/>Sale</span>
               </div>
             {% endif %}
