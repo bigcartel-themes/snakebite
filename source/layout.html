@@ -52,9 +52,9 @@
             <ul class="clear">
               {% if categories.all != blank %}
                 <li>
-                <a class="dropdown-trigger" href="/">Products <span class="nav-caret">v</span></a>
+                <a class="dropdown-trigger" href="/products">Products <span class="nav-caret">v</span></a>
                 <ul class="dropdown">
-                <li><a href="/">View All</a></li>
+                <li><a href="/products">View All</a></li>
                 {% for category in categories.all %}
                   <li><a href="{{ category.url }}">{{ category.name }}</a></li>
                 {% endfor %}
@@ -100,7 +100,7 @@
                 <li>
                 <a class="accordion-trigger" href="#">Products <span class="nav-caret">v</span></a>
                 <ul class="accordion">
-                <li><a href="/">View All</a></li>
+                <li><a href="/products">View All</a></li>
                 {% for category in categories.all %}
                   <li><a href="{{ category.url }}">{{ category.name }}</a></li>
                 {% endfor %}
