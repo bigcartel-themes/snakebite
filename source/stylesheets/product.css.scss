@@ -6,11 +6,8 @@
 .product .images {
   float: right;
   width: 66%;
-  {% if theme.accent_image %}
-  background: url('{{theme.accent_image.url}}');
-  {% else %}
-  background: {{theme.accent_color}};
-  {% endif %}
+  background-color: #{"{{theme.accent_color}}"};
+  background-image: #{"{% if theme.accent_image != blank %} url(\"{{ theme.accent_image.url }}\") {% else %} none {% endif %}"};
 }
 .product .images-inner {
   display: inline-block;
@@ -22,21 +19,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  {% if theme.accent_image %}
-  background: url('{{theme.accent_image.url}}');
-  {% else %}
-  background: {{theme.accent_color}};
-  {% endif %}
+  background-color: #{"{{theme.accent_color}}"};
+  background-image: #{"{% if theme.accent_image != blank %} url(\"{{ theme.accent_image.url }}\") {% else %} none {% endif %}"};
   z-index: -1;
 }
 .slideshow {
   position: relative;
   overflow: hidden;
-  {% if theme.accent_image %}
-  background: url('{{theme.accent_image.url}}');
-  {% else %}
-  background: {{theme.accent_color}};
-  {% endif %}
+  background-color: #{"{{theme.accent_color}}"};
+  background-image: #{"{% if theme.accent_image != blank %} url(\"{{ theme.accent_image.url }}\") {% else %} none {% endif %}"};
 }
 .slideshow img {
   display: block;
@@ -62,8 +53,8 @@
   height: 7px;
   border-radius: 20px;
   text-indent: -999px;
-  background: {{theme.highlight_color}};
-  border: 3px solid {{theme.primary_color}};
+  background: #{"{{theme.highlight_color}}"};
+  border: 3px solid #{"{{theme.primary_color}}"};
   position: relative;
   -moz-transition: background 300ms;
   -o-transition: background 300ms;
@@ -71,7 +62,7 @@
   transition: background 300ms;
 }
 .cycle-pager span.cycle-pager-active span {
-  background: {{theme.primary_color}};
+  background: #{"{{theme.primary_color}}"};
   -moz-transition: background 300ms;
   -o-transition: background 300ms;
   -webkit-transition: background 300ms;
@@ -112,8 +103,8 @@
 }
 .social-links li a {
   display: block;
-  background: {{theme.primary_color}};
-  color: {{theme.background_color}};
+  background: #{"{{theme.primary_color}}"};
+  color: #{"{{theme.background_color}}"};
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
@@ -122,7 +113,7 @@
   border-radius: 5px;
 }
 .social-links li a:hover {
-  color: {{theme.highlight_color}};
+  color: #{"{{theme.highlight_color}}"};
 }
 .purchase {
   margin-top: 30px;
@@ -182,11 +173,11 @@
 }
 .btn-purchase-inactive:hover {
   background: none;
-  color: {{theme.primary_color}};
+  color: #{"{{theme.primary_color}}"};
   cursor: default;
 }
 .options {
-  border: 3px solid {{theme.primary_color}};
+  border: 3px solid #{"{{theme.primary_color}}"};
   border-radius: 5px;
   margin-bottom: 20px;
 }
@@ -198,8 +189,8 @@
   position: relative;
 }
 .option-selected:hover {
-  color: {{theme.background_color}};
-  background: {{theme.primary_color}};
+  color: #{"{{theme.background_color}}"};
+  background: #{"{{theme.primary_color}}"};
 }
 .option-selected-name {
   display: block;
@@ -213,7 +204,7 @@
   z-index: 10;
 }
 .options-list {
-  background: {{theme.background_color}};
+  background: #{"{{theme.background_color}}"};
   max-height: 200px;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
@@ -224,8 +215,8 @@
   cursor: pointer;
 }
 .options-list li:hover {
-  background: {{theme.primary_color}};
-  color: {{theme.background_color}};
+  background: #{"{{theme.primary_color}}"};
+  color: #{"{{theme.background_color}}"};
 }
 .options .dropdown-caret {
   position: absolute;

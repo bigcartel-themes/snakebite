@@ -4,11 +4,11 @@
 --------------------------------------------- */
 @font-face {
   font-family: "icons";
-  src:url("{{ 'icons.eot' | theme_image_url }}");
-  src:url("{{ 'icons.eot#iefix' | theme_image_url }}") format("embedded-opentype"),
-    url("{{ 'icons.ttf' | theme_image_url }}") format("truetype"),
-    url("{{ 'icons.svg' | theme_image_url }}") format("svg"),
-    url("{{ 'icons.woff' | theme_image_url }}") format("woff");
+  src:url(#{"{{ 'icons.eot' | theme_image_url }}"});
+  src:url(#{"{{ 'icons.eot#iefix' | theme_image_url }}"}) format("embedded-opentype"),
+    url(#{"{{ 'icons.ttf' | theme_image_url }}"}) format("truetype"),
+    url(#{"{{ 'icons.svg' | theme_image_url }}"}) format("svg"),
+    url(#{"{{ 'icons.woff' | theme_image_url }}"}) format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -63,22 +63,22 @@
 /* TYPOGRAPHY
 --------------------------------------------- */
 body {
-  color: {{theme.primary_color}};
-  font-family: "{{theme.text_font}}", sans-serif;
+  color: #{"{{theme.primary_color}}"};
+  font-family: "#{"{{theme.text_font}}"}", sans-serif;
   font-size: 62.5%;
   -webkit-text-size-adjust: none;
   text-rendering: optimizeLegibility;
   cursor: default;
 }
 input {
-  font-family: "{{theme.text_font}}", sans-serif;
+  font-family: "#{"{{theme.text_font}}"}", sans-serif;
 }
 a {
-  color: {{theme.primary_color}};
+  color: #{"{{theme.primary_color}}"};
   text-decoration: none;
 }
 a:hover {
-  color: {{theme.primary_color}};
+  color: #{"{{theme.primary_color}}"};
 }
 p,
 .main ul,
@@ -93,10 +93,10 @@ label {
 }
 .main p a:hover {
   text-decoration: underline;
-  background: {{theme.highlight_color}};
+  background: #{"{{theme.highlight_color}}"};
 }
 h1, h2, h3 {
-  font-family: "{{theme.header_font}}", sans-serif;
+  font-family: "#{"{{theme.header_font}}"}", sans-serif;
 }
 h1 {
   font-size: 80px;
@@ -123,8 +123,8 @@ h4 {
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
-  color: {{theme.primary_color}};
-  background: {{theme.highlight_color}};
+  color: #{"{{theme.primary_color}}"};
+  background: #{"{{theme.highlight_color}}"};
   padding: 6px 12px;
 }
 ul.bullets {
@@ -142,11 +142,8 @@ html, body {
   height: 100%;
 }
 body {
-  {% if theme.background_image %}
-  background: url('{{theme.background_image.url}}');
-  {% else %}
-  background: {{theme.background_color}};
-  {% endif %}
+  background-color: #{"{{theme.background_color}}"};
+  background-image: #{"{% if theme.background_image != blank %} url(\"{{ theme.background_image.url }}\") {% else %} none {% endif %}"};
 }
 .wrapper {
   overflow: hidden;
@@ -184,11 +181,11 @@ body {
 .btn {
   display: inline-block;
   padding: 15px 20px;
-  font-family: "{{theme.text_font}}", sans-serif;
+  font-family: "#{"{{theme.text_font}}"}", sans-serif;
   font-size: 20px;
   line-height: 22px;
-  color: {{theme.primary_color}};
-  border: 3px solid {{theme.primary_color}};
+  color: #{"{{theme.primary_color}}"};
+  border: 3px solid #{"{{theme.primary_color}}"};
   background: none;
   text-align: center;
   border-radius: 5px;
@@ -197,12 +194,12 @@ body {
   cursor: pointer;
 }
 .btn:hover {
-  background: {{theme.primary_color}};
-  color: {{theme.background_color}};
+  background: #{"{{theme.primary_color}}"};
+  color: #{"{{theme.background_color}}"};
 }
 .btn-inactive:hover {
   background: none;
-  color: {{theme.primary_color}};
+  color: #{"{{theme.primary_color}}"};
 }
 
 /* Badges */
@@ -221,20 +218,20 @@ body {
   vertical-align: middle;
 }
 .badge-red {
-  color: {{theme.primary_color}};
-  border: 3px solid {{theme.primary_color}};
+  color: #{"{{theme.primary_color}}"};
+  border: 3px solid #{"{{theme.primary_color}}"};
 }
 .badge-white {
-  color: {{theme.primary_color}};
-  background: {{theme.background_color}};
-  border: 3px solid {{theme.background_color}};
+  color: #{"{{theme.primary_color}}"};
+  background: #{"{{theme.background_color}}"};
+  border: 3px solid #{"{{theme.background_color}}"};
 }
 
 /* HEADER
 --------------------------------------------- */
 header {
-  background: {{theme.background_color}};
-  border-bottom: 8px solid {{theme.primary_color}};
+  background: #{"{{theme.background_color}}"};
+  border-bottom: 8px solid #{"{{theme.primary_color}}"};
   position: fixed;
   top: 0;
   width: 100%;
@@ -253,7 +250,7 @@ header .inner {
 }
 .home header:hover,
 .products header:hover {
-  background: {{theme.background_color}};
+  background: #{"{{theme.background_color}}"};
   -moz-transition: background 200ms;
   -o-transition: background 200ms;
   -webkit-transition: background 200ms;
@@ -261,7 +258,7 @@ header .inner {
 }
 .wordmark {
   float: left;
-  font-family: "{{theme.header_font}}", sans-serif;
+  font-family: "#{"{{theme.header_font}}"}", sans-serif;
   font-size: 22px;
   line-height: 30px;
   margin-top: 34px;
@@ -270,7 +267,7 @@ header .inner {
   display: block;
   float: left;
   height: 90px;
-  max-width: 200px;
+  width: auto;
 }
 .logo img {
   height: 100%;
@@ -284,7 +281,7 @@ header .inner {
 .nav-main a,
 .nav-main > ul > li > span {
   font-size: 12px;
-  color: {{theme.primary_color}};
+  color: #{"{{theme.primary_color}}"};
   text-transform: uppercase;
   letter-spacing: 0.09em;
   font-weight: 700;
@@ -307,8 +304,8 @@ header .inner {
 }
 .nav-main > ul > li.active > a,
 .nav-main > ul > li.active > span {
-  background: {{theme.primary_color}};
-  color: {{theme.background_color}};
+  background: #{"{{theme.primary_color}}"};
+  color: #{"{{theme.background_color}}"};
 }
 .nav-main > ul > li.cart-status {
   margin-left: 28px;
@@ -347,7 +344,7 @@ header .inner {
   height: 70px;
   width: 70px;
   border-radius: 80px;
-  background: {{theme.highlight_color}};
+  background: #{"{{theme.highlight_color}}"};
   position: absolute;
   top: 10px;
   right: -14px;
@@ -391,10 +388,10 @@ header .inner {
   animation: orbpulse 400ms ease-in-out;
 }
 .cart-orb-inverse {
-  background: {{theme.primary_color}};
+  background: #{"{{theme.primary_color}}"};
 }
 .cart-status-inverse a {
-  color: {{theme.highlight_color}};
+  color: #{"{{theme.highlight_color}}"};
 }
 .cart-orb-shrink {
   -moz-transition: -moz-transform 100ms ease-in-out;
@@ -430,8 +427,8 @@ header .inner {
   position: absolute;
   top: 90px;
   right: 0px;
-  border-top: 8px solid {{theme.primary_color}};
-  background: {{theme.primary_color}};
+  border-top: 8px solid #{"{{theme.primary_color}}"};
+  background: #{"{{theme.primary_color}}"};
   text-align: right;
   padding: 0;
   max-height: 590px;
@@ -452,14 +449,14 @@ header .inner {
 }
 .nav-main .dropdown li a {
   display: block;
-  color: {{theme.background_color}};
+  color: #{"{{theme.background_color}}"};
   padding: 15px 20px;
   min-width: 200px;
 }
 .nav-main .dropdown li a:hover {
-  color: {{theme.background_color}};
-  background: {{theme.highlight_color}};
-  color: {{theme.primary_color}};
+  color: #{"{{theme.background_color}}"};
+  background: #{"{{theme.highlight_color}}"};
+  color: #{"{{theme.primary_color}}"};
 }
 .nav-mobile {
   display: none;
@@ -468,19 +465,19 @@ header .inner {
 /* FOOTER
 --------------------------------------------- */
 footer {
-  background: {{theme.primary_color}};
+  background: #{"{{theme.primary_color}}"};
   font-size: 12px;
   line-height: 1.3em;
-  color: {{theme.background_color}};
+  color: #{"{{theme.background_color}}"};
   text-transform: uppercase;
   letter-spacing: 0.09em;
   font-weight: 700;
 }
 footer a {
-  color: {{theme.background_color}};
+  color: #{"{{theme.background_color}}"};
 }
 footer a:hover {
-  color: {{theme.highlight_color}};
+  color: #{"{{theme.highlight_color}}"};
 }
 footer .inner {
   min-height: 12px;
@@ -637,7 +634,7 @@ footer .footer-text {
     position: absolute;
     top: 70px;
     width: 100%;
-    background: {{theme.primary_color}};
+    background: #{"{{theme.primary_color}}"};
   }
   .nav-mobile > ul {
     margin: 20px;
@@ -653,16 +650,16 @@ footer .footer-text {
   .nav-mobile a {
     display: block;
     padding: 16px 0;
-    background: {{theme.background_color}};
-    color: {{theme.primary_color}};
+    background: #{"{{theme.background_color}}"};
+    color: #{"{{theme.primary_color}}"};
     text-align: center;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 700;
   }
   .nav-mobile a:hover {
-    color: {{theme.primary_color}};
-    background: {{theme.highlight_color}};
+    color: #{"{{theme.primary_color}}"};
+    background: #{"{{theme.highlight_color}}"};
   }
   .nav-mobile li > ul {
     display: none;
@@ -670,14 +667,14 @@ footer .footer-text {
   }
   .nav-mobile li > ul li {
     margin-top: 0;
-    border-top: 3px solid {{theme.background_color}};
+    border-top: 3px solid #{"{{theme.background_color}}"};
   }
   .nav-mobile li > ul li:first-child {
     border-top: none;
   }
   .nav-mobile li > ul a {
     background: none;
-    color: {{theme.background_color}};
+    color: #{"{{theme.background_color}}"};
   }
   
 }

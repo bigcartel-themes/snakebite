@@ -5,7 +5,7 @@
   padding: 15px;
   border-radius: 5px;
   text-align: center;
-  background: {{theme.highlight_color}};
+  background: #{"{{theme.highlight_color}}"};
 }
 .contact-form-wrap {
   max-width: 600px;
@@ -42,9 +42,9 @@
   padding: 15px;
   width: 100%;
   font-size: 16px;
-  border: 3px solid {{theme.primary_color}};
-  font-family: "{{theme.text_font}}", sans-serif, sans-serif;
-  color: {{theme.primary_color}};
+  border: 3px solid #{"{{theme.primary_color}}"};
+  font-family: "#{"{{theme.text_font}}"}", sans-serif, sans-serif;
+  color: #{"{{theme.primary_color}}"};
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
@@ -53,13 +53,13 @@
 }
 .contact-form-wrap input:focus,
 .contact-form-wrap textarea:focus {
-  background: {{theme.accent_color}};
+  background: #{"{{theme.accent_color}}"};
 }
 .contact-form-wrap textarea {
   height: 100px;
 }
 .captcha-wrap {
-  border: 3px solid {{theme.primary_color}};
+  border: 3px solid #{"{{theme.primary_color}}"};
   border-radius: 5px;
   height: 52px;
   overflow: hidden;
@@ -68,8 +68,8 @@
   width: 125px;
   height: 52px;
   float: left;
-  background: {{theme.background_color}};
-  border-right: 3px solid {{theme.primary_color}};
+  background: #{"{{theme.background_color}}"};
+  border-right: 3px solid #{"{{theme.primary_color}}"};
 }
 .captcha-input {
   width: 50%;
@@ -79,7 +79,7 @@
   border: 0px;
 }
 .captcha-wrap.active {
-  background: {{theme.accent_color}};
+  background: #{"{{theme.accent_color}}"};
 }
 .captcha-input input {
   border-top: 0px;
