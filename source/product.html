@@ -38,7 +38,7 @@
 {% else %}
   <span class="highlight price">{{ product.default_price | money_with_sign }}</span>
 {% endif %}
-  {% unless product.status == 'sold-out' %}
+  {% if product.status == 'active' %}
     <div class="purchase" data-default-option-id="{{ product.options.first.id }}">
       {% if product.options.size > 1 %}
       <div class="options-wrap">
@@ -63,7 +63,7 @@
         <div class="btn btn-purchase"><span>Purchase</span></div>
       {% endif %}
     </div>
-  {% endunless %}
+  {% endif %}
 {% if product.description != blank %}
   <div class="description">
   {{ product.description | paragraphs }}
