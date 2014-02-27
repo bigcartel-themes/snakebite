@@ -73,6 +73,7 @@
 .pagination a,
 .pagination span {
   display: inline-block;
+  white-space: nowrap;
   padding: 0 4px;
 }
 .pagination .current,
@@ -340,6 +341,9 @@
   .rand-6 {
     width: 240px;
     top: 0;
+  }
+  .pagination {
+    padding: 0 40px;
   }
 
 }
