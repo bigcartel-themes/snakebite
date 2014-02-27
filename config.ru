@@ -12,10 +12,10 @@ options = {}
 #options[:store] = 'fuzzcotheme'
 
 #has artists
-options[:store] = 'goldrobotrecords'
+#options[:store] = 'goldrobotrecords'
 
 #has pages
-#options[:store] = 'ripeshop'
+options[:store] = 'ripeshop'
 
 # Simulate the customization done by store owners by passing values to different variables.
 # Default values are based on the "default" for each setting in your settings.json.
