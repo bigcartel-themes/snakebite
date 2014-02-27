@@ -250,7 +250,7 @@
 
   .product .main .inner {
     margin-top: 78px;
-    margin-right: 0px;
+    margin-right: 0;
   }
   .product h2 {
     margin-top: 40px;
@@ -261,6 +261,9 @@
 /* MEDIUM */
 @media only screen and (max-width : $break-medium) {
 
+  .product .main .inner {
+    margin-top: 0;
+  }
   .product h2 {
     margin-top: 50px;
   }
