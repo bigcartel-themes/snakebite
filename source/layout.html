@@ -156,7 +156,9 @@
     
     <footer>
       <div class="inner">
-        <span class="copyright">Copyright {{ 'Today' | date: "%Y" }} <a href="{{ store.website }}">{{ store.name }}</a></span>        
+        <span class="copyright">
+        Copyright {{ 'Today' | date: "%Y" }} <a href="{% if store.website != blank %}{{ store.website }}{% else %}{{ store.url }}{% endif %}">{{ store.name }}</a>
+        </span>        
         <span class="footer-text">{{ bigcartel_credit }}</span>
       </div>
     </footer>
