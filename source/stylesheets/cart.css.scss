@@ -312,6 +312,11 @@
 .checkout-placeholder {
   margin-top: 100px;
 }
+.cart .errors {
+  margin-bottom: 0;
+  border-bottom: 3px solid #F72E2A;
+  border-radius: 0;
+}
 
 /* EXTRA LARGE */
 @media only screen and (min-width : $break-extra-large) {
