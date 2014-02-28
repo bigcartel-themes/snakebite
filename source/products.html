@@ -41,7 +41,9 @@
   
   {% endfor %}
     
-{{ paginate | default_pagination }}
+{% if paginate.pages > 1 %}
+  {{ paginate | default_pagination }}
+{% endif %}
 
 {% else %}
 
