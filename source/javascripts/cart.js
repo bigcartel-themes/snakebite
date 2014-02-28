@@ -8,7 +8,11 @@ $(function() {
     cartOrbEl.addClass('cart-orb-animate');
     var curCount = parseInt(cartCountEl.html());
     if(cart.item_count === 0) {
-      location.reload();
+      $('.cart-wrap').hide();
+      $('.cart-empty-modal').fadeIn();
+      setTimeout(function() {
+        document.location.href = '../'; 
+      }, 1500);
     } else if(curCount != cart.item_count) {
       cartCountEl.addClass('cart-count-animate');
       setTimeout(function() {

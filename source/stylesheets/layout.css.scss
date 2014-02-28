@@ -70,8 +70,10 @@ body {
   text-rendering: optimizeLegibility;
   cursor: default;
 }
-input {
+input,
+textarea {
   font-family: "#{"{{theme.text_font}}"}", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 a {
   color: #{"{{theme.primary_color}}"};
