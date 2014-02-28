@@ -90,6 +90,7 @@
   vertical-align: middle;
 }
 .cart-item-actions {
+  display: block;
   width: 20%;
 }
 .cart-item-price {
@@ -188,7 +189,7 @@
 }
 .cart-one-option .cart-options-item { 
   float: none;
-  margin: 0 auto inherit;
+  margin: 0 auto 60px;
 }
 .cart-options-item p {
   margin-top: 10px;

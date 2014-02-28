@@ -6,13 +6,13 @@ options = {}
 # categories, and more. Just give us the subdomain. Default is "dugway" for dugway.bigcartel.com.
 
 #options[:store] = 'herriottgrace'
-options[:store] = 'fuzzcotheme'
+#options[:store] = 'fuzzcotheme'
 #options[:store] = 'wintercabincollection'
 #options[:store] = 'banditodesignco'
 #options[:store] = 'fuzzcotheme'
 
 #has artists
-#options[:store] = 'goldrobotrecords'
+options[:store] = 'goldrobotrecords'
 
 #has pages
 #options[:store] = 'ripeshop'
