@@ -72,12 +72,18 @@ $(function() {
   }
 	$('.options-list').hide();
 	$('.option-selected').click(function() {
-		if ($('.options-list').is(':visible')) {
-			$('.options-list').hide();
+	  var optionsList = $('.options-list');
+		if (optionsList.is(':visible')) {
+			optionsList.slideUp(100);
 		} else {
-			$('.options-list').show();
+			optionsList.slideDown(100);
 		}
 	});
+	$('body').click(function(e) {
+    if (!$('.options').is(e.target) && $('.options').has(e.target).length === 0) {
+      $('.options-list').slideUp(100);
+    }
+  });
 	$('.options-list li').click(function() {
 		var option = $(this).html();
 		optionID = $(this).attr('data-option-id');

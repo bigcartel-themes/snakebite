@@ -1,7 +1,7 @@
 @import 'config';
 
 .product .main .inner {
-  margin-top: 98px;
+  margin-top: 78px;
 }
 .product .images {
   float: right;
@@ -68,7 +68,7 @@
   padding-bottom: 30px;
 }
 .product h2 {
-  margin: 70px 0 15px 0;
+  margin: 50px 0 15px 0;
 }
 .product h4 {
   margin: 0 0 15px 0;
@@ -120,26 +120,22 @@
 }
 @-webkit-keyframes purchasepulse {
   0%   { -webkit-transform: scale(.95); } 
-  45% { -webkit-transform: scale(1.2); } 
-  85% { -webkit-transform: scale(.9); } 
+  50% { -webkit-transform: scale(1.2); } 
   100%   { -webkit-transform: scale(1); } 
 }
 @-moz-keyframes purchasepulse {
   0%   { -moz-transform: scale(.95); } 
-  45% { -moz-transform: scale(1.2); } 
-  85% { -moz-transform: scale(.9); } 
+  50% { -moz-transform: scale(1.2); } 
   100%   { -moz-transform: scale(1); } 
 }
 @-o-keyframes purchasepulse {
   0%   { -o-transform: scale(.95); } 
-  45% { -o-transform: scale(1.2); } 
-  85% { -o-transform: scale(.9); } 
+  50% { -o-transform: scale(1.2); } 
   100%   { -o-transform: scale(1); } 
 }
 @keyframes purchasepulse {
   0%   { transform: scale(.95); } 
-  45% { transform: scale(1.2); } 
-  85% { transform: scale(.9); } 
+  50% { transform: scale(1.2); } 
   100%   { transform: scale(1); } 
 }
 .btn-purchase {
@@ -229,11 +225,10 @@
 @media only screen and (max-width : $break-large) {
 
   .product .main .inner {
-    margin-top: 78px;
     margin-right: 0;
   }
   .product h2 {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 
 }
@@ -243,9 +238,6 @@
 
   .product .main .inner {
     margin-top: 0;
-  }
-  .product h2 {
-    margin-top: 50px;
   }
   .cycle-pager {
     width: 100%;
@@ -282,9 +274,6 @@
   }
   .product .main .inner {
     margin: 0;
-  }
-  .product h2 {
-    margin-top: 40px;
   }
   .badge-sale {
     top: 20px;

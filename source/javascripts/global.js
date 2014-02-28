@@ -76,10 +76,5 @@ $(function() {
     });
     wordmarkSizing();
   }
-
-  // Cart orb hover animation
-  $('.cart-status').mousedown(function() {
-    $('.cart-orb').addClass('cart-orb-shrink');
-  });
   
 });

@@ -18,7 +18,7 @@ $(function() {
       setTimeout(function() {
         cartCountEl.html(cart.item_count);
         cartOrbEl.removeClass('cart-orb-animate');
-      }, 500);
+      }, 800);
     }
   }
   Cart.updateTotals = function(cart) {
@@ -136,12 +136,18 @@ $(function() {
   });
   $('.country-list').hide();
 	$('.country-selected').click(function() {
-		if ($('.country-list').is(':visible')) {
-			$('.country-list').hide();
+	  var countryList = $('.country-list');
+		if (countryList.is(':visible')) {
+			countryList.slideUp(100);
 		} else {
-			$('.country-list').show();
+			countryList.slideDown(100);
 		}
 	});
+	$('body').click(function(e) {
+    if (!$('.countries').is(e.target) && $('.countries').has(e.target).length === 0) {
+      $('.country-list').slideUp(100);
+    }
+  });
 	$('.country-list li').click(function() {
 		countryVal = $(this).attr('data-country-id');
 		countryName = $(this).text();
