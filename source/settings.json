@@ -5,7 +5,7 @@
     {
       "variable": "logo",
       "label": "Logo",
-      "description": "Adds your logo to the header"
+      "description": "Adds your logo to the header. Suggested size 140px h by 600px w."
     },
     {
       "variable": "background_image",
