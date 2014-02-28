@@ -129,6 +129,7 @@ h4 {
   color: #{"{{theme.primary_color}}"};
   background: #{"{{theme.highlight_color}}"};
   padding: 6px 12px;
+  border-radius: 5px;
 }
 ul.bullets {
   font-size: 15px;
@@ -168,10 +169,6 @@ body {
 }
 .main .inner {
   margin-top: 130px;
-}
-.custom .main .inner {
-  max-width: 820px;
-  margin: 160px auto 70px;
 }
 
 /* MODULES
@@ -225,6 +222,21 @@ body {
   color: #{"{{theme.primary_color}}"};
   background: #{"{{theme.background_color}}"};
   border: 3px solid #{"{{theme.background_color}}"};
+}
+
+/* Errors */
+.errors {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  background: #{"{{theme.highlight_color}}"};
+}
+.errors li {
+  margin-top: 10px;
+}
+.errors li:first-child {
+  margin-top: 0;
 }
 
 /* HEADER

@@ -333,6 +333,7 @@
   margin-bottom: 0;
   border-bottom: 3px solid #F72E2A;
   border-radius: 0;
+  padding: 15px 20%;
 }
 .cart-empty-modal {
   display: none;
@@ -349,6 +350,9 @@
   .cart-options-item {
     width: 44%;
     padding: 0 3%;
+  }
+  .cart .errors {
+    padding: 15px;
   }
 
 }

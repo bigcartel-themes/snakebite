@@ -1,5 +1,10 @@
 @import 'config';
 
+.custom .main .inner {
+  max-width: 820px;
+  margin: 130px auto 70px;
+}
+
 /* Message pages */
 .centered-message {
   margin-top: 100px;

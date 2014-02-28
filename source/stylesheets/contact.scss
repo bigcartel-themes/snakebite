@@ -1,12 +1,5 @@
 @import 'config';
 
-.errors {
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 5px;
-  text-align: center;
-  background: #{"{{theme.highlight_color}}"};
-}
 .contact-form-wrap {
   max-width: 600px;
   margin: 0 auto 80px;

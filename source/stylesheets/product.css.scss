@@ -115,8 +115,9 @@
 .social-links li a:hover {
   color: #{"{{theme.highlight_color}}"};
 }
-.purchase {
-  margin-top: 30px;
+.product .price {
+  display: inline-block;
+  margin-bottom: 30px;
 }
 @-webkit-keyframes purchasepulse {
   0%   { -webkit-transform: scale(.95); } 

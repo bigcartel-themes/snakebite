@@ -9,13 +9,13 @@
     <a href="/" class="link-continue"><span class="icon-arrow-left"></span>Continue Shopping</a>
     <a href="#" onclick="Cart.checkout();" class="link-checkout hidden-phone">Checkout<span class="icon-arrow-right"></span></a>
   </div>
-  {% if errors != blank %}
-  <ul class="errors">
-    {% for error in errors %}
-    <li>{{ error }}</li>
-    {% endfor %}
+  <ul class="errors" {% if errors == blank %}style="display: none;"{% endif %}>
+    {% if errors != blank %}
+      {% for error in errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    {% endif %}
   </ul>
-  {% endif %}
   <div class="cart-items">
     {% for item in cart.items %}
     <div class="cart-item" data-item-id="{{ item.id }}">

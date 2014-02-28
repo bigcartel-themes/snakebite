@@ -1,5 +1,19 @@
 $(function() {
   
+  // Custom error handler
+  var errorTimeout;
+  API.onError = function(errors) {
+    if($('body').hasClass('product')) {
+      clearTimeout(errorTimeout);
+      $.each(errors, function( index, value ) {
+        $('.errors').html('<li>' + value + '</li>').fadeIn();
+      });
+      errorTimeout = setTimeout(function() {
+        $('.errors').fadeOut();
+      }, 4500);
+    }
+  }
+  
   // Custom cart methods
   Cart.updateCount = function(cart) {
     var cartCountEl = $('.cart-count');
@@ -104,7 +118,6 @@ $(function() {
     var curQuantity = parseInt(input.val());
     clearTimeout(decrementTimer);
     var newQuantity = curQuantity - 1;
-    console.log(newQuantity);
     input.val(newQuantity);
     if(newQuantity > 0) {
       decrementTimer = setTimeout(function() {

@@ -39,6 +39,7 @@
   <span class="highlight price">{{ product.default_price | money_with_sign }}</span>
 {% endif %}
   {% if product.status == 'active' %}
+    <ul class="errors" style="display: none;"></ul>
     <div class="purchase" data-default-option-id="{{ product.options.first.id }}">
       {% if product.options.size > 1 %}
       <div class="options-wrap">
