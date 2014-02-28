@@ -90,32 +90,34 @@ $(function() {
 		$('.option-selected-name').html(option);
 		$('.options-list').hide();
 		$('.options-wrap').height($('.options').outerHeight());
-		$('.btn-purchase').removeClass('btn-purchase-inactive');
+		$('.btn-purchase').removeClass('btn-inactive').addClass('btn-active');
 		$('.btn-purchase span').html('Purchase');
 	});
-  $('.purchase').on('mousedown', '.btn-purchase:not(.btn-purchase-inactive)', function(e) {
-    $(this).addClass('btn-purchase-active');
-  }).on('mouseup', '.btn-purchase:not(.btn-purchase-inactive)', function(e) {
-    e.preventDefault();
-    var purchaseBtn = $(this);
-    var purchaseText = purchaseBtn.find('span');
-    setTimeout(function() {
-      purchaseBtn.removeClass('btn-purchase-active');
-    }, 100);
-    if(optionID) {
-      $(this).addClass('btn-purchase-animate');
-      setTimeout(function() {
-        purchaseBtn.removeClass('btn-purchase-animate');
-      }, 200);
-      Cart.addItem(optionID, 1, function(cart) {
-        Cart.updateCount(cart);
-        purchaseText.html('Added!');
+	var purchaseReady = true;
+  $('.purchase').on('mouseup', '.btn-active', function(e) {
+    if(purchaseReady) {
+      purchaseReady = false;
+      setTimeout(function() { 
+        purchaseReady = true;
+      }, 1000);
+      e.preventDefault();
+      var purchaseBtn = $(this);
+      var purchaseText = purchaseBtn.find('span');
+      if(optionID) {
+        $(this).addClass('btn-pulse');
         setTimeout(function() {
-          purchaseText.clone().appendTo(purchaseBtn).html('Purchase').hide();
-          purchaseBtn.find('span').first().remove();
-          purchaseBtn.find('span').first().fadeIn(400);
-        }, 1000);
-      });
+          purchaseBtn.removeClass('btn-pulse');
+        }, 50);
+        Cart.addItem(optionID, 1, function(cart) {
+          Cart.updateCount(cart);
+          purchaseText.html('Added!');
+          setTimeout(function() {
+            purchaseText.clone().appendTo(purchaseBtn).html('Purchase').hide();
+            purchaseBtn.find('span').first().remove();
+            purchaseBtn.find('span').first().fadeIn(400);
+          }, 800);
+        });
+      }
     }
   });
   $(window).resize(function() {

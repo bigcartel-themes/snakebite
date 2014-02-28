@@ -119,7 +119,7 @@
   color: #{"{{theme.highlight_color}}"};
 }
 @-webkit-keyframes purchasepulse {
-  0%   { -webkit-transform: scale(.95); } 
+  0%   { -webkit-transform: scale(1); } 
   50% { -webkit-transform: scale(1.2); } 
   100%   { -webkit-transform: scale(1); } 
 }
@@ -143,17 +143,15 @@
   @include scale(1);
   @include single-transition(transform, 100ms, ease-in-out);
 }
-.btn-purchase-active {
+.btn-active:active {
   @include scale(.95);
   @include single-transition(transform, 50ms, ease-in-out);
 }
-.btn-purchase-animate {
-  -webkit-animation: purchasepulse 200ms ease-in-out;
-  -moz-animation: purchasepulse 200ms ease-in-out;
-  -o-animation: purchasepulse 200ms ease-in-out;
-  animation: purchasepulse 200ms ease-in-out;
+.btn-pulse {
+  @include scale(1.2);
+  @include single-transition(transform, 50ms, ease-in-out);
 }
-.btn-purchase-inactive:hover {
+.btn-inactive:hover {
   background: none;
   color: #{"{{theme.primary_color}}"};
   cursor: default;
@@ -239,11 +237,6 @@
   .product .main .inner {
     margin-top: 0;
   }
-  .cycle-pager {
-    width: 100%;
-    left: 0;
-    text-align: center;
-  }
 
 }
 
@@ -282,6 +275,11 @@
   .slideshow {
     max-width: 400px;
     margin: 0 auto;
+  }
+  .cycle-pager {
+    width: 100%;
+    left: 0;
+    text-align: center;
   }
 
 }

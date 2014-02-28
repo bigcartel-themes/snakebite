@@ -365,6 +365,34 @@ header .inner {
   @include scale(1);
   @include single-transition(all, 100ms, ease-in-out);
 }
+@-webkit-keyframes orbpulse {
+  0%   { -webkit-transform: scale(1); }
+  25% { -webkit-transform: scale(2); }
+  50%   { -webkit-transform: scale(1); } 
+  75% { -webkit-transform: scale(1.2); }
+  100%   { -webkit-transform: scale(1); }
+}
+@-moz-keyframes orbpulse {
+  0%   { -moz-transform: scale(1); }
+  25% { -moz-transform: scale(2); }
+  50%   { -moz-transform: scale(1); } 
+  75% { -moz-transform: scale(1.2); }
+  100%   { -moz-transform: scale(1); }
+} 
+@-o-keyframes orbpulse {
+  0%   { -o-transform: scale(1); }
+  25% { -o-transform: scale(2); }
+  50%   { -o-transform: scale(1); } 
+  75% { -o-transform: scale(1.2); }
+  100%   { -o-transform: scale(1); }
+}
+@keyframes orbpulse {
+  0%   { transform: scale(1); }
+  25% { transform: scale(2); }
+  50%   { transform: scale(1); } 
+  75% { transform: scale(1.2); }
+  100%   { transform: scale(1); }
+} 
 .cart-orb {
   height: 60px;
   width: 60px;
@@ -479,9 +507,6 @@ footer .footer-text {
   .main .inner {
     margin-top: 130px;
   }
-  .custom .main .inner {
-    margin: 140px auto 70px;
-  }
     
   /* Typography */
   h1 {
@@ -512,10 +537,6 @@ footer .footer-text {
   /* Global */
   .main .inner {
     margin-top: 50px;
-  }
-  .custom .main .inner {
-    max-width: 820px;
-    margin: 40px 20px 20px 20px;
   }
     
   /* Typography */

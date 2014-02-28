@@ -61,10 +61,20 @@
 /* LARGE */
 @media only screen and (max-width : $break-large) {
 
+  .custom .main .inner {
+    margin-top: 130px 0 0 0;
+    padding: 0 20px 20px 20px;
+  }
+
 }
 
 /* MEDIUM */
 @media only screen and (max-width : $break-medium) {
+
+  .custom .main .inner {
+    margin: 50px 0 0 0;
+    padding: 0 20px 20px 20px;
+  }
 
 }
 
