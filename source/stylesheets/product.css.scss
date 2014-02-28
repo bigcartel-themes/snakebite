@@ -74,6 +74,16 @@
 .product .description {
   margin: 30px 0 0 0;
 }
+
+.product .description b,
+.product .description strong {
+  font-weight: bold;
+}
+.product .description i,
+.product .description em {
+  font-style: italic;
+}
+
 .static-option-list {
   margin-bottom: 30px;
 }
