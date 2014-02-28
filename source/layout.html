@@ -54,22 +54,22 @@
           {% endif %}
           <nav class="nav-main">
             <ul class="clear">
-              {% if categories.all != blank %}
+              {% if categories.active != blank %}
                 <li>
                 <a class="dropdown-trigger" href="/products">Products <span class="nav-caret">v</span></a>
                 <ul class="dropdown">
                 <li><a href="/products">View All</a></li>
-                {% for category in categories.all %}
+                {% for category in categories.active %}
                   <li><a href="{{ category.url }}">{{ category.name }}</a></li>
                 {% endfor %}
                 </ul>
                 </li>
               {% endif %}
-              {% if artists.all != blank %}
+              {% if artists.active != blank %}
                 <li>
                 <span class="dropdown-trigger">Artists <span class="nav-caret">v</span></span>
                 <ul class="dropdown">
-                {% for artist in artists.all %}
+                {% for artist in artists.active %}
                   <li><a href="{{ artist.url }}">{{ artist.name }}</a></li>
                 {% endfor %}
                 </ul>
