@@ -99,22 +99,22 @@
         <nav class="nav-mobile clear">
           <ul>
             <li><a href="/">Home</a></li>
-            {% if categories.all != blank %}
+            {% if categories.active != blank %}
                 <li>
                 <a class="accordion-trigger" href="#">Products <span class="nav-caret">v</span></a>
                 <ul class="accordion">
                 <li><a href="/products">View All</a></li>
-                {% for category in categories.all %}
+                {% for category in categories.active %}
                   <li><a href="{{ category.url }}">{{ category.name }}</a></li>
                 {% endfor %}
                 </ul>
                 </li>
               {% endif %}
-              {% if artists.all != blank %}
+              {% if artists.active != blank %}
                 <li>
                 <a class="accordion-trigger" href="#">Artists <span class="nav-caret">v</span></a>
                 <ul class="accordion">
-                {% for artist in artists.all %}
+                {% for artist in artists.active %}
                   <li><a href="{{ artist.url }}">{{ artist.name }}</a></li>
                 {% endfor %}
                 </ul>
