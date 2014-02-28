@@ -188,7 +188,7 @@
 }
 .cart-one-option .cart-options-item { 
   float: none;
-  width: auto;
+  margin: 0 auto inherit;
 }
 .cart-options-item p {
   margin-top: 10px;
@@ -202,7 +202,7 @@
   padding: 15px 100px 15px 15px;
   font-family: "#{"{{theme.text_font}}"}", sans-serif;
   font-size: 16px;
-  color: #0000FF;
+  color: #{"{{theme.primary_color}}"};
   border: 3px solid #{"{{theme.primary_color}}"};
   background: none;
   text-align: center;
@@ -350,9 +350,6 @@
     width: 44%;
     padding: 0 3%;
   }
-  .cart-one-option .cart-options-item { 
-    width: auto;
-  }
 
 }
 
@@ -360,7 +357,7 @@
 @media only screen and (max-width : $break-medium) {
 
   .cart .main .inner {
-    margin-top: 0;
+    margin: 0;
   }
   .cart-item-price {
     font-size: 20px;
