@@ -87,16 +87,14 @@
                 </li>
               {% endif %}
               <li><a href="/contact">Contact</a></li>
-              <li class="mobile-nav-trigger"><a href="#"><span class="icon-menu"></span></a></li>
-              <li class="cart-status">
-                <a href="/cart">
-                  <span class="cart-count">{{ cart.item_count }}</span>
-                  <span class="icon-cart"></span>
-                </a>
-              </li>
             </ul>
+            <a href="#" class="mobile-nav-trigger"><span class="icon-menu"></span></a>
+            <a href="/cart" class="cart-status">
+              <span class="cart-count">{{ cart.item_count }}</span>
+              <span class="icon-cart"></span>
+              <div class="cart-orb" {% if cart.item_count == 0 %}style="display: none;"{% endif %}></div>
+            </a>
           </nav>
-          <div class="cart-orb" {% if cart.item_count == 0 %}style="display: none;"{% endif %}></div>
         </div>
         <nav class="nav-mobile clear">
           <ul>
