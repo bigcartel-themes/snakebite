@@ -22,34 +22,17 @@
   height: auto;
 }
 .preview .badge-empty {
-  -moz-transition: -moz-transform 100ms ease-in-out;
-  -o-transition: -o-transform 100ms ease-in-out;
-  -webkit-transition: -webkit-transform 100ms ease-in-out;
-  transition: transform 100ms ease-in-out;
+  @include single-transition(transform, 100ms, ease-in-out);
 }
 .preview:hover .badge-empty {
   color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"};
   background: #{"{{theme.primary_color}}"};
-  -moz-transition: -moz-transform 100ms ease-in-out;
-  -o-transition: -o-transform 100ms ease-in-out;
-  -webkit-transition: -webkit-transform 100ms ease-in-out;
-  transition: transform 100ms ease-in-out;
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  @include scale(1.1);
+  @include single-transition(transform, 100ms, ease-in-out);
 }
 .preview:active .badge-empty {
-  -moz-transition: -moz-transform 50ms ease-in-out;
-  -o-transition: -o-transform 50ms ease-in-out;
-  -webkit-transition: -webkit-transform 50ms ease-in-out;
-  transition: transform 50ms ease-in-out;
-  -moz-transform: scale(.95);
-  -ms-transform: scale(.95);
-  -o-transform: scale(.95);
-  -webkit-transform: scale(.95);
-  transform: scale(.95);
+  @include scale(.95);
+  @include single-transition(transform, 50ms, ease-in-out);
 }
 .preview .badge {
   position: absolute;

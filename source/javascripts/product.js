@@ -96,7 +96,6 @@ $(function() {
     setTimeout(function() {
       purchaseBtn.removeClass('btn-purchase-active');
     }, 100);
-    purchaseText.html('Adding...');
     if(optionID) {
       $(this).addClass('btn-purchase-animate');
       setTimeout(function() {

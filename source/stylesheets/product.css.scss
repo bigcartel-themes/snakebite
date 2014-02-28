@@ -31,7 +31,7 @@
 }
 .slideshow img {
   display: block;
-  width: 100%;
+  width: auto;
   max-width: 100%;
 }
 .cycle-pager {
@@ -56,17 +56,11 @@
   background: #{"{{theme.highlight_color}}"};
   border: 3px solid #{"{{theme.primary_color}}"};
   position: relative;
-  -moz-transition: background 300ms;
-  -o-transition: background 300ms;
-  -webkit-transition: background 300ms;
-  transition: background 300ms;
+  @include single-transition(background, 300ms);
 }
 .cycle-pager span.cycle-pager-active span {
   background: #{"{{theme.primary_color}}"};
-  -moz-transition: background 300ms;
-  -o-transition: background 300ms;
-  -webkit-transition: background 300ms;
-  transition: background 300ms;
+  @include single-transition(background, 300ms);
 }
 .product .details {
   float: left;
@@ -150,26 +144,12 @@
 }
 .btn-purchase {
   display: block;
-  -moz-transition: scale 100ms ease-in-out;
-  -o-transition: scale 100ms ease-in-out;
-  -webkit-transition: scale 100ms ease-in-out;
-  transition: scale 100ms ease-in-out;
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
+  @include scale(1);
+  @include single-transition(transform, 100ms, ease-in-out);
 }
 .btn-purchase-active {
-  -moz-transition: -moz-transform 100ms ease-in-out;
-  -o-transition: -o-transform 100ms ease-in-out;
-  -webkit-transition: -webkit-transform 100ms ease-in-out;
-  transition: transform 100ms ease-in-out;
-  -moz-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  -o-transform: scale(0.95);
-  -webkit-transform: scale(0.95);
-  transform: scale(0.95);
+  @include scale(.95);
+  @include single-transition(transform, 50ms, ease-in-out);
 }
 .btn-purchase-animate {
   -webkit-animation: purchasepulse 200ms ease-in-out;

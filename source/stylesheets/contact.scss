@@ -57,6 +57,7 @@
 }
 .contact-form-wrap textarea {
   height: 100px;
+  resize: none;
 }
 .captcha-wrap {
   border: 3px solid #{"{{theme.primary_color}}"};
