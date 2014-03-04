@@ -127,4 +127,11 @@ $(function() {
     $('.options-wrap').height($('.options').outerHeight());
   });
   
+  // Social link popups
+  $('.social-links a').click(function(e) {
+    e.preventDefault();
+    var shareURL = $(this).attr('href');
+    window.open( shareURL, "myWindow", "status = 1, height = 400, width = 600, resizable = 0" )
+  });
+  
 });
