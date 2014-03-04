@@ -31,15 +31,17 @@ $(function() {
     function maxImageHeight() {
       if($(window).width() > 880) {
         var maxImageHeight = $(window).height() - $('header').outerHeight();
+        $('.images, .images img').css({'max-height': maxImageHeight});
       } else {
-        var maxImageHeight = 2000;
+        $('.images, .images img').css({'max-height': 9999});
       }
-      $('.images, .images img').css({'max-height': maxImageHeight});
     }
     $(window).resize(function() {
       maxImageHeight();
     });
-    maxImageHeight();
+    $(window).load(function() {
+      maxImageHeight();
+    });
     
   } else {
   
@@ -108,7 +110,7 @@ $(function() {
         $(this).addClass('btn-pulse');
         setTimeout(function() {
           purchaseBtn.removeClass('btn-pulse');
-        }, 50);
+        }, 100);
         Cart.addItem(optionID, 1, function(cart) {
           Cart.updateCount(cart);
           purchaseText.html('Added!');

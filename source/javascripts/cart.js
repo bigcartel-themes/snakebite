@@ -10,7 +10,7 @@ $(function() {
       });
       errorTimeout = setTimeout(function() {
         $('.errors').fadeOut();
-      }, 4500);
+      }, 5000);
     }
   }
   
