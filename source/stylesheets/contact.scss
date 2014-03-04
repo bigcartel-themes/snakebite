@@ -35,6 +35,7 @@
   padding: 15px;
   width: 100%;
   font-size: 16px;
+  background: none;
   border: 3px solid #{"{{theme.primary_color}}"};
   font-family: "#{"{{theme.text_font}}"}", sans-serif, sans-serif;
   color: #{"{{theme.primary_color}}"};
@@ -62,7 +63,7 @@
   width: 125px;
   height: 52px;
   float: left;
-  background: #{"{{theme.background_color}}"};
+  background: #FFFFFF;
   border-right: 3px solid #{"{{theme.primary_color}}"};
 }
 .captcha-input {

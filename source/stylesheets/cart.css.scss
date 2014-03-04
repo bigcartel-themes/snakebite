@@ -326,13 +326,14 @@
   font-size: 50px;
   font-weight: 700;
   margin: 10px 0;
+  border-radius: 5px;
 }
 .checkout-placeholder {
   margin-top: 100px;
 }
 .cart .errors {
   margin-bottom: 0;
-  border-bottom: 3px solid #F72E2A;
+  border-bottom: 3px solid #{"{{theme.primary_color}}"};
   border-radius: 0;
   padding: 15px 20%;
 }

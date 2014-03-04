@@ -159,7 +159,7 @@
 }
 .btn-pulse {
   @include scale(1.2);
-  @include single-transition(transform, 50ms, ease-in-out);
+  @include single-transition(transform, 100ms, ease-in-out);
 }
 .btn-inactive:hover {
   background: none;
