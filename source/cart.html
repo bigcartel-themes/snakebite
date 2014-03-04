@@ -79,7 +79,7 @@
                 <p>We don't ship to {{ cart.country.name }}</p>
               {% endif %}
             {% else %}
-              <p>{{ cart.shipping.amount | money_with_sign }}</p>
+              <p class="shipping-amount">{{ cart.shipping.amount | money_with_sign }}</p>
             {% endif %}
           {% else %}
             <p>{{ cart.shipping.amount | money_with_sign }}</p>

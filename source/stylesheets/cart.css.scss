@@ -118,6 +118,12 @@
   height: 50%;
   display: table;
   text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .cart .quantity-increment {
   border-bottom: 3px solid #{"{{theme.primary_color}}"};

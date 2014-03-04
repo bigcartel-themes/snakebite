@@ -189,6 +189,12 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .btn:hover {
   background: #{"{{theme.primary_color}}"};
@@ -321,6 +327,7 @@ header .inner {
   right: 0px;
   background: #{"{{theme.primary_color}}"};
   text-align: right;
+  overflow: hidden;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -458,6 +465,8 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.09em;
   font-weight: 700;
+  position: relative;
+  z-index: 500;
 }
 footer a {
   color: #{"{{theme.background_color}}"};

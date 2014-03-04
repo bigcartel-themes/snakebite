@@ -36,12 +36,13 @@ $(function() {
       setTimeout(function() {
         cartCountEl.html(cart.item_count);
         cartOrbEl.removeClass('cart-orb-animate');
-      }, 800);
+      }, 500);
     }
   }
   Cart.updateTotals = function(cart) {
     $('.header-subtotal-number').html(Format.money(cart.subtotal, true, true));
     $('.grand-total').html(Format.money(cart.total, true, true));
+    $('.shipping-amount').html(Format.money(cart.shipping.amount, true, true));
   }
   Cart.updateItemPrice = function(cart, index) {
     el = $('.cart-item')[index];
@@ -102,6 +103,7 @@ $(function() {
     clearTimeout(incrementTimer);
     incrementTimer = setTimeout(function() {
       Cart.updateItem(cartItem.id, newQuantity, function(cart) {
+        console.log(cart);
         Cart.updateTotals(cart);
         Cart.updateCount(cart);
         Cart.updateItemPrice(cart, cartItem.index);

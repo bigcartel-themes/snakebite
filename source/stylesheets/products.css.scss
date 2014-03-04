@@ -61,6 +61,7 @@
 }
 .pagination .current,
 .pagination a:hover {
+  border-radius: 5px;
   background: #{"{{theme.highlight_color}}"};
 }
 .pagination .disabled {
