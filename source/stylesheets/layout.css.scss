@@ -147,7 +147,7 @@ html, body {
 }
 body {
   background-color: #{"{{theme.background_color}}"};
-  background-image: #{"{% if theme.background_image != blank %} url(\"{{ theme.background_image.url }}\") {% else %} none {% endif %}"};
+  background-image: #{"{% if theme.images.background != blank %} url(\"{{ theme.images.background.url }}\") {% else %} none {% endif %}"};
 }
 .wrapper {
   overflow: hidden;
@@ -272,7 +272,7 @@ header .inner {
   float: left;
   height: 70px;
   width: 300px;
-  background-image: #{"{% if theme.logo != blank %} url(\"{{ theme.logo.url }}\") {% else %} none {% endif %}"};
+  background-image: #{"{% if theme.images.logo != blank %} url(\"{{ theme.images.logo.url }}\") {% else %} none {% endif %}"};
   background-size: contain;
   background-position: center left;
   background-repeat: no-repeat;  

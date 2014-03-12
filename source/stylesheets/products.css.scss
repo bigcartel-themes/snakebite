@@ -75,7 +75,7 @@
   bottom: 0;
   z-index: -1;
   background-color: #{"{{theme.accent_color}}"};
-  background-image: #{"{% if theme.accent_image != blank %} url(\"{{ theme.accent_image.url }}\") {% else %} none {% endif %}"};
+  background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"};
 }
 .preview {
   width: 300px;

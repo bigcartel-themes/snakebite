@@ -8,12 +8,12 @@
       "description": "Adds your logo to the header. Suggested size 140px h by 600px w."
     },
     {
-      "variable": "background_image",
+      "variable": "background",
       "label": "Background Image",
       "description": "Repeating image replaces background color."
     },
     {
-      "variable": "accent_image",
+      "variable": "accent",
       "label": "Accent Image",
       "description": "Repeating image replaces accent color."
     }
