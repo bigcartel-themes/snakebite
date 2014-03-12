@@ -87,7 +87,7 @@
     "optimize_legibility": true,
     "antialias_text": true,
     "content_width": "700px",
-    "header_image": "{{image}}",
+    "header_image": "{{logo}}",
     "background_color": "{{background_color}}",
     "title_font": "{{header_font}}",
     "title_color": "{{primary_color}}",
