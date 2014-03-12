@@ -10,12 +10,12 @@
     {
       "variable": "background",
       "label": "Background Image",
-      "description": "Repeating image replaces background color."
+      "description": "Repeating image replaces background color"
     },
     {
       "variable": "accent",
       "label": "Accent Image",
-      "description": "Repeating image replaces accent color."
+      "description": "Repeating image replaces accent color"
     }
   ],
   "fonts": [
@@ -58,7 +58,7 @@
       "label": "Enable product slideshows",
       "type": "boolean",
       "default": true,
-      "description": "Displays product images as a slideshow instead of stacked images."
+      "description": "Displays product images as a slideshow instead of stacked images"
     },
     {
       "variable": "show_social",
@@ -83,7 +83,7 @@
       "description": "The number of products shown per page"
     }
   ],
-    "checkout": {
+  "checkout": {
     "optimize_legibility": true,
     "antialias_text": true,
     "content_width": "700px",
