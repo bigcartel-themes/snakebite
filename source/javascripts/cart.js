@@ -24,6 +24,11 @@ $(function() {
     if(cart.item_count === 0) {
       $('.cart-wrap').hide();
       $('.cart-empty-modal').fadeIn();
+      cartCountEl.addClass('cart-count-animate');
+      setTimeout(function() {
+        cartCountEl.html(cart.item_count);
+        cartCountEl.removeClass('cart-count-animate');
+      }, 150);
       setTimeout(function() {
         document.location.href = '../'; 
       }, 1500);

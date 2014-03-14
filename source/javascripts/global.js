@@ -20,6 +20,18 @@ $(function() {
     });
   }
   
+  /*
+  if($(window).width() > 700) {
+    $('.preview').hide();
+    $('.preview').each(function() {
+      var preview = $(this);
+      preview.find('img').load(function() {
+        preview.fadeIn(200);
+      });
+    });
+  }
+  */
+  
   // Dropdown menu
   $('.nav-main li:not(.cart-status, .mobile-nav-trigger)').mouseenter(function() {
     $(this).addClass('active');
