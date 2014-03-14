@@ -1,4 +1,29 @@
-<div class="centered-message">
-  <h1>We'll be back soon!</h1>
-  <h2>We&#8217;re working on our site at the moment.</h2>
-</div>
+<!DOCTYPE html>
+<head>
+  <title>{{ store.name }} &mdash; {{ page.name }}</title>
+  <meta charset="utf-8">
+  <meta name="description" content="{{ page.meta_description }}">
+  <meta name="keywords" content="{{ page.meta_keywords }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+  <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css" />
+
+  {{ head_content }}
+</head>
+<body>
+
+  <section class="main clear">
+    
+    <div class="inner format-text clear">
+    
+      <div class="centered-message">
+        <h1>We'll be back soon!</h1>
+        <h2>We&#8217;re working on our site at the moment.</h2>
+      </div>
+      
+    </div>
+    
+  </section>
+
+</body>  
+</html>
