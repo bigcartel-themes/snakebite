@@ -256,6 +256,9 @@ header {
   z-index: 500;
   @include single-transition(background, 200ms);
 }
+.maintenance_on header {
+  top: 27px;
+}
 header .inner {
   height: 70px;
   position: relative;
