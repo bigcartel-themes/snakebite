@@ -154,7 +154,7 @@
   outline: none;
 }
 .cart-item-remove {
-  color: #{"{{theme.accent_color}}"};
+  color: #{"{% if theme.accent_color != 'transparent' %} {{ theme.accent_color }} {% else %} #FFFFFF {% endif %}"};
   background: #{"{{theme.primary_color}}"};
   width: 100%;
   height: 50%;
