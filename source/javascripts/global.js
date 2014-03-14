@@ -11,27 +11,6 @@ $(function() {
     }
   }
   
-  // Fade in page content on load
-  if($(window).width() > 700) {
-    var waitForLoad = $('.main .inner, footer');
-    waitForLoad.hide();
-    $(window).load(function() {
-      waitForLoad.fadeIn(400);
-    });
-  }
-  
-  /*
-  if($(window).width() > 700) {
-    $('.preview').hide();
-    $('.preview').each(function() {
-      var preview = $(this);
-      preview.find('img').load(function() {
-        preview.fadeIn(200);
-      });
-    });
-  }
-  */
-  
   // Dropdown menu
   $('.nav-main li:not(.cart-status, .mobile-nav-trigger)').mouseenter(function() {
     $(this).addClass('active');
