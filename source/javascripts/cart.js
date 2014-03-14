@@ -57,7 +57,7 @@ $(function() {
   }  
   Cart.removeItemAnimate = function(itemID, el) {
     el.slideUp(150);
-    Cart.removeItem(itemID, function(cart) {
+    Cart.updateItem(itemID, 0, function(cart) {
       Cart.updateTotals(cart);
       Cart.updateCount(cart);
     });
@@ -108,7 +108,6 @@ $(function() {
     clearTimeout(incrementTimer);
     incrementTimer = setTimeout(function() {
       Cart.updateItem(cartItem.id, newQuantity, function(cart) {
-        console.log(cart);
         Cart.updateTotals(cart);
         Cart.updateCount(cart);
         Cart.updateItemPrice(cart, cartItem.index);
