@@ -24,9 +24,6 @@
       <meta property="og:url" content="{{ store.url }}{{ page.url }}" />
     {% endif %}
 
-  	<!-- Google Fonts -->
-  	<link href='http://fonts.googleapis.com/css?family=Knewave|Nova+Slim|Permanent+Marker|Hanalei+Fill|Della+Respira|Chewy|Vampiro+One|Allerta+Stencil|Bangers|Press+Start+2P|Montserrat|Cutive' rel='stylesheet' type='text/css'>
-  	
   	<!-- Styles -->
     <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">
   
@@ -47,7 +44,7 @@
     <div class="wrapper">
       <header>
         <div class="inner clear">
-          {% if theme.logo.url != blank %}
+          {% if theme.images.logo.url != blank %}
             <a class="logo" href="/"></a>
           {% else %}
             <a class="wordmark" href="/" data-store-name="{{ store.name | escape }}">{{ store.name }}</a>

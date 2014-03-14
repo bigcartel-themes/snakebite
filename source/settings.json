@@ -1,21 +1,21 @@
 {
-  "name": "Fuzzco",
-  "version": "0.3.0",
+  "name": "Snakebite",
+  "version": "1.0.1",
   "images": [
     {
       "variable": "logo",
       "label": "Logo",
-      "description": "Adds your logo to the header. Suggested size 140px h by 600px w."
+      "description": "Good for a logo up to 600 x 140 pixels"
     },
     {
-      "variable": "background_image",
+      "variable": "background",
       "label": "Background Image",
-      "description": "Repeating image replaces background color."
+      "description": "Repeating image replaces background color"
     },
     {
-      "variable": "accent_image",
+      "variable": "accent",
       "label": "Accent Image",
-      "description": "Repeating image replaces accent color."
+      "description": "Repeating image replaces accent color"
     }
   ],
   "fonts": [
@@ -58,7 +58,7 @@
       "label": "Enable product slideshows",
       "type": "boolean",
       "default": true,
-      "description": "Displays product images as a slideshow instead of stacked images."
+      "description": "Displays product images as a slideshow instead of stacked images"
     },
     {
       "variable": "show_social",
@@ -83,11 +83,11 @@
       "description": "The number of products shown per page"
     }
   ],
-    "checkout": {
+  "checkout": {
     "optimize_legibility": true,
     "antialias_text": true,
     "content_width": "700px",
-    "header_image": "{{image}}",
+    "header_image": "{{logo}}",
     "background_color": "{{background_color}}",
     "title_font": "{{header_font}}",
     "title_color": "{{primary_color}}",
