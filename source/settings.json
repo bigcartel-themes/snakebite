@@ -89,6 +89,7 @@
     "content_width": "700px",
     "header_image": "{{logo}}",
     "background_color": "{{background_color}}",
+    "background_image": "none",
     "title_font": "{{header_font}}",
     "title_color": "{{primary_color}}",
     "title_background_color": "{{background_color}}",
