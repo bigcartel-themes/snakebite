@@ -11,6 +11,19 @@ $(function() {
     }
   }
   
+  // Fade in page content on load
+  if($(window).width() > 700) {
+    $('.preview img, .preview .badge').hide();
+    $('.preview img').each(function() {
+      var preview = $(this);
+      var badges = preview.parent().find('.badge');
+      preview.load(function() {
+        preview.fadeIn(200);
+        badges.fadeIn(200);
+      });
+    });
+  }
+  
   // Dropdown menu
   $('.nav-main li:not(.cart-status, .mobile-nav-trigger)').mouseenter(function() {
     $(this).addClass('active');
