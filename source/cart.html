@@ -126,9 +126,11 @@
 <div class="centered-message centered-message-cart">
   <h1>Your cart is empty!</h1>
   <script type="text/javascript">
-    setTimeout(function() {
-      document.location.href = '../'; 
-    }, 1500);
+    if(!(/\/admin\/design/.test(top.location.pathname))) {
+      setTimeout(function() {
+        document.location.href = '/'; 
+      }, 1500);
+    }
   </script>
 </div>
 

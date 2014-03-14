@@ -30,7 +30,7 @@ $(function() {
         cartCountEl.removeClass('cart-count-animate');
       }, 150);
       setTimeout(function() {
-        document.location.href = '../'; 
+        document.location.href = '/'; 
       }, 1500);
     } else if(curCount != cart.item_count) {
       cartCountEl.addClass('cart-count-animate');

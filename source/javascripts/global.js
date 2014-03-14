@@ -1,5 +1,5 @@
 $(function() {
- 
+  
   // Retina support
 	if(window.devicePixelRatio >= 1.2){
     var images = document.getElementsByTagName('img');
