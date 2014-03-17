@@ -57,7 +57,6 @@ $(function() {
   Cart.removeItemAnimate = function(itemID, el) {
     el.slideUp(150);
     Cart.updateItem(itemID, 0, function(cart) {
-      console.log('updateItem callback');
       Cart.updateTotals(cart);
       Cart.updateCount(cart);
     });
