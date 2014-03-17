@@ -12,7 +12,7 @@
   font-weight: normal;
   font-style: normal;
 }
- 
+
 [data-icon]:before {
   font-family: "icons" !important;
   content: attr(data-icon);
@@ -25,7 +25,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
- 
+
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "icons" !important;
@@ -37,27 +37,27 @@
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-} 
+}
 .icon-cart:before {
-   content: "a"; 
-} 
+   content: "a";
+}
 .icon-menu:before {
-   content: "b"; 
-} 
+   content: "b";
+}
 .icon-close:before {
-   content: "c"; 
-} 
+   content: "c";
+}
 .icon-close-bold:before {
-   content: "d"; 
-} 
+   content: "d";
+}
 .icon-caret:before {
-   content: "e"; 
-} 
+   content: "e";
+}
 .icon-arrow-right:before {
-   content: "f"; 
-} 
+   content: "f";
+}
 .icon-arrow-left:before {
-   content: "g"; 
+   content: "g";
 }
 
 /* TYPOGRAPHY
@@ -114,6 +114,7 @@ h2 {
 h3 {
   font-size: 22px;
   line-height: 1.4em;
+  -webkit-transform: translateZ(0);
 }
 h4 {
   font-size: 12px;
@@ -153,7 +154,7 @@ body {
   overflow: hidden;
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -80px; 
+  margin-bottom: -80px;
 }
 .wrapper:after {
   content: "";
@@ -215,10 +216,12 @@ body {
   text-transform: uppercase;
   border-radius: 70px;
   display: table;
+  -webkit-transform: translateZ(0);
 }
 .badge span {
   display: table-cell;
   vertical-align: middle;
+  -webkit-transform: translateZ(0);
 }
 .badge-empty {
   color: #{"{{theme.primary_color}}"};
@@ -278,7 +281,7 @@ header .inner {
   background-image: #{"{% if theme.images.logo != blank %} url(\"{{ theme.images.logo.url | constrain: '600', '140' }}\") {% else %} none {% endif %}"};
   background-size: contain;
   background-position: center left;
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
 }
 .logo img {
   height: 100%;
@@ -378,31 +381,31 @@ header .inner {
 @-webkit-keyframes orbpulse {
   0%   { -webkit-transform: scale(1); }
   25% { -webkit-transform: scale(2); }
-  50%   { -webkit-transform: scale(1); } 
+  50%   { -webkit-transform: scale(1); }
   75% { -webkit-transform: scale(1.2); }
   100%   { -webkit-transform: scale(1); }
 }
 @-moz-keyframes orbpulse {
   0%   { -moz-transform: scale(1); }
   25% { -moz-transform: scale(2); }
-  50%   { -moz-transform: scale(1); } 
+  50%   { -moz-transform: scale(1); }
   75% { -moz-transform: scale(1.2); }
   100%   { -moz-transform: scale(1); }
-} 
+}
 @-o-keyframes orbpulse {
   0%   { -o-transform: scale(1); }
   25% { -o-transform: scale(2); }
-  50%   { -o-transform: scale(1); } 
+  50%   { -o-transform: scale(1); }
   75% { -o-transform: scale(1.2); }
   100%   { -o-transform: scale(1); }
 }
 @keyframes orbpulse {
   0%   { transform: scale(1); }
   25% { transform: scale(2); }
-  50%   { transform: scale(1); } 
+  50%   { transform: scale(1); }
   75% { transform: scale(1.2); }
   100%   { transform: scale(1); }
-} 
+}
 .cart-orb {
   height: 60px;
   width: 60px;
@@ -519,7 +522,7 @@ footer .footer-text {
   .main .inner {
     margin-top: 130px;
   }
-    
+
   /* Typography */
   h1 {
     font-size: 60px;
@@ -532,7 +535,7 @@ footer .footer-text {
     font-size: 18px;
     line-height: 1.7em;
   }
-  
+
   /* DOM mods */
   .visible-phone { display: none !important ; }
   .visible-tablet { display: inherit !important ; }
@@ -550,18 +553,18 @@ footer .footer-text {
   .main .inner {
     margin-top: 50px;
   }
-    
+
   /* Typography */
   h3 {
     font-size: 16px;
   }
-  
+
   /* Modules */
   .btn {
     padding: 15px 30px;
     font-size: 16px;
-  }  
-  
+  }
+
   /* Header */
   header {
     position: relative;
@@ -652,7 +655,7 @@ footer .footer-text {
     background: none;
     color: #{"{{theme.background_color}}"};
   }
-  
+
 }
 
 /* SMALL */
@@ -683,7 +686,7 @@ footer .footer-text {
   header .inner {
     margin-right: 10px;
   }
-  
+
   /* Modules */
   .highlight {
     font-size: 16px;
@@ -691,7 +694,7 @@ footer .footer-text {
   .badge-view {
     display: none;
   }
-      
+
   /* Footer */
   footer .copyright,
   footer .footer-text {
@@ -701,7 +704,7 @@ footer .footer-text {
   footer .footer-text {
     margin-top: 10px;
   }
- 
+
   /* DOM mods */
   .visible-phone { display: inherit !important ; }
   .visible-tablet { display: none !important ; }
@@ -714,5 +717,5 @@ footer .footer-text {
 
 /* EXTRA SMALL */
 @media only screen and (max-width : $break-extra-small) {
-  
+
 }
