@@ -90,10 +90,10 @@
   margin-bottom: 30px;
 }
 .product .description p {
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 .product .description p:last-child {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 .badge-sale {
   position: absolute;
@@ -138,24 +138,24 @@
   color: #{"{{theme.highlight_color}}"};
 }
 @-webkit-keyframes purchasepulse {
-  0%   { -webkit-transform: scale(1); } 
-  50% { -webkit-transform: scale(1.2); } 
-  100%   { -webkit-transform: scale(1); } 
+  0%   { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(1.2); }
+  100%   { -webkit-transform: scale(1); }
 }
 @-moz-keyframes purchasepulse {
-  0%   { -moz-transform: scale(.95); } 
-  50% { -moz-transform: scale(1.2); } 
-  100%   { -moz-transform: scale(1); } 
+  0%   { -moz-transform: scale(.95); }
+  50% { -moz-transform: scale(1.2); }
+  100%   { -moz-transform: scale(1); }
 }
 @-o-keyframes purchasepulse {
-  0%   { -o-transform: scale(.95); } 
-  50% { -o-transform: scale(1.2); } 
-  100%   { -o-transform: scale(1); } 
+  0%   { -o-transform: scale(.95); }
+  50% { -o-transform: scale(1.2); }
+  100%   { -o-transform: scale(1); }
 }
 @keyframes purchasepulse {
-  0%   { transform: scale(.95); } 
-  50% { transform: scale(1.2); } 
-  100%   { transform: scale(1); } 
+  0%   { transform: scale(.95); }
+  50% { transform: scale(1.2); }
+  100%   { transform: scale(1); }
 }
 .btn-purchase {
   display: block;
