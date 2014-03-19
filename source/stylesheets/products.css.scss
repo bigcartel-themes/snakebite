@@ -31,6 +31,7 @@
 .preview:hover .badge-empty {
   color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"};
   background: #{"{{theme.primary_color}}"};
+  @include translateZ(0);
   @include scale(1.1);
   @include single-transition(transform, 100ms, ease-in-out);
 }

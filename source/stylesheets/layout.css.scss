@@ -114,7 +114,7 @@ h2 {
 h3 {
   font-size: 22px;
   line-height: 1.4em;
-  -webkit-transform: translateZ(0);
+  @include translateZ(0);
 }
 h4 {
   font-size: 12px;
@@ -216,12 +216,12 @@ body {
   text-transform: uppercase;
   border-radius: 70px;
   display: table;
-  -webkit-transform: translateZ(0);
+  @include translateZ(0);
 }
 .badge span {
   display: table-cell;
   vertical-align: middle;
-  -webkit-transform: translateZ(0);
+  @include translateZ(0);
 }
 .badge-empty {
   color: #{"{{theme.primary_color}}"};
