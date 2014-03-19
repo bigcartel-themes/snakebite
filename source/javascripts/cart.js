@@ -53,7 +53,7 @@ $(function() {
     el = $('.cart-item')[index];
     el = $(el).find('.price-update');
     var price = cart.items[index].price;
-    el.html(Format.money(price, true));
+    el.html(Format.money(price, true, true));
   }  
   Cart.removeItemAnimate = function(itemID, el) {
     el.slideUp(150);
