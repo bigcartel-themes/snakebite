@@ -14,11 +14,17 @@ $(function() {
   // Fade in page content on load
   if($(window).width() > 700) {
     $('.preview img, .preview .badge').hide();
-    $('.preview img').each(function() {
+    $('.preview').each(function() {
       var preview = $(this);
-      var badges = preview.parent().find('.badge');
-      preview.load(function() {
-        preview.fadeIn(200);
+      var img = preview.find('img').first();
+      
+      // IE cache loading fix - swapping urls triggers onload
+      var imgSrc = img.attr('src');
+      img.attr('src', imgSrc);
+      
+      var badges = preview.find('.badge');
+      img.one('load', function() {
+        img.fadeIn(200);
         badges.fadeIn(200);
       });
     });
