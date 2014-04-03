@@ -12,25 +12,20 @@ $(function() {
   }
 
   // Fade in page content on load
-  if($(window).width() > 700) {
-    $('.preview img, .preview .badge').hide();
-    $('.preview').each(function() {
-      var preview = $(this);
-      var img = preview.find('img').first();
-
-      // IE cache loading fix - swapping urls triggers onload
-      var imgSrc = img.attr('src');
-      img.attr('src', imgSrc);
-
-      var badges = preview.find('.badge');
-      img.one('load', function() {
-        img.fadeIn(200);
-        badges.fadeIn(200);
-      }).each(function() {
-        if(this.complete) $(this).load();
-      });
-    });
-  }
+  if($(window).width() > 700) {
+    $('.preview img, .preview .badge').hide();
+    $('.preview').each(function() {
+      var preview = $(this);
+      var img = preview.find('img').first();
+      var badges = preview.find('.badge');
+      var tmpImg = new Image();
+      tmpImg.src = img.attr('src');
+      tmpImg.onload = function() {
+        img.fadeIn(200);
+        badges.fadeIn(200);
+      };
+    });
+  }
 
   // Dropdown menu
   $('.nav-main li:not(.cart-status, .mobile-nav-trigger)').mouseenter(function() {
