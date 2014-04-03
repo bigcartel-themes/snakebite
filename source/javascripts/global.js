@@ -1,5 +1,5 @@
 $(function() {
-  
+
   // Retina support
 	if(window.devicePixelRatio >= 1.2){
     var images = document.getElementsByTagName('img');
@@ -10,26 +10,28 @@ $(function() {
         }
     }
   }
-  
+
   // Fade in page content on load
   if($(window).width() > 700) {
     $('.preview img, .preview .badge').hide();
     $('.preview').each(function() {
       var preview = $(this);
       var img = preview.find('img').first();
-      
+
       // IE cache loading fix - swapping urls triggers onload
       var imgSrc = img.attr('src');
       img.attr('src', imgSrc);
-      
+
       var badges = preview.find('.badge');
       img.one('load', function() {
         img.fadeIn(200);
         badges.fadeIn(200);
+      }).each(function() {
+        if(this.complete) $(this).load();
       });
     });
   }
-  
+
   // Dropdown menu
   $('.nav-main li:not(.cart-status, .mobile-nav-trigger)').mouseenter(function() {
     $(this).addClass('active');
@@ -37,7 +39,7 @@ $(function() {
   $('.nav-main li:not(.cart-status, .mobile-nav-trigger)').mouseleave(function() {
     $(this).removeClass('active');
   });
-  
+
   // Mobile nav
   $('.mobile-nav-trigger').click(function(e) {
     e.preventDefault();
@@ -61,7 +63,7 @@ $(function() {
       $(this).parent().find('.accordion').slideDown(200);
     }
   });
-  
+
   // Wordmark shortening
   var wordmarkEl = $('.wordmark');
   if(wordmarkEl.length > 0) {
@@ -86,5 +88,5 @@ $(function() {
     });
     wordmarkSizing();
   }
-  
+
 });
