@@ -18,6 +18,13 @@
       "description": "Optional (repeating pattern suggested)"
     }
   ],
+  "image_sets": [
+    {
+      "variable": "slideshow",
+      "label": "Slideshow",
+      "description": "900px by 500px images recommended"
+    }
+  ],
   "fonts": [
     {
       "variable": "header_font",
