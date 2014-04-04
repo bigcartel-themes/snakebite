@@ -21,15 +21,15 @@
   "image_sets": [
     {
       "variable": "slideshow",
-      "label": "Slideshow",
-      "description": "900px by 500px images recommended"
+      "label": "Home Slideshow",
+      "description": "1800px by 900px images recommended"
     }
   ],
   "fonts": [
     {
       "variable": "header_font",
       "label": "Header Font",
-      "default": "Vampiro One"
+      "default": "Cutive"
     },
     {
       "variable": "text_font",
@@ -46,7 +46,7 @@
     {
       "variable": "primary_color",
       "label": "Primary Color",
-      "default": "#F72E2A"
+      "default": "#3936E0"
     },
     {
       "variable": "highlight_color",
@@ -56,7 +56,7 @@
     {
       "variable": "accent_color",
       "label": "Accent Color",
-      "default": "#DEFFFD"
+      "default": "#FFEAEA"
     }
   ],
   "options": [

@@ -1,53 +1,59 @@
-{% if contact.sent %}
+<section class="main clear">
+  <div class="inner clear">
 
-<div class="centered-message">
-  <h1>Sent!</h1>
-  <p>Your message has been sent and we&#8217;ll get back to you soon.</p>
-</div>
-
-{% else %}
-
-<h1>Contact</h1>
-<div class="contact-form-wrap">
-  {% if errors != blank %}
-  <ul class="errors">
-    {% for error in errors %}
-    <li>{{ error }}</li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-  <form class="contact-form" method="post" action="/contact">
-    <div class="contact-row clear">
-      <div class="contact-row-half">
-        <label for="name">Name</label>
-        {{ contact | contact_input: 'name' }}
-      </div>
-      <div class="contact-row-half">
-        <label for="email">Email</label>
-        {{ contact | contact_input: 'email' }}
-      </div>
+    {% if contact.sent %}
+    
+    <div class="centered-message">
+      <h1>Sent!</h1>
+      <p>Your message has been sent and we&#8217;ll get back to you soon.</p>
     </div>
-    <div class="contact-row">
-      <label for="subject">Subject</label>
-      {{ contact | contact_input: 'subject' }}
-    </div>
-    <div class="contact-row">
-      <label for="message">Message</label>
-      {{ contact | contact_input: 'message' }}
-    </div>
-    <div class="contact-row">
-      <div class="contact-row-half">
-        <label for="captcha">Spam check</label>
-        <div class="captcha-wrap">
-          <div class="captcha-code">{{ contact.captcha }}</div>
-          <div class="captcha-input">{{ contact | contact_input: 'captcha' }}</div>
+    
+    {% else %}
+    
+    <h1>Contact</h1>
+    <div class="contact-form-wrap">
+      {% if errors != blank %}
+      <ul class="errors">
+        {% for error in errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <form class="contact-form" method="post" action="/contact">
+        <div class="contact-row clear">
+          <div class="contact-row-half">
+            <label for="name">Name</label>
+            {{ contact | contact_input: 'name' }}
+          </div>
+          <div class="contact-row-half">
+            <label for="email">Email</label>
+            {{ contact | contact_input: 'email' }}
+          </div>
         </div>
-      </div>
-      <div class="contact-row-half">
-        <button class="btn" id="contact-submit" type="submit" name="submit" title="Send us an email">Send Message</button>
-      </div>
+        <div class="contact-row">
+          <label for="subject">Subject</label>
+          {{ contact | contact_input: 'subject' }}
+        </div>
+        <div class="contact-row">
+          <label for="message">Message</label>
+          {{ contact | contact_input: 'message' }}
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-half">
+            <label for="captcha">Spam check</label>
+            <div class="captcha-wrap">
+              <div class="captcha-code">{{ contact.captcha }}</div>
+              <div class="captcha-input">{{ contact | contact_input: 'captcha' }}</div>
+            </div>
+          </div>
+          <div class="contact-row-half">
+            <button class="btn" id="contact-submit" type="submit" name="submit" title="Send us an email">Send Message</button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
-</div>
-
-{% endif %}
+    
+    {% endif %}
+    
+  </div>
+</section>

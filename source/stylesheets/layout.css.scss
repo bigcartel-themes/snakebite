@@ -248,6 +248,36 @@ body {
   margin-top: 0;
 }
 
+/* Pagers */
+.cycle-pager {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 400;
+}
+.cycle-pager > span {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  padding: 6px;
+  cursor: pointer;
+}
+.cycle-pager > span > span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 20px;
+  text-indent: -999px;
+  background: #{"{{theme.highlight_color}}"};
+  border: 3px solid #{"{{theme.primary_color}}"};
+  position: relative;
+  @include single-transition(background, 300ms);
+}
+.cycle-pager span.cycle-pager-active span {
+  background: #{"{{theme.primary_color}}"};
+  @include single-transition(background, 300ms);
+}
+
 /* HEADER
 --------------------------------------------- */
 header {
@@ -692,6 +722,11 @@ footer .footer-text {
   }
   .badge-view {
     display: none;
+  }
+  .cycle-pager {
+    width: 100%;
+    left: 0;
+    text-align: center;
   }
 
   /* Footer */

@@ -9,9 +9,9 @@ options[:store] = 'testdriveluna'
 
 options[:customization] = {
   :slideshow => [
-    { :url => 'http://placehold.it/1200x600/000000/ffffff&text=Slideshow image one', :width => 900, :height => 500 },
-    { :url => 'http://placehold.it/1200x600/000000/ffffff&text=Slideshow image two', :width => 900, :height => 500 },
-    { :url => 'http://placehold.it/1200x600/000000/ffffff&text=Slideshow image three', :width => 900, :height => 500 }
+    { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image one', :width => 1800, :height => 900, :name => 'snake' },
+    { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image two', :width => 1800, :height => 900, :name => 'snake' },
+    { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image three', :width => 1800, :height => 900, :name => 'snake' }
   ]
 }
 
