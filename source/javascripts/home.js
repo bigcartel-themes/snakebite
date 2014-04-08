@@ -6,7 +6,6 @@ $(function() {
     var slideshowAtts = {
       speed: 400,
       swipe: true,
-      loader: 'wait',
       autoHeight: 'calc',
       pagerTemplate: '<span><span></span></span>',
       next: $('.home-slideshow img')
