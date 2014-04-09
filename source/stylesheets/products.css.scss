@@ -175,7 +175,7 @@
 }
 
 .home-slideshow-wrap {
-  max-width: 1480px;
+  max-width: 1200px;
   margin: 76px auto 0;
   position: relative;
 }
@@ -198,9 +198,12 @@
   text-align: center;
 }
 
-
 /* EXTRA LARGE */
 @media only screen and (min-width : $break-extra-large) {
+
+  .home-slideshow-wrap {
+    max-width: 1480px;
+  }
 
 }
 

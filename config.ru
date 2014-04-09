@@ -4,16 +4,15 @@ options = {}
 
 # Use data from any store to make sure your theme looks great with all sorts of products, pages,
 # categories, and more. Just give us the subdomain. Default is "dugway" for dugway.bigcartel.com.
+# options[:store] = 'testdriveluna'
 
-options[:store] = 'testdriveluna'
-
-options[:customization] = {
-  :slideshow => [
-    { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image one', :width => 1800, :height => 900, :name => 'snake' },
-    { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image two', :width => 1800, :height => 900, :name => 'snake' },
-    { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image three', :width => 1800, :height => 900, :name => 'snake' }
-  ]
-}
+# options[:customization] = {
+#   :slideshow => [
+#     { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image one', :width => 1800, :height => 900, :name => 'snake' },
+#     { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image two', :width => 1800, :height => 900, :name => 'snake' },
+#     { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image three', :width => 1800, :height => 900, :name => 'snake' }
+#   ]
+# }
 
 # Simulate the customization done by store owners by passing values to different variables.
 # Default values are based on the "default" for each setting in your settings.json.
