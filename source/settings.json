@@ -5,7 +5,8 @@
     {
       "variable": "logo",
       "label": "Logo",
-      "description": "Good for a logo up to 600 x 140 pixels"
+      "description": "Good for a logo up to 600 x 140 pixels",
+      "default": "snakebite-logo.png"
     },
     {
       "variable": "background",
