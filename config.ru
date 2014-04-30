@@ -6,13 +6,13 @@ options = {}
 # categories, and more. Just give us the subdomain. Default is "dugway" for dugway.bigcartel.com.
 # options[:store] = 'testdriveluna'
 
-# options[:customization] = {
-#   :slideshow => [
-#     { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image one', :width => 1800, :height => 900, :name => 'snake' },
-#     { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image two', :width => 1800, :height => 900, :name => 'snake' },
-#     { :url => 'http://placehold.it/1800x900/31373f/ffffff&text=Slideshow image three', :width => 1800, :height => 900, :name => 'snake' }
-#   ]
-# }
+options[:customization] = {
+  :slideshow => [
+    { :url => 'images/snakebite-slide-1.jpg', :width => 1400, :height => 700, :name => 'Snake One' },
+    { :url => 'images/snakebite-slide-2.jpg', :width => 1400, :height => 700, :name => 'Snake Two' },
+    { :url => 'images/snakebite-slide-3.jpg', :width => 1400, :height => 700, :name => 'Snake Three' }
+  ]
+}
 
 # Simulate the customization done by store owners by passing values to different variables.
 # Default values are based on the "default" for each setting in your settings.json.
