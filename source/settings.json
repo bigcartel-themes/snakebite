@@ -23,7 +23,12 @@
     {
       "variable": "slideshow",
       "label": "Home Slideshow",
-      "description": "1400px by 700px images recommended"
+      "description": "1400px by 700px images recommended",
+      "defaults": [
+        "snakebite-slide-1.jpg", 
+        "snakebite-slide-2.jpg", 
+        "snakebite-slide-3.jpg"
+      ]
     }
   ],
   "fonts": [

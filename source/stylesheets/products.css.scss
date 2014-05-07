@@ -181,6 +181,7 @@
 }
 .home-slideshow {
   margin-left: 80px;  
+  @include translateZ(0);
 }
 .slideshow-stripe {
   width: 80px;
