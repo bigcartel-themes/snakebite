@@ -1,11 +1,12 @@
 {
   "name": "Snakebite",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "images": [
     {
       "variable": "logo",
       "label": "Logo",
-      "description": "Good for a logo up to 600 x 140 pixels"
+      "description": "Good for a logo up to 600 x 140 pixels",
+      "default": "snakebite-logo.png"
     },
     {
       "variable": "background",
@@ -18,11 +19,23 @@
       "description": "Optional (repeating pattern suggested)"
     }
   ],
+  "image_sets": [
+    {
+      "variable": "slideshow",
+      "label": "Home Slideshow",
+      "description": "1400px by 700px images recommended",
+      "defaults": [
+        "snakebite-slide-1.jpg", 
+        "snakebite-slide-2.jpg", 
+        "snakebite-slide-3.jpg"
+      ]
+    }
+  ],
   "fonts": [
     {
       "variable": "header_font",
       "label": "Header Font",
-      "default": "Vampiro One"
+      "default": "Cutive"
     },
     {
       "variable": "text_font",
@@ -39,7 +52,7 @@
     {
       "variable": "primary_color",
       "label": "Primary Color",
-      "default": "#F72E2A"
+      "default": "#3936E0"
     },
     {
       "variable": "highlight_color",
@@ -49,7 +62,7 @@
     {
       "variable": "accent_color",
       "label": "Accent Color",
-      "default": "#DEFFFD"
+      "default": "#FFEAEA"
     }
   ],
   "options": [

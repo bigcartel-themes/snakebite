@@ -1,52 +1,75 @@
-{% paginate products from products.current by theme.products_per_page %}
+{% if theme.image_sets.slideshow.size > 0 %}
+<section class="main clear has-slideshow">
+{% else %}
+<section class="main clear">
+{% endif %}
 
-{% if products != blank %}
-
-  {% for product in products %}
-  
-    <div class="preview rand-{{ forloop.index | modulo:7 }}">
-      <div class="preview-inner">
-        <a href="{{ product.url }}">
-          <div class="image-wrap" style="padding-bottom: {{ product.image.height | plus:0.0 | divided_by:(product.image.width | times:100 }}%;">
-            {% if theme.show_view_badges %}
-            <div class="badge badge-empty badge-view"><span>View</span></div>
-            {% endif %}
-            {% if product.status == 'coming-soon' %}
-              <div class="badge badge-filled badge-status">
-              <span>Coming<br/>Soon</span>
-              </div>
-            {% elsif product.status == 'sold-out' %}
-              <div class="badge badge-filled badge-status">
-              <span>Sold<br/>Out</span>
-              </div>
-            {% elsif product.on_sale %}
-              <div class="badge badge-filled badge-status">
-              <span>On<br/>Sale</span>
-              </div>
-            {% endif %}
-            <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '400' }}" data-src-retina="{{ product.image | product_image_url | constrain: '600' }}">
-          </div>
-          <div class="meta">
-            <span class="highlight price">{{ product.default_price | money_with_sign }}</span>
-            <h3>{{ product.name }}</h3>
-  
-          </div>
-          {% if product.on_sale %}
-          {% endif %}
-        </a>
+  {% if theme.image_sets.slideshow.size > 0 %}
+    <div class="home-slideshow-wrap">
+      <div class="slideshow-stripe"></div>
+      <div class="home-slideshow">
+        {% for image in theme.image_sets.slideshow %}
+        <img src="{{ image.url | constrain: '1400' }}" alt="Image of {{ image.name | escape }}">
+        {% endfor %}
+        <div class="cycle-pager"></div>
       </div>
     </div>
+  {% endif %}
+    
+  <div class="inner clear">
   
-  {% endfor %}
+    {% paginate products from products.current by theme.products_per_page %}
+    
+    {% if products != blank %}
+    
+      {% for product in products %}
+      
+        <div class="preview rand-{{ forloop.index | modulo:7 }}">
+          <div class="preview-inner">
+            <a href="{{ product.url }}">
+              <div class="image-wrap" style="padding-bottom: {{ product.image.height | plus:0.0 | divided_by:(product.image.width | times:100 }}%;">
+                {% if theme.show_view_badges %}
+                <div class="badge badge-empty badge-view"><span>View</span></div>
+                {% endif %}
+                {% if product.status == 'coming-soon' %}
+                  <div class="badge badge-filled badge-status">
+                  <span>Coming<br/>Soon</span>
+                  </div>
+                {% elsif product.status == 'sold-out' %}
+                  <div class="badge badge-filled badge-status">
+                  <span>Sold<br/>Out</span>
+                  </div>
+                {% elsif product.on_sale %}
+                  <div class="badge badge-filled badge-status">
+                  <span>On<br/>Sale</span>
+                  </div>
+                {% endif %}
+                <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '400' }}" data-src-retina="{{ product.image | product_image_url | constrain: '600' }}">
+              </div>
+              <div class="meta">
+                <span class="highlight price">{{ product.default_price | money_with_sign }}</span>
+                <h3>{{ product.name }}</h3>
+      
+              </div>
+              {% if product.on_sale %}
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      
+      {% endfor %}
+    
+    {% if paginate.pages > 1 %}
+      {{ paginate | default_pagination }}
+    {% endif %}
+    
+    {% else %}
+    
+       <h1 class="floating-title">No products found</h1>
+       
+    {% endif %}
+    
+    {% endpaginate %}
 
-{% if paginate.pages > 1 %}
-  {{ paginate | default_pagination }}
-{% endif %}
-
-{% else %}
-
-   <h1 class="floating-title">No products found</h1>
-   
-{% endif %}
-
-{% endpaginate %}
+  </div>
+</section>

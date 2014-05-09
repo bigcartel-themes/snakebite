@@ -132,22 +132,18 @@
           </ul>
         </nav>
       </header>
-      
-      <section class="main clear">
     
-          {% if page.category == 'custom' %}
-            <div class="inner format-text clear">
-              <h1>{{ page.name }}</h1>
+      {% if page.category == 'custom' %}
+        <section class="main clear">
+          <div class="inner format-text clear">
+            <h1>{{ page.name }}</h1>
             {{ page_content | paragraphs }}
-            </div>
-          {% else %}
-            <div class="inner clear">
-              {{ page_content }}
-            </div>
-          {% endif %}
-        
-      </section>
-    
+          </div>
+        </section>
+      {% else %}
+        {{ page_content }}
+      {% endif %}
+            
     </div><!-- End wrapper -->
     
     <footer>
