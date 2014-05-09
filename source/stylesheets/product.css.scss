@@ -205,7 +205,7 @@
 .options-list {
   background: #{"{{theme.background_color}}"};
   max-height: 200px;
-  overflow: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 .options-list li {
