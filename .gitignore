@@ -1,12 +1,12 @@
 .bundle
 .DS_Store
+.sass-cache
+.dugway.json
 
 build
-examples
 tmp
 log
 
 *.tmproj
 *.esproj
 *.sublime*
-*.sass-cache*

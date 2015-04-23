@@ -1,0 +1,9 @@
+{
+  "store": {
+    "subdomain": "beeteeth"
+  },
+  "customization": {
+    "background_color": "#336699",
+    "products_per_page": 10
+  }
+}
