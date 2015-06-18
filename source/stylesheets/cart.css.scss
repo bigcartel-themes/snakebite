@@ -290,8 +290,9 @@
 }
 .country-list {
   background: #{"{{theme.background_color}}"};
+  height:auto;
   max-height: 200px;
-  overflow: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 .country-list li {
