@@ -101,6 +101,8 @@
     "antialias_text": true,
     "content_width": "700px",
     "header_image": "{{logo}}",
+    "header_image_max_width": "600px",
+    "header_image_max_height": "140px",
     "background_color": "{{background_color}}",
     "background_image": "none",
     "title_font": "{{header_font}}",
