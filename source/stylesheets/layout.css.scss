@@ -102,7 +102,7 @@ h1, h2, h3 {
   font-family: "#{"{{theme.header_font}}"}", sans-serif;
 }
 h1 {
-  font-size: 80px;
+  font-size: 50px;
   line-height: 1.4em;
   margin: 0 0 30px;
   text-align: center;
@@ -143,6 +143,10 @@ ul.bullets li {
 
 /* GLOBAL LAYOUT
 --------------------------------------------- */
+html { 
+  overflow-y: scroll;
+  position: relative;
+}
 html, body {
   height: 100%;
 }
@@ -151,7 +155,7 @@ body {
   background-image: #{"{% if theme.images.background != blank %} url(\"{{ theme.images.background.url }}\") {% else %} none {% endif %}"};
 }
 .wrapper {
-  overflow: hidden;
+  
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -80px;
@@ -286,7 +290,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 500;
+  z-index: 501;
 }
 .maintenance_on header {
   top: 27px;
@@ -553,7 +557,7 @@ footer .footer-text {
 
   /* Typography */
   h1 {
-    font-size: 60px;
+    font-size: 45px;
   }
   h2 {
     font-size: 20px;
@@ -642,11 +646,12 @@ footer .footer-text {
     top: 70px;
     width: 100%;
     background: #{"{{theme.primary_color}}"};
+    z-index: 502;
+    height: auto;
   }
   .nav-mobile > ul {
     margin: 20px;
     border-radius: 5px;
-    overflow: hidden;
   }
   .nav-mobile li {
     margin-top: 5px;
@@ -689,7 +694,7 @@ footer .footer-text {
 /* SMALL */
 @media only screen and (max-width : $break-small) {
 
-  /* Typeography */
+  /* Typography */
   h1 {
     font-size: 34px;
   }

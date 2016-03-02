@@ -45,9 +45,6 @@ $(function() {
       mobileNav.slideDown(200);
     }
   });
-  $(window).resize(function() {
-    $('.nav-mobile').hide();
-  });
   $('.accordion-trigger').click(function(e) {
     e.preventDefault();
     var accordion = $(this).parent().find('.accordion');

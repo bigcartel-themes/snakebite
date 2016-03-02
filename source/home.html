@@ -7,7 +7,7 @@
   {% if theme.image_sets.slideshow.size > 0 %}
     <div class="home-slideshow-wrap">
       <div class="slideshow-stripe"></div>
-      <div class="home-slideshow">
+      <div class="home-slideshow" data-cycle-log="false">
         {% for image in theme.image_sets.slideshow %}
         <img src="{{ image.url | constrain: '1400' }}" alt="Image of {{ image.name | escape }}">
         {% endfor %}
