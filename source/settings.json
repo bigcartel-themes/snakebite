@@ -1,6 +1,6 @@
 {
   "name": "Snakebite",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "images": [
     {
       "variable": "logo",
@@ -101,6 +101,8 @@
     "antialias_text": true,
     "content_width": "700px",
     "header_image": "{{logo}}",
+    "header_image_max_width": "300px",
+    "header_image_max_height": "70px",
     "background_color": "{{background_color}}",
     "background_image": "none",
     "title_font": "{{header_font}}",
