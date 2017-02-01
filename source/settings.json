@@ -1,6 +1,6 @@
 {
   "name": "Snakebite",
-  "version": "1.1.7",
+  "version": "1.2.0",
   "images": [
     {
       "variable": "logo",
@@ -94,6 +94,30 @@
       "options": "1..100",
       "default": 15,
       "description": "The number of products shown per page"
+    },
+    {
+      "variable": "twitter_url",
+      "label": "Twitter URL",
+      "type": "text",
+      "description": "Ex: http://twitter.com/bigcartel"
+    },
+    {
+      "variable": "facebook_url",
+      "label": "Facebook URL",
+      "type": "text",
+      "description": "Ex: http://facebook.com/bigcartel"
+    },
+    {
+      "variable": "tumblr_url",
+      "label": "Tumblr URL",
+      "type": "text",
+      "description": "Ex: http://bigcartel.tumblr.com"
+    },
+    {
+      "variable": "instagram_url",
+      "label": "Instagram URL",
+      "type": "text",
+      "description": "Ex: http://instagram.com/bigcartel"
     }
   ],
   "checkout": {

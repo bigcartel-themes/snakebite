@@ -501,6 +501,7 @@ footer {
   font-size: 12px;
   line-height: 1.3em;
   color: #{"{{theme.background_color}}"};
+  height: 80px;
   text-transform: uppercase;
   letter-spacing: 0.09em;
   font-weight: 700;
@@ -514,14 +515,37 @@ footer a:hover {
   color: #{"{{theme.highlight_color}}"};
 }
 footer .inner {
-  min-height: 12px;
-  padding: 34px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
-footer .copyright {
-  float: left;
+footer .social_links {
+  display: inline-block;
+  left: 0;
+  position: relative;
+}
+footer .social_links li { 
+  display: inline-block;
+  margin: 0 10px;
+}
+footer .social_links li:first-child { 
+  margin-left: 0;
+}
+footer .social_links li a {
+  display: block; 
+}
+footer .social_links li a svg { 
+  fill: #{"{{theme.background_color}}"};
+  height: 22px;
+  width: 22px;
+}
+footer .social_links li a:hover svg {
+  fill: #{"{{theme.highlight_color}}"};
 }
 footer .footer-text {
-  float: right;
+  line-height: 2em;
+  position: absolute;
+  right: 0;
 }
 
 /* DOM MODS
@@ -734,13 +758,23 @@ footer .footer-text {
   }
 
   /* Footer */
-  footer .copyright,
+  footer { 
+    height: 120px;
+  }
+  
+  footer .social_links,
   footer .footer-text {
-    float: none;
     display: block;
+    left: auto;
+    right: auto;
+    
+  }
+  footer .social_links li:first-child { 
+    margin-left: 0;
   }
   footer .footer-text {
-    margin-top: 10px;
+    margin-top: 20px;
+    position: relative;
   }
 
   /* DOM mods */
