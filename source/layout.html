@@ -47,7 +47,7 @@
                 </ul>
                 </li>
               {% endif %}
-              {% if pages.all != blank %}
+              {% if pages.all != blank or store.website != blank %}
                 <li>
                 <span class="dropdown-trigger">Pages <span class="nav-caret">v</span></span>
                 <ul class="dropdown">
@@ -94,7 +94,7 @@
                 </ul>
                 </li>
               {% endif %}
-              {% if pages.all != blank %}
+              {% if pages.all != blank or store.website != blank %}
                 <li>
                 <a class="accordion-trigger" href="#">Pages <span class="nav-caret">v</span></a>
                 <ul class="accordion">
