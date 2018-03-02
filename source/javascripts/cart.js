@@ -46,7 +46,6 @@ $(function() {
   Cart.updateTotals = function(cart) {
     $('.header-subtotal-number').html(Format.money(cart.subtotal, true, true));
     $('.grand-total').html(Format.money(cart.total, true, true));
-    $('.shipping-amount').html(Format.money(cart.shipping && cart.shipping.amount ? cart.shipping.amount : 0, true, true));
   }
   Cart.updateItemPrice = function(cart, index) {
     el = $('.cart-item')[index];
@@ -136,47 +135,5 @@ $(function() {
       Cart.removeItemAnimate(cartItem.id, cartItem.el);
     }
   });
-
-  $('.discount-refresh').hide();
-  $('#cart_discount_code').focus(function() {
-    $('.discount-refresh').show();
-  });
-  $('.discount-refresh').click(function(e) {
-    $('#cart-form').submit();
-  });
-
-  // Custom country dropdown
-  var currentCountry = $("#country option:selected").text();
-  var currentCountryID = $("#country option:selected").val();
-  if((currentCountry.length > 0) && (currentCountryID.length > 0)) {
-    $('.country-selected-name').html(currentCountry);
-  }
-  $('#country option').each(function(i){
-    if(($(this).val().length > 0)) {
-      $('.country-list').append('<li data-country-id="'+$(this).val()+'">'+$(this).text()+'</li>');
-    }
-  });
-  $('.country-list').hide();
-	$('.country-selected').click(function() {
-	  var countryList = $('.country-list');
-		if (countryList.is(':visible')) {
-			countryList.slideUp(100);
-		} else {
-			countryList.slideDown(100);
-		}
-	});
-	$('body').click(function(e) {
-    if (!$('.countries').is(e.target) && $('.countries').has(e.target).length === 0) {
-      $('.country-list').slideUp(100);
-    }
-  });
-	$('.country-list li').click(function() {
-		countryVal = $(this).attr('data-country-id');
-		countryName = $(this).text();
-		$('#country').val(countryVal);
-		$('.country-selected-name').text(countryName);
-		$('.country-list').hide();
-		$('#cart-form').submit();
-	});
 
 });
