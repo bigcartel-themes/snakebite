@@ -43,8 +43,8 @@
     {% endif %}
       {% if product.status == 'active' %}
         <ul class="errors" style="display: none;"></ul>
-        <div class="purchase" data-default-option-id="{{ product.options.first.id }}">
-          {% if product.options.size > 1 %}
+        <div class="purchase" data-default-option-id="{{ product.options_in_stock.first.id }}">
+          {% if product.options_in_stock.size > 1 %}
           <div class="options-wrap">
             <div class="options">
               <div class="option-selected">
@@ -54,14 +54,14 @@
               <span class="dropdown-caret">v</span>
               </div>
               <ul class="options-list">
-              {% for option in product.options %}
+              {% for option in product.options_in_stock %}
                 <li data-option-id="{{ option.id }}">{{ option.name }} - {{ option.price | money: theme.money_format }}</li>
               {% endfor %}
               </ul>
             </div>
           </div>
           {% endif %}
-          {% if product.options.size > 1 %}
+          {% if product.options_in_stock.size > 1 %}
             <div class="btn btn-purchase btn-inactive"><span>Choose an option</span></div>
           {% else %}
             <div class="btn btn-purchase btn-active"><span>Purchase</span></div>
