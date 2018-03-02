@@ -44,7 +44,7 @@
                   <span>On<br/>Sale</span>
                   </div>
                 {% endif %}
-                <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '400' }}" data-src-retina="{{ product.image | product_image_url | constrain: '600' }}">
+                <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '400' }}" data-src-retina="{{ product.image | product_image_url | constrain: '800' }}">
               </div>
               <div class="meta">
                 <span class="highlight price">{{ product.default_price | money_with_sign }}</span>

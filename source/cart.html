@@ -34,7 +34,7 @@
               <span class="icon-close"></span>
             </div>
           </div>
-          <div class="cart-item-cell cart-item-image-mobile visible-phone" style="background-image: url('{{ item.product.image | product_image_url size:"small" }}');">
+          <div class="cart-item-cell cart-item-image-mobile visible-phone" style="background-image: url('{{ item.product.image | product_image_url | constrain: '600' }}');">
           </div>
           <div class="cart-item-cell cart-item-price">
             <span class="cart-item-price-inner price-update">{{ item.price | money_with_sign }}</span>
