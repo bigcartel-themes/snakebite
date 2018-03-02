@@ -54,66 +54,9 @@
         </div>
         {% endfor %}
       </div>
-      {% if cart.shipping.enabled or cart.discount.enabled %}
-        {% if cart.shipping.enabled and cart.discount.enabled %}
-        <div class="cart-options clear">
-        {% else %}
-        <div class="cart-options cart-one-option clear">
-        {% endif %}
-          {% if cart.shipping.enabled %}
-            <div class="cart-options-item">
-              <h3>Shipping</h3>
-              {% if cart.shipping.strict %}
-                {{ store.country | country_select }}
-                <div class="countries-wrap">
-                  <div class="countries">
-                    <div class="country-selected">
-                    <span class="country-selected-name">
-                    Select your country
-                    </span>
-                    <span class="dropdown-caret">v</span>
-                    </div>
-                    <ul class="country-list">
-                    </ul>
-                  </div>
-                </div>
-                {% if cart.shipping.pending %}
-                  {% if cart.country %}
-                    <p>We don't ship to {{ cart.country.name }}</p>
-                  {% endif %}
-                {% else %}
-                  <p class="shipping-amount">{{ cart.shipping.amount | money_with_sign }}</p>
-                {% endif %}
-              {% else %}
-                <p>{{ cart.shipping.amount | money_with_sign }}</p>
-              {% endif %}
-            </div>
-          {% endif %}
-      
-          {% if cart.discount.enabled %}
-          <div class="cart-options-item">
-            <h3>Discount</h3>
-            {% if cart.discount.pending %}
-              <div class="discount-wrap">
-                {{ cart.discount | discount_code_input }}
-                <div class="discount-refresh">Apply</div>
-              </div>
-            {% elsif cart.discount.free_shipping %}
-              <p>Free Shipping!</p>
-            {% else %}
-              <p>{{ cart.discount.name }} - You saved {{ cart.discount.amount | money_with_sign }}</p>
-            {% endif %}
-          </div>
-          {% endif %}
-        </div>
-      {% endif %}
         
       <div class="total">
-        {% if cart.shipping.enabled or cart.discount.enabled %}
-          <h3>Total</h3>
-        {% else %}
-          <h3>Subtotal</h3>
-        {% endif %}
+        <h3>Subtotal</h3>
         <span class="grand-total">{{ cart.total | money_with_sign }}</span>
       </div>
       

@@ -182,69 +182,6 @@
   display: table-cell;
   vertical-align: middle;
 }
-.cart-options {
-  text-align: center;
-  border-bottom: 3px solid #{"{{theme.primary_color}}"};
-  margin-bottom: 60px;
-}
-.cart-options-item {
-  float: left;
-  width: 30%;
-  padding: 0 10%;
-  margin-bottom: 60px;
-}
-.cart-one-option .cart-options-item { 
-  float: none;
-  margin: 0 auto 60px;
-}
-.cart-options-item p {
-  margin-top: 10px;
-}
-.cart-options-item h3 {
-  margin-bottom: 10px;
-}
-.discount-wrap input {
-  width: 100%;
-  outline: none;
-  padding: 15px 100px 15px 15px;
-  font-family: "#{"{{theme.text_font}}"}", sans-serif;
-  font-size: 16px;
-  color: #{"{{theme.primary_color}}"};
-  border: 3px solid #{"{{theme.primary_color}}"};
-  background: none;
-  text-align: center;
-  border-radius: 5px;
-  margin: 0;
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
-  box-sizing: border-box;
-}
-.discount-wrap input:focus {
-  background: #{"{{theme.accent_color}}"};
-}
-.discount-wrap  {
-  position: relative;
-}
-.discount-refresh {
-  width: 55px;
-  height: 12px;
-  padding: 21px 15px;
-  color: #{"{{theme.background_color}}"};
-  background: #{"{{theme.primary_color}}"};
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  font-size: 12px;
-  font-weight: 700;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  cursor: pointer;
-}
-.discount-refresh:hover {
-  color: #{"{{theme.highlight_color}}"};
-}
 .total {
   width: 100%;
   margin-bottom: 30px;
@@ -257,67 +194,6 @@
   text-transform: uppercase;
   letter-spacing: 0.09em;
   font-weight: 700;
-}
-.countries-wrap {
-  display: block;
-  margin: 0 auto;
-  height: 55px;
-  position: relative;
-  z-index: 10;
-}
-.countries {
-  border: 3px solid #{"{{theme.primary_color}}"};
-  border-radius: 5px;
-}
-#country {
-  display: none;
-}
-.country-selected {
-  font-size: 15px;
-  line-height: 22px;
-  padding: 14px 15px 13px;
-  cursor: pointer;
-  position: relative;
-}
-.country-selected:hover {
-  color: #{"{{theme.background_color}}"};
-  background: #{"{{theme.primary_color}}"};
-}
-.country-selected-name {
-  display: block;
-  margin-right: 30px;
-  font-size: 16px;
-}
-.country-list {
-  background: #{"{{theme.background_color}}"};
-  height:auto;
-  max-height: 200px;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.country-list li {
-  display: block;
-  padding: 10px;
-  cursor: pointer;
-}
-.country-list li:hover {
-  background: #{"{{theme.primary_color}}"};
-  color: #{"{{theme.background_color}}"};
-}
-.countries .dropdown-caret {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  margin-top: -12px;
-  text-transform: lowercase;
-  font-size: 7px;
-  display: block;
-  font-weight: 700;
-  -moz-transform: scalex(1.5);
-  -ms-transform: scalex(1.5);
-  -o-transform: scalex(1.5);
-  -webkit-transform: scalex(1.5);
-  transform: scalex(1.5);
 }
 .cart-btns {
   text-align: center;
