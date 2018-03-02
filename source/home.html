@@ -47,7 +47,7 @@
                 <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '400' }}" data-src-retina="{{ product.image | product_image_url | constrain: '800' }}">
               </div>
               <div class="meta">
-                <span class="highlight price">{{ product.default_price | money_with_sign }}</span>
+                <span class="highlight price">{{ product.default_price | money: theme.money_format }}</span>
                 <h3>{{ product.name }}</h3>
       
               </div>

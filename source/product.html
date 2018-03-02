@@ -37,9 +37,9 @@
     <div class="details">
     <h2>{{product.name}}</h2>
     {% if product.variable_pricing %}
-      <span class="highlight price">{{ product.min_price | money_with_sign }} – {{ product.max_price | money_with_sign }}</span>
+      <span class="highlight price">{{ product.min_price | money: theme.money_format }} – {{ product.max_price | money: theme.money_format }}</span>
     {% else %}
-      <span class="highlight price">{{ product.default_price | money_with_sign }}</span>
+      <span class="highlight price">{{ product.default_price | money: theme.money_format }}</span>
     {% endif %}
       {% if product.status == 'active' %}
         <ul class="errors" style="display: none;"></ul>
@@ -55,7 +55,7 @@
               </div>
               <ul class="options-list">
               {% for option in product.options %}
-                <li data-option-id="{{ option.id }}">{{ option.name }} - {{ option.price | money_with_sign }}</li>
+                <li data-option-id="{{ option.id }}">{{ option.name }} - {{ option.price | money: theme.money_format }}</li>
               {% endfor %}
               </ul>
             </div>
