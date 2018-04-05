@@ -89,6 +89,10 @@
   display: table-cell;
   vertical-align: middle;
 }
+.cart-item-name em { 
+  display: block;
+  font-size: 16px;
+}
 .cart-item-actions {
   display: block;
   width: 20%;

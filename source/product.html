@@ -44,33 +44,31 @@
       {% if product.status == 'active' %}
         <ul class="errors" style="display: none;"></ul>
         <div class="purchase" data-default-option-id="{{ product.options_in_stock.first.id }}">
-          {% if product.options_in_stock.size > 1 %}
-          <div class="options-wrap">
-            <div class="options">
-              <div class="option-selected">
-              <span class="option-selected-name">
-              Choose an option
-              </span>
-              <span class="dropdown-caret">v</span>
-              </div>
-              <ul class="options-list">
-              {% for option in product.options_in_stock %}
-                <li data-option-id="{{ option.id }}">{{ option.name }} - {{ option.price | money: theme.money_format }}</li>
-              {% endfor %}
-              </ul>
-            </div>
-          </div>
-          {% endif %}
-          {% if product.options_in_stock.size > 1 %}
-            <div class="btn btn-purchase btn-inactive"><span>Choose an option</span></div>
+          {% if product.has_default_option %}
+            <div class="btn btn-purchase btn-active"><span>Purchase</span></div> 
           {% else %}
-            <div class="btn btn-purchase btn-active"><span>Purchase</span></div>
-          {% endif %}
+            <div class="options-wrap">
+              <div class="options">
+                <div class="option-selected">
+                    <span class="option-selected-name">
+                      Choose an option
+                    </span>
+                  <span class="dropdown-caret">v</span>
+                </div>
+                <ul class="options-list">
+                {% for option in product.options_in_stock %}
+                  <li data-option-id="{{ option.id }}">{{ option.name }} - {{ option.price | money: theme.money_format }}</li>
+                {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <div class="btn btn-purchase btn-inactive"><span>Choose an option</span></div>
+          {% endif %} 
         </div>
       {% endif %}
     {% if product.description != blank %}
       <div class="description">
-      {{ product.description | paragraphs }}
+        {{ product.description | paragraphs }}
       </div>
     {% endif %}
        
