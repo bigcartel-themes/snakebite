@@ -369,6 +369,8 @@ header .inner {
   overflow: hidden;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  max-height: 50vh;
+  overflow-y: scroll;
 }
 .nav-main > ul > li.active .dropdown {
   visibility: visible;
