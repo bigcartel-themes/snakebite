@@ -15,7 +15,7 @@
   </head>
 
   <body class="{{ page.permalink }} {{ page.category }}">
-    
+
     <div class="wrapper">
       <header>
         <div class="inner clear">
@@ -111,7 +111,7 @@
           </ul>
         </nav>
       </header>
-    
+
       {% if page.category == 'custom' %}
         <section class="main clear">
           <div class="inner format-text clear">
@@ -122,12 +122,12 @@
       {% else %}
         {{ page_content }}
       {% endif %}
-            
+
     </div><!-- End wrapper -->
-    
+
     <footer>
       <div class="inner">
-        {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank %}
+        {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank or theme.pinterest_url != blank %}
           <ul class="social_links">
             {% if theme.twitter_url != blank %}
               <li><a title="Twitter" href="{{ theme.twitter_url }}"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 150.857 612 490.298"><path d="M606 209c-22.2 9.7-46 16.4-70.8 19.4 25.4-15.3 45-39.6 54-68.5-23.7 14-50 24-78 30-22.5-24-54.4-39-89.8-39-68 0-123 55-123 123 0 9.3 1 19 3 28-102.2-5-192.8-54-253.4-129-11 18.3-17 39.5-17 62.2 0 43 21.5 81 54.6 103-20.2-.6-39.2-6-55.8-15.4v2c0 60 42.3 110 98.6 121.2-10.4 3-21.3 4.6-32.5 4.6-8 0-16-1-23-2.5 15 49.3 61 85 115 86-42 33.3-96 53-153 53-10 0-20-.5-30-1.7 55 35 119.5 55.5 189 55.5 226.3 0 350-188.5 350-352 0-5.5 0-10.8-.3-16 24-17.6 45-39.4 61.4-64z"/></svg></a></li>
@@ -141,15 +141,18 @@
             {% if theme.tumblr_url != blank %}
               <li><a title="Tumblr" href="{{ theme.tumblr_url }}"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="117.504 90 377.114 611.937"><path d="M493.272 571.276c-14.566 13.832-55.692 26.194-55.692 26.194-115.18 27.907-107.957-66.464-107.957-66.464v-189.72h144.31v-96.818h-144.31V90H241.74c-11.383 139.658-124.236 164.628-124.236 164.628v87.394h67.81v224.604c-.98 62.424 36.475 92.656 36.475 92.656 115.055 89.964 272.83 9.67 272.83 9.67v-99.02l-1.348 1.344z"/></svg></a></li>
             {% endif %}
+            {% if theme.pinterest_url != blank %}
+              <li><a title="Pinterest" href="{{ theme.pinterest_url }}"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 12 16"><path d="M4.933 10.582c-.406 2.203-.9 4.314-2.366 5.418-.452-3.33.665-5.83 1.183-8.484C2.866 6 3.9 2.9 5.7 3.63c2.315.97-2 5.77.9 6.34 3 .6 4.225-5.4 2.365-7.36C6.285-.22 1.1 2.5 1.8 6.596c.154 1 1.1 1.3.4 2.658C.48 8.858-.034 7.45.032 5.574.138 2.504 2.692.352 5.255.054c3.24-.376 6.3 1.2 6.7 4.396.473 3.568-1.462 7.433-4.927 7.2C6.063 11.5 5.7 11 4.9 10.582z"/></svg></a></li>
+            {% endif %}
           </ul>
-        {% endif %}       
+        {% endif %}
         <span class="footer-text">{{ bigcartel_credit }}</span>
       </div>
     </footer>
-    
+
     {% if page.permalink == 'home' or  page.permalink == 'products' %}
     <div class="color-block-products"></div>
     {% endif %}
-    
+
   </body>
 </html>
