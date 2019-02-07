@@ -28,7 +28,7 @@
             <ul class="clear">
               {% if categories.active != blank %}
                 <li>
-                <a class="dropdown-trigger" href="/products">Products <span class="nav-caret">v</span></a>
+                <a class="dropdown-trigger" href="/products">{{ pages.products.name }} <span class="nav-caret">v</span></a>
                 <ul class="dropdown">
                 <li><a href="/products">View All</a></li>
                 {% for category in categories.active %}
@@ -75,7 +75,7 @@
             <li><a href="/">Home</a></li>
             {% if categories.active != blank %}
                 <li>
-                <a class="accordion-trigger" href="#">Products <span class="nav-caret">v</span></a>
+                <a class="accordion-trigger" href="#">{{ pages.products.name }} <span class="nav-caret">v</span></a>
                 <ul class="accordion">
                 <li><a href="/products">View All</a></li>
                 {% for category in categories.active %}
