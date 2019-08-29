@@ -143,7 +143,7 @@ ul.bullets li {
 
 /* GLOBAL LAYOUT
 --------------------------------------------- */
-html { 
+html {
   overflow-y: scroll;
   position: relative;
 }
@@ -155,7 +155,7 @@ body {
   background-image: #{"{% if theme.images.background != blank %} url(\"{{ theme.images.background.url }}\") {% else %} none {% endif %}"};
 }
 .wrapper {
-  
+
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -80px;
@@ -210,6 +210,76 @@ body {
   color: #{"{{theme.primary_color}}"};
 }
 
+/* Select box */
+.select {
+  @include all-transitions;
+  position: relative;
+  border: 2px solid $border-color;
+  color: $secondary-text-color;
+  font-family: $secondary-font;
+  height: 60px;
+  margin-bottom: 20px;
+  max-width: 300px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  select {
+    @include all-transitions;
+    @include appearance(none);
+    background: none;
+    border: 0;
+    color: $secondary-text-color;
+    font-family: $secondary-font;
+    font-size: 14px;
+    height: 100%;
+    line-height: 2em;
+    padding: 0 50px 0 20px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    option {
+      background-color: #FFF;
+      color: #000;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+
+  }
+
+  svg {
+    @include all-transitions;
+    fill: $secondary-text-color;
+    height: 8px;
+    margin-top: -2px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 13px;
+    z-index: 1;
+  }
+
+  &:hover {
+    color: $secondary-text-color;
+    border-color: $secondary-text-color;
+
+    select {
+      color: $primary-text-color;
+    }
+
+    svg {
+      fill: $primary-text-color;
+    }
+  }
+}
 /* Badges */
 .badge {
   height: 80px;
@@ -521,7 +591,7 @@ footer .inner {
   top: 50%;
   transform: translateY(-50%);
 }
-footer .inner:after { 
+footer .inner:after {
   clear: both;
   content: " ";
   display: table;
@@ -529,20 +599,20 @@ footer .inner:after {
 footer .social_links {
   float: left;
 }
-footer .social_links:after { 
+footer .social_links:after {
   clear: both;
   content: " ";
   display: table;
 }
-footer .social_links li { 
+footer .social_links li {
   float: left;
   margin: 0 10px;
 }
-footer .social_links li:first-child { 
+footer .social_links li:first-child {
   margin-left: 0;
 }
 footer .social_links li a {
-  display: block; 
+  display: block;
 }
 footer .social_links li a svg {
   display: block;
@@ -768,20 +838,20 @@ footer .footer-text {
   }
 
   /* Footer */
-  footer { 
+  footer {
     height: 120px;
   }
-  
+
   footer .social_links,
   footer .footer-text {
     display: block;
     float: none;
   }
-  footer .social_links li { 
+  footer .social_links li {
     display: inline-block;
     float: none;
   }
-  footer .social_links li:first-child { 
+  footer .social_links li:first-child {
     margin: 0 10px;
   }
   footer .footer-text {
