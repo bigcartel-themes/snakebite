@@ -1,83 +1,83 @@
 @import 'config'
 
-.home .main .inner {
+.home .main .inner
   text-align: center
-}
-.home .main.has-slideshow .inner {
+
+.home .main.has-slideshow .inner
   margin-top: 50px
-}
-.preview {
+
+.preview
   margin: 0 15px 80px 15px
   position: relative
   display: inline-block
-}
-.preview-inner a {
+
+.preview-inner a
   display: block
   position: relative
   width: 100%
-}
-.image-wrap {
+
+.image-wrap
   background: #{"{{theme.background_color}}"}
   position: relative
   z-index: 0
-}
-.image-wrap img {
+
+.image-wrap img
   display: block
   position: absolute
   width: 100%
   height: 100%
   z-index: 1
-}
-.preview .badge-empty {
+
+.preview .badge-empty
   @include single-transition(transform, 100ms, ease-in-out)
-}
-.preview:hover .badge-empty {
+
+.preview:hover .badge-empty
   color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"}
   background: #{"{{theme.primary_color}}"}
   @include translateZ(0)
   @include scale(1.1)
   @include single-transition(transform, 100ms, ease-in-out)
-}
-.preview:active .badge-empty {
+
+.preview:active .badge-empty
   @include scale(.95)
   @include single-transition(transform, 50ms, ease-in-out)
-}
-.preview .badge {
+
+.preview .badge
   position: absolute
   z-index: 2
-}
-.meta {
+
+.meta
   border-top: 3px solid #{"{{theme.primary_color}}"}
   text-align: left
   padding: 20px 0
   position: relative
-}
-.meta .price {
+
+.meta .price
   float: right
   margin: 0 0 10px 30px
-  -webkit-transform: translateZ(0)
-}
-.pagination {
+  +transform(translateZ(0))
+
+.pagination
   display: block
   font-size: 40px
   line-height: 1.5em
   margin-bottom: 80px
-}
+
 .pagination a,
-.pagination span {
+.pagination span
   display: inline-block
   white-space: nowrap
   padding: 0 4px
-}
+
 .pagination .current,
-.pagination a:hover {
+.pagination a:hover
   border-radius: 5px
   background: #{"{{theme.highlight_color}}"}
-}
-.pagination .disabled {
+
+.pagination .disabled
   display: none
-}
-.color-block-products {
+
+.color-block-products
   width: 70%
   height: 70%
   position: fixed
@@ -86,286 +86,272 @@
   z-index: -1
   background-color: #{"{{theme.accent_color}}"}
   background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
-}
-.preview {
+
+.preview
   width: 300px
-}
-.rand-0 {
+
+.rand-0
   width: 330px
   top: 40px
-}
-.rand-0 .badge-view {
+
+.rand-0 .badge-view
   bottom: 20px
   right: 20px
-}
-.rand-0 .badge-status {
+
+.rand-0 .badge-status
   top: 20px
   left: 20px
-}
-.rand-1 {
+
+.rand-1
   width: 280px
   top: 20px
-}
-.rand-1 .badge-view {
+
+.rand-1 .badge-view
   top: 21%
   right: -20px
-}
-.rand-1 .badge-status {
+
+.rand-1 .badge-status
   bottom: 20%
   left: -20px
-}
-.rand-2 {
+
+.rand-2
   width: 350px
   top: 0px
-}
-.rand-2 .badge-view {
+
+.rand-2 .badge-view
   top: 30%
   right: 20px
-}
-.rand-2 .badge-status {
+
+.rand-2 .badge-status
   top: 8%
   left: 20px
-}
-.rand-3 {
+
+.rand-3
   width: 320px
   top: 40px
-}
-.rand-3 .badge-view {
+
+.rand-3 .badge-view
   bottom: 20%
   left: -20px
-}
-.rand-3 .badge-status {
+
+.rand-3 .badge-status
   top: 10%
   right: -20px
-}
-.rand-4 {
+
+.rand-4
   width: 400px
   top:-20px
-}
-.rand-4 .badge-view {
+
+.rand-4 .badge-view
   top: 20%
   left: -20px
-}
-.rand-4 .badge-status {
+
+.rand-4 .badge-status
   bottom: 15%
   right: 20px
-}
-.rand-5 {
+
+.rand-5
   top: 20px
-}
-.rand-5 .badge-view {
+
+.rand-5 .badge-view
   top: 20px
   left: 20px
-}
-.rand-5 .badge-status {
+
+.rand-5 .badge-status
   top: -20px
   right: -20px
-}
-.rand-6 {
+
+.rand-6
   width: 330px
   top: 0px
-}
-.rand-6 .badge-view {
+
+.rand-6 .badge-view
   top: -20px
   right: 20px
-}
-.rand-6 .badge-status {
+
+.rand-6 .badge-status
   bottom: 10%
   left: -20px
-}
 
-.home-slideshow-wrap {
+
+.home-slideshow-wrap
   max-width: 1200px
   margin: 76px auto 0
   position: relative
-}
-.home-slideshow {
+
+.home-slideshow
   margin-left: 80px
   @include translateZ(0)
-}
-.slideshow-stripe {
+
+.slideshow-stripe
   width: 80px
   height: 90%
   position: absolute
   top: 0
   left: 0
   background: #{"{{theme.highlight_color}}"}
-}
+
 
 
 /* Categories / Artists */
-.products .main .inner {
+.products .main .inner
   margin-top: 130px
   text-align: center
-}
+
 
 /* EXTRA LARGE */
-@media only screen and (min-width : $break-extra-large) {
+@media only screen and (min-width : $break-extra-large)
 
-  .home-slideshow-wrap {
+  .home-slideshow-wrap
     max-width: 1480px
-  }
 
-}
 
 /* LARGE */
-@media only screen and (max-width : $break-large) {
+@media only screen and (max-width : $break-large)
 
-  .preview {
+  .preview
     margin: 0 15px 70px 15px
-  }
-  .preview {
     width: 200px
-  }
-  .meta {
+
+  .meta
     padding: 0 0 20px 0
     text-align: center
-  }
-  .meta .price {
+
+  .meta .price
     float: none
     display: inline-block
     margin: 0 0 -5px 0
     position: relative
     top: -20px
-  }
-  .rand-0 {
+
+  .rand-0
     width: 240px
     top: 40px
-  }
-  .rand-1 {
+
+  .rand-1
     width: 200px
     top: 20px
-  }
-  .rand-2 {
+
+  .rand-2
     width: 250px
     top: 0px
-  }
-  .rand-3 {
+
+  .rand-3
     width: 220px
     top: 40px
-  }
-  .rand-4 {
+
+  .rand-4
     width: 300px
     top:-20px
-  }
-  .rand-5 {
+
+  .rand-5
     top: 20px
-  }
-  .rand-6 {
+
+  .rand-6
     width: 230px
     top: 0px
-  }
-  .pagination {
-    font-size: 32px
-  }
 
-}
+  .pagination
+    font-size: 32px
 
 /* MEDIUM */
-@media only screen and (max-width : $break-medium) {
+@media only screen and (max-width : $break-medium)
 
   /* Home */
-  .home-slideshow-wrap {
+  .home-slideshow-wrap
     margin: 0 auto
-  }
-  .home-slideshow {
+
+  .home-slideshow
     margin-left: 0
-  }
-  .slideshow-stripe {
+
+  .slideshow-stripe
     display: none
-  }
+
 
   /* Categories / Artists */
-  .products .main .inner {
+  .products .main .inner
     margin-top: 50px
-  }
 
-}
 
 /* SMALL */
-@media only screen and (max-width : $break-small) {
+@media only screen and (max-width : $break-small)
 
-  .preview {
+  .preview
     margin: 0 15px 20px 15px
-  }
-  .rand-0 {
+
+  .rand-0
     width: 210px
     top: 0
-  }
-  .rand-1 {
+
+  .rand-1
     width: 200px
     top: 0
-  }
-  .rand-2 {
+
+  .rand-2
     width: 230px
     top: 0
-  }
-  .rand-3 {
+
+  .rand-3
     width: 210px
     top: 0
-  }
-  .rand-4 {
+
+  .rand-4
     width: 190px
     top: 0
-  }
-  .rand-5 {
+
+  .rand-5
     width: 210px
     top: 0
-  }
-  .rand-6 {
+
+  .rand-6
     width: 230px
     top: 0
-  }
-  .pagination {
+
+  .pagination
     font-size: 22px
     margin-bottom: 60px
-  }
+
 
   /* Categories / Artists */
-  .products .main .inner {
+  .products .main .inner
     margin-top: 40px
     text-align: center
-  }
-
-}
 
 /* EXTRA SMALL */
-@media only screen and (max-width : $break-extra-small) {
+@media only screen and (max-width : $break-extra-small)
 
   /* Products */
-  .preview {
+  .preview
     margin: 0 0 20px 0
-  }
-  .rand-0 {
+
+  .rand-0
     width: 260px
     top: 0
-  }
-  .rand-1 {
+
+  .rand-1
     width: 250px
     top: 0
-  }
-  .rand-2 {
+
+  .rand-2
     width: 280px
     top: 0
-  }
-  .rand-3 {
+
+  .rand-3
     width: 260px
     top: 0
-  }
-  .rand-4 {
+
+  .rand-4
     width: 210px
     top: 0
-  }
-  .rand-5 {
+
+  .rand-5
     width: 280px
     top: 0
-  }
-  .rand-6 {
+
+  .rand-6
     width: 240px
     top: 0
-  }
-  .pagination {
-    padding: 0 40px
-  }
 
-}
+  .pagination
+    padding: 0 40px
+
