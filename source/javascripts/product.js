@@ -1,5 +1,5 @@
 $(function() {
-  
+
   // Slider
   var slideshowAtts = {
     speed: 400,
@@ -20,12 +20,12 @@ $(function() {
       timers[uniqueId] = setTimeout(callback, ms);
     };
   })();
-  
+
   if($('.stacked-images').length === 0) {
-    
+
     // Slidehsow
     $('.slideshow').cycle(slideshowAtts);
-    
+
     // Slider max height
     function maxImageHeight() {
       if($(window).width() > 880) {
@@ -38,12 +38,12 @@ $(function() {
     $(window).resize(function() {
       maxImageHeight();
     });
-    $(window).load(function() {
+    $(window).on('load', function () {
       maxImageHeight();
     });
-    
+
   } else {
-  
+
     function startSlideshow() {
       if($(window).width() > 880) {
         $('.cycle-pager').hide();
@@ -54,13 +54,13 @@ $(function() {
       }
     }
     startSlideshow();
-    
+
     $(window).smartresize(function(){
       startSlideshow();
     });
-    
+
   }
-  
+
   // Pause slideshow on page click
   $('.slideshow').on('cycle-pager-activated cycle-prev cycle-next', function( event, opts ) {
     $(this).cycle('pause');
@@ -99,7 +99,7 @@ $(function() {
   $('.purchase').on('mouseup', '.btn-active', function(e) {
     if(purchaseReady) {
       purchaseReady = false;
-      setTimeout(function() { 
+      setTimeout(function() {
         purchaseReady = true;
       }, 1000);
       e.preventDefault();
@@ -125,12 +125,12 @@ $(function() {
   $(window).resize(function() {
     $('.options-wrap').height($('.options').outerHeight());
   });
-  
+
   // Social link popups
   $('.social-links a').click(function(e) {
     e.preventDefault();
     var shareURL = $(this).attr('href');
     window.open( shareURL, "myWindow", "status = 1, height = 400, width = 600, resizable = 0" )
   });
-  
+
 });
