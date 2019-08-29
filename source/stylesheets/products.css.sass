@@ -29,18 +29,18 @@
   z-index: 1
 
 .preview .badge-empty
-  @include single-transition(transform, 100ms, ease-in-out)
+  +transition(transform 100ms ease-in-out)
 
 .preview:hover .badge-empty
   color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"}
   background: $primary-color
-  @include translateZ(0)
-  @include scale(1.1)
-  @include single-transition(transform, 100ms, ease-in-out)
+  +transform(translateZ(0))
+  +transform(scale(1.1))
+  +transition(transform 100ms ease-in-out)
 
 .preview:active .badge-empty
-  @include scale(.95)
-  @include single-transition(transform, 50ms, ease-in-out)
+  +transform(scale(.95))
+  +transition(transform 50ms ease-in-out)
 
 .preview .badge
   position: absolute
@@ -140,7 +140,7 @@
 
 .rand-4
   width: 400px
-  top:-20px
+  top: -20px
 
 .rand-4 .badge-view
   top: 20%
@@ -181,7 +181,7 @@
 
 .home-slideshow
   margin-left: 80px
-  @include translateZ(0)
+  +transform(translateZ(0))
 
 .slideshow-stripe
   width: 80px
@@ -242,7 +242,7 @@
 
   .rand-4
     width: 300px
-    top:-20px
+    top: -20px
 
   .rand-5
     top: 20px

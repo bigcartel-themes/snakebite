@@ -138,16 +138,16 @@
 
 .btn-purchase
   display: block
-  @include scale(1)
-  @include single-transition(transform, 100ms, ease-in-out)
+  +transform(scale(1))
+  +transition(transform 100ms ease-in-out)
 
 .btn-active:active
-  @include scale(.95)
-  @include single-transition(transform, 50ms, ease-in-out)
+  +transform(scale(.95))
+  +transition(transform 50ms ease-in-out)
 
 .btn-pulse
-  @include scale(1.2)
-  @include single-transition(transform, 100ms, ease-in-out)
+  +transform(scale(1.2))
+  +transition(transform 100ms ease-in-out)
 
 .btn-inactive:hover
   background: none

@@ -151,11 +151,11 @@ body
 
 /* Select box */
 .select
-  @include all-transitions
+  +all-transitions
   position: relative
-  border: 2px solid $border-color
-  color: $secondary-text-color
-  font-family: $secondary-font
+  border: 2px solid $primary-color
+  color: $primary-color
+  font-family: "#{"{{theme.text_font}}"}", sans-serif
   height: 60px
   margin-bottom: 20px
   max-width: 300px
@@ -164,12 +164,12 @@ body
   width: 100%
 
   select
-    @include all-transitions
-    @include appearance(none)
+    +all-transitions
+    +appearance(none)
     background: none
     border: 0
-    color: $secondary-text-color
-    font-family: $secondary-font
+    color: $primary-color
+    font-family: "#{"{{theme.text_font}}"}", sans-serif
     font-size: 14px
     height: 100%
     line-height: 2em
@@ -193,8 +193,8 @@ body
       display: none
 
   svg
-    @include all-transitions
-    fill: $secondary-text-color
+    +all-transitions
+    fill: $primary-color
     height: 8px
     margin-top: -2px
     position: absolute
@@ -204,16 +204,16 @@ body
     z-index: 1
 
   &:hover
-    color: $secondary-text-color
-    border-color: $secondary-text-color
+    color: $primary-color
+    border-color: $primary-color
 
     select
-      color: $primary-text-color
+      color: $primary-color
 
       option:disabled
         color: graytext
     svg
-      fill: $primary-text-color
+      fill: $primary-color
 
 /* Badges */
 .badge
@@ -225,12 +225,12 @@ body
   text-transform: uppercase
   border-radius: 70px
   display: table
-  @include translateZ(0)
+  +transform(translateZ(0))
 
 .badge span
   display: table-cell
   vertical-align: middle
-  @include translateZ(0)
+  +transform(translateZ(0))
 
 .badge-empty
   color: $primary-color
@@ -280,11 +280,11 @@ body
   background: $highlight-color
   border: 3px solid $primary-color
   position: relative
-  @include single-transition(background, 300ms)
+  +transition(transform background 300ms)
 
 .cycle-pager span.cycle-pager-active span
   background: $primary-color
-  @include single-transition(background, 300ms)
+  +transition(transform background 300ms)
 
 
 /* HEADER
@@ -405,7 +405,7 @@ header .inner
   position: relative
   display: inline-block
   top: -2px
-  @include scaleX(1.5)
+  +transform(scaleX(1.5))
 
 .mobile-nav-trigger
   display: none
@@ -415,8 +415,8 @@ header .inner
   padding: 0
   width: 70px
   height: 70px
-  @include scale(1)
-  @include single-transition(all, 100ms, ease-in-out)
+  +transform(scale(1))
+  +transition(transform all 100ms ease-in-out)
 
 @-webkit-keyframes orbpulse
   0%
@@ -464,15 +464,15 @@ header .inner
   right: 5px
   position: absolute
   z-index: 505
-  @include single-transition(transform, 100ms, ease-in-out)
+  +transition(transform 100ms ease-out)
 
 .cart-status .cart-orb
-  @include scale(0)
-  @include single-transition(transform, 100ms, ease-in-out)
+  +transform(scale(0))
+  +transition(transform 100ms ease-out)
 
 .cart-status:hover .cart-orb
-  @include scale(1.6)
-  @include single-transition(transform, 100ms, ease-out)
+  +transform(scale(0))
+  +transition(transform 100ms ease-out)
 
 /* Disable orb on cart pages */
 .cart .cart-status:hover .cart-orb
@@ -486,7 +486,7 @@ header .inner
   padding-right: 5px
   position: relative
   z-index: 510
-  @include single-transition(all, 100ms)
+  +transition(transform all 100ms)
 
 .icon-cart
   display: block
@@ -498,16 +498,15 @@ header .inner
   z-index: 510
 
 .cart-status .cart-count-animate
-  @include translate(0,16px)
-  @include single-transition(all, 100ms)
+  +transform(translate(0,16px))
+  +transition(transform all 100ms)
 
 .cart-status .cart-orb-animate
-  @include scale(1.6)
-  @include single-transition(transform, 150ms, ease-out)
+  +transform(scale(1.6))
+  +transition(transform 150ms ease-out)
 
 .nav-mobile
   display: none
-
 
 /* FOOTER
  */
@@ -532,7 +531,7 @@ footer a:hover
 footer .inner
   position: relative
   top: 50%
-  transform: translateY(-50%)
+  +transform(translateY(-50%))
 
 footer .inner:after
   clear: both
