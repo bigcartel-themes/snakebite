@@ -2,7 +2,7 @@
 
 /* ICON FONT
 --------------------------------------------- */
-@font-face {
+@font-face
   font-family: "icons"
   src:url(#{"{{ 'icons.eot' | theme_font_url }}"})
   src:url(#{"{{ 'icons.eot#iefix' | theme_font_url }}"}) format("embedded-opentype"),
@@ -11,9 +11,9 @@
     url(#{"{{ 'icons.svg' | theme_font_url }}"}) format("svg")
   font-weight: normal
   font-style: normal
-}
 
-[data-icon]:before {
+
+[data-icon]:before
   font-family: "icons" !important
   content: attr(data-icon)
   font-style: normal !important
@@ -24,10 +24,10 @@
   line-height: 1
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-}
+
 
 [class^="icon-"]:before,
-[class*=" icon-"]:before {
+[class*=" icon-"]:before
   font-family: "icons" !important
   font-style: normal !important
   font-weight: normal !important
@@ -37,93 +37,93 @@
   line-height: 1
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-}
-.icon-cart:before {
+
+.icon-cart:before
    content: "a"
-}
-.icon-menu:before {
+
+.icon-menu:before
    content: "b"
-}
-.icon-close:before {
+
+.icon-close:before
    content: "c"
-}
-.icon-close-bold:before {
+
+.icon-close-bold:before
    content: "d"
-}
-.icon-caret:before {
+
+.icon-caret:before
    content: "e"
-}
-.icon-arrow-right:before {
+
+.icon-arrow-right:before
    content: "f"
-}
-.icon-arrow-left:before {
+
+.icon-arrow-left:before
    content: "g"
-}
+
 
 /* TYPOGRAPHY
 --------------------------------------------- */
-body {
+body
   color: #{"{{theme.primary_color}}"}
   font-family: "#{"{{theme.text_font}}"}", sans-serif
   font-size: 62.5%
   -webkit-text-size-adjust: none
   text-rendering: optimizeLegibility
   cursor: default
-}
+
 input,
-textarea {
+textarea
   color: #{"{{theme.primary_color}}"}
   font-family: "#{"{{theme.text_font}}"}", sans-serif
   -webkit-font-smoothing: antialiased
-}
-a {
+
+a
   color: #{"{{theme.primary_color}}"}
   text-decoration: none
-}
-a:hover {
+
+a:hover
   color: #{"{{theme.primary_color}}"}
-}
+
 p,
 .main ul,
 .main ol,
 .main table,
-label {
+label
   font-size: 16px
   line-height: 24px
-}
-.main p a {
+
+.main p a
   text-decoration: underline
-}
-.main p a:hover {
+
+.main p a:hover
   text-decoration: underline
   background: #{"{{theme.highlight_color}}"}
-}
-h1, h2, h3 {
+
+h1, h2, h3
   font-family: "#{"{{theme.header_font}}"}", sans-serif
-}
-h1 {
+
+h1
   font-size: 50px
   line-height: 1.4em
   margin: 0 0 30px
   text-align: center
-}
-h2 {
+
+h2
   font-size: 30px
   line-height: 1.4em
-}
-h3 {
+
+h3
   font-size: 22px
   line-height: 1.4em
   @include translateZ(0)
-}
-h4 {
+
+h4
   font-size: 12px
   line-height: 1.3em
   text-transform: uppercase
   letter-spacing: 0.09em
   font-weight: 700
-}
-.highlight {
+
+.highlight
   font-size: 18px
   font-weight: 700
   line-height: 24px
@@ -131,56 +131,55 @@ h4 {
   background: #{"{{theme.highlight_color}}"}
   padding: 6px 12px
   border-radius: 5px
-}
-ul.bullets {
+
+ul.bullets
   font-size: 15px
   line-height: 22px
   margin-left: 18px
-}
-ul.bullets li {
+
+ul.bullets li
   list-style: disc
-}
+
 
 /* GLOBAL LAYOUT
 --------------------------------------------- */
-html {
+html
   overflow-y: scroll
   position: relative
-}
-html, body {
+
+html, body
   height: 100%
-}
-body {
+
+body
   background-color: #{"{{theme.background_color}}"}
   background-image: #{"{% if theme.images.background != blank %} url(\"{{ theme.images.background.url }}\") {% else %} none {% endif %}"}
-}
-.wrapper {
 
+.wrapper
   min-height: 100%
   /* equal to footer height */
   margin-bottom: -80px
-}
-.wrapper:after {
+
+.wrapper:after
   content: ""
   display: block
   /* equal to footer height */
   height: 80px
-}
-.inner {
+
+.inner
   max-width: 1200px
   min-width: 280px
   margin: 0 auto
   position: relative
-}
-.main .inner {
+
+.main .inner
   margin-top: 130px
-}
+
 
 /* MODULES
 --------------------------------------------- */
 
 /* Buttons */
-.btn {
+.btn
   display: inline-block
   padding: 15px 20px
   font-family: "#{"{{theme.text_font}}"}", sans-serif
@@ -200,18 +199,18 @@ body {
   -moz-user-select: none
   -ms-user-select: none
   user-select: none
-}
-.btn:hover {
+
+.btn:hover
   background: #{"{{theme.primary_color}}"}
   color: #{"{{theme.background_color}}"}
-}
+
 .btn-inactive:hover {
   background: none
   color: #{"{{theme.primary_color}}"}
-}
+
 
 /* Select box */
-.select {
+.select
   @include all-transitions
   position: relative
   border: 2px solid $border-color
@@ -224,7 +223,7 @@ body {
   position: relative
   width: 100%
 
-  select {
+  select
     @include all-transitions
     @include appearance(none)
     background: none
@@ -239,23 +238,21 @@ body {
     width: 100%
     z-index: 2
 
-    option {
+    option
       background-color: #FFF
       color: #000
-    }
 
-    &:focus {
+      &:disabled
+        color: graytext
+
+    &:focus
       box-shadow: none
       outline: none
-    }
 
-    &::-ms-expand {
+    &::-ms-expand
       display: none
-    }
 
-  }
-
-  svg {
+  svg
     @include all-transitions
     fill: $secondary-text-color
     height: 8px
@@ -265,23 +262,21 @@ body {
     top: 50%
     width: 13px
     z-index: 1
-  }
 
-  &:hover {
+  &:hover
     color: $secondary-text-color
     border-color: $secondary-text-color
 
-    select {
+    select
       color: $primary-text-color
-    }
 
-    svg {
+      option:disabled
+        color: graytext
+    svg
       fill: $primary-text-color
-    }
-  }
-}
+
 /* Badges */
-.badge {
+.badge
   height: 80px
   width: 80px
   font-size: 14px
@@ -291,52 +286,52 @@ body {
   border-radius: 70px
   display: table
   @include translateZ(0)
-}
-.badge span {
+
+.badge span
   display: table-cell
   vertical-align: middle
   @include translateZ(0)
-}
-.badge-empty {
+
+.badge-empty
   color: #{"{{theme.primary_color}}"}
   border: 3px solid #{"{{theme.primary_color}}"}
-}
-.badge-filled {
+
+.badge-filled
   color: #{"{{theme.primary_color}}"}
   background: #{"{{theme.background_color}}"}
   border: 3px solid #{"{{theme.background_color}}"}
-}
+
 
 /* Errors */
-.errors {
+.errors
   margin-bottom: 20px
   padding: 15px
   border-radius: 5px
   text-align: center
   background: #{"{{theme.highlight_color}}"}
-}
-.errors li {
+
+.errors li
   margin-top: 10px
-}
-.errors li:first-child {
+
+.errors li:first-child
   margin-top: 0
-}
+
 
 /* Pagers */
-.cycle-pager {
+.cycle-pager
   position: absolute
   left: 24px
   bottom: 24px
   z-index: 400
-}
-.cycle-pager > span {
+
+.cycle-pager > span
   display: inline-block
   width: 13px
   height: 13px
   padding: 6px
   cursor: pointer
-}
-.cycle-pager > span > span {
+
+.cycle-pager > span > span
   display: inline-block
   width: 7px
   height: 7px
@@ -346,37 +341,37 @@ body {
   border: 3px solid #{"{{theme.primary_color}}"}
   position: relative
   @include single-transition(background, 300ms)
-}
-.cycle-pager span.cycle-pager-active span {
+
+.cycle-pager span.cycle-pager-active span
   background: #{"{{theme.primary_color}}"}
   @include single-transition(background, 300ms)
-}
+
 
 /* HEADER
 --------------------------------------------- */
-header {
+header
   background: #{"{{theme.background_color}}"}
   border-bottom: 6px solid #{"{{theme.primary_color}}"}
   position: fixed
   top: 0
   width: 100%
   z-index: 501
-}
-.maintenance_on header {
+
+.maintenance_on header
   top: 27px
-}
-header .inner {
+
+header .inner
   height: 70px
   position: relative
-}
-.wordmark {
+
+.wordmark
   float: left
   font-family: "#{"{{theme.header_font}}"}", sans-serif
   font-size: 22px
   line-height: 30px
   margin-top: 24px
-}
-.logo {
+
+.logo
   display: block
   float: left
   height: 70px
@@ -385,49 +380,49 @@ header .inner {
   background-size: contain
   background-position: center left
   background-repeat: no-repeat
-}
-.logo img {
+
+.logo img
   height: 100%
   width: auto
-}
-.nav-main {
+
+.nav-main
   position: absolute
   bottom: 0
   right: 0
   height: 70px
   z-index: 500
-}
+
 .nav-main a,
-.nav-main > ul > li > span {
+.nav-main > ul > li > span
   font-size: 12px
   color: #{"{{theme.primary_color}}"}
   text-transform: uppercase
   letter-spacing: 0.09em
   font-weight: 700
-}
-.nav-main > ul {
+
+.nav-main > ul
   float: left
   display: block
   height: 70px
-}
-.nav-main > ul > li {
+
+.nav-main > ul > li
   float: left
   display: block
   list-style: none
   position: relative
-}
+
 .nav-main > ul > li > a,
-.nav-main > ul > li > span {
+.nav-main > ul > li > span
   display: block
   height: 12px
   padding: 29px 25px
-}
+
 .nav-main > ul > li.active > a,
-.nav-main > ul > li.active > span {
+.nav-main > ul > li.active > span
   background: #{"{{theme.primary_color}}"}
   color: #{"{{theme.background_color}}"}
-}
-.nav-main .dropdown {
+
+.nav-main .dropdown
   visibility: hidden
   opacity: 0
   position: absolute
@@ -441,77 +436,85 @@ header .inner {
   border-bottom-right-radius: 5px
   max-height: 50vh
   overflow-y: scroll
-}
-.nav-main > ul > li.active .dropdown {
+
+.nav-main > ul > li.active .dropdown
   visibility: visible
   opacity: 1
-}
-.icon-cart {
+
+.icon-cart
   font-size: 40px
-}
-.nav-main .dropdown li {
+
+.nav-main .dropdown li
   display: block
   line-height: 18px
-}
-.nav-main .dropdown li a {
+
+.nav-main .dropdown li a
   display: block
   color: #{"{{theme.background_color}}"}
   padding: 15px 20px
   min-width: 200px
-}
-.nav-main .dropdown li a:hover {
+
+.nav-main .dropdown li a:hover
   color: #{"{{theme.background_color}}"}
   background: #{"{{theme.highlight_color}}"}
   color: #{"{{theme.primary_color}}"}
-}
-.nav-caret {
+
+.nav-caret
   text-transform: lowercase
   font-size: 7px
   position: relative
   display: inline-block
   top: -2px
   @include scaleX(1.5)
-}
-.mobile-nav-trigger {
+
+.mobile-nav-trigger
   display: none
-}
-.cart-status {
+
+.cart-status
   float: left
   padding: 0
   width: 70px
   height: 70px
   @include scale(1)
   @include single-transition(all, 100ms, ease-in-out)
-}
-@-webkit-keyframes orbpulse {
-  0%   { -webkit-transform: scale(1) }
-  25% { -webkit-transform: scale(2) }
-  50%   { -webkit-transform: scale(1) }
-  75% { -webkit-transform: scale(1.2) }
-  100%   { -webkit-transform: scale(1) }
-}
-@-moz-keyframes orbpulse {
-  0%   { -moz-transform: scale(1) }
-  25% { -moz-transform: scale(2) }
-  50%   { -moz-transform: scale(1) }
-  75% { -moz-transform: scale(1.2) }
-  100%   { -moz-transform: scale(1) }
-}
-@-o-keyframes orbpulse {
-  0%   { -o-transform: scale(1) }
-  25% { -o-transform: scale(2) }
-  50%   { -o-transform: scale(1) }
-  75% { -o-transform: scale(1.2) }
-  100%   { -o-transform: scale(1) }
-}
-@keyframes orbpulse {
-  0%   { transform: scale(1) }
-  25% { transform: scale(2) }
-  50%   { transform: scale(1) }
-  75% { transform: scale(1.2) }
-  100%   { transform: scale(1) }
-}
-.cart-orb {
+
+@-webkit-keyframes orbpulse
+  0%
+    -webkit-transform: scale(1)
+  25%
+    -webkit-transform: scale(2)
+  50%
+    -webkit-transform: scale(1)
+  75%
+    -webkit-transform: scale(1.2)
+  100%
+    -webkit-transform: scale(1)
+
+@-moz-keyframes orbpulse
+  0%
+    -moz-transform: scale(1)
+  25%
+    -moz-transform: scale(2)
+  50%
+    -moz-transform: scale(1)
+  75%
+    -moz-transform: scale(1.2)
+  100%
+    -moz-transform: scale(1)
+
+@keyframes orbpulse
+  0%
+    transform: scale(1)
+  25%
+    transform: scale(2)
+  50%
+    transform: scale(1)
+  75%
+    transform: scale(1.2)
+  100%
+    transform: scale(1)
+
+.cart-orb
   height: 60px
   width: 60px
   border-radius: 80px
@@ -522,20 +525,20 @@ header .inner {
   position: absolute
   z-index: 505
   @include single-transition(transform, 100ms, ease-in-out)
-}
-.cart-status .cart-orb {
+
+.cart-status .cart-orb
   @include scale(0)
   @include single-transition(transform, 100ms, ease-in-out)
-}
-.cart-status:hover .cart-orb {
+
+.cart-status:hover .cart-orb
   @include scale(1.6)
   @include single-transition(transform, 100ms, ease-out)
-}
+
 /* Disable orb on cart pages */
-.cart .cart-status:hover .cart-orb {
+.cart .cart-status:hover .cart-orb
   display: none
-}
-.cart-count {
+
+.cart-count
   display: block
   text-align: center
   margin-top: 16px
@@ -544,8 +547,8 @@ header .inner {
   position: relative
   z-index: 510
   @include single-transition(all, 100ms)
-}
-.icon-cart {
+
+.icon-cart
   display: block
   margin: 0 auto
   width: 40px
@@ -553,22 +556,22 @@ header .inner {
   position: relative
   top: -4px
   z-index: 510
-}
-.cart-status .cart-count-animate {
+
+.cart-status .cart-count-animate
   @include translate(0,16px)
   @include single-transition(all, 100ms)
-}
-.cart-status .cart-orb-animate {
+
+.cart-status .cart-orb-animate
   @include scale(1.6)
   @include single-transition(transform, 150ms, ease-out)
-}
-.nav-mobile {
+
+.nav-mobile
   display: none
-}
+
 
 /* FOOTER
 --------------------------------------------- */
-footer {
+footer
   background: #{"{{theme.primary_color}}"}
   font-size: 12px
   line-height: 1.3em
@@ -579,191 +582,197 @@ footer {
   font-weight: 700
   position: relative
   z-index: 500
-}
-footer a {
+
+footer a
   color: #{"{{theme.background_color}}"}
-}
-footer a:hover {
+
+footer a:hover
   color: #{"{{theme.highlight_color}}"}
-}
-footer .inner {
+
+footer .inner
   position: relative
   top: 50%
   transform: translateY(-50%)
-}
-footer .inner:after {
+
+footer .inner:after
   clear: both
   content: " "
   display: table
-}
-footer .social_links {
+
+footer .social_links
   float: left
-}
-footer .social_links:after {
+
+footer .social_links:after
   clear: both
   content: " "
   display: table
-}
-footer .social_links li {
+
+footer .social_links li
   float: left
   margin: 0 10px
-}
-footer .social_links li:first-child {
+
+footer .social_links li:first-child
   margin-left: 0
-}
-footer .social_links li a {
+
+footer .social_links li a
   display: block
-}
-footer .social_links li a svg {
+
+footer .social_links li a svg
   display: block
   fill: #{"{{theme.background_color}}"}
   height: 22px
   width: 22px
-}
-footer .social_links li a:hover svg {
+
+footer .social_links li a:hover svg
   fill: #{"{{theme.highlight_color}}"}
-}
-footer .footer-text {
+
+footer .footer-text
   float: right
   line-height: 22px
-}
+
 
 /* DOM MODS
 --------------------------------------------- */
-.visible-phone { display: none !important  }
-.visible-tablet { display: none !important  }
-.visible-desktop { display: inherit !important  }
-.hidden-phone { display: inherit !important }
-.hidden-tablet { display: inherit !important }
-.hidden-desktop { display: none !important }
-
+.visible-phone
+  display: none !important
+.visible-tablet
+  display: none !important
+.visible-desktop
+  display: inherit !important
+.hidden-phone
+  display: inherit !important
+.hidden-tablet
+  display: inherit !important
+.hidden-desktop
+  display: none !important
 
 /* EXTRA LARGE */
-@media only screen and (min-width : $break-extra-large) {
-
-  .inner {
+@media only screen and (min-width : $break-extra-large)
+  .inner
     max-width: 1480px
-  }
-
-}
 
 /* LARGE */
-@media only screen and (max-width : $break-large) {
+@media only screen and (max-width : $break-large)
 
   /* Global */
-  .inner {
+  .inner
     margin-left: 30px
     margin-right: 30px
-  }
-  .main .inner {
+
+  .main .inner
     margin-top: 130px
-  }
+
 
   /* Typography */
-  h1 {
+  h1
     font-size: 45px
-  }
-  h2 {
+
+  h2
     font-size: 20px
     line-height: 1.5em
-  }
-  h3 {
+
+  h3
     font-size: 18px
     line-height: 1.7em
-  }
+
 
   /* DOM mods */
-  .visible-phone { display: none !important  }
-  .visible-tablet { display: inherit !important  }
-  .visible-desktop { display: none !important  }
-  .hidden-phone { display: inherit !important }
-  .hidden-tablet { display: none !important }
-  .hidden-desktop { display: inherit !important }
+  .visible-phone
+    display: none !important
+  .visible-tablet
+    display: inherit !important
+  .visible-desktop
+    display: none !important
+  .hidden-phone
+    display: inherit !important
+  .hidden-tablet
+    display: none !important
+  .hidden-desktop
+    display: inherit !important
 
-}
 
 /* MEDIUM */
-@media only screen and (max-width : $break-medium) {
+@media only screen and (max-width : $break-medium)
 
   /* Global */
-  .main .inner {
+  .main .inner
     margin-top: 50px
-  }
+
 
   /* Typography */
-  h3 {
+  h3
     font-size: 16px
-  }
+
 
   /* Modules */
-  .btn {
+  .btn
     padding: 15px 30px
     font-size: 16px
-  }
+
 
   /* Header */
-  header {
+  header
     position: relative
-  }
-  header .inner {
+
+  header .inner
     height: 70px
-  }
-  .logo {
+
+  .logo
     width: 160px
-  }
-  .wordmark {
+
+  .wordmark
     margin-top: 24px
-  }
-  .nav-main {
+
+  .nav-main
     height: 70px
-  }
-  .nav-main ul {
+
+  .nav-main ul
     display: none
-  }
-  .mobile-nav-trigger {
+
+  .mobile-nav-trigger
     display: block
     float: left
     height: 70px
     width: 50px
-  }
-  .icon-menu {
+
+  .icon-menu
     display: block
     font-size: 30px
     width: 30px
     margin: 22px auto 0
-  }
-  .cart-status {
+
+  .cart-status
     height: 70px
     width: 50px
-  }
-  .cart-orb {
+
+  .cart-orb
     width: 60px
     height: 60px
     top: 5px
     right: -4px
-  }
-  .icon-cart {
+
+  .icon-cart
     top: -4px
-  }
-  .nav-mobile {
+
+  .nav-mobile
     position: absolute
     top: 70px
     width: 100%
     background: #{"{{theme.primary_color}}"}
     z-index: 502
     height: auto
-  }
-  .nav-mobile > ul {
+
+  .nav-mobile > ul
     margin: 20px
     border-radius: 5px
-  }
-  .nav-mobile li {
+
+  .nav-mobile li
     margin-top: 5px
-  }
-  .nav-mobile li:first-child {
+
+  .nav-mobile li:first-child
     margin-top: 0
-  }
-  .nav-mobile a {
+
+  .nav-mobile a
     display: block
     padding: 16px 0
     background: #{"{{theme.background_color}}"}
@@ -772,108 +781,101 @@ footer .footer-text {
     text-transform: uppercase
     font-size: 16px
     font-weight: 700
-  }
-  .nav-mobile a:hover {
+
+  .nav-mobile a:hover
     color: #{"{{theme.primary_color}}"}
     background: #{"{{theme.highlight_color}}"}
-  }
-  .nav-mobile li > ul {
+
+  .nav-mobile li > ul
     display: none
     margin-top: 0
-  }
-  .nav-mobile li > ul li {
+
+  .nav-mobile li > ul li
     margin-top: 0
     border-top: 3px solid #{"{{theme.background_color}}"}
-  }
-  .nav-mobile li > ul li:first-child {
+
+  .nav-mobile li > ul li:first-child
     border-top: none
-  }
-  .nav-mobile li > ul a {
+
+  .nav-mobile li > ul a
     background: none
     color: #{"{{theme.background_color}}"}
-  }
-
-}
 
 /* SMALL */
-@media only screen and (max-width : $break-small) {
+@media only screen and (max-width : $break-small)
 
   /* Typography */
-  h1 {
+  h1
     font-size: 34px
-  }
 
   /* Global */
-  .inner {
+  .inner
     margin-left: 20px
     margin-right: 20px
-  }
-  .main .inner {
+
+  .main .inner
     margin-top: 40px
-  }
-  .home .main .inner {
+
+  .home .main .inner
     margin-left: 0
     margin-right: 0
-  }
-  footer .inner {
+
+  footer .inner
     min-height: 34px
     padding: 24px 0
     text-align: center
-  }
-  header .inner {
+
+  header .inner
     margin-right: 10px
-  }
+
 
   /* Modules */
-  .highlight {
+  .highlight
     font-size: 16px
-  }
-  .badge-view {
+
+  .badge-view
     display: none
-  }
-  .cycle-pager {
+
+  .cycle-pager
     width: 100%
     left: 0
     text-align: center
-  }
 
   /* Footer */
-  footer {
+  footer
     height: 120px
-  }
 
   footer .social_links,
-  footer .footer-text {
+  footer .footer-text
     display: block
     float: none
-  }
-  footer .social_links li {
+
+  footer .social_links li
     display: inline-block
     float: none
-  }
-  footer .social_links li:first-child {
+
+  footer .social_links li:first-child
     margin: 0 10px
-  }
-  footer .footer-text {
+
+  footer .footer-text
     line-height: 34px
     position: relative
-  }
-  footer .social_links + .footer-text {
+
+  footer .social_links + .footer-text
     line-height: 22px
     margin-top: 20px
-  }
 
   /* DOM mods */
-  .visible-phone { display: inherit !important  }
-  .visible-tablet { display: none !important  }
-  .visible-desktop { display: none !important  }
-  .hidden-phone { display: none !important }
-  .hidden-tablet { display: inherit !important }
-  .hidden-desktop { display: inherit !important }
+  .visible-phone
+    display: inherit !important
+  .visible-tablet
+    display: none !important
+  .visible-desktop
+    display: none !important
+  .hidden-phone
+    display: none !important
+  .hidden-tablet
+    display: inherit !important
+  .hidden-desktop
+    display: inherit !important
 
-}
-
-/* EXTRA SMALL */
-@media only screen and (max-width : $break-extra-small) {
-
-}
