@@ -3,7 +3,6 @@
 {% else %}
 <section class="main clear">
 {% endif %}
-
   {% if theme.image_sets.slideshow.size > 0 %}
     <div class="home-slideshow-wrap">
       <div class="slideshow-stripe"></div>
@@ -15,15 +14,10 @@
       </div>
     </div>
   {% endif %}
-    
   <div class="inner clear">
-  
     {% paginate products from products.current by theme.products_per_page %}
-    
     {% if products != blank %}
-    
       {% for product in products %}
-      
         <div class="preview rand-{{ forloop.index | modulo:7 }}">
           <div class="preview-inner">
             <a href="{{ product.url }}">
@@ -49,27 +43,20 @@
               <div class="meta">
                 <span class="highlight price">{{ product.default_price | money: theme.money_format }}</span>
                 <h3>{{ product.name }}</h3>
-      
+
               </div>
               {% if product.on_sale %}
               {% endif %}
             </a>
           </div>
         </div>
-      
       {% endfor %}
-    
     {% if paginate.pages > 1 %}
       {{ paginate | default_pagination }}
     {% endif %}
-    
     {% else %}
-    
        <h1 class="floating-title">No products found</h1>
-       
     {% endif %}
-    
     {% endpaginate %}
-
   </div>
 </section>
