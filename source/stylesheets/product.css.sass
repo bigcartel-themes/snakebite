@@ -1,223 +1,223 @@
-@import 'config';
+@import 'config'
 
 .product .main .inner {
-  margin-top: 76px;
+  margin-top: 76px
 }
 .product .wrapper {
-  overflow: hidden;
+  overflow: hidden
 }
 .product .images {
-  float: right;
-  width: 66%;
-  background-color: #{"{{theme.accent_color}}"};
-  background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"};
+  float: right
+  width: 66%
+  background-color: #{"{{theme.accent_color}}"}
+  background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
 }
 .product .images-inner {
-  position: relative;
+  position: relative
 }
 .product .color-block {
-  width: 2000%;
-  height: 2000%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #{"{{theme.accent_color}}"};
-  background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"};
-  z-index: -1;
+  width: 2000%
+  height: 2000%
+  position: absolute
+  top: 0
+  left: 0
+  background-color: #{"{{theme.accent_color}}"}
+  background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
+  z-index: -1
 }
 .slideshow {
-  position: relative;
-  overflow: hidden;
-  background-color: #{"{{theme.accent_color}}"};
-  background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"};
+  position: relative
+  overflow: hidden
+  background-color: #{"{{theme.accent_color}}"}
+  background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
 }
 .slideshow img {
-  display: block;
-  width: auto;
-  max-width: 100%;
+  display: block
+  width: auto
+  max-width: 100%
 }
 
 .product .details {
-  float: left;
-  width: 28%;
+  float: left
+  width: 28%
 }
 .product h2 {
-  margin: 50px 0 0 0;
+  margin: 50px 0 0 0
 }
 .product h4 {
-  margin: 0 0 15px 0;
+  margin: 0 0 15px 0
 }
 .product .description {
-  margin: 30px 0 0 0;
+  margin: 30px 0 0 0
 }
 .product .errors {
-  margin: 30px 0 0 0;
+  margin: 30px 0 0 0
 }
 .product .description b,
 .product .description strong {
-  font-weight: bold;
+  font-weight: bold
 }
 .product .description i,
 .product .description em {
-  font-style: italic;
+  font-style: italic
 }
 
 .static-option-list {
-  margin-bottom: 30px;
+  margin-bottom: 30px
 }
 .product .description p {
-  margin-bottom: 20px;
+  margin-bottom: 20px
 }
 .product .description p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0
 }
 .badge-sale {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  z-index: 400;
+  position: absolute
+  top: 30px
+  left: 30px
+  z-index: 400
 }
 .product .price {
-  display: inline-block;
-  margin-top: 15px;
+  display: inline-block
+  margin-top: 15px
 }
 .purchase {
-  margin-top: 30px;
+  margin-top: 30px
 }
 .social-links {
-  overflow: hidden;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  overflow: hidden
+  margin-top: 30px
+  margin-bottom: 15px
 }
 .social-links li {
-  float: left;
-  margin: 0 10px 10px 0;
+  float: left
+  margin: 0 10px 10px 0
 }
 .social-links li a {
-  display: block;
-  background: #{"{{theme.primary_color}}"};
-  color: #{"{{theme.background_color}}"};
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.09em;
-  padding: 5px 10px;
-  border-radius: 5px;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  display: block
+  background: #{"{{theme.primary_color}}"}
+  color: #{"{{theme.background_color}}"}
+  text-transform: uppercase
+  font-weight: 700
+  font-size: 12px
+  letter-spacing: 0.09em
+  padding: 5px 10px
+  border-radius: 5px
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
 }
 .social-links li a:hover {
-  color: #{"{{theme.highlight_color}}"};
+  color: #{"{{theme.highlight_color}}"}
 }
 @-webkit-keyframes purchasepulse {
-  0%   { -webkit-transform: scale(1); }
-  50% { -webkit-transform: scale(1.2); }
-  100%   { -webkit-transform: scale(1); }
+  0%   { -webkit-transform: scale(1) }
+  50% { -webkit-transform: scale(1.2) }
+  100%   { -webkit-transform: scale(1) }
 }
 @-moz-keyframes purchasepulse {
-  0%   { -moz-transform: scale(.95); }
-  50% { -moz-transform: scale(1.2); }
-  100%   { -moz-transform: scale(1); }
+  0%   { -moz-transform: scale(.95) }
+  50% { -moz-transform: scale(1.2) }
+  100%   { -moz-transform: scale(1) }
 }
 @-o-keyframes purchasepulse {
-  0%   { -o-transform: scale(.95); }
-  50% { -o-transform: scale(1.2); }
-  100%   { -o-transform: scale(1); }
+  0%   { -o-transform: scale(.95) }
+  50% { -o-transform: scale(1.2) }
+  100%   { -o-transform: scale(1) }
 }
 @keyframes purchasepulse {
-  0%   { transform: scale(.95); }
-  50% { transform: scale(1.2); }
-  100%   { transform: scale(1); }
+  0%   { transform: scale(.95) }
+  50% { transform: scale(1.2) }
+  100%   { transform: scale(1) }
 }
 .btn-purchase {
-  display: block;
-  @include scale(1);
-  @include single-transition(transform, 100ms, ease-in-out);
+  display: block
+  @include scale(1)
+  @include single-transition(transform, 100ms, ease-in-out)
 }
 .btn-active:active {
-  @include scale(.95);
-  @include single-transition(transform, 50ms, ease-in-out);
+  @include scale(.95)
+  @include single-transition(transform, 50ms, ease-in-out)
 }
 .btn-pulse {
-  @include scale(1.2);
-  @include single-transition(transform, 100ms, ease-in-out);
+  @include scale(1.2)
+  @include single-transition(transform, 100ms, ease-in-out)
 }
 .btn-inactive:hover {
-  background: none;
-  color: #{"{{theme.primary_color}}"};
-  cursor: default;
+  background: none
+  color: #{"{{theme.primary_color}}"}
+  cursor: default
 }
 .options {
-  border: 3px solid #{"{{theme.primary_color}}"};
-  border-radius: 5px;
-  margin-bottom: 20px;
+  border: 3px solid #{"{{theme.primary_color}}"}
+  border-radius: 5px
+  margin-bottom: 20px
 }
 .option-selected {
-  font-size: 15px;
-  line-height: 22px;
-  padding: 10px;
-  cursor: pointer;
-  position: relative;
+  font-size: 15px
+  line-height: 22px
+  padding: 10px
+  cursor: pointer
+  position: relative
 }
 .option-selected:hover {
-  color: #{"{{theme.background_color}}"};
-  background: #{"{{theme.primary_color}}"};
+  color: #{"{{theme.background_color}}"}
+  background: #{"{{theme.primary_color}}"}
 }
 .option-selected-name {
-  display: block;
-  margin-right: 30px;
-  font-size: 16px;
+  display: block
+  margin-right: 30px
+  font-size: 16px
 }
 .options-wrap {
-  height: 48px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 10;
+  height: 48px
+  margin-bottom: 20px
+  position: relative
+  z-index: 10
 }
 .options-list {
-  background: #{"{{theme.background_color}}"};
-  height:auto;
-  max-height: 200px;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  background: #{"{{theme.background_color}}"}
+  height:auto
+  max-height: 200px
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
 }
 .options-list li {
-  display: block;
-  padding: 10px;
-  cursor: pointer;
+  display: block
+  padding: 10px
+  cursor: pointer
 }
 .options-list li:hover {
-  background: #{"{{theme.primary_color}}"};
-  color: #{"{{theme.background_color}}"};
+  background: #{"{{theme.primary_color}}"}
+  color: #{"{{theme.background_color}}"}
 }
 .options .dropdown-caret {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  margin-top: -12px;
-  text-transform: lowercase;
-  font-size: 7px;
-  display: block;
-  font-weight: 700;
-  -moz-transform: scalex(1.5);
-  -ms-transform: scalex(1.5);
-  -o-transform: scalex(1.5);
-  -webkit-transform: scalex(1.5);
-  transform: scalex(1.5);
+  position: absolute
+  top: 50%
+  right: 20px
+  margin-top: -12px
+  text-transform: lowercase
+  font-size: 7px
+  display: block
+  font-weight: 700
+  -moz-transform: scalex(1.5)
+  -ms-transform: scalex(1.5)
+  -o-transform: scalex(1.5)
+  -webkit-transform: scalex(1.5)
+  transform: scalex(1.5)
 }
 
 /* LARGE */
 @media only screen and (max-width : $break-large) {
 
   .product .main .inner {
-    margin-right: 0;
+    margin-right: 0
   }
   .product h2 {
-    margin-top: 30px;
+    margin-top: 30px
   }
 
 }
@@ -226,7 +226,7 @@
 @media only screen and (max-width : $break-medium) {
 
   .product .main .inner {
-    margin-top: 0;
+    margin-top: 0
   }
 
 }
@@ -236,36 +236,36 @@
 
   .product .details,
   .product .images {
-    float: none;
-    width: auto;
+    float: none
+    width: auto
   }
   .product .images {
-    width: 100%;
+    width: 100%
   }
   .product .images-inner {
-    display: block;
+    display: block
   }
   .product .details {
-    text-align: center;
-    margin: 0 20px 20px 20px;
+    text-align: center
+    margin: 0 20px 20px 20px
   }
   .product .description,
   .product .bullets {
-    text-align: left;
+    text-align: left
   }
   .product .color-block {
-    display: none;
+    display: none
   }
   .product .main .inner {
-    margin: 0;
+    margin: 0
   }
   .badge-sale {
-    top: 20px;
-    left: 20px;
+    top: 20px
+    left: 20px
   }
   .slideshow {
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 400px
+    margin: 0 auto
   }
 
 }

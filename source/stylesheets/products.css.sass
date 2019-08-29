@@ -1,209 +1,209 @@
-@import 'config';
+@import 'config'
 
 .home .main .inner {
-  text-align: center;
+  text-align: center
 }
 .home .main.has-slideshow .inner {
-  margin-top: 50px;
+  margin-top: 50px
 }
 .preview {
-  margin: 0 15px 80px 15px;
-  position: relative;
-  display: inline-block;
+  margin: 0 15px 80px 15px
+  position: relative
+  display: inline-block
 }
 .preview-inner a {
-  display: block;
-  position: relative;
-  width: 100%;
+  display: block
+  position: relative
+  width: 100%
 }
 .image-wrap {
-  background: #{"{{theme.background_color}}"};
-  position: relative;
-  z-index: 0;
+  background: #{"{{theme.background_color}}"}
+  position: relative
+  z-index: 0
 }
 .image-wrap img {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  display: block
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index: 1
 }
 .preview .badge-empty {
-  @include single-transition(transform, 100ms, ease-in-out);
+  @include single-transition(transform, 100ms, ease-in-out)
 }
 .preview:hover .badge-empty {
-  color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"};
-  background: #{"{{theme.primary_color}}"};
-  @include translateZ(0);
-  @include scale(1.1);
-  @include single-transition(transform, 100ms, ease-in-out);
+  color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"}
+  background: #{"{{theme.primary_color}}"}
+  @include translateZ(0)
+  @include scale(1.1)
+  @include single-transition(transform, 100ms, ease-in-out)
 }
 .preview:active .badge-empty {
-  @include scale(.95);
-  @include single-transition(transform, 50ms, ease-in-out);
+  @include scale(.95)
+  @include single-transition(transform, 50ms, ease-in-out)
 }
 .preview .badge {
-  position: absolute;
-  z-index: 2;
+  position: absolute
+  z-index: 2
 }
 .meta {
-  border-top: 3px solid #{"{{theme.primary_color}}"};
-  text-align: left;
-  padding: 20px 0;
-  position: relative;
+  border-top: 3px solid #{"{{theme.primary_color}}"}
+  text-align: left
+  padding: 20px 0
+  position: relative
 }
 .meta .price {
-  float: right;
-  margin: 0 0 10px 30px;
-  -webkit-transform: translateZ(0);
+  float: right
+  margin: 0 0 10px 30px
+  -webkit-transform: translateZ(0)
 }
 .pagination {
-  display: block;
-  font-size: 40px;
-  line-height: 1.5em;
-  margin-bottom: 80px;
+  display: block
+  font-size: 40px
+  line-height: 1.5em
+  margin-bottom: 80px
 }
 .pagination a,
 .pagination span {
-  display: inline-block;
-  white-space: nowrap;
-  padding: 0 4px;
+  display: inline-block
+  white-space: nowrap
+  padding: 0 4px
 }
 .pagination .current,
 .pagination a:hover {
-  border-radius: 5px;
-  background: #{"{{theme.highlight_color}}"};
+  border-radius: 5px
+  background: #{"{{theme.highlight_color}}"}
 }
 .pagination .disabled {
-  display: none;
+  display: none
 }
 .color-block-products {
-  width: 70%;
-  height: 70%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: #{"{{theme.accent_color}}"};
-  background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"};
+  width: 70%
+  height: 70%
+  position: fixed
+  left: 0
+  bottom: 0
+  z-index: -1
+  background-color: #{"{{theme.accent_color}}"}
+  background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
 }
 .preview {
-  width: 300px;
+  width: 300px
 }
 .rand-0 {
-  width: 330px;
-  top: 40px;
+  width: 330px
+  top: 40px
 }
 .rand-0 .badge-view {
-  bottom: 20px;
-  right: 20px;
+  bottom: 20px
+  right: 20px
 }
 .rand-0 .badge-status {
-  top: 20px;
-  left: 20px;
+  top: 20px
+  left: 20px
 }
 .rand-1 {
-  width: 280px;
-  top: 20px;
+  width: 280px
+  top: 20px
 }
 .rand-1 .badge-view {
-  top: 21%;
-  right: -20px;
+  top: 21%
+  right: -20px
 }
 .rand-1 .badge-status {
-  bottom: 20%;
-  left: -20px;
+  bottom: 20%
+  left: -20px
 }
 .rand-2 {
-  width: 350px;
-  top: 0px;
+  width: 350px
+  top: 0px
 }
 .rand-2 .badge-view {
-  top: 30%;
-  right: 20px;
+  top: 30%
+  right: 20px
 }
 .rand-2 .badge-status {
-  top: 8%;
-  left: 20px;
+  top: 8%
+  left: 20px
 }
 .rand-3 {
-  width: 320px;
-  top: 40px;
+  width: 320px
+  top: 40px
 }
 .rand-3 .badge-view {
-  bottom: 20%;
-  left: -20px;
+  bottom: 20%
+  left: -20px
 }
 .rand-3 .badge-status {
-  top: 10%;
-  right: -20px;
+  top: 10%
+  right: -20px
 }
 .rand-4 {
-  width: 400px;
-  top:-20px;
+  width: 400px
+  top:-20px
 }
 .rand-4 .badge-view {
-  top: 20%;
-  left: -20px;
+  top: 20%
+  left: -20px
 }
 .rand-4 .badge-status {
-  bottom: 15%;
-  right: 20px;
+  bottom: 15%
+  right: 20px
 }
 .rand-5 {
-  top: 20px;
+  top: 20px
 }
 .rand-5 .badge-view {
-  top: 20px;
-  left: 20px;
+  top: 20px
+  left: 20px
 }
 .rand-5 .badge-status {
-  top: -20px;
-  right: -20px;
+  top: -20px
+  right: -20px
 }
 .rand-6 {
-  width: 330px;
-  top: 0px;
+  width: 330px
+  top: 0px
 }
 .rand-6 .badge-view {
-  top: -20px;
-  right: 20px;
+  top: -20px
+  right: 20px
 }
 .rand-6 .badge-status {
-  bottom: 10%;
-  left: -20px;
+  bottom: 10%
+  left: -20px
 }
 
 .home-slideshow-wrap {
-  max-width: 1200px;
-  margin: 76px auto 0;
-  position: relative;
+  max-width: 1200px
+  margin: 76px auto 0
+  position: relative
 }
 .home-slideshow {
-  margin-left: 80px;
-  @include translateZ(0);
+  margin-left: 80px
+  @include translateZ(0)
 }
 .slideshow-stripe {
-  width: 80px;
-  height: 90%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #{"{{theme.highlight_color}}"};
+  width: 80px
+  height: 90%
+  position: absolute
+  top: 0
+  left: 0
+  background: #{"{{theme.highlight_color}}"}
 }
 
 
 /* Categories / Artists */
 .products .main .inner {
-  margin-top: 130px;
-  text-align: center;
+  margin-top: 130px
+  text-align: center
 }
 
 /* EXTRA LARGE */
 @media only screen and (min-width : $break-extra-large) {
 
   .home-slideshow-wrap {
-    max-width: 1480px;
+    max-width: 1480px
   }
 
 }
@@ -215,48 +215,48 @@
     margin: 0 15px 70px 15px
   }
   .preview {
-    width: 200px;
+    width: 200px
   }
   .meta {
-    padding: 0 0 20px 0;
-    text-align: center;
+    padding: 0 0 20px 0
+    text-align: center
   }
   .meta .price {
-    float: none;
-    display: inline-block;
-    margin: 0 0 -5px 0;
-    position: relative;
-    top: -20px;
+    float: none
+    display: inline-block
+    margin: 0 0 -5px 0
+    position: relative
+    top: -20px
   }
   .rand-0 {
-    width: 240px;
-    top: 40px;
+    width: 240px
+    top: 40px
   }
   .rand-1 {
-    width: 200px;
-    top: 20px;
+    width: 200px
+    top: 20px
   }
   .rand-2 {
-    width: 250px;
-    top: 0px;
+    width: 250px
+    top: 0px
   }
   .rand-3 {
-    width: 220px;
-    top: 40px;
+    width: 220px
+    top: 40px
   }
   .rand-4 {
-    width: 300px;
-    top:-20px;
+    width: 300px
+    top:-20px
   }
   .rand-5 {
-    top: 20px;
+    top: 20px
   }
   .rand-6 {
-    width: 230px;
-    top: 0px;
+    width: 230px
+    top: 0px
   }
   .pagination {
-    font-size: 32px;
+    font-size: 32px
   }
 
 }
@@ -266,18 +266,18 @@
 
   /* Home */
   .home-slideshow-wrap {
-    margin: 0 auto;
+    margin: 0 auto
   }
   .home-slideshow {
-    margin-left: 0;
+    margin-left: 0
   }
   .slideshow-stripe {
-    display: none;
+    display: none
   }
 
   /* Categories / Artists */
   .products .main .inner {
-    margin-top: 50px;
+    margin-top: 50px
   }
 
 }
@@ -286,45 +286,45 @@
 @media only screen and (max-width : $break-small) {
 
   .preview {
-    margin: 0 15px 20px 15px;
+    margin: 0 15px 20px 15px
   }
   .rand-0 {
-    width: 210px;
-    top: 0;
+    width: 210px
+    top: 0
   }
   .rand-1 {
-    width: 200px;
-    top: 0;
+    width: 200px
+    top: 0
   }
   .rand-2 {
-    width: 230px;
-    top: 0;
+    width: 230px
+    top: 0
   }
   .rand-3 {
-    width: 210px;
-    top: 0;
+    width: 210px
+    top: 0
   }
   .rand-4 {
-    width: 190px;
-    top: 0;
+    width: 190px
+    top: 0
   }
   .rand-5 {
-    width: 210px;
-    top: 0;
+    width: 210px
+    top: 0
   }
   .rand-6 {
-    width: 230px;
-    top: 0;
+    width: 230px
+    top: 0
   }
   .pagination {
-    font-size: 22px;
-    margin-bottom: 60px;
+    font-size: 22px
+    margin-bottom: 60px
   }
 
   /* Categories / Artists */
   .products .main .inner {
-    margin-top: 40px;
-    text-align: center;
+    margin-top: 40px
+    text-align: center
   }
 
 }
@@ -334,38 +334,38 @@
 
   /* Products */
   .preview {
-    margin: 0 0 20px 0;
+    margin: 0 0 20px 0
   }
   .rand-0 {
-    width: 260px;
-    top: 0;
+    width: 260px
+    top: 0
   }
   .rand-1 {
-    width: 250px;
-    top: 0;
+    width: 250px
+    top: 0
   }
   .rand-2 {
-    width: 280px;
-    top: 0;
+    width: 280px
+    top: 0
   }
   .rand-3 {
-    width: 260px;
-    top: 0;
+    width: 260px
+    top: 0
   }
   .rand-4 {
-    width: 210px;
-    top: 0;
+    width: 210px
+    top: 0
   }
   .rand-5 {
-    width: 280px;
-    top: 0;
+    width: 280px
+    top: 0
   }
   .rand-6 {
-    width: 240px;
-    top: 0;
+    width: 240px
+    top: 0
   }
   .pagination {
-    padding: 0 40px;
+    padding: 0 40px
   }
 
 }
