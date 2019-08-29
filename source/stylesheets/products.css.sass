@@ -17,7 +17,7 @@
   width: 100%
 
 .image-wrap
-  background: #{"{{theme.background_color}}"}
+  background: $background-color
   position: relative
   z-index: 0
 
@@ -33,7 +33,7 @@
 
 .preview:hover .badge-empty
   color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"}
-  background: #{"{{theme.primary_color}}"}
+  background: $primary-color
   @include translateZ(0)
   @include scale(1.1)
   @include single-transition(transform, 100ms, ease-in-out)
@@ -47,7 +47,7 @@
   z-index: 2
 
 .meta
-  border-top: 3px solid #{"{{theme.primary_color}}"}
+  border-top: 3px solid $primary-color
   text-align: left
   padding: 20px 0
   position: relative
@@ -72,7 +72,7 @@
 .pagination .current,
 .pagination a:hover
   border-radius: 5px
-  background: #{"{{theme.highlight_color}}"}
+  background: $highlight-color
 
 .pagination .disabled
   display: none
@@ -84,7 +84,7 @@
   left: 0
   bottom: 0
   z-index: -1
-  background-color: #{"{{theme.accent_color}}"}
+  background-color: $accent-color
   background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
 
 .preview
@@ -189,7 +189,7 @@
   position: absolute
   top: 0
   left: 0
-  background: #{"{{theme.highlight_color}}"}
+  background: $highlight-color
 
 
 

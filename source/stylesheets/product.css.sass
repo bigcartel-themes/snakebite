@@ -9,7 +9,7 @@
 .product .images
   float: right
   width: 66%
-  background-color: #{"{{theme.accent_color}}"}
+  background-color: $accent-color
   background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
 
 .product .images-inner
@@ -21,14 +21,14 @@
   position: absolute
   top: 0
   left: 0
-  background-color: #{"{{theme.accent_color}}"}
+  background-color: $accent-color
   background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
   z-index: -1
 
 .slideshow
   position: relative
   overflow: hidden
-  background-color: #{"{{theme.accent_color}}"}
+  background-color: $accent-color
   background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
 
 .slideshow img
@@ -94,8 +94,8 @@
 
 .social-links li a
   display: block
-  background: #{"{{theme.primary_color}}"}
-  color: #{"{{theme.background_color}}"}
+  background: $primary-color
+  color: $background-color
   text-transform: uppercase
   font-weight: 700
   font-size: 12px
@@ -110,7 +110,7 @@
   user-select: none
 
 .social-links li a:hover
-  color: #{"{{theme.highlight_color}}"}
+  color: $highlight-color
 
 @-webkit-keyframes purchasepulse
   0%
@@ -151,11 +151,11 @@
 
 .btn-inactive:hover
   background: none
-  color: #{"{{theme.primary_color}}"}
+  color: $primary-color
   cursor: default
 
 .options
-  border: 3px solid #{"{{theme.primary_color}}"}
+  border: 3px solid $primary-color
   border-radius: 5px
 
 .option-selected
@@ -166,8 +166,8 @@
   position: relative
 
 .option-selected:hover
-  color: #{"{{theme.background_color}}"}
-  background: #{"{{theme.primary_color}}"}
+  color: $background-color
+  background: $primary-color
 
 .option-selected-name
   display: block
@@ -181,7 +181,7 @@
   z-index: 10
 
 .options-list
-  background: #{"{{theme.background_color}}"}
+  background: $background-color
   height:auto
   max-height: 200px
   overflow-y: auto
@@ -193,8 +193,8 @@
   cursor: pointer
 
 .options-list li:hover
-  background: #{"{{theme.primary_color}}"}
-  color: #{"{{theme.background_color}}"}
+  background: $primary-color
+  color: $background-color
 
 .options .dropdown-caret
   position: absolute

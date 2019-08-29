@@ -4,7 +4,7 @@
   margin-top: 78px
 
 .cart-header
-  border-bottom: 3px solid #{"{{theme.primary_color}}"}
+  border-bottom: 3px solid $primary-color
   font-size: 12px
   line-height: 20px
   text-transform: uppercase
@@ -61,7 +61,7 @@
   margin-bottom: 60px
 
 .cart-item
-  border-bottom: 3px solid #{"{{theme.primary_color}}"}
+  border-bottom: 3px solid $primary-color
   overflow: hidden
   width: 100%
   height: 200px
@@ -75,7 +75,7 @@
 .cart-item-image
   width: 20%
   text-align: center
-  background-color: #{"{{theme.accent_color}}"}
+  background-color: $accent-color
   background-size: cover
   background-position: center center
 
@@ -99,15 +99,15 @@
   width: 20%
 
 .cart-item-quantity
-  color: #{"{{theme.primary_color}}"}
-  background: #{"{{theme.accent_color}}"}
+  color: $primary-color
+  background: $accent-color
   height: 50%
 
 .cart .quantity-controls
   width: 30%
   float: left
   height: 100%
-  border-right: 3px solid #{"{{theme.primary_color}}"}
+  border-right: 3px solid $primary-color
   -moz-box-sizing: border-box
   -webkit-box-sizing: border-box
   box-sizing: border-box
@@ -127,15 +127,15 @@
   user-select: none
 
 .cart .quantity-increment
-  border-bottom: 3px solid #{"{{theme.primary_color}}"}
+  border-bottom: 3px solid $primary-color
 
 .cart .quantity-decrement span, .cart .quantity-increment span
   display: table-cell
   vertical-align: middle
 
 .cart .quantity-decrement:hover, .cart .quantity-increment:hover
-  background: #{"{{theme.primary_color}}"}
-  color: #{"{{theme.accent_color}}"}
+  background: $primary-color
+  color: $accent-color
   cursor: pointer
 
 .cart-item-quantity input
@@ -146,7 +146,7 @@
   line-height: 40px
   font-weight: 700
   text-align: center
-  color: #{"{{theme.primary_color}}"}
+  color: $primary-color
   background: none
   padding: 0
   border: none
@@ -154,7 +154,7 @@
 
 .cart-item-remove
   color: #{"{% if theme.accent_color != 'transparent' %} {{ theme.accent_color }} {% else %} #FFFFFF {% endif %}"}
-  background: #{"{{theme.primary_color}}"}
+  background: $primary-color
   width: 100%
   height: 50%
   text-align: center
@@ -170,7 +170,7 @@
 
 .cart-item-price
   height: 100%
-  background: #{"{{theme.highlight_color}}"}
+  background: $highlight-color
   font-size: 30px
   line-height: 40px
   font-weight: 700
@@ -204,7 +204,7 @@
 .grand-total
   display: inline-block
   padding: 10px 10px 7px
-  background: #{"{{theme.highlight_color}}"}
+  background: $highlight-color
   font-size: 50px
   font-weight: 700
   margin: 10px 0
@@ -215,7 +215,7 @@
 
 .cart .errors
   margin-bottom: 0
-  border-bottom: 3px solid #{"{{theme.primary_color}}"}
+  border-bottom: 3px solid $primary-color
   border-radius: 0
   padding: 15px 20%
 
@@ -233,8 +233,8 @@
     padding: 15px
 
   .cart .quantity-decrement:hover, .cart .quantity-increment:hover
-    background: #{"{{theme.accent_color}}"}
-    color: #{"{{theme.primary_color}}"}
+    background: $accent-color
+    color: $primary-color
     cursor: pointer
 
 
@@ -281,7 +281,7 @@
     height: 100px
     width: 25%
     float: left
-    background-color: #{"{{theme.accent_color}}"}
+    background-color: $accent-color
     background-size: cover
     background-position: center center
 
