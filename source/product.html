@@ -33,7 +33,7 @@
         {% endif %}
       </div>
     </div>
-    
+
     <div class="details">
     <h2>{{product.name}}</h2>
     {% if product.variable_pricing %}
@@ -45,7 +45,7 @@
         <ul class="errors" style="display: none;"></ul>
         <div class="purchase" data-default-option-id="{{ product.options_in_stock.first.id }}">
           {% if product.has_default_option %}
-            <div class="btn btn-purchase btn-active"><span>Purchase</span></div> 
+            <div class="btn btn-purchase btn-active"><span>Purchase</span></div>
           {% else %}
             <div class="options-wrap">
               <div class="options">
@@ -63,7 +63,7 @@
               </div>
             </div>
             <div class="btn btn-purchase btn-inactive"><span>Choose an option</span></div>
-          {% endif %} 
+          {% endif %}
         </div>
       {% endif %}
     {% if product.description != blank %}
@@ -71,16 +71,16 @@
         {{ product.description | paragraphs }}
       </div>
     {% endif %}
-       
+
       {% if theme.show_social %}
       <ul class="social-links">
-        <li><a target="_blank" href="http://twitter.com/home?status={{product.name}}%20-%20{{store.name}}%20{{store.url}}{{product.url}}">Tweet</a></li>
+        <li><a target="_blank" href="https://twitter.com/intent/tweet?status={{product.name}}%20-%20{{store.name}}%20{{store.url}}{{product.url}}">Tweet</a></li>
         <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{store.url}}{{product.url}}">Share</a></li>
         <li><a target="_blank" href="http://pinterest.com/pin/create/button/?url={{store.url}}{{product.url}}&media={{ product.images.first.url }}">Pin It</a></li>
       </ul>
       {% endif %}
-      
+
     </div>
-    
+
   </div>
 </section>
