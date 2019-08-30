@@ -4,17 +4,26 @@
   max-width: 820px
   margin: 130px auto 70px
 
+  @media only screen and (max-width : $break-large)
+    margin: 130px auto 70px
+    padding: 0 20px 20px 20px
 
-/* Message pages */
-.centered-message
-  margin-top: 100px
-  text-align: center
+  @media only screen and (max-width : $break-medium)
+    margin: 50px 0 0 0
+    padding: 0 20px 20px 20px
 
 .btn-continue
   margin: 30px auto 0
 
-.centered-message h2
-  margin-bottom: 10px
+.centered-message
+  margin-top: 100px
+  text-align: center
+
+  @media only screen and (max-width : $break-small)
+    margin-top: 0
+
+  h2
+    margin-bottom: 10px
 
 .centered-message .btn
   margin-top: 30px
@@ -22,10 +31,14 @@
 .centered-message-cart
   margin-top: 200px
 
+  @media only screen and (max-width : $break-small)
+    margin-top: 40px
+
 .centered-message-cart h1
   margin-bottom: 0
 
 /* General pages */
+
 .format-text p
   margin-bottom: 20px
 
@@ -50,27 +63,3 @@
 .format-text ol li
   display: list-item
   list-style: decimal
-
-/* LARGE */
-@media only screen and (max-width : $break-large)
-
-  .custom .main .inner
-    margin-top: 130px 0 0 0
-    padding: 0 20px 20px 20px
-
-/* MEDIUM */
-@media only screen and (max-width : $break-medium)
-
-  .custom .main .inner
-    margin: 50px 0 0 0
-    padding: 0 20px 20px 20px
-
-/* SMALL */
-@media only screen and (max-width : $break-small)
-
-  /* Message pages */
-  .centered-message
-    margin-top: 0
-
-  .centered-message-cart
-    margin-top: 40px

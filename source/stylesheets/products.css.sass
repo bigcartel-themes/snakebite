@@ -11,7 +11,7 @@
   position: relative
   display: inline-block
 
-.preview-inner a
+.preview-inner .preview-inner-wrap
   display: block
   position: relative
   width: 100%
@@ -28,23 +28,24 @@
   height: 100%
   z-index: 1
 
-.preview .badge-empty
-  +transition(transform 100ms ease-in-out)
+.preview
+  .badge
+    position: absolute
+    z-index: 2
 
-.preview:hover .badge-empty
-  color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"}
-  background: $primary-color
-  +transform(translateZ(0))
-  +transform(scale(1.1))
-  +transition(transform 100ms ease-in-out)
+  .badge-empty
+    +transition(transform 100ms ease-in-out)
 
-.preview:active .badge-empty
-  +transform(scale(.95))
-  +transition(transform 50ms ease-in-out)
+  &:hover .badge-empty, &:focus .badge-empty
+    color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"}
+    background: $primary-color
+    +transform(translateZ(0))
+    +transform(scale(1.1))
+    +transition(transform 100ms ease-in-out)
 
-.preview .badge
-  position: absolute
-  z-index: 2
+  &:active .badge-empty
+    +transform(scale(.95))
+    +transition(transform 50ms ease-in-out)
 
 .meta
   border-top: 3px solid $primary-color
@@ -52,10 +53,10 @@
   padding: 20px 0
   position: relative
 
-.meta .price
-  float: right
-  margin: 0 0 10px 30px
-  +transform(translateZ(0))
+  .price
+    float: right
+    margin: 0 0 10px 30px
+    +transform(translateZ(0))
 
 .pagination
   display: block
@@ -63,19 +64,17 @@
   line-height: 1.5em
   margin-bottom: 80px
 
-.pagination a,
-.pagination span
-  display: inline-block
-  white-space: nowrap
-  padding: 0 4px
+  a, span
+    display: inline-block
+    white-space: nowrap
+    padding: 0 4px
 
-.pagination .current,
-.pagination a:hover
-  border-radius: 5px
-  background: $highlight-color
+  .current, a:hover
+    border-radius: 5px
+    background: $highlight-color
 
-.pagination .disabled
-  display: none
+  .disabled
+    display: none
 
 .color-block-products
   width: 70%

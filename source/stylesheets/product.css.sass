@@ -36,8 +36,12 @@
   width: auto
   max-width: 100%
 
+.product-form
+  margin-top: 30px
+
 .product .details
   float: left
+  margin-bottom: 40px
   width: 28%
 
 .product h2
@@ -59,7 +63,6 @@
 .product .description i,
 .product .description em
   font-style: italic
-
 
 .static-option-list
   margin-bottom: 30px
@@ -154,64 +157,6 @@
   color: $primary-color
   cursor: default
 
-.options
-  border: 3px solid $primary-color
-  border-radius: 5px
-
-.option-selected
-  font-size: 15px
-  line-height: 22px
-  padding: 10px
-  cursor: pointer
-  position: relative
-
-.option-selected:hover
-  color: $background-color
-  background: $primary-color
-
-.option-selected-name
-  display: block
-  margin-right: 30px
-  font-size: 16px
-
-.options-wrap
-  height: 48px
-  margin-bottom: 20px
-  position: relative
-  z-index: 10
-
-.options-list
-  background: $background-color
-  height:auto
-  max-height: 200px
-  overflow-y: auto
-  -webkit-overflow-scrolling: touch
-
-.options-list li
-  display: block
-  padding: 10px
-  cursor: pointer
-
-.options-list li:hover
-  background: $primary-color
-  color: $background-color
-
-.options .dropdown-caret
-  position: absolute
-  top: 50%
-  right: 20px
-  margin-top: -12px
-  text-transform: lowercase
-  font-size: 7px
-  display: block
-  font-weight: 700
-  -moz-transform: scalex(1.5)
-  -ms-transform: scalex(1.5)
-  -o-transform: scalex(1.5)
-  -webkit-transform: scalex(1.5)
-  transform: scalex(1.5)
-
-
 /* LARGE */
 @media only screen and (max-width : $break-large)
 
@@ -227,7 +172,6 @@
 
   .product .main .inner
     margin-top: 0
-
 
 /* SMALL */
 @media only screen and (max-width : $break-small)

@@ -77,9 +77,8 @@ ul.bullets
   line-height: 22px
   margin-left: 18px
 
-ul.bullets li
-  list-style: disc
-
+  li
+    list-style: disc
 
 /* GLOBAL LAYOUT
  */
@@ -114,10 +113,6 @@ body
 .main .inner
   margin-top: 130px
 
-
-/* MODULES
- */
-
 /* Buttons */
 .btn
   display: inline-block
@@ -140,25 +135,30 @@ body
   -ms-user-select: none
   user-select: none
 
-.btn:hover
-  background: $primary-color
-  color: $background-color
+  &:hover, &:active, &:focus
+    background: $primary-color
+    color: $background-color
+
+  &:disabled, &.disabled
+    cursor: not-allowed
+    opacity: .3
 
 .btn-inactive:hover
   background: none
   color: $primary-color
 
-
 /* Select box */
 .select
   +all-transitions
   position: relative
-  border: 2px solid $primary-color
+  border-radius: 5px
+  border: 3px solid $primary-color
   color: $primary-color
   font-family: "#{"{{theme.text_font}}"}", sans-serif
-  height: 60px
+  height: 50px
   margin-bottom: 20px
-  max-width: 300px
+  max-width: 100%
+  text-transform: uppercase
   padding: 0
   position: relative
   width: 100%
@@ -171,10 +171,12 @@ body
     color: $primary-color
     font-family: "#{"{{theme.text_font}}"}", sans-serif
     font-size: 14px
+    font-weight: 700
     height: 100%
     line-height: 2em
     padding: 0 50px 0 20px
     position: relative
+    text-transform: uppercase
     width: 100%
     z-index: 2
 
@@ -250,11 +252,11 @@ body
   text-align: center
   background: $highlight-color
 
-.errors li
-  margin-top: 10px
+  li
+    margin-top: 10px
 
-.errors li:first-child
-  margin-top: 0
+    &:first-child
+      margin-top: 0
 
 
 /* Pagers */
@@ -522,52 +524,52 @@ footer
   position: relative
   z-index: 500
 
-footer a
-  color: $background-color
+  a
+    color: $background-color
 
-footer a:hover
-  color: $highlight-color
+    &:hover
+      color: $highlight-color
 
-footer .inner
-  position: relative
-  top: 50%
-  +transform(translateY(-50%))
+  .inner
+    position: relative
+    top: 50%
+    +transform(translateY(-50%))
 
-footer .inner:after
-  clear: both
-  content: " "
-  display: table
+    &:after
+      clear: both
+      content: " "
+      display: table
 
-footer .social_links
-  float: left
+  .social_links
+    float: left
 
-footer .social_links:after
-  clear: both
-  content: " "
-  display: table
+    &:after
+      clear: both
+      content: " "
+      display: table
 
-footer .social_links li
-  float: left
-  margin: 0 10px
+  li
+    float: left
+    margin: 0 10px
 
-footer .social_links li:first-child
-  margin-left: 0
+    a
+      display: block
 
-footer .social_links li a
-  display: block
+      svg
+        display: block
+        fill: $background-color
+        height: 22px
+        width: 22px
 
-footer .social_links li a svg
-  display: block
-  fill: $background-color
-  height: 22px
-  width: 22px
+      &:hover svg
+        fill: $highlight-color
 
-footer .social_links li a:hover svg
-  fill: $highlight-color
+    &:first-child
+      margin-left: 0
 
-footer .footer-text
-  float: right
-  line-height: 22px
+  .footer-text
+    float: right
+    line-height: 22px
 
 
 /* DOM MODS
