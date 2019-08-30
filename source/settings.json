@@ -96,6 +96,22 @@
       "requires": "inventory"
     },
     {
+      "variable": "featured_products",
+      "label": "Featured products",
+      "type": "select",
+      "options": "0..100",
+      "default": 12,
+      "description": "The number of products featured on the Home page"
+    },
+    {
+      "variable": "featured_order",
+      "label": "Featured products order",
+      "type": "select",
+      "options": "product_orders",
+      "default": "position",
+      "description": "The order of products on the Home page"
+    },
+    {
       "variable": "products_per_page",
       "label": "Products per page",
       "type": "select",
