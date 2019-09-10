@@ -18,92 +18,62 @@
           {% else %}
             <a class="wordmark" href="/" data-store-name="{{ store.name | escape }}">{{ store.name }}</a>
           {% endif %}
-          <nav class="nav-main">
-            <ul class="clear">
-              {% if categories.active != blank %}
-                <li>
-                <a class="dropdown-trigger" href="/products">{{ pages.products.name }} <span class="nav-caret">v</span></a>
-                <ul class="dropdown">
-                <li><a href="/products">View All</a></li>
-                {% for category in categories.active %}
-                  <li><a href="{{ category.url }}">{{ category.name }}</a></li>
-                {% endfor %}
-                </ul>
-                </li>
-              {% endif %}
-              {% if artists.active != blank %}
-                <li>
-                <span class="dropdown-trigger">Artists <span class="nav-caret">v</span></span>
-                <ul class="dropdown">
-                {% for artist in artists.active %}
-                  <li><a href="{{ artist.url }}">{{ artist.name }}</a></li>
-                {% endfor %}
-                </ul>
-                </li>
-              {% endif %}
-              {% if pages.all != blank or store.website != blank %}
-                <li>
-                <span class="dropdown-trigger">Pages <span class="nav-caret">v</span></span>
-                <ul class="dropdown">
-                {% for page in pages.all %}
-                  <li><a href="{{ page.url }}">{{ page.name }}</a></li>
-                {% endfor %}
-                {% if store.website != blank %}
-                  <li><a href="{{ store.website }}">Back to site</a></li>
+
+          <nav class="header-nav-container">
+            <ul class="header-nav">
+              <li>
+                <a href="#" class="open-overlay" title="{{ pages.products.name }}">{{ pages.products.name }} <span class="nav-caret">v</span></a>
+                {% if categories.active != blank or artists.active != blank %}
+                  <ul class="header-nav-dropdown">
+                    <li><a href="/products">View all</a></li>
+                    {% if categories.active != blank %}
+                      {% for category in categories.active %}
+                        <li>{{ category | link_to }}</li>
+                      {% endfor %}
+                    {% endif %}
+                    {% if artists.active != blank %}
+                      {% for artist in artists.active %}
+                        <li>{{ artist | link_to }}</li>
+                      {% endfor %}
+                    {% endif %}
+                  </ul>
                 {% endif %}
-                </ul>
+              </li>
+              {% if pages.all != blank %}
+                <li>
+                  {% if pages.all != blank or store.website != blank %}
+                    <a href="#" class="open-overlay" title="Pages" type="button">Pages <span class="nav-caret">v</span></a>
+                    <ul class="header-nav-dropdown">
+                      {% for page in pages.all %}
+                        <li>{{ page | link_to }}</li>
+                      {% endfor %}
+                      {% if store.website != blank %}
+                        <li><a href="{{ store.website }}">Back to site</a></li>
+                      {% endif %}
+                    </ul>
+                  {% endif %}
                 </li>
+              {% else %}
+
               {% endif %}
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="/contact" title="Contact">Contact</a></li>
+              <li>
+                <a href="/cart" class="cart-status" title="View Cart">
+                  <span class="cart-count">{{ cart.item_count }}</span>
+                  <svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M21.875 7.438l1.625-4.75h5.625v1.563h-4l-4 11.188c4.25 0 4.25 5.625 0 5.625h-15.25v-1.625h15.25c2.125 0 2.125-2.375 0-2.375h-16l-1.625-9.625zM10.688 24.25c0-0.875-0.688-1.563-1.563-1.563-0.938 0-1.625 0.688-1.625 1.563s0.688 1.625 1.625 1.625c0.875 0 1.563-0.75 1.563-1.625M20.313 24.25c0-0.875-0.75-1.563-1.625-1.563s-1.563 0.688-1.563 1.563c0 0.875 0.688 1.625 1.563 1.625s1.625-0.75 1.625-1.625"></path></svg>
+                  <div class="cart-orb" {% if cart.item_count == 0 %}style="display: none;"{% endif %}></div>
+                </a>
+              </li>
             </ul>
-            <a href="#" class="mobile-nav-trigger"><span class="icon-menu"></span></a>
-            <a href="/cart" class="cart-status">
-              <span class="cart-count">{{ cart.item_count }}</span>
-              <span class="icon-cart"></span>
+          </nav>
+          <nav class="header-nav-container mobile-nav">
+            <a href="#" class="mobile-nav-trigger"><svg class="icon-menu" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M2 4h28v4h-28zM2 12h28v4h-28zM2 20h28v4h-28z"></path></svg></a>
+            <a href="/cart" title="View Cart">
+              <svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M21.875 7.438l1.625-4.75h5.625v1.563h-4l-4 11.188c4.25 0 4.25 5.625 0 5.625h-15.25v-1.625h15.25c2.125 0 2.125-2.375 0-2.375h-16l-1.625-9.625zM10.688 24.25c0-0.875-0.688-1.563-1.563-1.563-0.938 0-1.625 0.688-1.625 1.563s0.688 1.625 1.625 1.625c0.875 0 1.563-0.75 1.563-1.625M20.313 24.25c0-0.875-0.75-1.563-1.625-1.563s-1.563 0.688-1.563 1.563c0 0.875 0.688 1.625 1.563 1.625s1.625-0.75 1.625-1.625"></path></svg>
               <div class="cart-orb" {% if cart.item_count == 0 %}style="display: none;"{% endif %}></div>
             </a>
           </nav>
         </div>
-        <nav class="nav-mobile clear">
-          <ul>
-            <li><a href="/">Home</a></li>
-            {% if categories.active != blank %}
-                <li>
-                <a class="accordion-trigger" href="#">{{ pages.products.name }} <span class="nav-caret">v</span></a>
-                <ul class="accordion">
-                <li><a href="/products">View All</a></li>
-                {% for category in categories.active %}
-                  <li><a href="{{ category.url }}">{{ category.name }}</a></li>
-                {% endfor %}
-                </ul>
-                </li>
-              {% endif %}
-              {% if artists.active != blank %}
-                <li>
-                <a class="accordion-trigger" href="#">Artists <span class="nav-caret">v</span></a>
-                <ul class="accordion">
-                {% for artist in artists.active %}
-                  <li><a href="{{ artist.url }}">{{ artist.name }}</a></li>
-                {% endfor %}
-                </ul>
-                </li>
-              {% endif %}
-              {% if pages.all != blank or store.website != blank %}
-                <li>
-                <a class="accordion-trigger" href="#">Pages <span class="nav-caret">v</span></a>
-                <ul class="accordion">
-                {% for page in pages.all %}
-                  <li><a href="{{ page.url }}">{{ page.name }}</a></li>
-                {% endfor %}
-                {% if store.website != blank %}
-                  <li><a href="{{ store.website }}">Back to site</a></li>
-                {% endif %}
-                </ul>
-                </li>
-              {% endif %}
-              <li><a href="/contact">Contact</a></li>
-          </ul>
-        </nav>
       </header>
 
       {% if page.category == 'custom' %}
@@ -145,7 +115,7 @@
     </footer>
 
     {% if page.permalink == 'home' or  page.permalink == 'products' %}
-    <div class="color-block-products"></div>
+      <div class="color-block-products"></div>
     {% endif %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{ 'api' | theme_js_url }}"></script>
