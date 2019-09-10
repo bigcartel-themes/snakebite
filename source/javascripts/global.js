@@ -27,35 +27,6 @@ $(function() {
     });
   }
 
-  // Dropdown menu
-  $('.nav-main li:not(.cart-status, .mobile-nav-trigger)').mouseenter(function() {
-    $(this).addClass('active');
-  });
-  $('.nav-main li:not(.cart-status, .mobile-nav-trigger)').mouseleave(function() {
-    $(this).removeClass('active');
-  });
-
-  // Mobile nav
-  $('.mobile-nav-trigger').click(function(e) {
-    e.preventDefault();
-    mobileNav = $('.nav-mobile');
-    if(mobileNav.is(':visible')) {
-      mobileNav.slideUp(200);
-    } else {
-      mobileNav.slideDown(200);
-    }
-  });
-  $('.accordion-trigger').click(function(e) {
-    e.preventDefault();
-    var accordion = $(this).parent().find('.accordion');
-    if(accordion.is(':visible')) {
-      $(this).parent().find('.accordion').slideUp(200);
-    } else {
-      $('.accordion').slideUp(200);
-      $(this).parent().find('.accordion').slideDown(200);
-    }
-  });
-
   // Wordmark shortening
   var wordmarkEl = $('.wordmark');
   if(wordmarkEl.length > 0) {
@@ -82,6 +53,90 @@ $(function() {
   }
 
 });
+
+$('.open-mobile-nav').click(function(e) {
+  e.preventDefault();
+  $('.main-nav').slideToggle();
+});
+var isGreaterThanZero = function(currentValue) {
+  return currentValue > 0;
+}
+
+function arrayContainsArray(superset, subset) {
+  if (0 === subset.length) {
+    return false;
+  }
+  return subset.every(function (value) {
+    return (superset.indexOf(value) >= 0);
+  });
+}
+
+function unique(item, index, array) {
+  return array.indexOf(item) == index;
+}
+
+function cartesianProduct(a) {
+  var i, j, l, m, a1, o = [];
+  if (!a || a.length == 0) return a;
+  a1 = a.splice(0, 1)[0];
+  a = cartesianProduct(a);
+  for (i = 0, l = a1.length; i < l; i++) {
+    if (a && a.length) for (j = 0, m = a.length; j < m; j++)
+      o.push([a1[i]].concat(a[j]));
+    else
+      o.push([a1[i]]);
+  }
+  return o;
+}
+
+Array.prototype.equals = function (array) {
+  if (!array)
+    return false;
+  if (this.length != array.length)
+    return false;
+  for (var i = 0, l=this.length; i < l; i++) {
+    if (this[i] instanceof Array && array[i] instanceof Array) {
+      if (!this[i].equals(array[i]))
+        return false;
+    }
+    else if (this[i] != array[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// From https://github.com/kevlatus/polyfill-array-includes/blob/master/array-includes.js
+if (!Array.prototype.includes) {
+  Object.defineProperty(Array.prototype, 'includes', {
+    value: function (searchElement, fromIndex) {
+      if (this == null) {
+        throw new TypeError('"this" is null or not defined');
+      }
+      var o = Object(this);
+      var len = o.length >>> 0;
+      if (len === 0) {
+        return false;
+      }
+      var n = fromIndex | 0;
+      var k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+      function sameValueZero(x, y) {
+        return x === y || (typeof x === 'number' && typeof y === 'number' && isNaN(x) && isNaN(y));
+      }
+      while (k < len) {
+        if (sameValueZero(o[k], searchElement)) {
+          return true;
+        }
+        k++;
+      }
+      return false;
+    }
+  });
+}
+
+Array.prototype.count = function(filterMethod) {
+  return this.reduce((count, item) => filterMethod(item)? count + 1 : count, 0);
+}
 if ($('.product_option_select').length) {
   disableAddButton();
 }
@@ -99,7 +154,7 @@ function enableAddButton(updated_price) {
   else {
     priceTitle = '';
   }
-  addButton.html(addButtonTitle + priceTitle);
+  addButton.find('.status_text').html(addButtonTitle + priceTitle);
 }
 
 function disableAddButton(type) {
@@ -111,7 +166,7 @@ function disableAddButton(type) {
   if (!addButton.is(":disabled")) {
     addButton.attr("disabled","disabled");
   }
-  addButton.html(addButtonTitle);
+  addButton.find('.status_text').html(addButtonTitle);
 }
 
 function enableSelectOption(select_option) {

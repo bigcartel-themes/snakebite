@@ -4,4 +4,5 @@
 //= require javascripts/home
 //= require javascripts/product
 //= require javascripts/contact
+//= require javascripts/nav
 //= require javascripts/product-option-groups

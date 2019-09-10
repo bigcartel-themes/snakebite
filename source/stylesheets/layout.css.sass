@@ -336,159 +336,159 @@ header .inner
   &.mobile-nav
     display: none
 
-.header-nav
-  +flexbox
-  font-size: 12px
+
+.main-nav
+  z-index: 2
+  position: relative
+
+  @media only screen and (max-width : $break-medium)
+    display: none
+    position: fixed
+    top: 70px
+    left: 0
+    width: 100%
+
+.nav, .nav ul
+  margin: 0
+  padding: 0
+  list-style: none
+
+/* Top level nav */
+.nav
+
+  @media only screen and (max-width : $break-medium)
+    background: $primary-color
+    color: $background-color
+    padding: 20px
+
+/* Dropdowns */
+.nav ul
+  +transition(.1s linear all)
+  background: $primary-color
+  position: absolute
+  top: 100%
+  left: -9999px
+  opacity: 0
+  min-width: 200px
+  max-height: 400px
+  overflow-y: scroll
+
+.nav li
+  background: $background-color
+  float: left
+  position: relative
+
+  @media only screen and (max-width : $break-medium)
+    float: none
+    display: block
+    margin-top: 5px
+    width: 100%
+
+    &:first-child
+      margin-top: 0
+
+/* Top level nav items */
+.nav li > a
+  float: left
+  line-height: 70px
   color: $primary-color
+  font-weight: bold
+  font-size: 12px
+  text-decoration: none
+  padding: 0 25px
   text-transform: uppercase
   letter-spacing: 0.09em
   font-weight: 700
-  height: 70px
-  list-style: none
-  margin: 0
-  padding: 0
-  position: relative
 
-  @media screen and (max-width: $break-small)
-    +justify-content(space-evenly)
-    font-size: 20px
+  > svg
+    fill: $primary-color
+    margin-left: 2px
+    height: 9px
+    width: 9px
 
-  > li
+  @media only screen and (max-width : $break-medium)
+    color: $primary-color
+    line-height: 20px
+    padding: 16px 0
     display: block
+    font-size: 16px
+    float: none
+    width: 100%
+    text-align: center
+
+/* Top level hover state, preserve hover state when hovering dropdown  */
+.nav li > a:hover, .nav li > a:focus, .nav li:focus > a, .nav li:hover > a, .nav li:focus-within > a
+  background: $primary-color
+  color: $background-color
+  outline: 0
+
+  > svg
+    fill: $background-color
+
+/* Rounded corners for first top level nav item */
+.nav > li:first-child > a
+
+/* Rounded corners for last top level nav item */
+.nav > li:last-child > a
+
+.nav li:hover ul, .nav li:focus ul, ul.show-menu
+  left: auto
+  right: 0
+  opacity: 0.99
+
+  @media only screen and (max-width : $break-medium)
+    left: auto
+    opacity: 1
     position: relative
 
-    &:hover, &:focus, &:active
-      background: $primary-color
-      color: $background-color
+.nav ul li
+  float: none
+  position: static
 
-      a, button, span
-        color: $background-color
+  @media only screen and (max-width : $break-medium)
+    position: relative
 
-      svg
-        fill: $background-color
+.nav ul a
+  float: none
+  display: block
+  color: $background-color
+  background: $primary-color
+  font-size: 12px
+  text-shadow: none
+  line-height: 20px
+  padding: 15px 20px
+  text-transform: uppercase
+  font-weight: 700
+  letter-spacing: .09em
+  transition: 0.1s linear all
+  text-align: right
 
-    &.overlay-open
+  @media only screen and (max-width : $break-medium)
+    padding: 15px 0
+    text-align: center
 
-      @media screen and (max-width: $break-small)
-        ul
-          -webkit-overflow-scrolling: touch
-          +transform(none)
-          +transition(none)
-          height: 100vh
-          left: 0
-          max-height: 100vh
-          opacity: 1
-          padding: 70px 50px
-          position: fixed
-          top: 0
-          width: 100vw
-          z-index: 30
-          visibility: visible
+/* Rounded corners for ul and last list item */
+.nav ul, .nav ul li:last-child a
+  border: 0
+  border-bottom-left-radius: 7px
+  border-bottom-right-radius: 7px
 
-        .close-overlay
-          background: none
-          border: none
-          color: $primary-color
-          display: block
-          height: 24px
-          line-height: normal
-          padding: 5px
-          position: fixed
-          right: 30px
-          top: 30px
-          width: 24px
-          z-index: 40
+.nav ul a:hover, .nav ul a:focus
+  background: $highlight-color
+  color: $primary-color
 
-    > a, > .dropdown-title, .open-overlay
-      cursor: pointer
-      display: block
-      font-size: 12px
-      color: $primary-color
-      text-transform: uppercase
-      letter-spacing: 0.09em
-      font-weight: 700
-      line-height: 66px
-      padding: 2px 25px
-      position: relative
 
-      @media screen and (max-width: $break-small)
-        padding: 2px 10px
 
-    .open-overlay
-      +appearance(none)
-      border: none
-      background: none
-      color: $primary-color
 
-  ul
-    +transform-origin(100% 0%)
-    +transform(scaleY(0.75))
-    +transition(all 0.3s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out)
-    background: $primary-color
-    border-bottom-left-radius: 5px
-    border-bottom-right-radius: 5px
-    color: $background-color
-    font-size: 12px
-    list-style: none
-    margin: 0
-    max-height: 450px
-    opacity: 0
-    overflow: auto
-    padding: 10px 0 0 0
-    position: absolute
-    right: 0
-    text-align: right
-    top: 100%
-    width: 250px
-    visibility: hidden
-    z-index: 20
 
-    > li
-      border-bottom: 1px solid $primary-color
 
-      a
-        +flexbox
-        +justify-content(flex-end)
-        +align-items(center)
-        color: $background-color
-        cursor: pointer
-        height: 48px
-        line-height: 20px
-        padding: 0 30px
-        text-align: right
 
-        &:active, &:focus, &:hover
-          background: $highlight-color
-          color: $primary-color
-          outline: none
 
-      &:last-child
-        border-bottom: 0px
 
-@media screen and (min-width: $break-small)
-  .header-nav li:hover > ul, .header-nav li ul:hover
-    +transform(scale(1) translateY(0))
-    visibility: visible
-    opacity: 1
-    transition-delay: 0s
 
-    @media screen and (max-width: $break-small)
-      +transform(none)
-      left: 0
 
-  .header-nav li:focus-within > ul
-    +transform(scale(1) translateY(0))
-    visibility: visible
-    opacity: 1
-    transition-delay: 0s
 
-    @media screen and (max-width: $break-small)
-      +transform(none)
-      left: 0
 
-ul li ul li
-  clear: both
-  width: 100%
 
 .cart-item-count
   font-size: 15px
@@ -497,6 +497,7 @@ ul li ul li
   right: -15px
   text-align: left
   top: -8px
+  z-index: 112
 
   @media screen and (max-width: $break-small)
     right: -30px
@@ -524,29 +525,36 @@ ul li ul li
   background: $highlight-color
   color: $primary-color
 
-.nav-caret
-  text-transform: lowercase
-  font-size: 7px
-  position: relative
-  display: inline-block
-  top: -2px
-  +transform(scaleX(1.5))
-
-.mobile-nav-trigger
+.open-mobile-nav
   display: none
+  margin-right: 10px
 
-  @media screen and (max-width: $break-small)
-    display: block
+  svg
+    fill: $primary-color
+    margin-top: 2px
+
+  @media screen and (max-width: $break-medium)
+    +flexbox
+    +justify-content(center)
+    +align-items(center)
 
 .cart-status
   float: left
   padding: 0
+  font-weight: 700
   line-height: 15px !important
-  padding: 2px 0 !important
-  width: 70px
-  height: 70px
+  width: 68px
+  height: 68px
   +transform(scale(1))
-  +transition(transform all 100ms ease-in-out)
+  +transition(transform 100ms ease-in-out)
+
+.secondary-nav
+  display: block
+  z-index: 500
+
+  @media screen and (max-width: $break-medium)
+    +flexbox
+    margin-left: auto
 
 @-webkit-keyframes orbpulse
   0%
@@ -600,7 +608,7 @@ ul li ul li
   +transition(transform 100ms ease-out)
 
 .cart-status:hover .cart-orb
-  +transform(scale(0))
+  +transform(scale(1.6))
   +transition(transform 100ms ease-out)
 
 /* Disable orb on cart pages */
@@ -610,9 +618,10 @@ ul li ul li
 .cart-count
   display: block
   text-align: center
-  margin-top: 16px
+  margin-top: 15px
+  font-size: 12px
   margin-bottom: -2px
-  padding-right: 5px
+  padding-right: 6px
   position: relative
   z-index: 510
   +transition(transform 100ms)
@@ -633,9 +642,6 @@ ul li ul li
 .cart-status .cart-orb-animate
   +transform(scale(1.6))
   +transition(transform 150ms ease-out)
-
-.nav-mobile
-  display: none
 
 /* FOOTER
  */
