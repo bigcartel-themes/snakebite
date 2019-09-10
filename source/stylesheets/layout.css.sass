@@ -303,11 +303,11 @@ header
   top: 27px
 
 header .inner
+  +flexbox
   height: 70px
   position: relative
 
 .wordmark
-  float: left
   font-family: "#{"{{theme.header_font}}"}", sans-serif
   font-size: 22px
   line-height: 30px
@@ -315,7 +315,6 @@ header .inner
 
 .logo
   display: block
-  float: left
   height: 70px
   width: 300px
   background-image: #{"{% if theme.images.logo != blank %} url(\"{{ theme.images.logo.url | constrain: '600', '140' }}\") {% else %} none {% endif %}"}
@@ -327,63 +326,187 @@ header .inner
   height: 100%
   width: auto
 
-.nav-main
-  position: absolute
-  bottom: 0
-  right: 0
-  height: 70px
-  z-index: 500
+.header-nav-container
+  background: $background-color
+  margin-left: auto
+  padding: 0
+  position: relative
+  z-index: 10
 
-.nav-main a,
-.nav-main > ul > li > span
+  &.mobile-nav
+    display: none
+
+.header-nav
+  +flexbox
   font-size: 12px
   color: $primary-color
   text-transform: uppercase
   letter-spacing: 0.09em
   font-weight: 700
-
-.nav-main > ul
-  float: left
-  display: block
   height: 70px
-
-.nav-main > ul > li
-  float: left
-  display: block
   list-style: none
+  margin: 0
+  padding: 0
   position: relative
 
-.nav-main > ul > li > a,
-.nav-main > ul > li > span
-  display: block
-  height: 12px
-  padding: 29px 25px
+  @media screen and (max-width: $break-small)
+    +justify-content(space-evenly)
+    font-size: 20px
 
-.nav-main > ul > li.active > a,
-.nav-main > ul > li.active > span
-  background: $primary-color
-  color: $background-color
+  > li
+    display: block
+    position: relative
 
-.nav-main .dropdown
-  visibility: hidden
-  opacity: 0
+    &:hover, &:focus, &:active
+      background: $primary-color
+      color: $background-color
+
+      a, button, span
+        color: $background-color
+
+      svg
+        fill: $background-color
+
+    &.overlay-open
+
+      @media screen and (max-width: $break-small)
+        ul
+          -webkit-overflow-scrolling: touch
+          +transform(none)
+          +transition(none)
+          height: 100vh
+          left: 0
+          max-height: 100vh
+          opacity: 1
+          padding: 70px 50px
+          position: fixed
+          top: 0
+          width: 100vw
+          z-index: 30
+          visibility: visible
+
+        .close-overlay
+          background: none
+          border: none
+          color: $primary-color
+          display: block
+          height: 24px
+          line-height: normal
+          padding: 5px
+          position: fixed
+          right: 30px
+          top: 30px
+          width: 24px
+          z-index: 40
+
+    > a, > .dropdown-title, .open-overlay
+      cursor: pointer
+      display: block
+      font-size: 12px
+      color: $primary-color
+      text-transform: uppercase
+      letter-spacing: 0.09em
+      font-weight: 700
+      line-height: 66px
+      padding: 2px 25px
+      position: relative
+
+      @media screen and (max-width: $break-small)
+        padding: 2px 10px
+
+    .open-overlay
+      +appearance(none)
+      border: none
+      background: none
+      color: $primary-color
+
+  ul
+    +transform-origin(100% 0%)
+    +transform(scaleY(0.75))
+    +transition(all 0.3s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out)
+    background: $primary-color
+    border-bottom-left-radius: 5px
+    border-bottom-right-radius: 5px
+    color: $background-color
+    font-size: 12px
+    list-style: none
+    margin: 0
+    max-height: 450px
+    opacity: 0
+    overflow: auto
+    padding: 10px 0 0 0
+    position: absolute
+    right: 0
+    text-align: right
+    top: 100%
+    width: 250px
+    visibility: hidden
+    z-index: 20
+
+    > li
+      border-bottom: 1px solid $primary-color
+
+      a
+        +flexbox
+        +justify-content(flex-end)
+        +align-items(center)
+        color: $background-color
+        cursor: pointer
+        height: 48px
+        line-height: 20px
+        padding: 0 30px
+        text-align: right
+
+        &:active, &:focus, &:hover
+          background: $highlight-color
+          color: $primary-color
+          outline: none
+
+      &:last-child
+        border-bottom: 0px
+
+@media screen and (min-width: $break-small)
+  .header-nav li:hover > ul, .header-nav li ul:hover
+    +transform(scale(1) translateY(0))
+    visibility: visible
+    opacity: 1
+    transition-delay: 0s
+
+    @media screen and (max-width: $break-small)
+      +transform(none)
+      left: 0
+
+  .header-nav li:focus-within > ul
+    +transform(scale(1) translateY(0))
+    visibility: visible
+    opacity: 1
+    transition-delay: 0s
+
+    @media screen and (max-width: $break-small)
+      +transform(none)
+      left: 0
+
+ul li ul li
+  clear: both
+  width: 100%
+
+.cart-item-count
+  font-size: 15px
+  min-width: 40px
   position: absolute
-  top: 70px
-  padding: 6px 0 0 0
-  right: 0px
-  background: $primary-color
-  text-align: right
-  overflow: hidden
-  border-bottom-left-radius: 5px
-  border-bottom-right-radius: 5px
-  max-height: 50vh
-  overflow-y: scroll
+  right: -15px
+  text-align: left
+  top: -8px
 
-.nav-main > ul > li.active .dropdown
-  visibility: visible
-  opacity: 1
+  @media screen and (max-width: $break-small)
+    right: -30px
+
+  &.no-items
+    opacity: 0
+    visibility: hidden
 
 .icon-cart
+  fill: $primary-color
   font-size: 40px
 
 .nav-main .dropdown li
@@ -412,9 +535,14 @@ header .inner
 .mobile-nav-trigger
   display: none
 
+  @media screen and (max-width: $break-small)
+    display: block
+
 .cart-status
   float: left
   padding: 0
+  line-height: 15px !important
+  padding: 2px 0 !important
   width: 70px
   height: 70px
   +transform(scale(1))
@@ -461,7 +589,6 @@ header .inner
   width: 60px
   border-radius: 80px
   background: $highlight-color
-  position: absolute
   top: 5px
   right: 5px
   position: absolute
@@ -488,7 +615,7 @@ header .inner
   padding-right: 5px
   position: relative
   z-index: 510
-  +transition(transform all 100ms)
+  +transition(transform 100ms)
 
 .icon-cart
   display: block
@@ -501,7 +628,7 @@ header .inner
 
 .cart-status .cart-count-animate
   +transform(translate(0,16px))
-  +transition(transform all 100ms)
+  +transition(all 100ms)
 
 .cart-status .cart-orb-animate
   +transform(scale(1.6))
@@ -650,7 +777,6 @@ footer
     padding: 15px 30px
     font-size: 16px
 
-
   /* Header */
   header
     position: relative
@@ -663,24 +789,6 @@ footer
 
   .wordmark
     margin-top: 24px
-
-  .nav-main
-    height: 70px
-
-  .nav-main ul
-    display: none
-
-  .mobile-nav-trigger
-    display: block
-    float: left
-    height: 70px
-    width: 50px
-
-  .icon-menu
-    display: block
-    font-size: 30px
-    width: 30px
-    margin: 22px auto 0
 
   .cart-status
     height: 70px
@@ -695,52 +803,6 @@ footer
   .icon-cart
     top: -4px
 
-  .nav-mobile
-    position: absolute
-    top: 70px
-    width: 100%
-    background: $primary-color
-    z-index: 502
-    height: auto
-
-  .nav-mobile > ul
-    margin: 20px
-    border-radius: 5px
-
-  .nav-mobile li
-    margin-top: 5px
-
-  .nav-mobile li:first-child
-    margin-top: 0
-
-  .nav-mobile a
-    display: block
-    padding: 16px 0
-    background: $background-color
-    color: $primary-color
-    text-align: center
-    text-transform: uppercase
-    font-size: 16px
-    font-weight: 700
-
-  .nav-mobile a:hover
-    color: $primary-color
-    background: $highlight-color
-
-  .nav-mobile li > ul
-    display: none
-    margin-top: 0
-
-  .nav-mobile li > ul li
-    margin-top: 0
-    border-top: 3px solid $background-color
-
-  .nav-mobile li > ul li:first-child
-    border-top: none
-
-  .nav-mobile li > ul a
-    background: none
-    color: $background-color
 
 /* SMALL */
 @media only screen and (max-width : $break-small)

@@ -27,14 +27,13 @@
   padding-right: 40px
 
 .icon-arrow-left, .icon-arrow-right
-  font-size: 40px
-  line-height: 50px
+  +transform(translateY(-50%))
+  fill: $primary-color
   display: block
   height: 40px
   width: 40px
   position: absolute
   top: 50%
-  margin-top: -20px
 
 .icon-arrow-left
   left: 0
@@ -153,20 +152,19 @@
   outline: none
 
 .cart-item-remove
-  color: #{"{% if theme.accent_color != 'transparent' %} {{ theme.accent_color }} {% else %} #FFFFFF {% endif %}"}
+  +flexbox
+  +align-items(center)
+  +justify-content(center)
   background: $primary-color
   width: 100%
   height: 50%
   text-align: center
-  display: table
   cursor: pointer
 
 .icon-close
-  display: table-cell
-  vertical-align: middle
-  font-size: 40px
-  position: relative
-  top: 6px
+  fill: #{"{% if theme.accent_color != 'transparent' %} {{ theme.accent_color }} {% else %} #FFFFFF {% endif %}"}
+  height: 40px
+  width: 40px
 
 .cart-item-price
   height: 100%
