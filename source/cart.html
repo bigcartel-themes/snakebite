@@ -31,7 +31,7 @@
               {{ item | item_quantity_input }}
             </div>
             <div class="cart-item-remove">
-              <span class="icon-close"></span>
+              <svg class="icon-close" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M30.25 1.5l-2.313-2.25-12.25 12.25-12.25-12.25-2.25 2.25 12.25 12.25-12.25 12.313 2.25 2.25 12.25-12.25 12.25 12.25 2.313-2.25-12.25-12.313z"></path></svg>
             </div>
           </div>
           <div class="cart-item-cell cart-item-image-mobile visible-phone" style="background-image: url('{{ item.product.image | product_image_url | constrain: '600' }}');">
