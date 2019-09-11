@@ -42,7 +42,7 @@
 .product .details
   float: left
   margin-bottom: 40px
-  width: 28%
+  width: 29%
 
 .product h2
   margin: 50px 0 0 0
@@ -146,6 +146,9 @@
   display: block
   +transform(scale(1))
   +transition(transform 100ms ease-in-out)
+  font-size: 16px
+  padding-left: 10px
+  padding-right: 10px
   width: 100%
 
 .btn-active:active
@@ -164,6 +167,12 @@
 /* LARGE */
 @media only screen and (max-width : $break-large)
 
+  .product .details
+    width: 32%
+
+  .product .images
+    width: 63%
+
   .product .main .inner
     margin-right: 0
 
@@ -171,14 +180,8 @@
     margin-top: 30px
 
 
-/* MEDIUM */
-@media only screen and (max-width : $break-medium)
-
-  .product .main .inner
-    margin-top: 0
-
 /* SMALL */
-@media only screen and (max-width : $break-small)
+@media only screen and (max-width : $break-medium)
 
   .product .details,
   .product .images
