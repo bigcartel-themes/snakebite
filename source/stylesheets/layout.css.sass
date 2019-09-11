@@ -206,16 +206,17 @@ body
     z-index: 1
 
   &:hover
-    color: $primary-color
+    background: $primary-color
+    color: $background-color
     border-color: $primary-color
 
     select
-      color: $primary-color
+      color: $background-color
 
       option:disabled
         color: graytext
     svg
-      fill: $primary-color
+      fill: $background-color
 
 /* Badges */
 .badge
@@ -322,6 +323,9 @@ header .inner
   background-position: center left
   background-repeat: no-repeat
 
+  &:focus
+    outline: auto
+
 .logo img
   height: 100%
   width: auto
@@ -372,6 +376,12 @@ header .inner
   min-width: 200px
   max-height: 400px
   overflow-y: scroll
+
+  @media screen and (max-width: $break-medium)
+    position: relative
+    opacity: 1
+    min-width: 0
+    max-height: 0
 
 .nav li
   background: $background-color
@@ -607,7 +617,7 @@ header .inner
   +transform(scale(0))
   +transition(transform 100ms ease-out)
 
-.cart-status:hover .cart-orb
+.cart-status:hover .cart-orb, .cart-status:focus .cart-orb
   +transform(scale(1.6))
   +transition(transform 100ms ease-out)
 
