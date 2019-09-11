@@ -205,7 +205,7 @@ body
     width: 13px
     z-index: 1
 
-  &:hover
+  &:hover, &:focus, &:focus-within
     background: $primary-color
     color: $background-color
     border-color: $primary-color
@@ -673,7 +673,7 @@ footer
   a
     color: $background-color
 
-    &:hover
+    &:hover, &:focus
       color: $highlight-color
 
   .inner
@@ -707,7 +707,7 @@ footer
         height: 22px
         width: 22px
 
-      &:hover svg
+      &:hover svg, &:focus svg
         fill: $highlight-color
 
     &:first-child

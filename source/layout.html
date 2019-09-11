@@ -60,7 +60,8 @@
             <a href="#" class="open-mobile-nav" title="Mobile navigation">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M2 4h28v4h-28zM2 12h28v4h-28zM2 20h28v4h-28z"></path></svg>
             </a>
-            <a href="/cart" class="cart-status" title="View Cart">
+
+            <a href="/cart" class="cart-status" title="View Cart" tabindex="0">
               <span class="cart-count">{{ cart.item_count }}</span>
               <svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M21.875 7.438l1.625-4.75h5.625v1.563h-4l-4 11.188c4.25 0 4.25 5.625 0 5.625h-15.25v-1.625h15.25c2.125 0 2.125-2.375 0-2.375h-16l-1.625-9.625zM10.688 24.25c0-0.875-0.688-1.563-1.563-1.563-0.938 0-1.625 0.688-1.625 1.563s0.688 1.625 1.625 1.625c0.875 0 1.563-0.75 1.563-1.625M20.313 24.25c0-0.875-0.75-1.563-1.625-1.563s-1.563 0.688-1.563 1.563c0 0.875 0.688 1.625 1.563 1.625s1.625-0.75 1.625-1.625"></path></svg>
               <div class="cart-orb" {% if cart.item_count == 0 %}style="display: none;"{% endif %}></div>

@@ -18,6 +18,9 @@
   margin: 20px 0
   position: relative
 
+  &:hover, &:focus
+    text-decoration: underline
+
 .link-continue
   float: left
   padding-left: 40px
@@ -82,6 +85,9 @@
   width: 36%
   padding: 0 2%
 
+  a:hover, a:focus
+    text-decoration: underline
+
 .cart-item-name h3
   display: table-cell
   vertical-align: middle
@@ -116,8 +122,10 @@
   line-height: 22px
   width: 101%
   height: 50%
-  display: table
   text-align: center
+  background: none
+  border: none
+  color: $primary-color
   -webkit-touch-callout: none
   -webkit-user-select: none
   -khtml-user-select: none
@@ -129,7 +137,6 @@
   border-bottom: 3px solid $primary-color
 
 .cart .quantity-decrement span, .cart .quantity-increment span
-  display: table-cell
   vertical-align: middle
 
 .cart .quantity-decrement:hover, .cart .quantity-increment:hover
@@ -156,10 +163,16 @@
   +align-items(center)
   +justify-content(center)
   background: $primary-color
+  border: none
   width: 100%
   height: 50%
   text-align: center
   cursor: pointer
+
+  &:hover, &:focus
+    background: $highlight-color
+    .icon-close
+      fill: $primary-color
 
 .icon-close
   fill: #{"{% if theme.accent_color != 'transparent' %} {{ theme.accent_color }} {% else %} #FFFFFF {% endif %}"}
@@ -266,9 +279,6 @@
   .icon-close
     font-size: 20px
     top: 2px
-
-  .icon-close:before
-    content: "d"
 
   .cart-item-price
     height: 100px
