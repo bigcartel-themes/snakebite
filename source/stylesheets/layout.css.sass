@@ -259,7 +259,6 @@ body
     &:first-child
       margin-top: 0
 
-
 /* Pagers */
 .cycle-pager
   position: absolute
@@ -295,7 +294,7 @@ body
 header
   background: $background-color
   border-bottom: 6px solid $primary-color
-  position: fixed
+  position: absolute
   top: 0
   width: 100%
   z-index: 501
@@ -308,11 +307,21 @@ header .inner
   height: 70px
   position: relative
 
+  @media screen and (max-width: $break-medium)
+    margin-left: 0
+    margin-right: 0
+
 .wordmark
   font-family: "#{"{{theme.header_font}}"}", sans-serif
   font-size: 22px
   line-height: 30px
   margin-top: 24px
+
+  @media screen and (max-width: $break-medium)
+    margin-left: 30px
+
+  @media screen and (max-width: $break-small)
+    margin-left: 10px
 
 .logo
   display: block
@@ -322,6 +331,12 @@ header .inner
   background-size: contain
   background-position: center left
   background-repeat: no-repeat
+
+  @media screen and (max-width: $break-medium)
+    margin-left: 30px
+
+  @media screen and (max-width: $break-small)
+    margin-left: 20px
 
   &:focus
     outline: auto
@@ -340,14 +355,13 @@ header .inner
   &.mobile-nav
     display: none
 
-
 .main-nav
   z-index: 2
   position: relative
 
   @media only screen and (max-width : $break-medium)
     display: none
-    position: fixed
+    position: absolute
     top: 70px
     left: 0
     width: 100%
@@ -378,10 +392,13 @@ header .inner
   overflow-y: scroll
 
   @media screen and (max-width: $break-medium)
+    background: $background-color
+    border: none !important
+    display: none
     position: relative
     opacity: 1
     min-width: 0
-    max-height: 0
+    max-height: none
 
 .nav li
   background: $background-color
@@ -432,8 +449,15 @@ header .inner
   color: $background-color
   outline: 0
 
+  @media screen and (max-width: $break-medium)
+    background: $highlight-color
+    color: $primary-color
+
   > svg
     fill: $background-color
+
+    @media screen and (max-width: $break-medium)
+      fill: $primary-color
 
 /* Rounded corners for first top level nav item */
 .nav > li:first-child > a
@@ -483,22 +507,12 @@ header .inner
   border-bottom-left-radius: 7px
   border-bottom-right-radius: 7px
 
+  @media screen and (max-width: $break-medium)
+    border-radius: 0
+
 .nav ul a:hover, .nav ul a:focus
   background: $highlight-color
   color: $primary-color
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .cart-item-count
   font-size: 15px
@@ -519,21 +533,6 @@ header .inner
 .icon-cart
   fill: $primary-color
   font-size: 40px
-
-.nav-main .dropdown li
-  display: block
-  line-height: 18px
-
-.nav-main .dropdown li a
-  display: block
-  color: $background-color
-  padding: 15px 20px
-  min-width: 200px
-
-.nav-main .dropdown li a:hover
-  color: $background-color
-  background: $highlight-color
-  color: $primary-color
 
 .open-mobile-nav
   display: none
@@ -565,6 +564,10 @@ header .inner
   @media screen and (max-width: $break-medium)
     +flexbox
     margin-left: auto
+    margin-right: 30px
+
+  @media screen and (max-width: $break-small)
+    margin-right: 10px
 
 @-webkit-keyframes orbpulse
   0%
@@ -843,10 +846,6 @@ footer
     min-height: 34px
     padding: 24px 0
     text-align: center
-
-  header .inner
-    margin-right: 10px
-
 
   /* Modules */
   .highlight

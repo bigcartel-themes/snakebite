@@ -14,13 +14,10 @@
       <header>
         <div class="inner clear">
           {% if theme.images.logo.url != blank %}
-            <a class="logo" href="/"></a>
+            <a class="logo" href="/" title="Home"></a>
           {% else %}
             <a class="wordmark" href="/" data-store-name="{{ store.name | escape }}">{{ store.name }}</a>
           {% endif %}
-
-
-
           <div class="main-nav header-nav-container" role="navigation" aria-label="Main menu">
             <ul class="nav" role="menubar" aria-hidden="false">
               <li role="menuitem" {% if categories.active != blank or artists.active != blank %}aria-haspopup="true"{% endif %}>
