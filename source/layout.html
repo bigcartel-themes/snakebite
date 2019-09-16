@@ -3,14 +3,8 @@
   <head>
     <title>{{ page.name }} | {{ store.name }}</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="{{ 'api' | theme_js_url }}" type="text/javascript"></script>
-    <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>
     {{ head_content }}
   </head>
 
@@ -20,96 +14,60 @@
       <header>
         <div class="inner clear">
           {% if theme.images.logo.url != blank %}
-            <a class="logo" href="/"></a>
+            <a class="logo" href="/" title="Home"></a>
           {% else %}
             <a class="wordmark" href="/" data-store-name="{{ store.name | escape }}">{{ store.name }}</a>
           {% endif %}
-          <nav class="nav-main">
-            <ul class="clear">
-              {% if categories.active != blank %}
-                <li>
-                <a class="dropdown-trigger" href="/products">{{ pages.products.name }} <span class="nav-caret">v</span></a>
-                <ul class="dropdown">
-                <li><a href="/products">View All</a></li>
-                {% for category in categories.active %}
-                  <li><a href="{{ category.url }}">{{ category.name }}</a></li>
-                {% endfor %}
-                </ul>
-                </li>
-              {% endif %}
-              {% if artists.active != blank %}
-                <li>
-                <span class="dropdown-trigger">Artists <span class="nav-caret">v</span></span>
-                <ul class="dropdown">
-                {% for artist in artists.active %}
-                  <li><a href="{{ artist.url }}">{{ artist.name }}</a></li>
-                {% endfor %}
-                </ul>
-                </li>
-              {% endif %}
-              {% if pages.all != blank or store.website != blank %}
-                <li>
-                <span class="dropdown-trigger">Pages <span class="nav-caret">v</span></span>
-                <ul class="dropdown">
-                {% for page in pages.all %}
-                  <li><a href="{{ page.url }}">{{ page.name }}</a></li>
-                {% endfor %}
-                {% if store.website != blank %}
-                  <li><a href="{{ store.website }}">Back to site</a></li>
+          <div class="main-nav header-nav-container" role="navigation" aria-label="Main menu">
+            <ul class="nav" role="menubar" aria-hidden="false">
+              <li role="menuitem" {% if categories.active != blank or artists.active != blank %}aria-haspopup="true"{% endif %}>
+                <a href="#">{{ pages.products.name }} <svg viewBox="0 0 15 7.6" enable-background="new 0 0 15 7.6"><path d="M15 1.1l-7.5 6.5-7.5-6.3 1-1.2 6.5 5.5 6.5-5.6z"/></svg></a>
+                {% if categories.active != blank or artists.active != blank %}
+                  <ul data-test="true" aria-hidden="true" role="menu" class="">
+                    <li role="menuitem"><a href="/products" tabindex="-1">View All</a></li>
+                    {% if categories.active != blank %}
+                      {% for category in categories.active %}
+                        <li role="menuitem"><a href="{{ category.url }}" tabindex="-1">{{ category.name }}</a></li>
+                      {% endfor %}
+                    {% endif %}
+                    {% if artists.active != blank %}
+                      {% for artist in artists.active %}
+                        <li role="menuitem"><a href="{{ artist.url }}" tabindex="-1">{{ artist.name }}</a></li>
+                      {% endfor %}
+                    {% endif %}
+                  </ul>
                 {% endif %}
-                </ul>
+              </li>
+              {% if pages.all != blank or store.website != blank %}
+                <li role="menuitem" aria-haspopup="true">
+                  <a href="#">Pages <svg viewBox="0 0 15 7.6" enable-background="new 0 0 15 7.6"><path d="M15 1.1l-7.5 6.5-7.5-6.3 1-1.2 6.5 5.5 6.5-5.6z"/></svg></a>
+                  <ul data-test="true" aria-hidden="true" role="menu" class="">
+                    {% for page in pages.all %}
+                      <li role="menuitem"><a href="{{ page.url }}" title="View {{ page.name | escape }}">{{ page.name }}</a></li>
+                    {% endfor %}
+                    {% if store.website != blank %}
+                      <li role="menuitem"><a href="{{ store.website }}" tabindex="-1">Back to site</a></li>
+                    {% endif %}
+                  </ul>
                 </li>
               {% endif %}
-              <li><a href="/contact">Contact</a></li>
+              <li role="menuitem" aria-haspopup="false">
+                <a href="/contact" title="Contact">Contact</a></li>
+              </li>
             </ul>
-            <a href="#" class="mobile-nav-trigger"><span class="icon-menu"></span></a>
-            <a href="/cart" class="cart-status">
+          </div>
+          <div class="secondary-nav">
+            <a href="#" class="open-mobile-nav" title="Mobile navigation">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M2 4h28v4h-28zM2 12h28v4h-28zM2 20h28v4h-28z"></path></svg>
+            </a>
+
+            <a href="/cart" class="cart-status" title="View Cart" tabindex="0">
               <span class="cart-count">{{ cart.item_count }}</span>
-              <span class="icon-cart"></span>
+              <svg class="icon-cart" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M21.875 7.438l1.625-4.75h5.625v1.563h-4l-4 11.188c4.25 0 4.25 5.625 0 5.625h-15.25v-1.625h15.25c2.125 0 2.125-2.375 0-2.375h-16l-1.625-9.625zM10.688 24.25c0-0.875-0.688-1.563-1.563-1.563-0.938 0-1.625 0.688-1.625 1.563s0.688 1.625 1.625 1.625c0.875 0 1.563-0.75 1.563-1.625M20.313 24.25c0-0.875-0.75-1.563-1.625-1.563s-1.563 0.688-1.563 1.563c0 0.875 0.688 1.625 1.563 1.625s1.625-0.75 1.625-1.625"></path></svg>
               <div class="cart-orb" {% if cart.item_count == 0 %}style="display: none;"{% endif %}></div>
             </a>
-          </nav>
+          </div>
         </div>
-        <nav class="nav-mobile clear">
-          <ul>
-            <li><a href="/">Home</a></li>
-            {% if categories.active != blank %}
-                <li>
-                <a class="accordion-trigger" href="#">{{ pages.products.name }} <span class="nav-caret">v</span></a>
-                <ul class="accordion">
-                <li><a href="/products">View All</a></li>
-                {% for category in categories.active %}
-                  <li><a href="{{ category.url }}">{{ category.name }}</a></li>
-                {% endfor %}
-                </ul>
-                </li>
-              {% endif %}
-              {% if artists.active != blank %}
-                <li>
-                <a class="accordion-trigger" href="#">Artists <span class="nav-caret">v</span></a>
-                <ul class="accordion">
-                {% for artist in artists.active %}
-                  <li><a href="{{ artist.url }}">{{ artist.name }}</a></li>
-                {% endfor %}
-                </ul>
-                </li>
-              {% endif %}
-              {% if pages.all != blank or store.website != blank %}
-                <li>
-                <a class="accordion-trigger" href="#">Pages <span class="nav-caret">v</span></a>
-                <ul class="accordion">
-                {% for page in pages.all %}
-                  <li><a href="{{ page.url }}">{{ page.name }}</a></li>
-                {% endfor %}
-                {% if store.website != blank %}
-                  <li><a href="{{ store.website }}">Back to site</a></li>
-                {% endif %}
-                </ul>
-                </li>
-              {% endif %}
-              <li><a href="/contact">Contact</a></li>
-          </ul>
-        </nav>
       </header>
 
       {% if page.category == 'custom' %}
@@ -151,8 +109,16 @@
     </footer>
 
     {% if page.permalink == 'home' or  page.permalink == 'products' %}
-    <div class="color-block-products"></div>
+      <div class="color-block-products"></div>
     {% endif %}
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ 'api' | theme_js_url }}"></script>
+    <script src="{{ theme | theme_js_url }}"></script>
+    {% if page.full_url contains '/product/' %}
+      <script>
+        var show_sold_out_product_options = '{{ theme.show_sold_out_product_options }}';
+        Product.find('{{ product.permalink }}', processProduct)
+      </script>
+    {% endif %}
   </body>
 </html>

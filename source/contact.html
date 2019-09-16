@@ -2,14 +2,14 @@
   <div class="inner clear">
 
     {% if contact.sent %}
-    
+
     <div class="centered-message">
       <h1>Sent!</h1>
       <p>Your message has been sent and we&#8217;ll get back to you soon.</p>
     </div>
-    
+
     {% else %}
-    
+
     <h1>Contact</h1>
     <div class="contact-form-wrap">
       {% if errors != blank %}
@@ -47,13 +47,13 @@
             </div>
           </div>
           <div class="contact-row-half">
-            <button class="btn" id="contact-submit" type="submit" name="submit" title="Send us an email">Send Message</button>
+            <button class="btn" id="contact-submit" type="submit" name="submit" title="Send message" tabindex="6">Send Message</button>
           </div>
         </div>
       </form>
     </div>
-    
+
     {% endif %}
-    
+
   </div>
 </section>

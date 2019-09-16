@@ -1,0 +1,103 @@
+@import 'config'
+
+.contact-form-wrap
+  max-width: 600px
+  margin: 0 auto 80px
+
+.contact-row
+  margin-bottom: 20px
+  overflow: hidden
+
+.contact-row-centered
+  text-align: center
+  padding-top: 30px
+
+.contact-row label
+  margin-bottom: 5px
+
+.contact-row-half
+  width: 48%
+  height: 100%
+  float: left
+  position: relative
+
+.contact-row .contact-row-half:first-child
+  margin-right: 4%
+
+.contact-form-wrap label
+  display: block
+  width: 100%
+
+.contact-form-wrap input,
+.contact-form-wrap textarea
+  border: none
+  outline: none
+  padding: 15px
+  width: 100%
+  font-size: 16px
+  background: none
+  border: 3px solid $primary-color
+  font-family: "#{"{{theme.text_font}}"}", sans-serif, sans-serif
+  color: $primary-color
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  border-radius: 5px
+  -webkit-appearance: none
+
+.contact-form-wrap input:focus,
+.contact-form-wrap textarea:focus
+  background: $accent-color
+
+.contact-form-wrap textarea
+  height: 200px
+  resize: vertical
+
+.captcha-wrap
+  border: 3px solid $primary-color
+  border-radius: 5px
+  height: 52px
+  overflow: hidden
+
+.captcha-code
+  width: 125px
+  height: 52px
+  float: left
+  background: #FFFFFF
+  border-right: 3px solid $primary-color
+
+.captcha-input
+  width: 50%
+  float: left
+
+.captcha-input input
+  border: 0px
+
+.captcha-wrap.active
+  background: $accent-color
+
+.captcha-input input
+  border-top: 0px
+  background: none
+
+.captcha-input input:focus
+  background: none
+
+.contact-form button
+  width: 100%
+  margin-top: 29px
+
+
+/* MEDIUM */
+@media only screen and (max-width : $break-medium)
+  .contact-form button
+    margin-top: 28px
+
+/* SMALL */
+@media only screen and (max-width : $break-small)
+  .contact-row-half
+    width: 100%
+    margin: 0
+
+  .contact-row .contact-row-half:first-child
+    margin-bottom: 20px

@@ -52,7 +52,7 @@ $(function() {
     el = $(el).find('.price-update');
     var price = cart.items[index].price;
     el.html(Format.money(price, true, true));
-  }  
+  }
   Cart.removeItemAnimate = function(itemID, el) {
     el.slideUp(150);
     Cart.updateItem(itemID, 0, function(cart) {
@@ -81,7 +81,7 @@ $(function() {
   $('.cart-item-quantity input').on("click", function () {
     $(this).select();
   });
-  $('.cart-item-quantity input').on('keyup', function() {
+  $('.cart-item-quantity input').on('change', function() {
     getCartItem($(this));
     var quantity = parseFloat($(this).val());
     if(quantity === 0) {

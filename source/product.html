@@ -33,7 +33,7 @@
         {% endif %}
       </div>
     </div>
-    
+
     <div class="details">
     <h2>{{product.name}}</h2>
     {% if product.variable_pricing %}
@@ -43,44 +43,63 @@
     {% endif %}
       {% if product.status == 'active' %}
         <ul class="errors" style="display: none;"></ul>
-        <div class="purchase" data-default-option-id="{{ product.options_in_stock.first.id }}">
+
+        <form method="post" class="product-form {% if theme.show_sold_out_product_options %}show-sold-out{% else %}hide-sold-out{% endif %}" action="/cart" accept-charset="utf8">
+          <input type="hidden" name="utf8" value='✓'>
           {% if product.has_default_option %}
-            <div class="btn btn-purchase btn-active"><span>Purchase</span></div> 
+            {{ product.option | hidden_option_input }}
           {% else %}
-            <div class="options-wrap">
-              <div class="options">
-                <div class="option-selected">
-                    <span class="option-selected-name">
-                      Choose an option
-                    </span>
-                  <span class="dropdown-caret">v</span>
-                </div>
-                <ul class="options-list">
-                {% for option in product.options_in_stock %}
-                  <li data-option-id="{{ option.id }}">{{ option.name }} - {{ option.price | money: theme.money_format }}</li>
+            {% if product.has_option_groups %}
+              <div class="product_option_groups">
+                <input id="option" name="cart[add][id]" type="hidden" value="0">
+                {% for option_group in product.option_groups %}
+                  <div class="select">
+                    <select data-unavailable-text="(Unavailable)" data-sold-text="(Sold out)" data-group-id="{{ option_group.id }}" data-group-name="{{ option_group.name | escape }}" class="product_option_group" name="option_group[{{ option_group.id }}]" aria-label="Select {{ option_group.name | escape }}">
+                      <option value="0" disabled="disabled" selected>Select {{ option_group.name }}</option>
+                      {% for value in option_group.values %}
+                        <option value="{{ value.id }}" data-name="{{ value.name | escape }}">{{ value.name }}</option>
+                      {% endfor %}
+                    </select>
+                    <svg viewBox="0 0 15 7.6" enable-background="new 0 0 15 7.6"><path d="M15 1.1l-7.5 6.5-7.5-6.3 1-1.2 6.5 5.5 6.5-5.6z"/></svg>
+                  </div>
                 {% endfor %}
-                </ul>
               </div>
-            </div>
-            <div class="btn btn-purchase btn-inactive"><span>Choose an option</span></div>
-          {% endif %} 
-        </div>
+            {% else %}
+              <div class="select">
+                <select class="product_option_select" id="option" name="cart[add][id]" aria-label="Select option">
+                  <option value="0" disabled="disabled" selected>Select option</option>
+                  {% for option in product.options %}
+                    <option value="{{ option.id }}" data-price="{{ option.price }}"{% if option.sold_out %} disabled="disabled" disabled-type="sold-out"{% endif %}>{{ option.name }} {% if option.sold_out %} (Sold out){% endif %}</option>
+                  {% endfor %}
+                </select>
+                <svg viewBox="0 0 15 7.6" enable-background="new 0 0 15 7.6"><path d="M15 1.1l-7.5 6.5-7.5-6.3 1-1.2 6.5 5.5 6.5-5.6z"/></svg>
+              </div>
+            {% endif %}
+          {% endif %}
+          {{ product | product_quantity_input, 1, 'product-quantity', 'product-quantity' }}
+          <button class="btn btn-purchase add-to-cart-button" name="submit" type="submit" title="Add to cart" data-added-text="Added!" data-adding-text="Adding..." data-add-title="Add to cart" data-sold-title="Sold out">
+            <span class="status_text">Add to cart</span>
+          </button>
+        </form>
+
+
+
       {% endif %}
     {% if product.description != blank %}
       <div class="description">
         {{ product.description | paragraphs }}
       </div>
     {% endif %}
-       
+
       {% if theme.show_social %}
       <ul class="social-links">
-        <li><a target="_blank" href="http://twitter.com/home?status={{product.name}}%20-%20{{store.name}}%20{{store.url}}{{product.url}}">Tweet</a></li>
+        <li><a target="_blank" href="https://twitter.com/intent/tweet?status={{product.name}}%20-%20{{store.name}}%20{{store.url}}{{product.url}}">Tweet</a></li>
         <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{store.url}}{{product.url}}">Share</a></li>
         <li><a target="_blank" href="http://pinterest.com/pin/create/button/?url={{store.url}}{{product.url}}&media={{ product.images.first.url }}">Pin It</a></li>
       </ul>
       {% endif %}
-      
+
     </div>
-    
+
   </div>
 </section>

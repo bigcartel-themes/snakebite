@@ -3,7 +3,6 @@
 {% else %}
 <section class="main clear">
 {% endif %}
-
   {% if theme.image_sets.slideshow.size > 0 %}
     <div class="home-slideshow-wrap">
       <div class="slideshow-stripe"></div>
@@ -15,18 +14,13 @@
       </div>
     </div>
   {% endif %}
-    
   <div class="inner clear">
-  
-    {% paginate products from products.current by theme.products_per_page %}
-    
+    {% get products from products.all limit:theme.featured_products order:theme.featured_order %}
     {% if products != blank %}
-    
       {% for product in products %}
-      
-        <div class="preview rand-{{ forloop.index | modulo:7 }}">
+        <a href="{{ product.url }}" title="View {{ product.name | escape }}" class="preview rand-{{ forloop.index | modulo:7 }}">
           <div class="preview-inner">
-            <a href="{{ product.url }}">
+            <div class="preview-inner-wrap">
               <div class="image-wrap" style="padding-bottom: {{ product.image.height | plus:0.0 | divided_by:(product.image.width | times:100 }}%;">
                 {% if theme.show_view_badges %}
                 <div class="badge badge-empty badge-view"><span>View</span></div>
@@ -49,27 +43,16 @@
               <div class="meta">
                 <span class="highlight price">{{ product.default_price | money: theme.money_format }}</span>
                 <h3>{{ product.name }}</h3>
-      
               </div>
               {% if product.on_sale %}
               {% endif %}
-            </a>
+            </div>
           </div>
-        </div>
-      
+        </a>
       {% endfor %}
-    
-    {% if paginate.pages > 1 %}
-      {{ paginate | default_pagination }}
-    {% endif %}
-    
     {% else %}
-    
        <h1 class="floating-title">No products found</h1>
-       
     {% endif %}
-    
-    {% endpaginate %}
-
+    {% endget %}
   </div>
 </section>

@@ -1,0 +1,62 @@
+@import 'config'
+
+.custom .main .inner
+  max-width: 820px
+  margin: 130px auto 70px
+
+  @media only screen and (max-width : $break-large)
+    margin: 130px auto 70px
+    padding: 0 20px 20px 20px
+
+  @media only screen and (max-width : $break-medium)
+    margin: 50px 0 0 0
+    padding: 0 20px 20px 20px
+
+.btn-continue
+  margin: 30px auto 0
+
+.centered-message
+  margin-top: 100px
+  text-align: center
+
+  @media only screen and (max-width : $break-small)
+    margin-top: 0
+
+  h2
+    margin-bottom: 10px
+
+  .btn
+    margin-top: 30px
+
+.centered-message-cart
+  margin-top: 200px
+
+  @media only screen and (max-width : $break-small)
+    margin-top: 40px
+
+.centered-message-cart h1
+  margin-bottom: 0
+
+.format-text
+  p
+    margin-bottom: 20px
+
+  b, strong
+    font-weight: bold
+
+  i, em
+    font-style: italic
+
+  ul
+    margin: 0 0 20px 40px
+
+    li
+      display: list-item
+      list-style: disc
+
+  ol
+    margin: 0 0 20px 40px
+
+    li
+      display: list-item
+      list-style: decimal

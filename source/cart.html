@@ -2,15 +2,15 @@
   <div class="inner clear">
 
     {% if cart.items != blank %}
-    
+
     <div class="centered-message centered-message-cart cart-empty-modal">
       <h1>Your cart is empty!</h1>
     </div>
     <div class="cart-wrap">
       <form method="post" action="/cart" id="cart-form">
       <div class="cart-header">
-        <a href="/" class="link-continue"><span class="icon-arrow-left"></span>Continue Shopping</a>
-        <a href="#" onclick="Cart.checkout();" class="link-checkout hidden-phone">Checkout<span class="icon-arrow-right"></span></a>
+        <a href="/" class="link-continue"><svg class="icon-arrow-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M18.75 21.75l2.25-2.25-5.5-5.5 5.5-5.5-2.25-2.25-7.75 7.75z"></path></svg> Continue Shopping</a>
+        <a href="#" onclick="Cart.checkout();" class="link-checkout hidden-phone">Checkout <svg class="icon-arrow-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M13.25 21.75l-2.25-2.25 5.5-5.5-5.5-5.5 2.25-2.25 7.75 7.75z"></path></svg></a>
       </div>
       <ul class="errors" {% if errors == blank %}style="display: none;"{% endif %}>
         {% if errors != blank %}
@@ -25,14 +25,14 @@
           <div class="cart-item-cell cart-item-actions">
             <div class="cart-item-quantity">
               <div class="quantity-controls">
-                <div class="quantity-increment"><span>+</span></div>
-                <div class="quantity-decrement"><span>-</span></div>
+                <button class="quantity-increment"><span>+</span></button>
+                <button class="quantity-decrement"><span>-</span></button>
               </div>
               {{ item | item_quantity_input }}
             </div>
-            <div class="cart-item-remove">
-              <span class="icon-close"></span>
-            </div>
+            <button class="cart-item-remove">
+              <svg class="icon-close" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M30.25 1.5l-2.313-2.25-12.25 12.25-12.25-12.25-2.25 2.25 12.25 12.25-12.25 12.313 2.25 2.25 12.25-12.25 12.25 12.25 2.313-2.25-12.25-12.313z"></path></svg>
+            </button>
           </div>
           <div class="cart-item-cell cart-item-image-mobile visible-phone" style="background-image: url('{{ item.product.image | product_image_url | constrain: '600' }}');">
           </div>
@@ -54,33 +54,33 @@
         </div>
         {% endfor %}
       </div>
-        
+
       <div class="total">
         <h3>Subtotal</h3>
         <span class="grand-total">{{ cart.total | money: theme.money_format }}</span>
       </div>
-      
+
       <div class="cart-btns">
         <button class="btn" type="submit" onclick="Cart.checkout(); return false" title="Checkout">Checkout</button>
       </div>
-      
+
       </form>
     </div>
-    
+
     {% else %}
-    
+
     <div class="centered-message centered-message-cart">
       <h1>Your cart is empty!</h1>
       <script type="text/javascript">
         if(!(/\/admin\/design/.test(top.location.pathname))) {
           setTimeout(function() {
-            document.location.href = '/'; 
+            document.location.href = '/';
           }, 1500);
         }
       </script>
     </div>
-    
+
     {% endif %}
-    
+
   </div>
 </section>
