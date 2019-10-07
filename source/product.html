@@ -77,13 +77,15 @@
             {% endif %}
           {% endif %}
           {{ product | product_quantity_input, 1, 'product-quantity', 'product-quantity' }}
-          <button class="btn btn-purchase add-to-cart-button" name="submit" type="submit" title="Add to cart" data-added-text="Added!" data-adding-text="Adding..." data-add-title="Add to cart" data-sold-title="Sold out">
+          <button class="btn btn-purchase add-to-cart-button" name="submit" type="submit" title="Add to cart" data-added-text="Added!" data-adding-text="Adding..." data-add-title="Add to cart" data-sold-title="Sold out"{% if product.has_default_option %}{% else %}disabled="disabled"{% endif %}>
             <span class="status_text">Add to cart</span>
           </button>
+          {% if product.has_option_groups %}
+            <div class="reset-selection-button-container">
+              <button class="btn minimal-button reset-selection-button" title="Reset selection" type="reset">Reset selection</button>
+            </div>
+        {% endif %}
         </form>
-
-
-
       {% endif %}
     {% if product.description != blank %}
       <div class="description">

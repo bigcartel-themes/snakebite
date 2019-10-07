@@ -126,6 +126,7 @@ body
   border-radius: 5px
   font-weight: 700
   text-transform: uppercase
+  text-align: center
   cursor: pointer
   -webkit-touch-callout: none
   -webkit-user-select: none
@@ -133,8 +134,21 @@ body
   -moz-user-select: none
   -ms-user-select: none
   user-select: none
+  width: 100%
 
-  &:hover, &:active, &:focus
+  &.minimal-button
+    background: none
+    color: $primary-color
+    border: none
+    font-size: 13px
+    padding: 0
+
+    &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
+      background: none
+      color: $primary-color
+      text-decoration: underline
+
+  &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
     background: $primary-color
     color: $background-color
 
@@ -157,7 +171,7 @@ body
   border: 3px solid $primary-color
   color: $primary-color
   font-family: "#{"{{theme.text_font}}"}", sans-serif
-  height: 50px
+  height: 56px
   margin-bottom: 20px
   max-width: 100%
   text-transform: uppercase
