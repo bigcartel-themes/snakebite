@@ -74,6 +74,7 @@ $(function() {
     cartItem.index = $('.cart-item').index(cartItem.el);
   }
   $('.cart-item-remove').click(function(e) {
+    e.preventDefault();
     getCartItem($(this));
     Cart.removeItemAnimate(cartItem.id, cartItem.el);
   });
