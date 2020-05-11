@@ -1,12 +1,11 @@
 {
   "name": "Snakebite",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "images": [
     {
       "variable": "logo",
       "label": "Logo",
-      "description": "Good for a logo up to 600 x 140 pixels",
-      "default": "snakebite-logo.png"
+      "description": "Good for a logo up to 600 x 140 pixels"
     },
     {
       "variable": "background",
@@ -23,12 +22,7 @@
     {
       "variable": "slideshow",
       "label": "Home Slideshow",
-      "description": "1400px by 700px images recommended",
-      "defaults": [
-        "snakebite-slide-1.jpg",
-        "snakebite-slide-2.jpg",
-        "snakebite-slide-3.jpg"
-      ]
+      "description": "1400px by 700px images recommended"
     }
   ],
   "fonts": [

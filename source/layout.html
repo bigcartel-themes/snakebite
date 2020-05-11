@@ -21,7 +21,11 @@
           <div class="main-nav header-nav-container" role="navigation" aria-label="Main menu">
             <ul class="nav" role="menubar" aria-hidden="false">
               <li role="menuitem" {% if categories.active != blank or artists.active != blank %}aria-haspopup="true"{% endif %}>
-                <a href="#">{{ pages.products.name }} <svg viewBox="0 0 15 7.6" enable-background="new 0 0 15 7.6"><path d="M15 1.1l-7.5 6.5-7.5-6.3 1-1.2 6.5 5.5 6.5-5.6z"/></svg></a>
+                {% if categories.active != blank or artists.active != blank %}
+                  <a href="#">{{ pages.products.name }} <svg viewBox="0 0 15 7.6" enable-background="new 0 0 15 7.6"><path d="M15 1.1l-7.5 6.5-7.5-6.3 1-1.2 6.5 5.5 6.5-5.6z"/></svg></a>
+                {% else %}
+                  <a href="/products">{{ pages.products.name }}</a>
+                {% endif %}
                 {% if categories.active != blank or artists.active != blank %}
                   <ul data-test="true" aria-hidden="true" role="menu" class="">
                     <li role="menuitem"><a href="/products" tabindex="-1">View All</a></li>
