@@ -1,6 +1,6 @@
 {
   "name": "Snakebite",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "images": [
     {
       "variable": "logo",
@@ -110,7 +110,7 @@
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 15,
+      "default": 36,
       "description": "The number of products shown per page"
     },
     {
