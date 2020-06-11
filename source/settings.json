@@ -1,6 +1,6 @@
 {
   "name": "Snakebite",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "images": [
     {
       "variable": "logo",
@@ -110,7 +110,7 @@
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 15,
+      "default": 36,
       "description": "The number of products shown per page"
     },
     {
@@ -175,10 +175,10 @@
     "step_header_color": "{{primary_color}}",
     "step_inactive_header_color": "{{primary_color}}",
     "content_border_width": "0px",
-    "error_background_color": "#ea4859",
+    "error_background_color": "#950f1e",
     "error_color": "#ffffff",
     "error_border_radius": "0",
-    "error_border_color": "#ea4859",
+    "error_border_color": "#950f1e",
     "step_border_style": "solid",
     "step_border_color": "{{primary_color}}",
     "step_border_width": "3px",
@@ -186,14 +186,15 @@
     "step_inactive_background_color": "{{background_color}}",
     "step_header_font": "{{text_font}}",
     "body_font": "{{text_font}}",
+    "body_font_size": "16px",
     "input_font": "{{text_font}}",
   	"input_focus_color": "#000000",
   	"input_focus_background_color": "#ffffff",
-  	"input_focus_border_color": "#bfbfbf",
-  	"input_error_border_color": "#ea4859",
+  	"input_focus_border_color": "#111111",
+  	"input_error_border_color": "#950f1e",
   	"input_color": "#000000",
   	"input_error_color": "#000000",
-  	"input_border_color": "#bfbfbf",
+  	"input_border_color": "#888888",
   	"input_background_color": "#ffffff",
   	"input_error_background_color": "#ffffff",
     "input_border_width": "3px",
@@ -207,12 +208,12 @@
     "button_hover_color": "{{background_color}}",
     "summary_color": "{{primary_color}}",
     "summary_secondary_color": "{{primary_color}}",
-    "summary_submit_border_color": "#bcbcbc",
+    "summary_submit_border_color": "{{primary_color}}",
     "summary_item_border_color": "{{primary_color}}",
     "summary_item_border_width": "3px",
     "summary_item_list_border_color": "{{primary_color}}",
     "summary_item_list_border_width": "3px",
     "link_color": "{{primary_color}}",
-    "link_hover_color": "#bcbcbc"
+    "link_hover_color": "{{primary_color}}"
   }
 }

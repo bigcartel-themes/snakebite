@@ -236,13 +236,13 @@ body
 
 /* Badges */
 .badge
-  height: 80px
-  width: 80px
-  font-size: 14px
-  line-height: 18px
+  height: 70px
+  width: 70px
+  font-size: 13px
+  line-height: 1.25em
   text-align: center
   text-transform: uppercase
-  border-radius: 70px
+  border-radius: 50%
   display: table
   +transform(translateZ(0))
 
@@ -320,6 +320,7 @@ header
 
 header .inner
   +flexbox
+  +align-items(center)
   height: 70px
   position: relative
 
@@ -331,7 +332,6 @@ header .inner
   font-family: "#{"{{theme.header_font}}"}", sans-serif
   font-size: 22px
   line-height: 30px
-  margin-top: 24px
 
   @media screen and (max-width: $break-medium)
     margin-left: 30px
@@ -821,9 +821,6 @@ footer
 
   .logo
     width: 160px
-
-  .wordmark
-    margin-top: 24px
 
   .cart-status
     height: 70px

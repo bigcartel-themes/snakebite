@@ -1,10 +1,9 @@
 <section class="main clear">
   <div class="inner clear">
-
     {% if cart.items != blank %}
-
     <div class="centered-message centered-message-cart cart-empty-modal">
       <h1>Your cart is empty!</h1>
+      <div class="cart-empty-text">Sounds like a good time to <a href="/products">start shopping</a>.</div>
     </div>
     <div class="cart-wrap">
       <form method="post" action="/cart" id="cart-form">
@@ -71,16 +70,8 @@
 
     <div class="centered-message centered-message-cart">
       <h1>Your cart is empty!</h1>
-      <script type="text/javascript">
-        if(!(/\/admin\/design/.test(top.location.pathname))) {
-          setTimeout(function() {
-            document.location.href = '/';
-          }, 1500);
-        }
-      </script>
+      <div class="cart-empty-text">Sounds like a good time to <a href="/products">start shopping</a>.</div>
     </div>
-
     {% endif %}
-
   </div>
 </section>
