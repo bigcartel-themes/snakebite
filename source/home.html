@@ -14,45 +14,47 @@
       </div>
     </div>
   {% endif %}
-  <div class="inner clear">
-    {% get products from products.all limit:theme.featured_products order:theme.featured_order %}
-    {% if products != blank %}
-      {% for product in products %}
-        <a href="{{ product.url }}" title="View {{ product.name | escape }}" class="preview rand-{{ forloop.index | modulo:7 }}">
-          <div class="preview-inner">
-            <div class="preview-inner-wrap">
-              <div class="image-wrap" style="padding-bottom: {{ product.image.height | plus:0.0 | divided_by:(product.image.width | times:100 }}%;">
-                {% if theme.show_view_badges %}
-                <div class="badge badge-empty badge-view"><span>View</span></div>
+  {% if theme.featured_products > 0 %}
+    <div class="inner clear">
+      {% get products from products.all limit:theme.featured_products order:theme.featured_order %}
+      {% if products != blank %}
+        {% for product in products %}
+          <a href="{{ product.url }}" title="View {{ product.name | escape }}" class="preview rand-{{ forloop.index | modulo:7 }}">
+            <div class="preview-inner">
+              <div class="preview-inner-wrap">
+                <div class="image-wrap" style="padding-bottom: {{ product.image.height | plus:0.0 | divided_by:(product.image.width | times:100 }}%;">
+                  {% if theme.show_view_badges %}
+                  <div class="badge badge-empty badge-view"><span>View</span></div>
+                  {% endif %}
+                  {% if product.status == 'coming-soon' %}
+                    <div class="badge badge-filled badge-status">
+                    <span>Coming<br/>Soon</span>
+                    </div>
+                  {% elsif product.status == 'sold-out' %}
+                    <div class="badge badge-filled badge-status">
+                    <span>Sold<br/>Out</span>
+                    </div>
+                  {% elsif product.on_sale %}
+                    <div class="badge badge-filled badge-status">
+                    <span>On<br/>Sale</span>
+                    </div>
+                  {% endif %}
+                  <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '400' }}" data-src-retina="{{ product.image | product_image_url | constrain: '800' }}">
+                </div>
+                <div class="meta">
+                  <span class="highlight price">{{ product.default_price | money: theme.money_format }}</span>
+                  <h3>{{ product.name }}</h3>
+                </div>
+                {% if product.on_sale %}
                 {% endif %}
-                {% if product.status == 'coming-soon' %}
-                  <div class="badge badge-filled badge-status">
-                  <span>Coming<br/>Soon</span>
-                  </div>
-                {% elsif product.status == 'sold-out' %}
-                  <div class="badge badge-filled badge-status">
-                  <span>Sold<br/>Out</span>
-                  </div>
-                {% elsif product.on_sale %}
-                  <div class="badge badge-filled badge-status">
-                  <span>On<br/>Sale</span>
-                  </div>
-                {% endif %}
-                <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '400' }}" data-src-retina="{{ product.image | product_image_url | constrain: '800' }}">
               </div>
-              <div class="meta">
-                <span class="highlight price">{{ product.default_price | money: theme.money_format }}</span>
-                <h3>{{ product.name }}</h3>
-              </div>
-              {% if product.on_sale %}
-              {% endif %}
             </div>
-          </div>
-        </a>
-      {% endfor %}
-    {% else %}
-       <h1 class="floating-title">No products found</h1>
-    {% endif %}
-    {% endget %}
-  </div>
+          </a>
+        {% endfor %}
+      {% else %}
+         <h1 class="floating-title">No products found</h1>
+      {% endif %}
+      {% endget %}
+    </div>
+  {% endif %}
 </section>
