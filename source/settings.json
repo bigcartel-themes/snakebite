@@ -1,6 +1,6 @@
 {
   "name": "Snakebite",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "images": [
     {
       "variable": "logo",
@@ -29,34 +29,34 @@
     {
       "variable": "header_font",
       "label": "Header Font",
-      "default": "Copse"
+      "default": "Helvetica"
     },
     {
       "variable": "text_font",
       "label": "Text Font",
-      "default": "Montserrat"
+      "default": "Arial Black"
     }
   ],
   "colors": [
     {
       "variable": "background_color",
       "label": "Background",
-      "default": "#FFFFFF"
+      "default": "#DFAD30"
     },
     {
       "variable": "primary_color",
       "label": "Primary Color",
-      "default": "#3936E0"
+      "default": "#0808B7"
     },
     {
       "variable": "highlight_color",
       "label": "Highlight Color",
-      "default": "#FFFF00"
+      "default": "#F5D480"
     },
     {
       "variable": "accent_color",
       "label": "Accent Color",
-      "default": "#FFEAEA"
+      "default": "#BF3908"
     }
   ],
   "options": [
