@@ -95,11 +95,13 @@
     {% endif %}
 
       {% if theme.show_social %}
-      <ul class="social-links">
-        <li><a target="_blank" href="https://twitter.com/intent/tweet?status={{product.name}}%20-%20{{store.name}}%20{{store.url}}{{product.url}}">Tweet</a></li>
-        <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{store.url}}{{product.url}}">Share</a></li>
-        <li><a target="_blank" href="http://pinterest.com/pin/create/button/?url={{store.url}}{{product.url}}&media={{ product.images.first.url }}">Pin It</a></li>
-      </ul>
+        {% capture tweet_string %}{{ product.name }} - {{ store.name }} {{ page.full_url }}{% endcapture %}
+        {% assign tweet_string = tweet_string | url_encode %}
+        <ul class="social-links">
+          <li><a target="_blank" href="https://twitter.com/intent/tweet?text={{ tweet_string }}">Tweet</a></li>
+          <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{store.url}}{{product.url}}">Share</a></li>
+          <li><a target="_blank" href="http://pinterest.com/pin/create/button/?url={{store.url}}{{product.url}}&media={{ product.images.first.url }}">Pin It</a></li>
+        </ul>
       {% endif %}
 
     </div>
