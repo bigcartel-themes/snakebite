@@ -1,9 +1,7 @@
 function processProduct(product) {
   if (product.has_option_groups) {
-    disableAddButton("add-to-cart");
     setInitialProductOptionStatuses(product);
     $(".product_option_group").on('change',function() {
-      disableAddButton("add-to-cart");
       $('#option').val(0);
       processAvailableDropdownOptions(product, $(this));
     });
@@ -12,13 +10,12 @@ function processProduct(product) {
     }
   }
   if ($('.product_option_select').length) {
-    disableAddButton();
     if (show_sold_out_product_options === 'false') {
       $('option[disabled-type="sold-out"]').wrap('<span>');
     }
   }
   $('.reset-selection-button').on('click', function() {
-    disableAddButton("add-to-cart");
+    enableAddButton();
     $(this).hide();
     $(".product_option_group option").each(function(index,element) {
       if (element.value > 0) {
