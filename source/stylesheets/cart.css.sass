@@ -113,9 +113,6 @@
   float: left
   height: 100%
   border-right: 3px solid $primary-color
-  -moz-box-sizing: border-box
-  -webkit-box-sizing: border-box
-  box-sizing: border-box
 
 .cart .quantity-decrement, .cart .quantity-increment
   +flexbox
@@ -195,7 +192,7 @@
   text-align: center
 
 .total h3
-  font-family: "#{"{{theme.text_font}}"}", sans-serif
+  font-family: $text-font
   font-size: 12px
   line-height: 20px
   text-transform: uppercase
@@ -301,9 +298,6 @@
     width: 100%
     padding: 20px
     text-align: center
-    -moz-box-sizing: border-box
-    -webkit-box-sizing: border-box
-    box-sizing: border-box
 
   .total
     width: 80%

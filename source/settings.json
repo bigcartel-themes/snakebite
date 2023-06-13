@@ -1,6 +1,6 @@
 {
   "name": "Snakebite",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "images": [
     {
       "variable": "logo",
@@ -60,6 +60,13 @@
     }
   ],
   "options": [
+    {
+      "variable": "maintenance_message",
+      "label": "Maintenance mode message",
+      "type": "text",
+      "description": "A message visitors see when your shop is in Maintenance Mode",
+      "default": "We're working on our shop right now.<br /><br />Please check back soon."
+    },
     {
       "variable": "product_slideshows",
       "label": "Enable product slideshows",
