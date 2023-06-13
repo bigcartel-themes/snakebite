@@ -1,9 +1,12 @@
 @import 'config'
 
+*
+  box-sizing: border-box
+
 /* TYPOGRAPHY  */
 body
   color: $primary-color
-  font-family: "#{"{{theme.text_font}}"}", sans-serif
+  font-family: $text-font
   font-size: 62.5%
   -webkit-text-size-adjust: none
   text-rendering: optimizeLegibility
@@ -12,7 +15,7 @@ body
 input,
 textarea
   color: $primary-color
-  font-family: "#{"{{theme.text_font}}"}", sans-serif
+  font-family: $text-font
   -webkit-font-smoothing: antialiased
 
 a
@@ -38,7 +41,7 @@ label
   background: $highlight-color
 
 h1, h2, h3
-  font-family: "#{"{{theme.header_font}}"}", sans-serif
+  font-family: $header-font
 
 h1
   font-size: 50px
@@ -116,7 +119,7 @@ body
 .btn
   display: inline-block
   padding: 15px 20px
-  font-family: "#{"{{theme.text_font}}"}", sans-serif
+  font-family: $text-font
   font-size: 20px
   line-height: 22px
   color: $primary-color
@@ -170,7 +173,7 @@ body
   border-radius: 5px
   border: 3px solid $primary-color
   color: $primary-color
-  font-family: "#{"{{theme.text_font}}"}", sans-serif
+  font-family: $text-font
   height: 56px
   margin-bottom: 20px
   max-width: 100%
@@ -185,7 +188,7 @@ body
     background: none
     border: 0
     color: $primary-color
-    font-family: "#{"{{theme.text_font}}"}", sans-serif
+    font-family: $text-font
     font-size: 14px
     font-weight: 700
     height: 100%
@@ -329,7 +332,7 @@ header .inner
     margin-right: 0
 
 .wordmark
-  font-family: "#{"{{theme.header_font}}"}", sans-serif
+  font-family: $header-font
   font-size: 22px
   line-height: 30px
 
@@ -353,9 +356,6 @@ header .inner
 
   @media screen and (max-width: $break-small)
     margin-left: 20px
-
-  &:focus
-    outline: auto
 
 .logo img
   height: 100%
@@ -911,7 +911,7 @@ footer
     display: inherit !important
 
 .bigcartel-credit
-  font-family: "#{"{{theme.header_font}}"}", sans-serif
+  font-family: $header-font
   line-height: 1em
   font-size: 15px
   display: inline-flex

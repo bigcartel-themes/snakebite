@@ -24,9 +24,6 @@ video {
 	background: {{theme.highlight_color}};
 	color: {{theme.primary_color}};
 }
-*:focus {
-	outline: none
-}
 ::-webkit-input-placeholder {}
 :-moz-placeholder {}
 input[type=text],
