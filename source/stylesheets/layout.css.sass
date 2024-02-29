@@ -676,13 +676,8 @@ header .inner
  */
 footer
   background: $primary-color
-  font-size: 12px
-  line-height: 1.3em
   color: $background-color
-  height: 80px
-  text-transform: uppercase
-  letter-spacing: 0.09em
-  font-weight: 700
+  padding: 48px 0
   position: relative
   z-index: 500
 
@@ -694,45 +689,27 @@ footer
 
   .inner
     position: relative
-    top: 50%
-    +transform(translateY(-50%))
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 32px
 
-    &:after
-      clear: both
-      content: " "
-      display: table
+.social-icons
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 24px
+  flex-wrap: wrap
 
-  .social_links
-    float: left
+  a
+    display: block
 
-    &:after
-      clear: both
-      content: " "
-      display: table
-
-  li
-    float: left
-    margin: 0 10px
-
-    a
+    svg
       display: block
-
-      svg
-        display: block
-        fill: $background-color
-        height: 22px
-        width: 22px
-
-      &:hover svg, &:focus svg
-        fill: $highlight-color
-
-    &:first-child
-      margin-left: 0
-
-  .footer-text
-    float: right
-    line-height: 22px
-
+      fill: currentColor
+      height: 22px
+      width: 22px
 
 /* DOM MODS
  */
@@ -871,30 +848,6 @@ footer
     width: 100%
     left: 0
     text-align: center
-
-  /* Footer */
-  footer
-    height: 120px
-
-  footer .social_links,
-  footer .footer-text
-    display: block
-    float: none
-
-  footer .social_links li
-    display: inline-block
-    float: none
-
-  footer .social_links li:first-child
-    margin: 0 10px
-
-  footer .footer-text
-    line-height: 34px
-    position: relative
-
-  footer .social_links + .footer-text
-    line-height: 22px
-    margin-top: 20px
 
   /* DOM mods */
   .visible-phone
