@@ -175,7 +175,7 @@
       "variable": "show_view_badges",
       "label": "Show view badges",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "description": "Adds circular \"view product\" badges on top of product thumbnails"
     },
     {
@@ -207,7 +207,7 @@
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 36,
+      "default": 48,
       "description": "The number of products shown per page"
     },
     {
