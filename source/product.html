@@ -35,7 +35,7 @@
     </div>
 
     <div class="details">
-    <h2>{{product.name}}</h2>
+    <h1>{{product.name}}</h1>
     {% if product.variable_pricing %}
       <span class="highlight price">{{ product.min_price | money: theme.money_format }} – {{ product.max_price | money: theme.money_format }}</span>
     {% else %}
@@ -54,7 +54,7 @@
                 <input id="option" name="cart[add][id]" type="hidden" value="0">
                 {% for option_group in product.option_groups %}
                   <div class="select">
-                    <select data-unavailable-text="(Unavailable)" data-sold-text="(Sold out)" data-group-id="{{ option_group.id }}" data-group-name="{{ option_group.name | escape }}" class="product_option_group" name="option_group[{{ option_group.id }}]" title="Select {{ option_group.name | escape }}" required>
+                    <select data-unavailable-text="(Unavailable)" data-sold-text="(Sold out)" data-group-id="{{ option_group.id }}" data-group-name="{{ option_group.name | escape }}" class="product_option_group" name="option_group[{{ option_group.id }}]" aria-label="Select {{ option_group.name | escape }}" required>
                       <option value="" disabled="disabled" selected>Select {{ option_group.name }}</option>
                       {% for value in option_group.values %}
                         <option value="{{ value.id }}" data-name="{{ value.name | escape }}">{{ value.name }}</option>
@@ -66,7 +66,7 @@
               </div>
             {% else %}
               <div class="select">
-                <select class="product_option_select" id="option" name="cart[add][id]" title="Select variant" required>
+                <select class="product_option_select" id="option" name="cart[add][id]" aria-label="Select variant" required>
                   <option value="" disabled="disabled" selected>Select variant</option>
                   {% for option in product.options %}
                     <option value="{{ option.id }}" data-price="{{ option.price }}"{% if option.sold_out %} disabled="disabled" disabled-type="sold-out"{% endif %}>{{ option.name }} {% if option.sold_out %} (Sold out){% endif %}</option>
@@ -83,7 +83,7 @@
           {{ store | instant_checkout_button: 'light-outline', '44px' }}
           {% if product.has_option_groups %}
             <div class="reset-selection-button-container">
-              <button class="btn minimal-button reset-selection-button" title="Reset selection" type="reset">Reset selection</button>
+              <button class="btn minimal-button reset-selection-button" type="reset">Reset selection</button>
             </div>
         {% endif %}
         </form>

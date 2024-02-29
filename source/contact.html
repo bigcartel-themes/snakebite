@@ -39,14 +39,13 @@
           {{ contact | contact_input: 'message' }}
         </div>
         <div class="contact-row">
-          <div class="recaptcha-note">
-            {{ contact.recaptcha }}
+          <div class="contact-row-half">
+            <button class="btn" id="contact-submit" type="submit" name="submit">Send Message</button>
           </div>
         </div>
-
         <div class="contact-row">
-          <div class="contact-row-half">
-            <button class="btn" id="contact-submit" type="submit" name="submit" title="Send message" tabindex="6">Send Message</button>
+          <div class="recaptcha-note">
+            {{ contact.recaptcha }}
           </div>
         </div>
       </form>
