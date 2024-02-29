@@ -10,39 +10,26 @@
   text-transform: uppercase
   letter-spacing: 0.09em
   font-weight: 700
-  overflow: hidden
+  display: flex
+  align-items: center
 
-.link-continue, .link-checkout
-  display: block
-  height: 20px
+.link-continue
+  display: flex
   padding: 20px 0
   position: relative
+  align-items: center
+  justify-content: center
+  gap: 10px
+  margin-left: 10px
 
   &:hover, &:focus
     text-decoration: underline
 
-.link-continue
-  float: left
-  padding-left: 40px
-
-.link-checkout
-  float: right
-  padding-right: 40px
-
-.icon-arrow-left, .icon-arrow-right
-  +transform(translateY(-50%))
+.icon-arrow-left
   fill: $primary-color
   display: block
-  height: 40px
-  width: 40px
-  position: absolute
-  top: 50%
-
-.icon-arrow-left
-  left: 0
-
-.icon-arrow-right
-  right: 0
+  height: 18px
+  width: 18px
 
 .header-subtotal
   float: right
@@ -190,6 +177,10 @@
   width: 100%
   margin-bottom: 30px
   text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
 
 .total h3
   font-family: $text-font
@@ -298,10 +289,6 @@
     width: 100%
     padding: 20px
     text-align: center
-
-  .total
-    width: 80%
-    padding: 0 10%
 
   .cart-items,
   .cart-options,
