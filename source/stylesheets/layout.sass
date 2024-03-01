@@ -5,8 +5,8 @@
 
 /* TYPOGRAPHY  */
 body
-  color: $primary-color
-  font-family: $text-font
+  color: var(--primary-color)
+  font-family: var(--text-font)
   font-size: 62.5%
   -webkit-text-size-adjust: none
   text-rendering: optimizeLegibility
@@ -14,16 +14,16 @@ body
 
 input,
 textarea
-  color: $primary-color
-  font-family: $text-font
+  color: var(--primary-color)
+  font-family: var(--text-font)
   -webkit-font-smoothing: antialiased
 
 a
-  color: $primary-color
+  color: var(--primary-color)
   text-decoration: none
 
 a:hover
-  color: $primary-color
+  color: var(--primary-color)
 
 p,
 .main ul,
@@ -37,10 +37,10 @@ label
 
 .main p a:hover
   text-decoration: underline
-  background: $highlight-color
+  background: var(--highlight-color)
 
 h1, h2, h3
-  font-family: $header-font
+  font-family: var(--header-font)
 
 h1
   font-size: 50px
@@ -62,8 +62,8 @@ h4
 .highlight
   font-size: 18px
   font-weight: 700
-  color: $primary-color
-  background: $highlight-color
+  color: var(--primary-color)
+  background: var(--highlight-color)
   padding: 6px 12px
   border-radius: 5px
 
@@ -77,7 +77,7 @@ html, body
   height: 100%
 
 body
-  background-color: $background-color
+  background-color: var(--background-color)
   background-image: #{"{% if theme.images.background != blank %} url(\"{{ theme.images.background.url }}\") {% else %} none {% endif %}"}
 
 .wrapper
@@ -104,10 +104,10 @@ body
 .btn
   display: inline-block
   padding: 15px 20px
-  font-family: $text-font
+  font-family: var(--text-font)
   font-size: 20px
-  color: $primary-color
-  border: 3px solid $primary-color
+  color: var(--primary-color)
+  border: 3px solid var(--primary-color)
   background: none
   text-align: center
   border-radius: 5px
@@ -125,38 +125,38 @@ body
 
   &.minimal-button
     background: none
-    color: $primary-color
+    color: var(--primary-color)
     border: none
     font-size: 13px
     padding: 0
 
     &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
       background: none
-      color: $primary-color
+      color: var(--primary-color)
       text-decoration: underline
 
   &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
-    background: $primary-color
-    color: $background-color
+    background: var(--primary-color)
+    color: var(--background-color)
 
   &:disabled, &.disabled
     background: none
-    color: $primary-color
+    color: var(--primary-color)
     cursor: not-allowed
     opacity: .3
 
 .btn-inactive:hover
   background: none
-  color: $primary-color
+  color: var(--primary-color)
 
 /* Select box */
 .select
   box-sizing: border-box
   position: relative
   border-radius: 5px
-  border: 3px solid $primary-color
-  color: $primary-color
-  font-family: $text-font
+  border: 3px solid var(--primary-color)
+  color: var(--primary-color)
+  font-family: var(--text-font)
   height: 56px
   margin-bottom: 20px
   max-width: 100%
@@ -168,9 +168,9 @@ body
     +appearance(none)
     background: none
     border: 0
-    color: $primary-color
+    color: var(--primary-color)
     cursor: pointer
-    font-family: $text-font
+    font-family: var(--text-font)
     font-size: 16px
     font-weight: 700
     height: 100%
@@ -194,7 +194,7 @@ body
       display: none
 
   svg
-    fill: $primary-color
+    fill: var(--primary-color)
     height: 8px
     margin-top: -2px
     position: absolute
@@ -204,17 +204,17 @@ body
     z-index: 1
 
   &:hover, &:focus, &:focus-within
-    background: $primary-color
-    color: $background-color
-    border-color: $primary-color
+    background: var(--primary-color)
+    color: var(--background-color)
+    border-color: var(--primary-color)
 
     select
-      color: $background-color
+      color: var(--background-color)
 
       option:disabled
         color: graytext
     svg
-      fill: $background-color
+      fill: var(--background-color)
 
 /* Badges */
 .badge
@@ -233,13 +233,13 @@ body
   +transform(translateZ(0))
 
 .badge-empty
-  color: $primary-color
-  border: 3px solid $primary-color
+  color: var(--primary-color)
+  border: 3px solid var(--primary-color)
 
 .badge-filled
-  color: $primary-color
-  background: $background-color
-  border: 3px solid $background-color
+  color: var(--primary-color)
+  background: var(--background-color)
+  border: 3px solid var(--background-color)
 
 
 /* Errors */
@@ -248,7 +248,7 @@ body
   padding: 15px
   border-radius: 5px
   text-align: center
-  background: $highlight-color
+  background: var(--highlight-color)
 
   li
     margin-top: 10px
@@ -276,21 +276,21 @@ body
   height: 7px
   border-radius: 20px
   text-indent: -999px
-  background: $highlight-color
-  border: 3px solid $primary-color
+  background: var(--highlight-color)
+  border: 3px solid var(--primary-color)
   position: relative
   +transition(transform background 300ms)
 
 .cycle-pager span.cycle-pager-active span
-  background: $primary-color
+  background: var(--primary-color)
   +transition(transform background 300ms)
 
 
 /* HEADER
  */
 header
-  background: $background-color
-  border-bottom: 6px solid $primary-color
+  background: var(--background-color)
+  border-bottom: 6px solid var(--primary-color)
   position: absolute
   top: 0
   width: 100%
@@ -310,7 +310,7 @@ header .inner
     margin-right: 0
 
 .wordmark
-  font-family: $header-font
+  font-family: var(--header-font)
   font-size: 22px
 
   @media screen and (max-width: $break-medium)
@@ -339,7 +339,7 @@ header .inner
   width: auto
 
 .header-nav-container
-  background: $background-color
+  background: var(--background-color)
   margin-left: auto
   padding: 0
   position: relative
@@ -370,14 +370,14 @@ header .inner
 .nav
 
   @media only screen and (max-width : $break-medium)
-    background: $primary-color
-    color: $background-color
+    background: var(--primary-color)
+    color: var(--background-color)
     padding: 20px
 
 /* Dropdowns */
 .nav ul
   +transition(.1s linear all)
-  background: $primary-color
+  background: var(--primary-color)
   position: absolute
   top: 100%
   left: -9999px
@@ -387,7 +387,7 @@ header .inner
   overflow-y: scroll
 
   @media screen and (max-width: $break-medium)
-    background: $background-color
+    background: var(--background-color)
     border: none !important
     display: none
     position: relative
@@ -396,7 +396,7 @@ header .inner
     max-height: none
 
 .nav li
-  background: $background-color
+  background: var(--background-color)
   float: left
   position: relative
 
@@ -412,7 +412,7 @@ header .inner
 /* Top level nav items */
 .nav li > a
   float: left
-  color: $primary-color
+  color: var(--primary-color)
   font-weight: bold
   font-size: 14px
   text-decoration: none
@@ -422,13 +422,13 @@ header .inner
   font-weight: 700
 
   > svg
-    fill: $primary-color
+    fill: var(--primary-color)
     margin-left: 2px
     height: 9px
     width: 9px
 
   @media only screen and (max-width : $break-medium)
-    color: $primary-color
+    color: var(--primary-color)
     padding: 16px 0
     display: block
     font-size: 16px
@@ -438,19 +438,19 @@ header .inner
 
 /* Top level hover state, preserve hover state when hovering dropdown  */
 .nav li > a:hover, .nav li > a:focus, .nav li:focus > a, .nav li:hover > a, .nav li:focus-within > a
-  background: $primary-color
-  color: $background-color
+  background: var(--primary-color)
+  color: var(--background-color)
   outline: 0
 
   @media screen and (max-width: $break-medium)
-    background: $highlight-color
-    color: $primary-color
+    background: var(--highlight-color)
+    color: var(--primary-color)
 
   > svg
-    fill: $background-color
+    fill: var(--background-color)
 
     @media screen and (max-width: $break-medium)
-      fill: $primary-color
+      fill: var(--primary-color)
 
 /* Rounded corners for first top level nav item */
 .nav > li:first-child > a
@@ -478,8 +478,8 @@ header .inner
 .nav ul a
   float: none
   display: block
-  color: $background-color
-  background: $primary-color
+  color: var(--background-color)
+  background: var(--primary-color)
   font-size: 14px
   text-shadow: none
   padding: 15px 20px
@@ -503,8 +503,8 @@ header .inner
     border-radius: 0
 
 .nav ul a:hover, .nav ul a:focus
-  background: $highlight-color
-  color: $primary-color
+  background: var(--highlight-color)
+  color: var(--primary-color)
 
 .cart-item-count
   font-size: 15px
@@ -523,7 +523,7 @@ header .inner
     visibility: hidden
 
 .icon-cart
-  fill: $primary-color
+  fill: var(--primary-color)
   font-size: 40px
 
 .open-mobile-nav
@@ -531,7 +531,7 @@ header .inner
   margin-right: 10px
 
   svg
-    fill: $primary-color
+    fill: var(--primary-color)
     margin-top: 2px
 
   @media screen and (max-width: $break-medium)
@@ -600,7 +600,7 @@ header .inner
   height: 60px
   width: 60px
   border-radius: 80px
-  background: $highlight-color
+  background: var(--highlight-color)
   top: 5px
   right: 5px
   position: absolute
@@ -650,17 +650,17 @@ header .inner
 /* FOOTER
  */
 footer
-  background: $primary-color
-  color: $background-color
+  background: var(--primary-color)
+  color: var(--background-color)
   padding: 48px 0
   position: relative
   z-index: 500
 
   a
-    color: $background-color
+    color: var(--background-color)
 
     &:hover, &:focus
-      color: $highlight-color
+      color: var(--highlight-color)
 
   .inner
     position: relative
@@ -835,7 +835,7 @@ footer
     display: inherit !important
 
 .bigcartel-credit
-  font-family: $header-font
+  font-family: var(--header-font)
   line-height: 1em
   font-size: 15px
   display: inline-flex

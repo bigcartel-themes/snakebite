@@ -17,7 +17,7 @@
   width: 100%
 
 .image-wrap
-  background: $background-color
+  background: var(--background-color)
   position: relative
   z-index: 0
 
@@ -38,7 +38,7 @@
 
   &:hover .badge-empty, &:focus .badge-empty
     color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"}
-    background: $primary-color
+    background: var(--primary-color)
     +transform(translateZ(0))
     +transform(scale(1.1))
     +transition(transform 100ms ease-in-out)
@@ -48,7 +48,7 @@
     +transition(transform 50ms ease-in-out)
 
 .meta
-  border-top: 3px solid $primary-color
+  border-top: 3px solid var(--primary-color)
   text-align: left
   padding: 20px 0
   position: relative
@@ -58,7 +58,7 @@
 
   .product-name
     font-size: 18px
-    font-family: $header-font
+    font-family: var(--header-font)
     font-size: 22px
 
   .price
@@ -76,7 +76,7 @@
 
   .current, a:hover
     border-radius: 5px
-    background: $highlight-color
+    background: var(--highlight-color)
 
   .disabled
     display: none
@@ -88,7 +88,7 @@
   left: 0
   bottom: 0
   z-index: -1
-  background-color: $accent-color
+  background-color: var(--accent-color)
   background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
 
 .preview
@@ -193,7 +193,7 @@
   position: absolute
   top: 0
   left: 0
-  background: $highlight-color
+  background: var(--highlight-color)
 
 
 

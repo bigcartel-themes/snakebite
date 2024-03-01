@@ -9,7 +9,7 @@
 .product .images
   float: right
   width: 66%
-  background-color: $accent-color
+  background-color: var(--accent-color)
   background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
 
 .product .images-inner
@@ -21,14 +21,14 @@
   position: absolute
   top: 0
   left: 0
-  background-color: $accent-color
+  background-color: var(--accent-color)
   background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
   z-index: -1
 
 .slideshow
   position: relative
   overflow: hidden
-  background-color: $accent-color
+  background-color: var(--accent-color)
   background-image: #{"{% if theme.images.accent != blank %} url(\"{{ theme.images.accent.url }}\") {% else %} none {% endif %}"}
 
 .slideshow img
@@ -103,8 +103,8 @@
 
 .social-links li a
   display: block
-  background: $primary-color
-  color: $background-color
+  background: var(--primary-color)
+  color: var(--background-color)
   text-transform: uppercase
   font-weight: 700
   font-size: 12px
@@ -119,7 +119,7 @@
   user-select: none
 
 .social-links li a:hover
-  color: $highlight-color
+  color: var(--highlight-color)
 
 #instant-checkout-button
   box-sizing: border-box
@@ -180,7 +180,7 @@ button.reset-selection-button
 
 .btn-inactive:hover
   background: none
-  color: $primary-color
+  color: var(--primary-color)
   cursor: default
 
 /* LARGE */
