@@ -1,34 +1,3 @@
-$(function() {
-
-  // Retina support
-	if(window.devicePixelRatio >= 1.2){
-    var images = document.getElementsByTagName('img');
-    for(var i=0;i < images.length;i++){
-        var attr = images[i].getAttribute('data-src-retina');
-        if(attr){
-            images[i].src = attr;
-        }
-    }
-  }
-
-  // Fade in page content on load
-  if($(window).width() > 700) {
-    $('.preview img, .preview .badge').hide();
-    $('.preview').each(function() {
-      var preview = $(this);
-      var img = preview.find('img').first();
-      var badges = preview.find('.badge');
-      var tmpImg = new Image();
-      tmpImg.src = img.attr('src');
-      tmpImg.onload = function() {
-        img.fadeIn(200);
-        badges.fadeIn(200);
-      };
-    });
-  }
-
-});
-
 $('.open-mobile-nav').click(function(e) {
   e.preventDefault();
   $('.main-nav').slideToggle();

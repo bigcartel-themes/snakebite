@@ -28,22 +28,23 @@
                   {% endif %}
                   {% if product.status == 'coming-soon' %}
                     <div class="badge badge-filled badge-status">
-                    <span>Coming<br/>Soon</span>
+                      <span>Coming<br/>Soon</span>
                     </div>
                   {% elsif product.status == 'sold-out' %}
                     <div class="badge badge-filled badge-status">
-                    <span>Sold<br/>Out</span>
+                      <span>Sold<br/>Out</span>
                     </div>
                   {% elsif product.on_sale %}
                     <div class="badge badge-filled badge-status">
-                    <span>On<br/>Sale</span>
+                      <span>On<br/>Sale</span>
                     </div>
                   {% endif %}
                   <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '400' }}" data-src-retina="{{ product.image | product_image_url | constrain: '800' }}">
                 </div>
                 <div class="meta">
+                  <div class="product-name">{{ product.name }}</div>
                   <span class="highlight price">{{ product.default_price | money: theme.money_format }}</span>
-                  <h3>{{ product.name }}</h3>
+
                 </div>
                 {% if product.on_sale %}
                 {% endif %}

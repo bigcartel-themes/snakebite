@@ -1,5 +1,3 @@
-@import 'flexbox'
-
 $break-extra-large: 1600px
 $break-large: 1245px
 $break-medium: 880px
@@ -13,34 +11,3 @@ $accent-color: #{"{{ theme.accent_color }}"}
 
 $header-font: #{"{{ theme.header_font | font_family }}"}
 $text-font: #{"{{ theme.text_font | font_family }}"}
-
-@mixin all-transitions
-  +transition(.2s linear)
-
-@mixin transition($transition...)
-  -webkit-transition: #{$transition}
-  transition: #{$transition}
-
-@mixin transform($str...)
-  -webkit-transform: $str
-  transform: $str
-
-@mixin transform-origin($str...)
-  -webkit-transform-origin: $str
-  transform-origin: $str
-
-@mixin appearance($str...)
-  -webkit-appearance: none
-  -moz-appearance: none
-  appearance: none
-
-@mixin keyframes($animation...)
-  @-webkit-keyframes #{$animation}
-    @content
-
-  @keyframes #{$animation}
-    @content
-
-@mixin animation($str...)
-  -webkit-animation: $str
-  animation: $str

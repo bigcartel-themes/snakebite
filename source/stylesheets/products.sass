@@ -52,16 +52,21 @@
   text-align: left
   padding: 20px 0
   position: relative
+  display: flex
+  align-items: flex-start
+  gap: 10px
+
+  .product-name
+    font-size: 18px
+    font-family: $header-font
+    font-size: 22px
 
   .price
-    float: right
-    margin: 0 0 10px 30px
-    +transform(translateZ(0))
+    margin-left: auto
 
 .pagination
   display: block
   font-size: 40px
-  line-height: 1.5em
   margin-bottom: 80px
 
   a, span
