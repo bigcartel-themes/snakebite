@@ -13,7 +13,9 @@
   overflow: hidden
 
 .link-continue, .link-checkout
-  display: block
+  display: flex
+  align-items: center
+  justify-content: center
   height: 20px
   padding: 20px 0
   position: relative
@@ -29,10 +31,12 @@
   float: right
   padding-right: 40px
 
+  @media screen and (max-width: $break-small)
+    display: none
+
 .icon-arrow-left, .icon-arrow-right
   +transform(translateY(-50%))
   fill: $primary-color
-  display: block
   height: 40px
   width: 40px
   position: absolute
