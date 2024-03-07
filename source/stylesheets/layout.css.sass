@@ -98,13 +98,13 @@ body
 .wrapper
   min-height: 100%
   /* equal to footer height */
-  margin-bottom: -80px
+  margin-bottom: -120px
 
 .wrapper:after
   content: ""
   display: block
   /* equal to footer height */
-  height: 80px
+  height: 120px
 
 .inner
   max-width: 1200px
@@ -679,12 +679,15 @@ footer
   font-size: 12px
   line-height: 1.3em
   color: $background-color
-  height: 80px
+  height: 120px
   text-transform: uppercase
   letter-spacing: 0.09em
   font-weight: 700
   position: relative
   z-index: 500
+  display: flex
+  align-items: center
+  justify-content: center
 
   a
     color: $background-color
@@ -694,45 +697,33 @@ footer
 
   .inner
     position: relative
-    top: 50%
-    +transform(translateY(-50%))
+    display: flex
+    align-items: center
+    width: 100%
 
-    &:after
-      clear: both
-      content: " "
-      display: table
+  .social-icons
+    display: flex
+    gap: 20px
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
 
-  .social_links
-    float: left
+    li
 
-    &:after
-      clear: both
-      content: " "
-      display: table
-
-  li
-    float: left
-    margin: 0 10px
-
-    a
-      display: block
-
-      svg
+      a
         display: block
-        fill: $background-color
-        height: 22px
-        width: 22px
 
-      &:hover svg, &:focus svg
-        fill: $highlight-color
+        svg
+          display: block
+          fill: $background-color
+          height: 22px
+          width: 22px
 
-    &:first-child
-      margin-left: 0
+        &:hover svg, &:focus svg
+          fill: $highlight-color
 
   .footer-text
-    float: right
-    line-height: 22px
-
+    margin-left: auto
 
 /* DOM MODS
  */
@@ -876,25 +867,12 @@ footer
   footer
     height: 120px
 
-  footer .social_links,
-  footer .footer-text
-    display: block
-    float: none
+    .inner
+      flex-direction: column
+      gap: 20px
 
-  footer .social_links li
-    display: inline-block
-    float: none
-
-  footer .social_links li:first-child
-    margin: 0 10px
-
-  footer .footer-text
-    line-height: 34px
-    position: relative
-
-  footer .social_links + .footer-text
-    line-height: 22px
-    margin-top: 20px
+    .footer-text
+      margin: 0
 
   /* DOM mods */
   .visible-phone
