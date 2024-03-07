@@ -1,6 +1,6 @@
 {
   "name": "Snakebite",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "images": [
     {
       "variable": "logo",
@@ -25,38 +25,115 @@
       "description": "1400px by 700px images recommended"
     }
   ],
+  "preset_styles": {
+    "preview": {
+      "title_font": "header_font",
+      "body_font": "primary_font",
+      "text_color": "primary_color",
+      "background_color": "background_color"
+    },
+    "presets": [
+      {
+        "group_name": "Classic",
+        "styles": [
+          {
+            "style_name": "Classic #1",
+            "fonts": {
+              "header_font": "DM Sans",
+              "text_font": "DM Sans"
+            },
+            "colors": {
+              "background_color": "#FFFFFF",
+              "primary_color": "#111111",
+              "highlight_color": "#88ECFF",
+              "accent_color": "#F3F3F5"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Playful",
+        "styles": [
+          {
+            "style_name": "Playful #1",
+            "fonts": {
+              "header_font": "Syne",
+              "text_font": "Syne"
+            },
+            "colors": {
+              "background_color": "#CEFF66",
+              "primary_color": "#000000",
+              "highlight_color": "#FFFFFF",
+              "accent_color": "#A6F304"
+            }
+          },
+          {
+            "style_name": "Playful #2",
+            "fonts": {
+              "header_font": "Concert One",
+              "text_font": "Dosis"
+            },
+            "colors": {
+              "background_color": "#FFFFFF",
+              "primary_color": "#F90081",
+              "highlight_color": "#F6FF20",
+              "accent_color": "#9DFFFC"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Natural",
+        "styles": [
+          {
+            "style_name": "Natural #1",
+            "fonts": {
+              "header_font": "Prata",
+              "text_font": "Source Sans Pro"
+            },
+            "colors": {
+              "background_color": "#F8F8F8",
+              "primary_color": "#0F1B27",
+              "highlight_color": "#EBE7E7",
+              "accent_color": "#DBD1D1"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "fonts": [
     {
       "variable": "header_font",
       "label": "Header Font",
-      "default": "Helvetica"
+      "default": "DM Sans"
     },
     {
       "variable": "text_font",
       "label": "Text Font",
-      "default": "Arial Black"
+      "default": "DM Sans"
     }
   ],
   "colors": [
     {
       "variable": "background_color",
       "label": "Background",
-      "default": "#DFAD30"
+      "default": "#FFFFFF"
     },
     {
       "variable": "primary_color",
       "label": "Primary Color",
-      "default": "#0808B7"
+      "default": "#111111"
     },
     {
       "variable": "highlight_color",
       "label": "Highlight Color",
-      "default": "#F5D480"
+      "default": "#88ECFF"
     },
     {
       "variable": "accent_color",
       "label": "Accent Color",
-      "default": "#BF3908"
+      "default": "#F3F3F5"
     }
   ],
   "options": [
