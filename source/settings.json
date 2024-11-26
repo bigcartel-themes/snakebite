@@ -152,13 +152,6 @@
       "description": "Displays product images as a slideshow instead of stacked images"
     },
     {
-      "variable": "show_social",
-      "label": "Show social media buttons",
-      "type": "boolean",
-      "default": false,
-      "description": "Adds social media share buttons to product pages"
-    },
-    {
       "variable": "show_view_badges",
       "label": "Show view badges",
       "type": "boolean",
