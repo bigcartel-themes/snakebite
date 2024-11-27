@@ -8,19 +8,16 @@
             <div class="preview-inner">
               <div class="preview-inner-wrap">
                 <div class="image-wrap" style="padding-bottom: {{ product.image.height | plus:0.0 | divided_by:(product.image.width | times:100 }}%;">
-                  {% if theme.show_view_badges %}
-                  <div class="badge badge-empty badge-view"><span>View</span></div>
-                  {% endif %}
                   {% if product.status == 'coming-soon' %}
-                    <div class="badge badge-filled badge-status">
+                    <div class="badge badge-secondary badge-status">
                     <span>Coming<br/>Soon</span>
                     </div>
                   {% elsif product.status == 'sold-out' %}
-                    <div class="badge badge-filled badge-status">
+                    <div class="badge badge-secondary badge-status">
                     <span>Sold<br/>Out</span>
                     </div>
                   {% elsif product.on_sale %}
-                    <div class="badge badge-filled badge-status">
+                    <div class="badge badge-primary badge-status">
                     <span>On<br/>Sale</span>
                     </div>
                   {% endif %}

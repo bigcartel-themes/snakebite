@@ -33,20 +33,6 @@
     position: absolute
     z-index: 2
 
-  .badge-empty
-    +transition(transform 100ms ease-in-out)
-
-  &:hover .badge-empty, &:focus .badge-empty
-    color: #{"{% if theme.background_color != 'transparent' %} {{ theme.background_color }} {% else %} #FFFFFF {% endif %}"}
-    background: $primary-color
-    +transform(translateZ(0))
-    +transform(scale(1.1))
-    +transition(transform 100ms ease-in-out)
-
-  &:active .badge-empty
-    +transform(scale(.95))
-    +transition(transform 50ms ease-in-out)
-
 .meta
   border-top: 3px solid $primary-color
   text-align: left
@@ -93,10 +79,6 @@
   width: 330px
   top: 40px
 
-.rand-0 .badge-view
-  bottom: 20px
-  right: 20px
-
 .rand-0 .badge-status
   top: 20px
   left: 20px
@@ -104,10 +86,6 @@
 .rand-1
   width: 280px
   top: 20px
-
-.rand-1 .badge-view
-  top: 21%
-  right: -20px
 
 .rand-1 .badge-status
   bottom: 20%
@@ -117,10 +95,6 @@
   width: 350px
   top: 0px
 
-.rand-2 .badge-view
-  top: 30%
-  right: 20px
-
 .rand-2 .badge-status
   top: 8%
   left: 20px
@@ -128,10 +102,6 @@
 .rand-3
   width: 320px
   top: 40px
-
-.rand-3 .badge-view
-  bottom: 20%
-  left: -20px
 
 .rand-3 .badge-status
   top: 10%
@@ -141,9 +111,6 @@
   width: 400px
   top: -20px
 
-.rand-4 .badge-view
-  top: 20%
-  left: -20px
 
 .rand-4 .badge-status
   bottom: 15%
@@ -152,10 +119,6 @@
 .rand-5
   top: 20px
 
-.rand-5 .badge-view
-  top: 20px
-  left: 20px
-
 .rand-5 .badge-status
   top: -20px
   right: -20px
@@ -163,10 +126,6 @@
 .rand-6
   width: 330px
   top: 0px
-
-.rand-6 .badge-view
-  top: -20px
-  right: 20px
 
 .rand-6 .badge-status
   bottom: 10%
