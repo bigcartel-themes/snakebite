@@ -1,6 +1,6 @@
 {
   "name": "Snakebite",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "images": [
     {
       "variable": "logo",
@@ -139,27 +139,27 @@
     {
       "variable": "primary_color",
       "label": "Primary",
-      "default": "#111111"
+      "default": "#F90081"
     },
     {
       "variable": "highlight_color",
       "label": "Highlight",
-      "default": "#88ECFF"
+      "default": "#F6FF20"
     },
     {
       "variable": "accent_color",
       "label": "Accent",
-      "default": "#F3F3F5"
+      "default": "#9DFFFC"
     },
     {
       "variable": "product_status_badge_text_color_primary",
       "label": "Product status badge text (primary)",
-      "default": "#111111"
+      "default": "#F6FF20"
     },
     {
       "variable": "product_status_badge_background_color_primary",
       "label": "Product status badge background (primary)",
-      "default": "#88ECFF"
+      "default": "#111111"
     },
     {
       "variable": "product_status_badge_text_color_secondary",
