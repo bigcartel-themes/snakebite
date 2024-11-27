@@ -254,9 +254,15 @@ body
   vertical-align: middle
   +transform(translateZ(0))
 
-.badge-empty
-  color: $primary-color
-  border: 3px solid $primary-color
+.badge-primary
+  color: $product-status-badge-text-color-primary
+  background: $product-status-badge-background-color-primary
+  //border: 3px solid $primary-color
+
+.badge-secondary
+  color: $product-status-badge-text-color-secondary
+  background: $product-status-badge-background-color-secondary
+  //border: 3px solid $primary-color
 
 .badge-filled
   color: $primary-color
@@ -848,9 +854,6 @@ footer
   /* Modules */
   .highlight
     font-size: 16px
-
-  .badge-view
-    display: none
 
   .cycle-pager
     width: 100%

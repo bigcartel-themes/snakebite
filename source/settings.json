@@ -46,7 +46,11 @@
               "background_color": "#FFFFFF",
               "primary_color": "#111111",
               "highlight_color": "#88ECFF",
-              "accent_color": "#F3F3F5"
+              "accent_color": "#F3F3F5",
+              "product_status_badge_text_color_primary": "#88ECFF",
+              "product_status_badge_background_color_primary": "#111111",
+              "product_status_badge_text_color_secondary": "#111111",
+              "product_status_badge_background_color_secondary": "#CDCDCD"
             }
           }
         ]
@@ -64,7 +68,11 @@
               "background_color": "#CEFF66",
               "primary_color": "#000000",
               "highlight_color": "#FFFFFF",
-              "accent_color": "#A6F304"
+              "accent_color": "#A6F304",
+              "product_status_badge_text_color_primary": "#A6F304",
+              "product_status_badge_background_color_primary": "#000000",
+              "product_status_badge_text_color_secondary": "#000000",
+              "product_status_badge_background_color_secondary": "#CDCDCD"
             }
           },
           {
@@ -77,7 +85,11 @@
               "background_color": "#FFFFFF",
               "primary_color": "#F90081",
               "highlight_color": "#F6FF20",
-              "accent_color": "#9DFFFC"
+              "accent_color": "#9DFFFC",
+              "product_status_badge_text_color_primary": "#F6FF20",
+              "product_status_badge_background_color_primary": "#111111",
+              "product_status_badge_text_color_secondary": "#111111",
+              "product_status_badge_background_color_secondary": "#CDCDCD"
             }
           }
         ]
@@ -95,7 +107,11 @@
               "background_color": "#F8F8F8",
               "primary_color": "#0F1B27",
               "highlight_color": "#EBE7E7",
-              "accent_color": "#DBD1D1"
+              "accent_color": "#DBD1D1",
+              "product_status_badge_text_color_primary": "#F1BB5D",
+              "product_status_badge_background_color_primary": "#111111",
+              "product_status_badge_text_color_secondary": "#111111",
+              "product_status_badge_background_color_secondary": "#CDCDCD"
             }
           }
         ]
@@ -134,7 +150,28 @@
       "variable": "accent_color",
       "label": "Accent Color",
       "default": "#F3F3F5"
+    },
+    {
+      "variable": "product_status_badge_text_color_primary",
+      "label": "Product status badge text (primary)",
+      "default": "#111111"
+    },
+    {
+      "variable": "product_status_badge_background_color_primary",
+      "label": "Product status badge background (primary)",
+      "default": "#88ECFF"
+    },
+    {
+      "variable": "product_status_badge_text_color_secondary",
+      "label": "Product status badge text (secondary)",
+      "default": "#111111"
+    },
+    {
+      "variable": "product_status_badge_background_color_secondary",
+      "label": "Product status badge background (secondary)",
+      "default": "#CDCDCD"
     }
+
   ],
   "options": [
     {
@@ -150,13 +187,6 @@
       "type": "boolean",
       "default": true,
       "description": "Displays product images as a slideshow instead of stacked images"
-    },
-    {
-      "variable": "show_view_badges",
-      "label": "Show view badges",
-      "type": "boolean",
-      "default": true,
-      "description": "Adds circular \"view product\" badges on top of product thumbnails"
     },
     {
       "variable": "show_sold_out_product_options",
