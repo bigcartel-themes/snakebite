@@ -138,17 +138,17 @@
     },
     {
       "variable": "primary_color",
-      "label": "Primary Color",
+      "label": "Primary",
       "default": "#111111"
     },
     {
       "variable": "highlight_color",
-      "label": "Highlight Color",
+      "label": "Highlight",
       "default": "#88ECFF"
     },
     {
       "variable": "accent_color",
-      "label": "Accent Color",
+      "label": "Accent",
       "default": "#F3F3F5"
     },
     {
