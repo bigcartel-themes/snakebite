@@ -8,10 +8,10 @@
     {{ head_content }}
   </head>
 
-  <body id="{{ page.permalink }}" class="{{ page.permalink }} {{ page.category }}">
+  <body id="{{ page.permalink }}" class="{{ page.permalink }} {{ page.category }}" data-bc-page-type="{% if page.category == 'custom' %}custom{% else %}{{ page.permalink }}{% endif %}">
 
     <div class="wrapper">
-      <header>
+      <header data-bc-hook="header">
         <div class="inner clear">
           {% if theme.images.logo.url != blank %}
             <a class="logo" href="/" title="Home"></a>
@@ -87,7 +87,7 @@
 
     </div><!-- End wrapper -->
 
-    <footer>
+    <footer data-bc-hook="footer">
       <div class="inner">
         {% if theme.instagram_url != blank
           or theme.tiktok_url != blank
