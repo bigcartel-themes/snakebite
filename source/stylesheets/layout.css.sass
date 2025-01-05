@@ -322,7 +322,7 @@ header
 header .inner
   +flexbox
   +align-items(center)
-  height: 70px
+  height: calc(#{$header-image-height} * 1px * 1.5)
   position: relative
 
   @media screen and (max-width: $break-medium)
@@ -342,22 +342,18 @@ header .inner
 
 .logo
   display: block
-  height: 70px
-  width: 300px
-  background-image: #{"{% if theme.images.logo != blank %} url(\"{{ theme.images.logo.url | constrain: '600', '140' }}\") {% else %} none {% endif %}"}
-  background-size: contain
-  background-position: center left
-  background-repeat: no-repeat
+  margin: 0 auto
+  max-height: calc(#{$header-image-height} * 1px)
+  width: auto
+  max-width: 375px
 
   @media screen and (max-width: $break-medium)
     margin-left: 30px
+    max-height: calc(#{$header-image-height} * 1px * 0.7)
 
   @media screen and (max-width: $break-small)
     margin-left: 20px
-
-.logo img
-  height: 100%
-  width: auto
+    max-height: calc(#{$header-image-height} * 1px * 0.5)
 
 .header-nav-container
   background: $background-color
@@ -801,9 +797,6 @@ footer
 
   header .inner
     height: 70px
-
-  .logo
-    width: 160px
 
   .cart-status
     height: 70px

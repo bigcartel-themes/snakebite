@@ -5,7 +5,7 @@
     {
       "variable": "logo",
       "label": "Logo",
-      "description": "Good for a logo up to 600 x 140 pixels"
+      "description": "Recommend transparent image in 600 x 140px size"
     },
     {
       "variable": "background",
@@ -180,6 +180,18 @@
       "type": "text",
       "description": "A message visitors see when your shop is in Maintenance Mode",
       "default": "We're working on our shop right now.<br /><br />Please check back soon."
+    },
+    {
+      "variable": "header_image_height",
+      "label": "Header image height",
+      "type": "select",
+      "options": [
+        ["Small", "70"],
+        ["Medium", "100"],
+        ["Large", "130"]
+      ],
+      "default": "70",
+      "description": "Controls the maximum height of your header image"
     },
     {
       "variable": "product_slideshows",

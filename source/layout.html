@@ -13,8 +13,17 @@
     <div class="wrapper">
       <header data-bc-hook="header">
         <div class="inner clear">
+          {% assign header_image_height_1x = theme.header_image_height %}
+          {% assign header_image_height_2x = header_image_height_1x | times: 2 %}
           {% if theme.images.logo.url != blank %}
-            <a class="logo" href="/" title="Home"></a>
+            <a href="/" title="Home">
+              <img
+                  class="logo"
+                  srcset="{{ theme.images.logo.url | constrain: '', header_image_height_1x }}, {{ theme.images.header.url | constrain: '', header_image_height_2x }} 2x"
+                  src="{{ theme.images.logo.url | constrain: '', header_image_height_1x }}"
+                  alt="{{ store.name }} Home"
+              >
+            </a>
           {% else %}
             <a class="wordmark" href="/" data-store-name="{{ store.name | escape }}">{{ store.name }}</a>
           {% endif %}
