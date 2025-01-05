@@ -51,7 +51,7 @@
           </div>
         </div>
         {% endfor %}
-        {% if cart.shareable_link == blank %}
+        {% if cart.shareable_link %}
           <a href="{{ cart.shareable_link }}" class="button footer minimal-button copy-cart-link" data-clipboard-text="{{ cart.shareable_link }}">Share this cart</a>
         {% endif %}
       </div>
@@ -72,7 +72,7 @@
 
     <div class="centered-message centered-message-cart">
       <h1>Your cart is empty!</h1>
-      <div class="cart-empty-text">Sounds like a good time to <a href="/products">start shopping</a>.</div>
+      <div class="cart-empty-text"><a href="/products" class="btn">Shop now</a></div>
     </div>
     {% endif %}
   </div>
