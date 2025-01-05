@@ -213,6 +213,13 @@
       "description": "The order of products on the Home page"
     },
     {
+      "variable": "all_products_button_text",
+      "label": "All products button text",
+      "type": "text",
+      "description": "Displays underneath featured products and links to your Products Page",
+      "default": "All Products"
+    },
+    {
       "variable": "products_per_page",
       "label": "Products per page",
       "type": "select",
