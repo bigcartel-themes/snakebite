@@ -51,6 +51,9 @@
           </div>
         </div>
         {% endfor %}
+        {% if cart.shareable_link == blank %}
+          <a href="{{ cart.shareable_link }}" class="button footer minimal-button copy-cart-link" data-clipboard-text="{{ cart.shareable_link }}">Share this cart</a>
+        {% endif %}
       </div>
 
       <div class="total">
