@@ -1,11 +1,11 @@
 {
   "name": "Snakebite",
-  "version": "1.9.3",
+  "version": "1.10.0",
   "images": [
     {
       "variable": "logo",
       "label": "Logo",
-      "description": "Good for a logo up to 600 x 140 pixels"
+      "description": "Recommend transparent image in 600 x 140px size"
     },
     {
       "variable": "background",
@@ -182,6 +182,18 @@
       "default": "We're working on our shop right now.<br /><br />Please check back soon."
     },
     {
+      "variable": "header_image_height",
+      "label": "Header image height",
+      "type": "select",
+      "options": [
+        ["Small", "70"],
+        ["Medium", "100"],
+        ["Large", "130"]
+      ],
+      "default": "70",
+      "description": "Controls the maximum height of your header image"
+    },
+    {
       "variable": "product_slideshows",
       "label": "Enable product slideshows",
       "type": "boolean",
@@ -211,6 +223,13 @@
       "options": "product_orders",
       "default": "position",
       "description": "The order of products on the Home page"
+    },
+    {
+      "variable": "all_products_button_text",
+      "label": "All products button text",
+      "type": "text",
+      "description": "Displays underneath featured products and links to your Products Page",
+      "default": "All Products"
     },
     {
       "variable": "products_per_page",

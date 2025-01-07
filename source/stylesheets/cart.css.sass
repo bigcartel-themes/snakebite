@@ -1,16 +1,29 @@
 @import 'config'
 
-.cart .main .inner
-  margin-top: 78px
-
 .cart-header
   border-bottom: 3px solid $primary-color
-  font-size: 12px
+  font-size: 14px
   line-height: 20px
   text-transform: uppercase
   letter-spacing: 0.09em
   font-weight: 700
   overflow: hidden
+
+.copy-cart-link
+  display: flex
+  float: right
+  align-items: center
+  justify-content: center
+  height: 20px
+  padding: 20px 20px
+  position: relative
+  text-transform: uppercase
+  font-size: 14px
+  font-weight: 700
+  letter-spacing: 0.09em
+  
+  &:hover
+    text-decoration: underline
 
 .link-continue, .link-checkout
   display: flex
@@ -197,7 +210,7 @@
 
 .total h3
   font-family: $text-font
-  font-size: 12px
+  font-size: 14px
   line-height: 20px
   text-transform: uppercase
   letter-spacing: 0.09em
@@ -304,7 +317,7 @@
     text-align: center
 
   .total
-    width: 80%
+    margin-top: 80px
     padding: 0 10%
 
   .cart-items,
@@ -324,3 +337,11 @@
 
   a
     text-decoration: underline
+
+  .btn
+    padding: 10
+    text-align: center
+    width: 80%
+    max-width: 300px
+    margin: 0 auto
+    text-decoration: none

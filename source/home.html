@@ -16,9 +16,10 @@
   {% endif %}
   {% if theme.featured_products > 0 %}
     <div class="inner clear">
-      {% get products from products.all limit:theme.featured_products order:theme.featured_order %}
+      {% get products from products.all order:theme.featured_order %}
       {% if products != blank %}
-        {% for product in products %}
+        {% assign featured_products = products | slice: 0, theme.featured_products %}
+        {% for product in featured_products %}
           <a href="{{ product.url }}" title="View {{ product.name | escape }}" class="preview rand-{{ forloop.index | modulo:7 }}">
             <div class="preview-inner">
               <div class="preview-inner-wrap">
@@ -48,6 +49,11 @@
             </div>
           </a>
         {% endfor %}
+        {% if products.size > featured_products.size && theme.all_products_button_text != blank%}
+        <div>
+          <a class="btn all-products-button" href="/products">{{ theme.all_products_button_text }}</a>
+        </div>
+        {% endif %}
       {% else %}
          <h1 class="floating-title">No products found</h1>
       {% endif %}

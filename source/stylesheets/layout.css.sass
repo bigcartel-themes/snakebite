@@ -7,7 +7,6 @@
 body
   color: $primary-color
   font-family: $text-font
-  font-size: 62.5%
   -webkit-text-size-adjust: none
   text-rendering: optimizeLegibility
   cursor: default
@@ -59,7 +58,7 @@ h3
   line-height: 1.4em
 
 h4
-  font-size: 12px
+  font-size: 14px
   line-height: 1.3em
   text-transform: uppercase
   letter-spacing: 0.09em
@@ -111,9 +110,6 @@ body
   min-width: 280px
   margin: 0 auto
   position: relative
-
-.main .inner
-  margin-top: 130px
 
 /* Buttons */
 .btn
@@ -311,10 +307,8 @@ body
 header
   background: $background-color
   border-bottom: 6px solid $primary-color
-  position: absolute
   top: 0
   width: 100%
-  z-index: 501
 
 .maintenance_on header
   top: 27px
@@ -322,7 +316,7 @@ header
 header .inner
   +flexbox
   +align-items(center)
-  height: 70px
+  height: calc(#{$header-image-height} * 1px * 1.5)
   position: relative
 
   @media screen and (max-width: $break-medium)
@@ -342,22 +336,18 @@ header .inner
 
 .logo
   display: block
-  height: 70px
-  width: 300px
-  background-image: #{"{% if theme.images.logo != blank %} url(\"{{ theme.images.logo.url | constrain: '600', '140' }}\") {% else %} none {% endif %}"}
-  background-size: contain
-  background-position: center left
-  background-repeat: no-repeat
+  margin: 0 auto
+  max-height: calc(#{$header-image-height} * 1px)
+  width: auto
+  max-width: 375px
 
   @media screen and (max-width: $break-medium)
     margin-left: 30px
+    max-height: calc(#{$header-image-height} * 1px * 0.7)
 
   @media screen and (max-width: $break-small)
     margin-left: 20px
-
-.logo img
-  height: 100%
-  width: auto
+    max-height: calc(#{$header-image-height} * 1px * 0.5)
 
 .header-nav-container
   background: $background-color
@@ -434,7 +424,7 @@ header .inner
   line-height: 70px
   color: $primary-color
   font-weight: bold
-  font-size: 12px
+  font-size: 14px
   text-decoration: none
   padding: 0 25px
   text-transform: uppercase
@@ -495,7 +485,7 @@ header .inner
   display: block
   color: $background-color
   background: $primary-color
-  font-size: 12px
+  font-size: 14px
   text-shadow: none
   line-height: 20px
   padding: 15px 20px
@@ -640,7 +630,7 @@ header .inner
   display: block
   text-align: center
   margin-top: 15px
-  font-size: 12px
+  font-size: 14px
   margin-bottom: -2px
   padding-right: 6px
   position: relative
@@ -668,7 +658,7 @@ header .inner
  */
 footer
   background: $primary-color
-  font-size: 12px
+  font-size: 14px
   line-height: 1.3em
   color: $background-color
   min-height: 120px
@@ -699,6 +689,7 @@ footer
     flex-wrap: wrap
     align-items: center
     justify-content: center
+    margin-bottom: 20px
 
     li
 
@@ -746,7 +737,7 @@ footer
     margin-right: 30px
 
   .main .inner
-    margin-top: 130px
+    margin-top: 5px
 
 
   /* Typography */
@@ -802,9 +793,6 @@ footer
   header .inner
     height: 70px
 
-  .logo
-    width: 160px
-
   .cart-status
     height: 70px
     width: 50px
@@ -830,9 +818,6 @@ footer
   .inner
     margin-left: 20px
     margin-right: 20px
-
-  .main .inner
-    margin-top: 40px
 
   .home .main .inner
     margin-left: 0
@@ -861,7 +846,7 @@ footer
       gap: 20px
 
     .footer-text
-      margin: 0
+      margin: auto
 
   /* DOM mods */
   .visible-phone
