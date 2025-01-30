@@ -1,6 +1,6 @@
 {
   "name": "Snakebite",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "images": [
     {
       "variable": "logo",
@@ -52,6 +52,40 @@
               "product_status_badge_text_color_secondary": "#111111",
               "product_status_badge_background_color_secondary": "#CDCDCD"
             }
+          },
+          {
+            "style_name": "Classic #2",
+            "fonts": {
+              "header_font": "Playfair Display",
+              "text_font": "Inter"
+            },
+            "colors": {
+              "background_color": "#FFFFFF",
+              "primary_color": "#1F364D",
+              "highlight_color": "#E4C6A5",
+              "accent_color": "#F5F0EC",
+              "product_status_badge_text_color_primary": "#E4C6A5",
+              "product_status_badge_background_color_primary": "#1F364D",
+              "product_status_badge_text_color_secondary": "#1F364D",
+              "product_status_badge_background_color_secondary": "#E4E4E4"
+            }
+          },
+          {
+            "style_name": "Classic #3",
+            "fonts": {
+              "header_font": "Libre Baskerville",
+              "text_font": "Source Sans Pro"
+            },
+            "colors": {
+              "background_color": "#1A2633",
+              "primary_color": "#FFFFFF",
+              "highlight_color": "#C9B188",
+              "accent_color": "#2C3B4A",
+              "product_status_badge_text_color_primary": "#C9B188",
+              "product_status_badge_background_color_primary": "#FFFFFF",
+              "product_status_badge_text_color_secondary": "#FFFFFF",
+              "product_status_badge_background_color_secondary": "#435263"
+            }
           }
         ]
       },
@@ -91,6 +125,23 @@
               "product_status_badge_text_color_secondary": "#111111",
               "product_status_badge_background_color_secondary": "#CDCDCD"
             }
+          },
+          {
+            "style_name": "Playful #3",
+            "fonts": {
+              "header_font": "Chewy",
+              "text_font": "DM Sans"
+            },
+            "colors": {
+              "background_color": "#FF7B54",
+              "primary_color": "#2D1832",
+              "highlight_color": "#FFE175",
+              "accent_color": "#FF9B82",
+              "product_status_badge_text_color_primary": "#FFE175",
+              "product_status_badge_background_color_primary": "#2D1832",
+              "product_status_badge_text_color_secondary": "#2D1832",
+              "product_status_badge_background_color_secondary": "#FFB4A2"
+            }
           }
         ]
       },
@@ -112,6 +163,40 @@
               "product_status_badge_background_color_primary": "#111111",
               "product_status_badge_text_color_secondary": "#111111",
               "product_status_badge_background_color_secondary": "#CDCDCD"
+            }
+          },
+          {
+            "style_name": "Natural #2",
+            "fonts": {
+              "header_font": "Cormorant",
+              "text_font": "Karla"
+            },
+            "colors": {
+              "background_color": "#F4EDE4",
+              "primary_color": "#2C4A3B",
+              "highlight_color": "#E6B797",
+              "accent_color": "#E8DFD8",
+              "product_status_badge_text_color_primary": "#E6B797",
+              "product_status_badge_background_color_primary": "#2C4A3B",
+              "product_status_badge_text_color_secondary": "#2C4A3B",
+              "product_status_badge_background_color_secondary": "#D4C8BE"
+            }
+          },
+          {
+            "style_name": "Natural #3",
+            "fonts": {
+              "header_font": "Fraunces",
+              "text_font": "Work Sans"
+            },
+            "colors": {
+              "background_color": "#2F4858",
+              "primary_color": "#F9F7F3",
+              "highlight_color": "#D7B19D",
+              "accent_color": "#45627A",
+              "product_status_badge_text_color_primary": "#D7B19D",
+              "product_status_badge_background_color_primary": "#F9F7F3",
+              "product_status_badge_text_color_secondary": "#F9F7F3",
+              "product_status_badge_background_color_secondary": "#45627A"
             }
           }
         ]
@@ -303,6 +388,24 @@
       "label": "YouTube URL",
       "type": "text",
       "description": "Ex: https://youtube.com/@BigCartelDotCom"
+    },
+    {
+      "variable": "spotify_url",
+      "label": "Spotify URL",
+      "type": "text",
+      "description": "Ex: https://open.spotify.com/artist/0gxy..."
+    },
+    {
+      "variable": "linkedin_url",
+      "label": "LinkedIn URL",
+      "type": "text",
+      "description": "Ex: https://linkedin.com/in/bigcartel"
+    },
+    {
+      "variable": "twitch_url",
+      "label": "Twitch URL",
+      "type": "text",
+      "description": "Ex: https://twitch.tv/username"
     },
     {
       "variable": "tumblr_url",
